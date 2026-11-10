@@ -1,0 +1,42 @@
+{
+  "title": "CAPY BK — EP01: Máy xúc bị rút trộm dầu?",
+  "aspect_ratio": "9:16",
+  "resolution": "540x960",
+  "fps": 16,
+  "duration_seconds": 32,
+  "status": "animatic with synthetic original sound bed, no narration/lipsync",
+  "source_mascot_file": "cheerful_capybara_workspace_celebration.png (GIF despite PNG filename)",
+  "segments": [
+    {
+      "start": 0,
+      "end": 5,
+      "type": "studio",
+      "narration": "Ê ê, máy xúc bị tụt dầu rồi! Bị rút trộm hả?"
+    },
+    {
+      "start": 5,
+      "end": 11,
+      "type": "excavator",
+      "narration": "Khoan! Máy lên dốc, cảm biến có thể báo khác."
+    },
+    {
+      "start": 11,
+      "end": 20,
+      "type": "technical schematic",
+      "narration": "Khi bình nghiêng, mặt thoáng nhiên liệu thay đổi so với bình. Vị trí phao có thể thay đổi, dù nhiên liệu chưa thực sự bị rút."
+    },
+    {
+      "start": 20,
+      "end": 26,
+      "type": "signals",
+      "narration": "Đó là lý do cần kết hợp mức nhiên liệu, độ nghiêng và trạng thái vận hành, rồi mới đánh giá bất thường."
+    },
+    {
+      "start": 26,
+      "end": 32,
+      "type": "studio closing",
+      "narration": "Nhớ nha! Phải đo đúng rồi mới kết luận. Tập sau cho máy xúc biết nói!"
+    }
+  ],
+  "technical_caution": "Illustrations are conceptual; not specific to a real Komatsu tank/sensor; FuelGuard detection not independently validated."
+}
