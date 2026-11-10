@@ -4,6 +4,7 @@ import argparse
 import json
 import math
 from pathlib import Path
+import subprocess
 import tempfile
 
 from PIL import Image, ImageDraw, ImageFont
@@ -135,9 +136,21 @@ def main():
         stage = scratch / "shots"
         stage.mkdir()
         voice = load_voice(args.model, args.tokens, manifest["voice"], scratch / "voice.json")
+        dry_voice = scratch / "dry_voice.wav"
+        voice_filters = ",".join([
+            "highpass=f=80",
+            "equalizer=f=210:t=q:w=0.8:g=-2",
+            "equalizer=f=2800:t=q:w=0.9:g=2.5",
+            "volume=1.15",
+            "alimiter=limit=0.86:level=0:latency=1",
+        ])
         for shot in manifest["shots"]:
             count = shot["duration_frames"]
-            cues = synthesize(voice, shot["captions"], count / FPS, stage / shot["voice"], length_scale=1.05)
+            cues = synthesize(voice, shot["captions"], count / FPS, dry_voice, length_scale=1.05)
+            subprocess.run([
+                args.ffmpeg, "-nostdin", "-hide_banner", "-loglevel", "error", "-i", str(dry_voice),
+                "-af", voice_filters, "-c:a", "pcm_s16le", str(stage / shot["voice"]),
+            ], check=True)
             if shot["visual"] in ("studio_open", "studio_close"):
                 source = ROOT / shot["asset"]["source"]
                 check_hash(source, shot["asset"]["sha256"])

@@ -4,16 +4,16 @@
 
 **DRAFT / OWNER REVIEW** · 7,80 giây · 1080×1920 · 30 fps. Capy phản ứng → máy xúc leo dốc → sơ đồ bình dầu → Capy chốt. Hai cảnh studio dùng chính GIF đã duyệt. Hai cảnh minh họa dùng hình vẽ 2D gốc với nét viền và nền giấy ấm. Nhịp cắt và cách minh họa tham khảo các khung xem trước quanh mốc 0:39. [Video tham chiếu](https://www.youtube.com/watch?v=dTWuRMURNyU&t=39s)
 
-Giọng nháp nam **Trầm Vang** là giọng tổng hợp. Hồ sơ mô hình nêu nguồn dữ liệu của checkpoint tổ tiên có điều khoản dùng cho nghiên cứu. Giữ bản lồng tiếng này ở phạm vi duyệt nội bộ và duyệt giọng cuối trước khi phát hành. [Hồ sơ mô hình](https://huggingface.co/vnhellboy/vietnamese-piper-voices#vietnamese-piper-voices-medium)
+Giọng nháp nam **Điềm Đạm** thay cho Trầm Vang, với cao độ tự nhiên cao hơn, giảm dải trầm nhẹ và nhấn dải rõ chữ. Khẩu hình được dựng lại theo giọng mới. Hồ sơ mô hình nêu nguồn dữ liệu của checkpoint tổ tiên có điều khoản dùng cho nghiên cứu. Giữ bản lồng tiếng này ở phạm vi duyệt nội bộ và duyệt giọng cuối trước khi phát hành. [Hồ sơ mô hình](https://huggingface.co/vnhellboy/vietnamese-piper-voices#vietnamese-piper-voices-medium)
 
-Sau khi cài phụ thuộc ở mục Build, tải `vi_VN-tramvang-medium.onnx` và `tokens.txt` vào `build/voice-tramvang/`. Script kiểm tra SHA-256 của cả hai. [Tệp mô hình](https://huggingface.co/vnhellboy/vietnamese-piper-voices/tree/main/vits-piper-vi_VN-tramvang-medium)
+Sau khi cài phụ thuộc ở mục Build, tải `vi_VN-diemdam-medium.onnx` và `tokens.txt` vào `build/voice-diemdam/`. Script kiểm tra SHA-256 của cả hai. [Tệp mô hình](https://huggingface.co/vnhellboy/vietnamese-piper-voices/tree/main/vits-piper-vi_VN-diemdam-medium)
 
 ```powershell
-& $py scripts/render_capy_multishot.py --model build/voice-tramvang/vi_VN-tramvang-medium.onnx --tokens build/voice-tramvang/tokens.txt --font C:/Windows/Fonts/seguisb.ttf --out build/multishot-media
-& $py scripts/build_video.py --manifest episodes/EP01/pilot_multishot.json --media-dir build/multishot-media --out build/multishot-capcut
+& $py scripts/render_capy_multishot.py --model build/voice-diemdam/vi_VN-diemdam-medium.onnx --tokens build/voice-diemdam/tokens.txt --font C:/Windows/Fonts/seguisb.ttf --out build/multishot-clear-media
+& $py scripts/build_video.py --manifest episodes/EP01/pilot_multishot.json --media-dir build/multishot-clear-media --out build/multishot-clear-capcut
 ```
 
-Mở `build/multishot-capcut/DRAFT_preview.mp4` để duyệt. Trong CapCut, xếp S01–S04 cùng WAV tương ứng theo `shot_table.csv` và nhập `captions_vi.srt`.
+Mở `build/multishot-clear-capcut/DRAFT_preview.mp4` để duyệt. Trong CapCut, xếp S01–S04 cùng WAV tương ứng theo `shot_table.csv` và nhập `captions_vi.srt`.
 
 ## Bản A · một cảnh studio
 

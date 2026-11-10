@@ -2,9 +2,10 @@
   "stage": "pilot",
   "profile": "tiktok",
   "voice": {
-    "model": "vnhellboy/vietnamese-piper-voices / Trầm Vang",
-    "model_sha256": "5e07e420b3f410a72a457ff9472131edf9aa489de3596237f3aced9c4859661a",
+    "model": "vnhellboy/vietnamese-piper-voices / Điềm Đạm",
+    "model_sha256": "821096ee1f6d424fd9d1a0ff83fd851637e5ff880e8aaf3c5b53be87269a6e26",
     "tokens_sha256": "e8a50ae0c75612d18cfcf3f90800dca79f961e3ed97f9574f3535194469187fd",
+    "mix": "Gentle low-mid reduction and presence boost with peak limiting.",
     "rights": "Research-lineage synthetic male narrator. Local draft only pending final voice and rights review."
   },
   "shots": [
