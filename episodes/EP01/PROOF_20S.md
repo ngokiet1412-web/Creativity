@@ -1,5 +1,7 @@
 # EP01 · Bản thử 20 giây
 
+Xem [bản hoạt hình kể chuyện](STORY_20S.md) để duyệt hướng Capy lái máy xúc, thoại trong cabin và cảnh cắt lớp bình dầu.
+
 **DRAFT / OWNER REVIEW** · 8 cảnh · 1080×1920 · 30 fps. Cảnh studio dùng GIF Capy đã duyệt, với khẩu hình theo giọng Việt. Các cảnh cắt dùng bảng màu pastel, kim đồng hồ hạ, thanh so sánh động, bọt thước cân bằng và điểm nhấn màu. Âm thanh hiệu ứng tự tổng hợp đi kèm WAV riêng.
 
 Bản MP4 duyệt dùng giọng nam Điềm Đạm đã chọn cho cảnh thử trước. Đây là giọng tạm để duyệt nhịp và màu. [Nguồn mô hình](https://huggingface.co/vnhellboy/vietnamese-piper-voices)

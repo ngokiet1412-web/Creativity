@@ -92,20 +92,27 @@ def retime_mouth(frame, pose, opening, width):
     if pose not in MOUTHS:
         return frame
     x, y, depth = MOUTHS[pose]
-    left, top, right, bottom = x - 24, y - 3, x + 25, y + depth + 11
+    return warp_mouth(frame, x, y, depth, opening, width)
+
+
+def warp_mouth(frame, x, y, depth, opening, width, radius=24):
+    scale = radius / 24
+    upper = round(3 * scale)
+    left, top, right, bottom = x - radius, y - upper, x + radius + 1, y + depth + round(11 * scale)
     patch = np.asarray(frame.crop((left, top, right, bottom)))
     rows, columns = np.indices(patch.shape[:2], dtype=float)
     # Hold the top lip and patch edges in place. Scale the opening and blend
     # the displacement out through the surrounding muzzle.
-    target_depth = 3 + (depth - 3) * opening
-    old_rows = np.interp(rows, [0, 3, 3 + target_depth, bottom - top - 1],
-                         [0, 3, 3 + depth, bottom - top - 1])
-    edge_x = np.clip((24 - abs(columns - 24)) / 8, 0, 1)
+    target_depth = upper + (depth - upper) * opening
+    old_rows = np.interp(rows, [0, upper, upper + target_depth, bottom - top - 1],
+                         [0, upper, upper + depth, bottom - top - 1])
+    edge_x = np.clip((radius - abs(columns - radius)) / (8 * scale), 0, 1)
     old_rows = rows + (old_rows - rows) * edge_x
-    target_width = 15 * width
-    old_columns = np.interp(columns, [0, 24 - target_width, 24, 24 + target_width, 48],
-                            [0, 9, 24, 39, 48])
-    edge_y = np.clip(np.minimum(rows, bottom - top - 1 - rows) / 6, 0, 1)
+    source_width = 15 * scale
+    target_width = source_width * width
+    old_columns = np.interp(columns, [0, radius - target_width, radius, radius + target_width, 2 * radius],
+                            [0, radius - source_width, radius, radius + source_width, 2 * radius])
+    edge_y = np.clip(np.minimum(rows, bottom - top - 1 - rows) / (6 * scale), 0, 1)
     old_columns = columns + (old_columns - columns) * edge_y
 
     iy, ix = old_rows.astype(int), old_columns.astype(int)
@@ -117,6 +124,16 @@ def retime_mouth(frame, pose, opening, width):
     result = frame.copy()
     result.paste(Image.fromarray((upper * (1 - fy) + lower * fy).astype(np.uint8)), (left, top))
     return result
+
+
+def viseme_at(cues, t):
+    # Average over one neighboring frame on each side to soften viseme changes.
+    shapes = [
+        next(((openness, width) for start, end, openness, width in cues if start <= sample < end),
+             (0.10, 0.97))
+        for sample in (t - 1 / FPS, t, t + 1 / FPS)
+    ]
+    return tuple((prev + 2 * now + following) / 4 for prev, now, following in zip(*shapes))
 
 
 def make_canvas(font_path, title="DẦU ĐI ĐÂU?"):
@@ -136,7 +153,7 @@ def make_canvas(font_path, title="DẦU ĐI ĐÂU?"):
     return canvas
 
 
-def studio_frames(source, font, cues, count, poses=POSES, title="DẦU ĐI ĐÂU?"):
+def posed_frames(source, cues, count, poses):
     with Image.open(source) as gif:
         if gif.format != "GIF" or gif.size != (478, 354) or gif.n_frames != 9:
             raise ValueError("Pilot rig expects the approved 478×354 GIF with nine poses.")
@@ -144,21 +161,20 @@ def studio_frames(source, font, cues, count, poses=POSES, title="DẦU ĐI ĐÂU
         for index in range(gif.n_frames):
             gif.seek(index)
             frames.append(gif.convert("RGB"))
-    canvas = make_canvas(font, title)
     pose_index = 0
     for frame_number in range(count):
         while pose_index + 1 < len(poses) and frame_number >= poses[pose_index + 1][0]:
             pose_index += 1
         pose = poses[pose_index][1]
         t = (frame_number + 0.5) / FPS
-        # Average over one neighboring frame on each side to soften viseme changes.
-        shapes = [
-            next(((openness, width) for start, end, openness, width in cues if start <= sample < end),
-                 (0.10, 0.97))
-            for sample in (t - 1 / FPS, t, t + 1 / FPS)
-        ]
-        opening, width = ((prev + 2 * now + following) / 4 for prev, now, following in zip(*shapes))
-        picture = retime_mouth(frames[pose], pose, opening, width)
+        opening, width = viseme_at(cues, t)
+        yield retime_mouth(frames[pose], pose, opening, width)
+
+
+def studio_frames(source, font, cues, count, poses=POSES, title="DẦU ĐI ĐÂU?"):
+    canvas = make_canvas(font, title)
+    for frame_number, picture in enumerate(posed_frames(source, cues, count, poses)):
+        t = (frame_number + 0.5) / FPS
         # The full studio plate stays inside the card at every camera position.
         scale = 1 + 0.018 * (1 - math.cos(math.tau * t / (count / FPS))) / 2
         w = round(916 * scale)
