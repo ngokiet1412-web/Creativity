@@ -1,0 +1,118 @@
+{
+  "stage": "pilot",
+  "profile": "tiktok",
+  "voice": {
+    "model": "vnhellboy/vietnamese-piper-voices / Trầm Vang",
+    "model_sha256": "5e07e420b3f410a72a457ff9472131edf9aa489de3596237f3aced9c4859661a",
+    "tokens_sha256": "e8a50ae0c75612d18cfcf3f90800dca79f961e3ed97f9574f3535194469187fd",
+    "rights": "Research-lineage synthetic male narrator. Local draft only pending final voice and rights review."
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start_frame": 0,
+      "duration_frames": 51,
+      "visual": "studio_open",
+      "title": "TỤT DẦU?!",
+      "video": "S01_picture.mp4",
+      "voice": "S01_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "assets/approved/capy_bk_master.gif",
+        "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0",
+        "date": "2026-11-10",
+        "shot": "S01",
+        "method": "Approved Capy poses and localized phoneme-timed mouth motion.",
+        "prompt": "Surprised Capy lifts its tiny paws as the fuel reading appears to drop.",
+        "rights": "Owner-approved studio GIF. BK mark requires rights review for commercial release.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 1633,
+          "text": "Ủa, tụt dầu rồi?"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "start_frame": 51,
+      "duration_frames": 54,
+      "visual": "machine",
+      "title": "MÁY LÊN DỐC",
+      "video": "S02_picture.mp4",
+      "voice": "S02_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S02",
+        "method": "Original 2D animation drawn in Pillow.",
+        "prompt": "Golden cartoon excavator climbs a schematic slope against a warm paper panel.",
+        "rights": "Original conceptual artwork for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 100,
+          "end_ms": 1767,
+          "text": "Máy vừa lên dốc."
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "start_frame": 105,
+      "duration_frames": 60,
+      "visual": "tank",
+      "title": "MỨC ĐO CÓ THỂ ĐỔI",
+      "video": "S03_picture.mp4",
+      "voice": "S03_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S03",
+        "method": "Original 2D schematic drawn in Pillow.",
+        "prompt": "A rectangular, half-full tank tilts while the liquid surface stays level. A sensor near the high end reads a lower local depth.",
+        "rights": "Original conceptual artwork for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 100,
+          "end_ms": 1967,
+          "text": "Mức đo có thể đổi."
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "start_frame": 165,
+      "duration_frames": 69,
+      "visual": "studio_close",
+      "title": "KHOAN KẾT LUẬN",
+      "video": "S04_picture.mp4",
+      "voice": "S04_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "assets/approved/capy_bk_master.gif",
+        "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0",
+        "date": "2026-11-10",
+        "shot": "S04",
+        "method": "Approved Capy poses and localized phoneme-timed mouth motion.",
+        "prompt": "Capy lifts its paws and settles back into the same studio composition.",
+        "rights": "Owner-approved studio GIF. BK mark requires rights review for commercial release.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 100,
+          "end_ms": 2133,
+          "text": "Khoan kết luận mất dầu!"
+        }
+      ]
+    }
+  ]
+}

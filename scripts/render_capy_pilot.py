@@ -56,9 +56,8 @@ def mouth_shape(phoneme):
     return 0.13, 0.97
 
 
-def synthesize(model, captions, duration, voice_path):
-    voice = PiperVoice.load(model, include_alignments=True)
-    config = SynthesisConfig(length_scale=1.20, noise_scale=0, noise_w_scale=0, volume=0.72)
+def synthesize(voice, captions, duration, voice_path, length_scale=1.20):
+    config = SynthesisConfig(length_scale=length_scale, noise_scale=0, noise_w_scale=0, volume=0.72)
     rate = voice.config.sample_rate
     audio = np.zeros(round(rate * duration), dtype="<i2")
     cues = []
@@ -120,7 +119,7 @@ def retime_mouth(frame, pose, opening, width):
     return result
 
 
-def make_canvas(font_path):
+def make_canvas(font_path, title="DẦU ĐI ĐÂU?"):
     navy, light, cyan, gold = "#101d35", "#f2f7ff", "#76ddfc", "#ffd075"
     canvas = Image.new("RGB", SIZE, "#080f1e")
     draw = ImageDraw.Draw(canvas)
@@ -131,13 +130,13 @@ def make_canvas(font_path):
         return ImageFont.truetype(str(font_path), size)
     draw.text((180, 259), "CAPY BK", font=font(29), fill=cyan, anchor="mm")
     draw.text((986, 261), "TẬP 01  /  DRAFT", font=font(26), fill=gold, anchor="rm")
-    draw.text((94, 373), "DẦU ĐI ĐÂU?", font=font(76), fill=light, anchor="ls")
+    draw.text((94, 373), title, font=font(76), fill=light, anchor="ls")
     draw.rounded_rectangle((94, 443, 144, 451), radius=4, fill=gold)
     draw.text((165, 448), "MÁY XÚC LÊN DỐC", font=font(28), fill=cyan, anchor="lm")
     return canvas
 
 
-def render_picture(ffmpeg, source, font, cues, count, target):
+def studio_frames(source, font, cues, count, poses=POSES, title="DẦU ĐI ĐÂU?"):
     with Image.open(source) as gif:
         if gif.format != "GIF" or gif.size != (478, 354) or gif.n_frames != 9:
             raise ValueError("Pilot rig expects the approved 478×354 GIF with nine poses.")
@@ -145,7 +144,31 @@ def render_picture(ffmpeg, source, font, cues, count, target):
         for index in range(gif.n_frames):
             gif.seek(index)
             frames.append(gif.convert("RGB"))
-    canvas = make_canvas(font)
+    canvas = make_canvas(font, title)
+    pose_index = 0
+    for frame_number in range(count):
+        while pose_index + 1 < len(poses) and frame_number >= poses[pose_index + 1][0]:
+            pose_index += 1
+        pose = poses[pose_index][1]
+        t = (frame_number + 0.5) / FPS
+        # Average over one neighboring frame on each side to soften viseme changes.
+        shapes = [
+            next(((openness, width) for start, end, openness, width in cues if start <= sample < end),
+                 (0.10, 0.97))
+            for sample in (t - 1 / FPS, t, t + 1 / FPS)
+        ]
+        opening, width = ((prev + 2 * now + following) / 4 for prev, now, following in zip(*shapes))
+        picture = retime_mouth(frames[pose], pose, opening, width)
+        # The full studio plate stays inside the card at every camera position.
+        scale = 1 + 0.018 * (1 - math.cos(math.tau * t / (count / FPS))) / 2
+        w = round(916 * scale)
+        h = round(w * picture.height / picture.width)
+        frame = canvas.copy()
+        frame.paste(picture.resize((w, h), Image.Resampling.LANCZOS), ((1080 - w) // 2, 851 - h // 2))
+        yield frame
+
+
+def encode_picture(ffmpeg, frames, target):
     cmd = [
         ffmpeg, "-hide_banner", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
         "-video_size", "1080x1920", "-framerate", str(FPS), "-i", "-", "-an",
@@ -153,26 +176,7 @@ def render_picture(ffmpeg, source, font, cues, count, target):
         "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(target),
     ]
     with subprocess.Popen(cmd, stdin=subprocess.PIPE) as process:
-        pose_index = 0
-        for frame_number in range(count):
-            while pose_index + 1 < len(POSES) and frame_number >= POSES[pose_index + 1][0]:
-                pose_index += 1
-            pose = POSES[pose_index][1]
-            t = (frame_number + 0.5) / FPS
-            # Average over one neighboring frame on each side to soften viseme changes.
-            shapes = [
-                next(((openness, width) for start, end, openness, width in cues if start <= sample < end),
-                     (0.10, 0.97))
-                for sample in (t - 1 / FPS, t, t + 1 / FPS)
-            ]
-            opening, width = ((prev + 2 * now + following) / 4 for prev, now, following in zip(*shapes))
-            picture = retime_mouth(frames[pose], pose, opening, width)
-            # The full studio plate stays inside the card at every camera position.
-            scale = 1 + 0.018 * (1 - math.cos(math.tau * t / (count / FPS))) / 2
-            w = round(916 * scale)
-            h = round(w * picture.height / picture.width)
-            frame = canvas.copy()
-            frame.paste(picture.resize((w, h), Image.Resampling.LANCZOS), ((1080 - w) // 2, 851 - h // 2))
+        for frame in frames:
             process.stdin.write(frame.tobytes())
         process.stdin.close()
         if process.wait():
@@ -198,8 +202,10 @@ def main():
     with tempfile.TemporaryDirectory(dir=out.parent) as scratch:
         stage = Path(scratch) / "pilot"
         stage.mkdir()
-        cues = synthesize(args.model, shot["captions"], shot["duration_frames"] / FPS, stage / shot["voice"])
-        render_picture(args.ffmpeg, source, args.font, cues, shot["duration_frames"], stage / shot["video"])
+        count = shot["duration_frames"]
+        voice = PiperVoice.load(args.model, include_alignments=True)
+        cues = synthesize(voice, shot["captions"], count / FPS, stage / shot["voice"])
+        encode_picture(args.ffmpeg, studio_frames(source, args.font, cues, count), stage / shot["video"])
         stage.rename(out)
 
 
