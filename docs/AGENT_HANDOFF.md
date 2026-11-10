@@ -1,3 +1,5 @@
+> **LATEST 2026-11-10 — MUST READ:** [WORKFLOW_V2_CINEMATIC.md](WORKFLOW_V2_CINEMATIC.md). Capy BK has moved from the old flat prototype to cinematic 3D animated story. Owner-approved 3 newest reference images currently live in the ChatGPT thread; **not yet uploaded to GitHub**. Codex owns integration, asset consistency checks, test/packaging and editor handoff. Owner-operated **CapCut AI** owns actual image-to-video animation, TTS/voice/lip-sync trials and final timeline editing. First joint deliverable: 6–8 second voiced cabin/joystick/fuel gauge reaction clip. No automatic CapCut control should be claimed.
+
 # Agent work packages for Creativity
 
 Repository: `ngokiet1412-web/Creativity` (PUBLIC)
