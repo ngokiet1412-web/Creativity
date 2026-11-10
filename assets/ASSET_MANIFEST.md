@@ -1,29 +1,18 @@
-# CAPY BK assets — public-safe manifest
+# CAPY BK asset inventory
 
-## Approved identity
-| Asset | Purpose | Current location/status | Exact file |
-|---|---|---|---|
-| cheerful smiling Capy in studio | APPROVED visual & motion reference | Generated conversation file; still needs import to repo | cheerful_capybara_workspace_celebration.png (**actual GIF 89a despite .png**) |
-| mascot original studio wave | earlier reference | Local only, not final identity | animated_bear_workshop_greeting.png (GIF despite extension) |
-| avatar cropped from GIF | channel avatar | Local conversation file, awaiting upload | Capy_BK_avatar_vuong.png |
-| animatic 32 sec | concept demo only | Local conversation file, awaiting upload | CAPY_BK_EP01_animatic_demo.mp4 |
-| animatic builder | reproducible draft Python | Local conversation file, awaiting upload | build_capy_bk_ep01_animatic.py |
-| animatic shotlist | prototype timings | Local conversation file, awaiting upload | CAPY_BK_EP01_animatic_shotlist.json |
-| episode cover | draft thumbnail | Local conversation file, awaiting upload | CAPY_BK_EP01_cover.jpg |
+The [approved package manifest](ASSET_SHA256.json) records the original names, byte counts and SHA-256 digests for all eight files. It comes from the package identified in [Issue #2](https://github.com/ngokiet1412-web/Creativity/issues/2#issuecomment-6766938944).
 
-**Do not mark any asset as present in repository until the binary is verified in GitHub.** Images and GIFs are not automatically transferred by writing this manifest; Codex/owner must import from approved local source on owner's computer.
-Canonical mascot visual: very round cheerful chubby capybara with tiny arms, white-and-blue BK shirt; navy engineering studio; real BK-themed three-hexagon emblem on shirt, panel, and mug. No silent changes to character or logo.
+| File in this checkout | Role and review status |
+|---|---|
+| `assets/approved/capy_bk_master.gif` | Owner-approved character and motion reference, including the shirt emblem, BK mug and illuminated panel. The original filename ended in `.png`. The bytes start with `GIF89a` and decode as nine frames at 478×354. |
+| `assets/approved/capy_bk_avatar_square.png` | Owner-supplied avatar in approved package. |
+| `assets/approved/capy_bk_still_from_gif.png` | Owner-supplied still for an identity reference in CapCut. |
+| `assets/prototypes/EP01_animatic_32s.mp4` | DRAFT reference with a synthetic sound bed. |
+| `assets/prototypes/EP01_cover.jpg` | DRAFT cover reference. |
+| `assets/prototypes/EP01_contact_sheet.jpg` | DRAFT storyboard reference. |
+| `assets/prototypes/source/build_capy_bk_ep01_animatic_PROTOTYPE.py` | Exact package copy of the historical builder. The repository's `scripts/` version already has a different output-path setting and remains the reference for the historical Git revision. |
+| `episodes/EP01/prototype_shotlist.json` | DRAFT historical timings. Existing Git blob matches the package. |
 
-## Filename handling
-Some generated assets are GIF files with .png extensions. Detect MIME/magic bytes and rename *copies* to .gif before using in an automated pipeline. Keep original for provenance.
-No machine footage, private user screenshots or licensed third-party stills may be pushed without explicit rights/safety check.
+The owner's package announcement is dated 2026-11-10. Use of the BK mark is subject to rights review for commercial release. Capy BK is an independent channel. The pilot's generated-media and voice provenance is recorded under `asset` in [pilot.json](../episodes/EP01/pilot.json).
 
-## Suggested binary asset layout (after owner import)
-- assets/approved/capy_bk_master.gif
-- assets/approved/capy_bk_avatar.png
-- assets/prototypes/EP01_animatic_32s.mp4
-- assets/prototypes/EP01_cover.jpg
-- assets/prototypes/EP01_shotlist.json
-- scripts/build_ep01_animatic.py
-
-For each file, add sha256, original filename, owner approval date, license/permission and GitHub path here.
+From the repository root, verify the checkout with `pwsh -File scripts/import_approved_assets.ps1`. To ingest again from the supplied files, pass `-ExtractedPath <folder>` or `-ZipPath <file>`. The ZIP route verifies the archive hash before extraction. The extracted-folder route verifies the pinned manifest, all eight file sizes and hashes, and the canonical GIF signature before copying. An existing mismatched destination stops the import. The ZIP itself was outside the supplied workspace snapshot used for this import.

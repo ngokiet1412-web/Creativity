@@ -1,0 +1,28 @@
+{
+  "stage": "pilot",
+  "profile": "tiktok",
+  "shots": [
+    {
+      "id": "S01",
+      "start_frame": 0,
+      "duration_frames": 216,
+      "video": "S01_picture.mp4",
+      "voice": "S01_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "assets/approved/capy_bk_master.gif",
+        "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0",
+        "date": "2026-11-10",
+        "shot": "S01",
+        "method": "Original GIF poses and local mouth deformation driven by Piper phoneme timings",
+        "prompt": "Capy reacts to a fuel reading dropping on a slope, then catches the mistake. Keep the original studio composition, shirt emblem, mug, and illuminated BK panel.",
+        "rights": "Owner-supplied artwork approved for the repository and pilot. BK mark requires rights review for commercial release. Draft voice is Piper vi_VN-vais1000-medium, trained on VAIS-1000 (CC BY 4.0 per model card), fine-tuned from Lessac. Final voice casting and rights pending.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {"start_ms": 333, "end_ms": 3300, "text": "Ủa, máy xúc vừa lên dốc\nmà mức dầu tụt rồi?"},
+        {"start_ms": 3733, "end_ms": 6767, "text": "Khoan, số đo đổi\nđâu có nghĩa là mất dầu!"}
+      ]
+    }
+  ]
+}

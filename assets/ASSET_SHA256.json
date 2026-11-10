@@ -1,0 +1,50 @@
+[
+  {
+    "destination": "assets/approved/capy_bk_master.gif",
+    "original_filename": "cheerful_capybara_workspace_celebration.png",
+    "bytes": 536469,
+    "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0"
+  },
+  {
+    "destination": "assets/approved/capy_bk_avatar_square.png",
+    "original_filename": "Capy_BK_avatar_vuong.png",
+    "bytes": 889968,
+    "sha256": "1d340a934c62efb5a3969ca4b4013ec2c918013fbfbd6c155ae73831b70d0ec1"
+  },
+  {
+    "destination": "assets/approved/capy_bk_still_from_gif.png",
+    "original_filename": "Capy_BK_tu_GIF_anh_tinh.png",
+    "bytes": 113408,
+    "sha256": "f0a6aeefdc74d1f55ef1e3710cf4dcca3d8c374a6151c9a9867421118ae1157a"
+  },
+  {
+    "destination": "assets/prototypes/EP01_animatic_32s.mp4",
+    "original_filename": "CAPY_BK_EP01_animatic_demo.mp4",
+    "bytes": 1631669,
+    "sha256": "3a067648e02194b6f49fe020213aa2bd689ddf893ca7b69655fa581ae640eea5"
+  },
+  {
+    "destination": "assets/prototypes/EP01_cover.jpg",
+    "original_filename": "CAPY_BK_EP01_cover.jpg",
+    "bytes": 112044,
+    "sha256": "6bd350e7b93a344e1dec4b35e50873c2a1a33a8e1b2603bd4b622408923c79b8"
+  },
+  {
+    "destination": "assets/prototypes/EP01_contact_sheet.jpg",
+    "original_filename": "CAPY_BK_EP01_contact_sheet.jpg",
+    "bytes": 169329,
+    "sha256": "bae24e463396a375560e498bdb092740145159cfa0cb0706526b2d7dc314aa80"
+  },
+  {
+    "destination": "scripts/build_capy_bk_ep01_animatic_PROTOTYPE.py",
+    "original_filename": "build_capy_bk_ep01_animatic.py",
+    "bytes": 13878,
+    "sha256": "c914c010a40d0c796267b1a173884d46e43fe3465852d49d95e9fb242e3aae40"
+  },
+  {
+    "destination": "episodes/EP01/prototype_shotlist.json",
+    "original_filename": "CAPY_BK_EP01_animatic_shotlist.json",
+    "bytes": 1517,
+    "sha256": "1d17fabfc3126eefadb7bc604decfb017aaf4d4d44a3f5488efe3df4f48c7c38"
+  }
+]

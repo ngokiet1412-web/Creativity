@@ -18,6 +18,8 @@
 | QA | owner / reviewer | accepted deliverable, upload decision |
 
 ## CapCut-first proof of style (BEFORE both episodes)
+Begin with [EP01 S01](../episodes/EP01/PILOT.md), a 6–8 second dialogue pilot for motion, voice and branding review. Review that scene before committing to either full cut. The longer proof below can be used to test cutaways and diagrams after the studio shot passes.
+
 1. Start from approved static Capy frame extracted from approved GIF; do not ask the image generator to redraw its identity.
 2. In CapCut desktop, look for **AI media > AI video > Image to video**. Import the still; test 4–6s action: 'blink, raise short paw, happy body bounce, slight natural head tilt; preserve shirt emblem, mug, set composition; do not change camera or character geometry.' Exact menu/models may vary by platform/account.
 3. Try **AI dialogue scene**, if present, using the same image and one Vietnamese dialogue line. Test whether stylized capy face lip-sync works. Otherwise, separate TTS narration and manual 2D visemes; do not force poor human-style face animation on a cartoon animal.
