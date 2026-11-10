@@ -1,3 +1,5 @@
+> **CANONICAL EP01 CONTENT CHANGE (2026-11-10):** The FIRST episode is now **Capy BK khám phá xe/máy công trình: là gì, vì sao có, từng loại dùng làm gì?** with a cinematic worksite tour. **Do not build the old fuel-level reading / theft assumption as EP01.** That previous pitch is preserved at [episodes/BACKLOG/FUEL_LEVEL_ORIGINAL_BRIEF.md](../episodes/BACKLOG/FUEL_LEVEL_ORIGINAL_BRIEF.md). New EP01: [brief](../episodes/EP01/BRIEF.md), [TikTok script](../episodes/EP01/SCRIPT_TIKTOK_V1_CONG_TRUONG.md), [CapCut AI scene prompts](../episodes/EP01/CAPCUT_EP01_DISCOVERY_SHOTS.md). The **first visual proof** is SC01 Capy arriving at the site carrying a tiny shovel, not CAB-01 fuel gauge alert. This update overrides old EP01 scene content while retaining the general Codex/CapCut tool division.
+
 # Paste to CapCut Pro AI / Video Studio — EP01 cabin shot
 
 Manual operator: owner with CapCut Pro desktop. Attach IMAGE 3: happy chubby Capy BK inside an excavator cab, twin joysticks and dashboard fuel gauge. If model takes one reference only, attach IMAGE 3 alone; preserve exact identity. Choose image-to-video, portrait 9:16, 6–8 sec, best appropriate model / credits.
