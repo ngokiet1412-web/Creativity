@@ -1,47 +1,34 @@
-# EP01 — Máy xúc nghiêng dốc: dầu mất thật hay mức đo sai?
+# EP01 — CAPY BK khám phá thế giới máy công trình (OWNER PIVOT 2026-11-10)
 
-Status: CONCEPT / TECHNICAL CLAIMS PENDING REVIEW. Two distinct versions; do not conflate them.
+**STATUS:** New canonical EP01 concept, DRAFT SCRIPT. Previous fuel level / theft-assumption EP01 concept was deferred and archived at episodes/BACKLOG/FUEL_LEVEL_ORIGINAL_BRIEF.md. Do NOT build any fuel-slope scene as EP01 unless owner re-approves. **Project flow stays cinematic**, with natural voice, character acting, beautiful detailed machinery, CapCut Pro AI clips and Codex pipeline.
 
-## Audience promise
-By the end, viewers can answer: '**Why can a fuel level sensor change when a machine tilts even without a matching decrease in actual fuel volume?**' and '**why a suspicious fuel-level drop is not automatic evidence of theft?**'
+## Premise and audience
+Capy BK arrives at a construction site and confidently volunteers to build a path into a workshop using a tiny shovel. A huge dirt pile crushes his confidence. The narrator introduces specialized construction machines and why humans invented and use them: excavator digging, dozer pushing/leveling, loader loading, dump truck hauling, roller compacting, crane lifting.
 
-## Technical guardrails
-- Distinguish sensor *measured level* from actual *liquid volume* and consumed fuel over time. Reading depends on tank geometry, sensor position, machine orientation, slosh and filtering.
-- On a tilt, a liquid free surface tends to remain approximately perpendicular to gravity when relatively static; its height relative to a sensor may change with tank attitude. Actual sensor response depends on technology and mount.
-- Real engine fuel use is independent of sensor reading artifact and must be considered; no definitive fault diagnosis from one signal.
-- Mitigation examples: synchronized timestamps, IMU orientation, operation state, calibrated volume mapping and temporal filtering are **candidate methods**, not proof of FuelGuard performance.
-- Never claim theft detection accuracy or validation without independently approved evidence.
-- Illustrative scenes are not a PC200-8 as-built schematic.
+**Education promise:** After ~2 minutes a complete newcomer can answer "xe/máy công trình là gì?", "vì sao có?", "mỗi loại làm gì?" in a clear, fun and accurate way. Not all machines are road vehicles; 'xe công trình' is an informal umbrella for construction equipment.
 
-## TikTok: ~2:00 / portrait 9:16 (story-driven)
-| Time | Beat | Image/action |
-|---|---|---|
-| 0:00–0:10 | Capy screams 'Trộm dầu?!' | studio capy bounces, warning icon |
-| 0:10–0:25 | Mechanic/narrator challenges assumption | excavator turns up slope |
-| 0:25–0:45 | tank level demonstration | transparent tank, liquid/gravity, illustrated sensor marker |
-| 0:45–1:05 | actual volume vs reading | contrasting two side-by-side panels |
-| 1:05–1:25 | why vibration + filtering matter | mini chart noisy samples vs smoothed |
-| 1:25–1:45 | research workflow, no unproven claims | block diagram: sensor + IMU + machine state + algorithm |
-| 1:45–2:00 | Capy realizes and teases CAN episode | happy bounce, logo and gentle CTA |
+## Canonical documents for EP01
+- [Full draft TikTok script](SCRIPT_TIKTOK_V1_CONG_TRUONG.md): 10 named scenes, ~120 seconds with acting & audio cues.
+- [CapCut image-to-video shot prompts](CAPCUT_EP01_DISCOVERY_SHOTS.md): scene generation instructions and first scene proof.
+- [Cinematic workflow v2](../../docs/WORKFLOW_V2_CINEMATIC.md): division of work still applies, but **old CAB-01 fuel alert is superseded by SC01 construction site arrival as the first style proof**.
 
-## YouTube: ~10:00 / landscape 16:9 (educational long form)
-| Time | Chapter | Educational value |
-|---|---|---|
-| 0:00–0:40 | Cold open: tilt + apparent fuel loss | engaging problem, distinguish reading vs loss |
-| 0:40–1:40 | What a fuel level sensor actually measures | sensor types, uncertainty |
-| 1:40–3:10 | Tank orientation and free-surface geometry | physical demonstration, diagram, intuitive volume/level distinction |
-| 3:10–4:25 | Why fuel slosh and vibration corrupt readings | temporal dynamics, examples of sampling |
-| 4:25–5:40 | Why filtering alone cannot fix all problems | lag, slope vs short oscillations, time sync |
-| 5:40–7:10 | Combining sensor + IMU + context | architecture; clearly label hypotheses |
-| 7:10–8:30 | A synthetic example walkthrough | toy data / visual graph; no private telemetry |
-| 8:30–9:30 | Designing a verification experiment | controlled tilt, refill, repeated observations, ground truth |
-| 9:30–10:00 | Recap + tease CAN/ECU | concise three-part takeaway |
+## First production proof
+SC01 reference R01 (owner's approved Capy standing with yellow excavator at site), not the old flat infographic. Animate 6–8 sec: Capy confident with tiny shovel, sees huge earth pile and reacts. Try natural Vietnamese dialogue with a youthful conversational voice. The episode narrative does not require Capy to drive a machine uphill in unsafe manner. Later scenes feature believable machinery and Capy as a curious observer/operator only in safe setups.
 
-## Scene production
-- Capy in studio is an anchor but should not be a static talking head for 10 minutes.
-- Cutaways: excavator slope, transparent tank, float/sensor, IMU vector, sample time-series plots, algorithm block and controlled experiment.
-- Separate wide and vertical compositions and prioritize readable engineering figures.
-- First milestone: 15–25s voiced proof of style with Capy + excavator + one diagram, not full-length production.
+## Targets
+TikTok first: 110–120s as an editing target, 9:16, 1080×1920, 30fps. Read-aloud and action timing take precedence over exact template runtime. YouTube later ~10min as independent long form elaborating construction equipment and hydraulics with verified technical facts; **no long-form script approved yet**.
+**No slideshow cards.** Intercut Capy with close-ups, crane shots, site tours, excavator cab, slow machine action and reaction shots. Avoid implausible controls or inconsistent machine geometry.
 
-## Release gate
-Scientific reviewer approval, animated mascot continuity, audio narration complete, rights cleared for logos/music/media, all platform versions played through and inspected before upload.
+## Safety & accuracy
+- Dynamic but safe machine movement; Capy stays out of equipment swing radius, dumping zones, and under lifted loads.
+- No actual model-specific technical specifications unless cited/verified; visuals are artistic generic examples.
+- No confidential FuelGuard field data or IP in the public repo.
+- All BK-inspired logo and third-party media rights subject to owner check.
+
+## Deliverables and review
+1. Owner imports original R01/R02/R03 refs & canonical mascot GIF to a rights-checked local staging folder.
+2. Codex creates asset ledger and 10-shot short-form manifest, replaces the old fuel alert shotlist for EP01 only via reviewed branch.
+3. CapCut owner makes first voiced 6–8sec SC01 cinematic style proof from R01 (text-to-video based on reference).
+4. Owner reviews motion, identity, voice, captions and cost; only then batch produce other shots.
+5. Narrator + technical reviewer check all equipment role claims and visuals.
+6. Assemble full TikTok ~2min, owner approves. Subsequent YouTube episode development follows.
