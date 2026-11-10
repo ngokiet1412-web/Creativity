@@ -47,8 +47,9 @@ def read_manifest(path, media):
     manifest = json.loads(path.read_text(encoding="utf-8"))
     width, height = PROFILES[manifest["profile"]]
     shots = manifest["shots"]
-    if not shots or manifest["stage"] not in ("pilot", "episode"):
-        raise ValueError("Supply shots and a stage of pilot or episode.")
+    stage = manifest["stage"]
+    if not shots or stage not in ("pilot", "proof", "episode"):
+        raise ValueError("Supply shots and a stage of pilot, proof or episode.")
     cursor = 0
     ids = set()
     for shot in shots:
@@ -75,9 +76,11 @@ def read_manifest(path, media):
             ):
                 raise ValueError(f"Invalid or overlapping captions: {name}")
             last_end = cue_end
-    if manifest["stage"] == "pilot" and not 6 * FPS <= cursor <= 8 * FPS:
+    if stage == "pilot" and not 6 * FPS <= cursor <= 8 * FPS:
         raise ValueError("Pilot must run for 6–8 seconds.")
-    return (width, height), shots, cursor
+    if stage == "proof" and not 15 * FPS <= cursor <= 25 * FPS:
+        raise ValueError("Style proof must run for 15–25 seconds.")
+    return (width, height), shots, cursor, stage
 
 
 def timestamp(ms):
@@ -132,7 +135,7 @@ def write_stem(stage, path, shots, tracks, kind):
                     output.writeframesraw(bytes(2 * min(remaining, RATE)))
 
 
-def package(stage, scratch, shots, size, count, ff, fp):
+def package(stage, scratch, shots, size, count, ff, fp, edit_stage):
     (stage / "clips").mkdir()
     (stage / "audio").mkdir()
     pictures, tracks, subtitles = [], [], []
@@ -171,7 +174,7 @@ def package(stage, scratch, shots, size, count, ff, fp):
     # concatenated timestamps so MP4 container rounding cannot accumulate.
     filters = [f"settb=1/{FPS}", "setpts=N"]
     if subtitles:
-        margin = 70 if size[1] > size[0] else 45
+        margin = 45 if size[0] >= size[1] else (62 if edit_stage == "proof" else 70)
         style = f"FontName=Arial,FontSize=13,Bold=1,Outline=2,Shadow=0,MarginV={margin},MarginL=30,MarginR=30"
         filters.append(f"subtitles=captions_vi.srt:force_style='{style}'")
     ffmpeg(ff, stage, "-f", "concat", "-safe", "0", "-i", concat, *audio, "-map", "0:v:0",
@@ -220,12 +223,12 @@ def main():
     if not ff or not fp:
         parser.error("FFmpeg and ffprobe are required.")
     try:
-        size, shots, count = read_manifest(args.manifest, media)
+        size, shots, count, edit_stage = read_manifest(args.manifest, media)
         output.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=output.parent) as scratch:
             stage = Path(scratch) / "handoff"
             stage.mkdir()
-            package(stage, Path(scratch), shots, size, count, ff, fp)
+            package(stage, Path(scratch), shots, size, count, ff, fp, edit_stage)
             stage.rename(output)
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as error:
         parser.exit(1, f"{error}\n")

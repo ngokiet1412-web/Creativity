@@ -1,4 +1,4 @@
-"""Render the four-shot Capy BK pilot with a local synthetic male voice."""
+"""Render the Capy BK pilot or style proof with a local synthetic male voice."""
 
 import argparse
 import json
@@ -6,7 +6,9 @@ import math
 from pathlib import Path
 import subprocess
 import tempfile
+import wave
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from piper import PiperVoice
 
@@ -16,6 +18,7 @@ from render_capy_pilot import FPS, ROOT, check_hash, encode_picture, studio_fram
 MANIFEST = ROOT / "episodes/EP01/pilot_multishot.json"
 INK = "#302821"
 AMBER = "#efad44"
+ACCENTS = ("#f06788", "#47c9bc", "#f8be53", "#9a83ee")
 OPEN_POSES = [(0, 0), (3, 1), (12, 2), (25, 3), (39, 5), (46, 7)]
 CLOSE_POSES = [(0, 1), (9, 2), (21, 3), (33, 2), (45, 4), (50, 5), (58, 6), (63, 7)]
 
@@ -36,15 +39,33 @@ def load_voice(model, tokens, provenance, config_path):
     return PiperVoice.load(model, config_path, include_alignments=True)
 
 
-def panel(title, number, font):
+def panel(title, number, font, paper):
     image = Image.new("RGB", (540, 960), "#080f1e")
     draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((29, 98, 511, 657), 17, "#f3e4c8", outline="#c8a878", width=2)
+    draw.rounded_rectangle((29, 98, 511, 657), 17, paper, outline="#c8a878", width=2)
     draw.text((51, 127), f"CAPY BK   /   {number}", font=font(15), fill="#725539", anchor="lm")
     draw.text((490, 127), "DRAFT", font=font(13), fill="#725539", anchor="rm")
     draw.text((51, 182), title, font=font(38), fill=INK, anchor="ls")
     draw.line((51, 202, 489, 202), fill="#c8a878", width=2)
     return image
+
+
+def ease(progress):
+    t = min(max(progress, 0), 1)
+    return t * t * (3 - 2 * t)
+
+
+def burst(draw, x, y, age, scale=1):
+    if not 0 <= age < 0.58:
+        return
+    progress = age / 0.58
+    for i, color in enumerate(ACCENTS):
+        angle = (i - 1.5) * 0.62
+        reach = scale * (7 + 25 * progress)
+        cx = x + math.sin(angle) * reach
+        cy = y - math.cos(angle) * reach * 0.65
+        radius = scale * (1 + 6 * (1 - progress))
+        draw.polygon([(cx - radius, cy), (cx, cy - radius), (cx + radius, cy), (cx, cy + radius)], fill=color)
 
 
 def machine_frame(image, progress, font):
@@ -83,8 +104,7 @@ def machine_frame(image, progress, font):
 def tank_frame(image, progress, font):
     draw = ImageDraw.Draw(image)
     cx, cy = 261, 422
-    amount = min(progress * 1.5, 1.0)
-    angle = math.radians(-22 * amount * amount * (3 - 2 * amount))
+    angle = math.radians(-22 * ease(progress * 1.5))
     co, si = math.cos(angle), math.sin(angle)
 
     def point(x, y):
@@ -105,28 +125,112 @@ def tank_frame(image, progress, font):
     draw.text((270, 615), "Vạch đỏ là vị trí cảm biến", font=font(16), fill="#725539", anchor="mm")
 
 
-def cutaway_frames(shot, font_path):
+def gauge_frame(image, progress, font):
+    draw = ImageDraw.Draw(image)
+    draw.rounded_rectangle((81, 259, 459, 542), 30, "#fff7ee", outline=INK, width=4)
+    bounds = (130, 291, 410, 571)
+    draw.arc(bounds, 180, 240, ACCENTS[0], 20)
+    draw.arc(bounds, 240, 300, ACCENTS[2], 20)
+    draw.arc(bounds, 300, 360, ACCENTS[1], 20)
+    drop = ease((progress - 0.20) * 4)
+    angle = math.radians(335 - 122 * drop)
+    x, y = 270 + 113 * math.cos(angle), 431 + 113 * math.sin(angle)
+    draw.line((270, 431, x, y), fill=INK, width=10)
+    draw.ellipse((258, 419, 282, 443), fill=INK)
+    draw.text((270, 498), "CHỈ BÁO MINH HỌA", font=font(20), fill=INK, anchor="mm")
+    burst(draw, 440, 581, (progress - 0.42) * 2.3)
+
+
+def comparison_frame(image, progress, font, measure):
+    draw = ImageDraw.Draw(image)
+    fill = ease(progress * 2.2)
+    first, second = (262, 262 - 128 * fill) if measure else (262 * fill, 262 * fill)
+    for y, label, value, color in (
+        (286, "TRÊN NỀN PHẲNG", first, ACCENTS[1]),
+        (453, "KHI BÌNH NGHIÊNG", second, ACCENTS[0] if measure else ACCENTS[1]),
+    ):
+        draw.rounded_rectangle((79, y, 461, y + 118), 20, "#fffaf1", outline=INK, width=3)
+        draw.text((111, y + 33), label, font=font(19), fill=INK, anchor="lm")
+        draw.rounded_rectangle((111, y + 62, 426, y + 88), 12, "#e8dfd1")
+        if value > 4:
+            draw.rounded_rectangle((111, y + 62, 111 + value, y + 88), 12, color)
+    if measure:
+        draw.text((270, 612), "ĐỘ SÂU Ở CÙNG MỘT CẢM BIẾN", font=font(15), fill=INK, anchor="mm")
+    else:
+        draw.text((270, 612), "CÙNG MỘT BÌNH · GIẢ SỬ KHÔNG HAO HỤT", font=font(15), fill=INK, anchor="mm")
+
+
+def level_frame(image, progress, font):
+    draw = ImageDraw.Draw(image)
+    draw.rounded_rectangle((74, 327, 466, 495), 29, ACCENTS[2], outline=INK, width=5)
+    draw.rounded_rectangle((120, 369, 420, 452), 40, "#ecffe9", outline=INK, width=4)
+    x = round(366 - 96 * ease(progress * 1.65))
+    draw.ellipse((x - 32, 383, x + 32, 438), ACCENTS[1], outline=INK, width=3)
+    for mark in (231, 309):
+        draw.line((mark, 369, mark, 452), fill=INK, width=3)
+    draw.text((270, 561), "ĐO LẠI TRÊN NỀN PHẲNG", font=font(21), fill=INK, anchor="mm")
+    burst(draw, 453, 321, progress * 2.5 - 1.2)
+
+
+def cutaway_frames(shot, font_path, colorful):
     def font(size):
         return ImageFont.truetype(str(font_path), size)
 
-    scene = {"machine": machine_frame, "tank": tank_frame}[shot["visual"]]
-    background = panel(shot["title"], shot["id"], font)
+    scene = {
+        "machine": machine_frame, "tank": tank_frame, "gauge": gauge_frame,
+        "measure": lambda image, progress, font: comparison_frame(image, progress, font, True),
+        "volume": lambda image, progress, font: comparison_frame(image, progress, font, False),
+        "level": level_frame,
+    }[shot["visual"]]
+    background = panel(shot["title"], shot["id"], font, shot.get("paper", "#f3e4c8"))
     count = shot["duration_frames"]
     for i in range(count):
         image = background.copy()
         scene(image, i / (count - 1), font)
+        if colorful:
+            draw = ImageDraw.Draw(image)
+            burst(draw, 65, 253, i / FPS)
+            burst(draw, 474, 265, i / FPS - 0.08)
         yield image.resize((1080, 1920), Image.Resampling.LANCZOS)
+
+
+def studio_accents(frames):
+    for i, frame in enumerate(frames):
+        draw = ImageDraw.Draw(frame)
+        burst(draw, 160, 1280, i / FPS - 0.08, scale=2)
+        burst(draw, 903, 1280, i / FPS - 0.13, scale=2)
+        yield frame
+
+
+def synthesize_sfx(path, cue, duration):
+    offset, start_hz, end_hz, length = {
+        "pop": (0.04, 550, 960, 0.17),
+        "zip": (0.06, 470, 710, 0.24),
+        "drop": (0.83, 720, 300, 0.25),
+    }[cue]
+    rate = 48_000
+    time = np.arange(round(length * rate)) / rate
+    phase = 2 * math.pi * (start_hz * time + (end_hz - start_hz) * time ** 2 / (2 * length))
+    envelope = np.minimum(time / 0.012, 1) * (1 - time / length) ** 2
+    sound = np.zeros(round(duration * rate), dtype="<i2")
+    start = round(offset * rate)
+    sound[start:start + len(time)] = 0.18 * 32767 * np.sin(phase) * envelope
+    with wave.open(str(path), "wb") as output:
+        output.setparams((1, 2, rate, 0, "NONE", "not compressed"))
+        output.writeframes(sound.tobytes())
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, default=MANIFEST)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--tokens", type=Path, required=True)
     parser.add_argument("--font", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--ffmpeg", default="ffmpeg")
     args = parser.parse_args()
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
+    colorful = manifest["stage"] == "proof"
     output = args.out.resolve()
     if output.exists():
         parser.error(f"Output already exists: {output}")
@@ -151,13 +255,19 @@ def main():
                 args.ffmpeg, "-nostdin", "-hide_banner", "-loglevel", "error", "-i", str(dry_voice),
                 "-af", voice_filters, "-c:a", "pcm_s16le", str(stage / shot["voice"]),
             ], check=True)
+            if shot.get("sound"):
+                synthesize_sfx(stage / shot["sfx"], shot["sound"], count / FPS)
             if shot["visual"] in ("studio_open", "studio_close"):
                 source = ROOT / shot["asset"]["source"]
                 check_hash(source, shot["asset"]["sha256"])
                 poses = OPEN_POSES if shot["visual"] == "studio_open" else CLOSE_POSES
+                if colorful:
+                    poses = [(round(frame * count / (poses[-1][0] + 5)), index) for frame, index in poses]
                 frames = studio_frames(source, args.font, cues, count, poses, shot["title"])
+                if colorful:
+                    frames = studio_accents(frames)
             else:
-                frames = cutaway_frames(shot, args.font)
+                frames = cutaway_frames(shot, args.font, colorful)
             encode_picture(args.ffmpeg, frames, stage / shot["video"])
         stage.rename(output)
 

@@ -1,0 +1,235 @@
+{
+  "stage": "proof",
+  "profile": "tiktok",
+  "voice": {
+    "model": "vnhellboy/vietnamese-piper-voices / Điềm Đạm",
+    "model_sha256": "821096ee1f6d424fd9d1a0ff83fd851637e5ff880e8aaf3c5b53be87269a6e26",
+    "tokens_sha256": "e8a50ae0c75612d18cfcf3f90800dca79f961e3ed97f9574f3535194469187fd",
+    "mix": "Gentle low-mid reduction and presence boost with peak limiting.",
+    "rights": "Local draft only pending final voice and rights review. Adam is an external casting option."
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start_frame": 0,
+      "duration_frames": 72,
+      "visual": "studio_open",
+      "title": "AI UỐNG DẦU?!",
+      "video": "S01_picture.mp4",
+      "voice": "S01_voice.wav",
+      "sfx": "S01_sfx.wav",
+      "sound": "pop",
+      "asset": {
+        "source": "assets/approved/capy_bk_master.gif",
+        "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0",
+        "date": "2026-11-10",
+        "shot": "S01",
+        "method": "Approved GIF poses, localized phoneme-timed mouth motion and graphic accents outside the studio plate.",
+        "prompt": "Capy reacts in the approved studio as colorful motion marks pop under the card.",
+        "rights": "Owner-approved studio GIF. BK mark requires rights review for commercial release.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2333,
+          "text": "Ủa, ai uống dầu của tôi?!"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "start_frame": 72,
+      "duration_frames": 69,
+      "visual": "machine",
+      "title": "MÁY LEO DỐC",
+      "paper": "#dbf4de",
+      "video": "S02_picture.mp4",
+      "voice": "S02_voice.wav",
+      "sfx": "S02_sfx.wav",
+      "sound": "zip",
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S02",
+        "method": "Original animated illustration drawn in Pillow.",
+        "prompt": "A yellow excavator climbs a schematic slope with a moving angle cue.",
+        "rights": "Original conceptual artwork and synthesized sound effects for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2233,
+          "text": "Máy mới leo dốc\nthôi mà!"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "start_frame": 141,
+      "duration_frames": 69,
+      "visual": "gauge",
+      "title": "TỤT CÁI RỤP!",
+      "paper": "#ffe0d4",
+      "video": "S03_picture.mp4",
+      "voice": "S03_voice.wav",
+      "sfx": "S03_sfx.wav",
+      "sound": "drop",
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S03",
+        "method": "Original animated illustration drawn in Pillow.",
+        "prompt": "A stylized gauge needle drops. The illustrative gauge has no machine-specific units.",
+        "rights": "Original conceptual artwork and synthesized sound effects for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2233,
+          "text": "Đồng hồ tụt cái rụp!"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "start_frame": 210,
+      "duration_frames": 81,
+      "visual": "tank",
+      "title": "BÌNH NGHIÊNG",
+      "paper": "#e7e4ff",
+      "video": "S04_picture.mp4",
+      "voice": "S04_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S04",
+        "method": "Original animated illustration drawn in Pillow.",
+        "prompt": "A symmetric half-full tank tilts while its stationary liquid surface remains horizontal.",
+        "rights": "Original conceptual artwork and synthesized sound effects for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2633,
+          "text": "Bình nghiêng,\nmặt dầu vẫn ngang."
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "start_frame": 291,
+      "duration_frames": 78,
+      "visual": "measure",
+      "title": "MỨC ĐO GIẢM",
+      "paper": "#fff0c8",
+      "video": "S05_picture.mp4",
+      "voice": "S05_voice.wav",
+      "sfx": "S05_sfx.wav",
+      "sound": "pop",
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S05",
+        "method": "Original animated illustration drawn in Pillow.",
+        "prompt": "A schematic comparison highlights lower local depth at the same sensor near the high end of the tilted tank.",
+        "rights": "Original conceptual artwork and synthesized sound effects for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2533,
+          "text": "Chỗ cảm biến,\nmức dầu thấp hơn."
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "start_frame": 369,
+      "duration_frames": 78,
+      "visual": "volume",
+      "title": "LƯỢNG DẦU VẪN VẬY",
+      "paper": "#dff7ed",
+      "video": "S06_picture.mp4",
+      "voice": "S06_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S06",
+        "method": "Original animated illustration drawn in Pillow.",
+        "prompt": "Two bars of equal height indicate the same volume in a closed, half-full hypothetical tank.",
+        "rights": "Original conceptual artwork and synthesized sound effects for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2533,
+          "text": "Trong ví dụ này,\nlượng dầu vẫn vậy."
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "start_frame": 447,
+      "duration_frames": 75,
+      "visual": "level",
+      "title": "VỀ CHỖ BẰNG PHẲNG",
+      "paper": "#dceeff",
+      "video": "S07_picture.mp4",
+      "voice": "S07_voice.wav",
+      "sfx": "S07_sfx.wav",
+      "sound": "zip",
+      "asset": {
+        "source": "scripts/render_capy_multishot.py",
+        "date": "2026-11-10",
+        "shot": "S07",
+        "method": "Original animated illustration drawn in Pillow.",
+        "prompt": "A bubble level centers to illustrate checking again on flat ground.",
+        "rights": "Original conceptual artwork and synthesized sound effects for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2433,
+          "text": "Về chỗ bằng phẳng,\nrồi đo lại."
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "start_frame": 522,
+      "duration_frames": 78,
+      "visual": "studio_close",
+      "title": "KHOAN BẮT OAN!",
+      "video": "S08_picture.mp4",
+      "voice": "S08_voice.wav",
+      "sfx": "S08_sfx.wav",
+      "sound": "pop",
+      "asset": {
+        "source": "assets/approved/capy_bk_master.gif",
+        "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0",
+        "date": "2026-11-10",
+        "shot": "S08",
+        "method": "Approved GIF poses, localized phoneme-timed mouth motion and graphic accents outside the studio plate.",
+        "prompt": "Capy lifts its paws and settles in the same studio, with a brief celebratory accent outside the image.",
+        "rights": "Owner-approved studio GIF. BK mark requires rights review for commercial release.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 133,
+          "end_ms": 2533,
+          "text": "Khoan bắt oan cái dốc!"
+        }
+      ]
+    }
+  ]
+}

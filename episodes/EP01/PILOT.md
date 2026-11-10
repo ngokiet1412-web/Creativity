@@ -1,5 +1,7 @@
 # EP01 · S01 studio pilot
 
+Xem [bản thử màu 20 giây và kịch bản Adam](PROOF_20S.md) để duyệt nhịp tám cảnh.
+
 ## Bản B · giọng nam và bốn cảnh
 
 **DRAFT / OWNER REVIEW** · 7,80 giây · 1080×1920 · 30 fps. Capy phản ứng → máy xúc leo dốc → sơ đồ bình dầu → Capy chốt. Hai cảnh studio dùng chính GIF đã duyệt. Hai cảnh minh họa dùng hình vẽ 2D gốc với nét viền và nền giấy ấm. Nhịp cắt và cách minh họa tham khảo các khung xem trước quanh mốc 0:39. [Video tham chiếu](https://www.youtube.com/watch?v=dTWuRMURNyU&t=39s)
