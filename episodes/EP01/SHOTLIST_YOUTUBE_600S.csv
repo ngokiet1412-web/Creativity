@@ -1,0 +1,12 @@
+chapter_id,start_s,end_s,topic,editorial_goal,assets_needed,QA
+Y01,0,35,Cold-open theft misunderstanding,Entertain without making false allegation,Capy studio and excavator slope,No proof of theft
+Y02,35,80,Define measured variables,Height versus quantity versus displayed indication,Four labeled diagrams,Distinct units
+Y03,80,145,Static tilt and gravity,Explain quasi-static liquid surface,Tank cross-sections angles,Geometry physical validity
+Y04,145,200,Dynamic slosh and vibration,Explain time variation and lag,Generic slosh sequence and time-series chart,No arbitrary numbers
+Y05,200,255,Sensor basics,Explain possible sensor types and calibration,Generic float or other sensor schematics,Not specific to PC200-8
+Y06,255,315,False assumptions,Compare actual consumption slope and suspicious loss,Multiple vignettes,No premature criminal inference
+Y07,315,390,System-level signals,Illustrate level IMU operation timestamp sync,Signal fusion block diagram,Research concept only
+Y08,390,455,AI role and limits,Separate anomaly ranking from definitive inference,False positive and false negative cartoons,No measured FuelGuard claims
+Y09,455,520,Validation experiment proposal,Show illustrative angle sweep protocol,Test rig generic setup,No invented outcomes
+Y10,520,570,Four engineering takeaways,Consolidate learning via Capy interactions,Capy recap with technical icons,Source check
+Y11,570,600,Teaser and close,Introduce CAN and ECU for episode two,Capy waving in studio,Brand check
