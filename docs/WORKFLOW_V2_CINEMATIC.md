@@ -1,7 +1,7 @@
 # CAPY BK — WORKFLOW V2 / Cinematic animation production
 **Decision date:** 2026-11-10. **Status:** authoritative working workflow for EP01, subject to owner approval. Links: issue #1 (master), #2 (Codex), #3 (CapCut AI), #4 (technical QA), #5 (writing).
 
-> **CAB-01 style trial.** Use hand-drawn 2D comedy with clear outlines, flat color and strong changes in expression. R01–R03 remain the approved originals for character and vehicle continuity. The separate R03-derived 2D frame is a draft for owner review. Story acting, the CapCut handoff and approval gates follow V2. See the [CAB-01 operator handoff](../episodes/EP01/shots/CAB-01/README.md).
+> **Separate CAB-01 style trial.** Use hand-drawn 2D comedy with clear outlines, flat color and strong changes in expression. R01–R03 remain the approved originals for character and vehicle continuity. The separate R03-derived 2D frame is a draft for owner review. The active EP01 opens with SC01. See the [CAB-01 operator handoff](../episodes/EP01/shots/CAB-01/README.md).
 
 ## 0. Creative reset: NO slides posing as a film
 Previous 8-card infographic storyboard and 32s animatic are learning prototypes, NOT a style target. Visual priority: **story → character acting → interesting excavator action → visually accurate explanation**, not sequential static posters.
@@ -32,7 +32,7 @@ Owner-approved reference style: 3 cinematic vertical stills from chat (not in Gi
 **Not CapCut AI:** independently deriving fuel physics, deciding sensor positions, writing definitive technical facts, assuming private GitHub read access, or making the entire long-form video from one prompt.
 **No automatic cross-tool sync:** Codex/GitHub and CapCut desktop exchange local files. ChatGPT can update GitHub, but cannot assume CapCut has consumed the updates.
 
-## 3. Exact scene assembly (cinematic, not cards)
+## 3. Deferred fuel-level scene plan
 1. **CAB-01 (6–8s):** use R03 as the identity and geometry reference. Try the draft 2D treatment after owner review. Capy pilots with twin levers, glances at the gauge, freezes with wide eyes and turns to the camera. Keep a consistent cab, two controls and subtle cabin vibration.
 2. **HILL-01 (5–8s):** use R02. Beautiful crawler excavator climbs a modest dirt slope, believable crawler travel and arm constraints. Exterior shot, background parallax.
 3. **HOST-01 (5–8s):** R01 or approved studio GIF. Capy addresses viewer: informal short dialogue; camera pans/pushes smoothly.

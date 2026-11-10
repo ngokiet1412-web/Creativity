@@ -1,6 +1,6 @@
 # CAB-01 · Bàn giao CapCut Pro AI
 
-**DRAFT · G1 đang chờ clip CapCut và owner duyệt.** Nhắm 7,50 giây, 225 khung ở 30 fps. Cửa sổ nghiệm thu là 6–8 giây.
+**DRAFT · Bài thử phong cách riêng, chờ clip CapCut và owner duyệt.** Nhắm 7,50 giây, 225 khung ở 30 fps. Cửa sổ nghiệm thu là 6–8 giây. Tập EP01 khám phá máy công trình mở đầu bằng SC01 theo brief hiện hành.
 
 ## Owner thao tác trong CapCut
 
@@ -9,7 +9,7 @@
 3. Dùng câu dưới đây trong Text to Speech hoặc thu âm. Thử giọng nam trẻ miền Nam, gần gũi như nói với bạn. “Ê ê, khoan!” nhanh và bất ngờ, nghỉ một nhịp, rồi nhấn nhẹ “tụt dữ” và lên giọng ở “vậy trời?!”. Nghe và chọn giọng trước khi chạy lip-sync.
 4. `audio/CAB-01_guide_vi_v01.wav` là WAV định nhịp tạm, 48 kHz mono, có khoảng trống từ đầu timeline đến lúc Capy nói. Bản này tổng hợp cục bộ với Piper/Điềm Đạm để duyệt timing. Dùng giọng owner chọn cho take trả về và giữ stem thoại khô riêng.
 5. Nhập `subtitles/CAB-01_vi_v01.srt` vào Captions, canh lại theo take thật và kiểm tra vùng an toàn. Đặt thoại sau cú liếc và quay lại nhìn camera. Thử lip-sync nếu tính năng hỗ trợ. Soi tiếp xúc tay với joystick, mặt, logo BK và kim đồng hồ.
-6. Xuất một take kiểm tra theo tên dưới đây. Ghi model, credit, thời gian, lỗi và chỉnh sửa vào file QA. Owner duyệt G1 trước khi tạo thêm cảnh.
+6. Xuất một take kiểm tra theo tên dưới đây. Ghi model, credit, thời gian, lỗi và chỉnh sửa vào file QA. Owner duyệt hướng 2D trước khi áp dụng sang các cảnh sản xuất.
 
 ```text
 Ê ê, khoan! Sao mới leo cái dốc mà đồng hồ dầu tụt dữ vậy trời?!

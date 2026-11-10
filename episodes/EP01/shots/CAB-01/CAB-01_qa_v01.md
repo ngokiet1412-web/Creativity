@@ -21,4 +21,4 @@
 - [ ] Review the voice for natural Vietnamese delivery, intelligibility and level. Speech starts after the reaction and the mouth matches the approved audio, including “Ê”, “khoan” and “tụt”.
 - [ ] Retimed UTF-8 captions match the actual take and fit the safe area around the face, controls and gauge.
 - [ ] Run the automated checks on the return. Watch the full MP4 at normal speed and again at the dialogue cut points.
-- [ ] Record approval before starting HILL-01, the tank cutaway or the longer proof.
+- [ ] Record the decision on the 2D look. Follow the current EP01 brief for the SC01 production proof.

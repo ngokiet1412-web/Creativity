@@ -1,4 +1,4 @@
-# Paste to CapCut Pro AI / Video Studio — EP01 cabin shot
+# Paste to CapCut Pro AI / Video Studio — CAB-01 style trial
 
 Owner operates CapCut Pro Desktop. Use R03 as the approved source for Capy in the cab, the twin joysticks and fuel gauge. If the owner accepts the 2D style frame, attach that R03-derived still for the motion trial. Choose image-to-video, portrait 9:16, 6–8 seconds. Check the selected model and credits before generating.
 
