@@ -2,7 +2,7 @@
 
 A creator-production workspace for **Capy BK**, an independent animated education channel about automotive engineering, construction machinery, applied AI, HCMUT student life, and carefully approved public-friendly R&D concepts.
 
-> **Status (2026-11-10):** Project kickoff / EP01 pre-production. The earlier 32-second animatic is a **silent narration placeholder**, not a releasable episode. New target: two editorially distinct cuts, **TikTok ~2 min (9:16)** and **YouTube ~10 min (16:9)**, with narration, expressive mascot animation, and scientifically reviewed diagrams.
+> **Status (2026-11-10):** EP01 follows [cinematic workflow V2](docs/WORKFLOW_V2_CINEMATIC.md). The first gate is the owner-reviewed [6–8 second CAB-01 handoff](episodes/EP01/shots/CAB-01/README.md) for CapCut AI, with a hand-drawn 2D style trial.
 
 ## EP01: Máy xúc nghiêng dốc — dầu thật sự mất hay cảm biến đọc sai?
 
@@ -35,4 +35,4 @@ A creator-production workspace for **Capy BK**, an independent animated educatio
 - `episodes/EP01/VOICE_SCRIPT.md` — narration and dialogue direction.
 - `docs/AGENT_HANDOFF.md` — scoped agent work packages, acceptance criteria.
 
-Use GitHub Issues for ownership and PRs for actual artifacts. First goal: **one 15–25 second polished, voice-enabled proof-of-style segment**, approved before producing both complete cuts.
+Use GitHub Issues for ownership and PRs for production artifacts. After CAB-01 approval, progress to a 15–25 second proof of style, a 75–100 second TikTok cut (up to ~120 seconds after review), and then a distinct ~10 minute YouTube cut.

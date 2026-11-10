@@ -1,9 +1,9 @@
 # Paste to CapCut Pro AI / Video Studio — EP01 cabin shot
 
-Manual operator: owner with CapCut Pro desktop. Attach IMAGE 3: happy chubby Capy BK inside an excavator cab, twin joysticks and dashboard fuel gauge. If model takes one reference only, attach IMAGE 3 alone; preserve exact identity. Choose image-to-video, portrait 9:16, 6–8 sec, best appropriate model / credits.
+Owner operates CapCut Pro Desktop. Use R03 as the approved source for Capy in the cab, the twin joysticks and fuel gauge. If the owner accepts the 2D style frame, attach that R03-derived still for the motion trial. Choose image-to-video, portrait 9:16, 6–8 seconds. Check the selected model and credits before generating.
 
 ## Video generation prompt
-Animate the EXACT uploaded reference into one continuous cinematic 3D cartoon shot. Keep the same extremely cute round chubby tan capybara wearing a white polo with royal-blue collar and BK-inspired logo, the yellow-and-black head accessory, and the same detailed yellow tracked hydraulic excavator cabin, glass and twin joysticks. The excavator travels slowly uphill; subtle realistic cabin vibration and sunlight movement. Capy looks happy first, then glances toward the dashboard fuel gauge, suddenly realizes the displayed fuel level is low, freezes in comic disbelief, eyes widen, tiny short paws react slightly, and Capy turns toward the camera as if speaking. Natural human-like comedic acting: micro-expressions, soft squash-and-stretch, head and body secondary motion, good timing. Close medium camera inside cabin, subtle smooth push-in. Preserve machine geometry and believable excavator controls. No added characters, no steering wheel, no extra paws/fingers, no clothing/logo changes, no illegible new labels, no abrupt camera cuts, no new props, no frozen slideshow or flat infographic. Vertical 9:16, 6–8 seconds, cinematic detailed 3D character animation.
+Paste [CAB-01_prompt_v01.txt](../episodes/EP01/shots/CAB-01/CAB-01_prompt_v01.txt). It specifies a continuous hand-drawn 2D shot with flat colors and a readable sequence of poses. The brief comic pause and the eye and mouth changes carry the reaction.
 
 ## Vietnamese line (create audio separately before lip-sync)
 "Ê ê, khoan! Sao mới leo cái dốc mà đồng hồ dầu tụt dữ vậy trời?!"
@@ -11,7 +11,7 @@ Animate the EXACT uploaded reference into one continuous cinematic 3D cartoon sh
 Voice direction: youthful male Southern Vietnamese, conversational, cute and expressive but natural; playful fast 'Ê ê, khoan!' and genuine disbelief at the end. NO monotone news presenter, NO robotic pacing, no voice cloning without permission.
 
 ## Operator steps
-1. Import R03 still and create a silent image-to-video clip CAB-01 with visual prompt above.
+1. Import R03 or its owner-selected 2D treatment and create a silent CAB-01 motion clip with the versioned prompt.
 2. Generate 2–3 Vietnamese AI TTS variations or use owner's recorded audio; owner selects.
 3. Test AI dialogue/lip-sync only if feature is available. If cartoon mouth distorts, prioritize external voice with simple mouth overlay/manual edit rather than forced lip sync.
 4. Add quiet engine hum, slight gauge alert and gentle camera punch-in; music must duck under dialogue.

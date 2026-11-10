@@ -1,0 +1,4 @@
+shot_id,reference_id,reference_path,min_seconds,max_seconds,aspect,width,height,fps,motion_owner,voice_owner,status,gate
+CAB-01,R03,assets/approved/reference_stills/R03_capy_bk_cabin.png,6,8,9:16,1080,1920,30,Owner / CapCut AI,Owner / CapCut TTS or recording,AWAITING_CAPCUT_TAKE,G1
+HILL-01,R02,assets/approved/reference_stills/R02_capy_bk_hill.png,5,8,9:16,1080,1920,30,Owner / CapCut AI,To be determined after G1,PLANNED,G1 approval
+TANK-01,,Engineering-reviewed generic tank cross-section,5,8,9:16,1080,1920,30,Owner / CapCut with technical reviewer,To be determined after G1,PLANNED,G1 approval and geometry review

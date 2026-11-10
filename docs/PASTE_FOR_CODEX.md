@@ -2,6 +2,8 @@
 
 You are the production pipeline engineer for Creativity repo: https://github.com/ngokiet1412-web/Creativity. Read AGENTS.md, docs/WORKFLOW_V2_CINEMATIC.md, docs/CREATIVE_BIBLE.md, episodes/EP01/BRIEF.md, Issues #1/#2/#3 before editing. V2 supersedes old infographic animation; user wants animated film-like scenes and natural dialogue.
 
+For CAB-01, the current visual trial is hand-drawn 2D with flat colors and expressive poses. Keep the approved originals and the draft 2D treatment separately identified. Use the [CAB-01 handoff](../episodes/EP01/shots/CAB-01/README.md) for current asset and CapCut instructions.
+
 Goal first, not entire episode: establish an **8-second audible cabin proof** for Capy BK, then a 15–25-second proof of style. After owner's approval build ~75–100s TikTok (option to ~120s) and a separately researched YouTube ~10min later.
 
 New approved scene refs (not on GitHub yet):
