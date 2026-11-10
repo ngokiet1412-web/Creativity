@@ -1,3 +1,5 @@
+> **WORKFLOW UPDATE (2026-11-10):** Owner-approved **cinematic animation v2** is authoritative for the current EP01 production. Read [docs/WORKFLOW_V2_CINEMATIC.md](docs/WORKFLOW_V2_CINEMATIC.md) first. Replace all earlier flat infographic/storyboard/card-based style goals with Capy acting inside an excavator, conversational voice, and CapCut AI-generated motion. The v2 **first milestone is an 8-second spoken cabin clip**; target short is roughly 75–100 seconds initially (extend toward 120 seconds only after timing/owner review). YouTube ~10min remains a later distinct format. **GitHub cannot automatically control owner's CapCut Pro desktop.**
+
 # CAPY BK — Agent contract (public repository)
 
 Read README.md, docs/CREATIVE_BIBLE.md, docs/PRODUCTION_PIPELINE.md, episodes/EP01/BRIEF.md and issue #1 before acting.
