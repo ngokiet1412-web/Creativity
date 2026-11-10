@@ -1,0 +1,15 @@
+shot_id,start_s,end_s,scene,visual,dialogue_role,capcut_asset,technical_review
+T01,0,7,Cold open,Capy surprised studio push-in,Capy,S01+S02,no accusation as fact
+T02,7,15,Reality check,Comic warning banner then calm host,Narrator,S01,drop does not prove theft
+T03,15,24,Flat-ground baseline,Excavator side view level ground,Narrator,S03 variant,no model-specific equipment
+T04,24,34,Climb slope,Excavator gradually tilts,Narrator,S03,orientation physically clear
+T05,34,45,Tank tilted,Generic transparent tank constant fluid amount,Narrator,S04,free surface gravity frame
+T06,45,52,Capy asks,Capy confused then curious,Capy,S01 new expression,separate height vs volume
+T07,52,64,Tank geometry,Sensor at one side and level reading,Narrator,S04 diagram,no universal fuel gauge claim
+T08,64,72,Slosh start,Excavator bumps lightly and tank oscillates,Capy,S05,not a real fuel reading trace
+T09,72,82,Time filtering,Raw line plot vs filtered plot,Narrator,S05 graphics,lag/over-smoothing
+T10,82,90,Capy reaction,Capy bounces nervously and asks question,Capy,S02,do not infer theft
+T11,90,99,Signal fusion,Icons for level IMU operating state,Narrator,S06,research concept only
+T12,99,108,Limits,Show cannot classify with certainty,Narrator,S07,no validated performance claim
+T13,108,114,Takeaway,Capy smiling says measure correctly,Capy,S08,conclusion sound
+T14,114,120,Outro,Capy waving and CAN episode teaser,Capy,S08,brand/license review
