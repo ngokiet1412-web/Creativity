@@ -1,3 +1,5 @@
+> **UPDATE V2 2026-11-10:** The official shot/voice/Codex↔CapCut task flow is [WORKFLOW_V2_CINEMATIC.md](WORKFLOW_V2_CINEMATIC.md). For EP01, **cinematic animated storytelling supersedes any infographic/card-style drafts**. First: owner-approved 3 scenic references → a 6–8s voiced cabin shot → a 15–25s edited proof → fully voiced TikTok ~75–100s (up to ~120s after timing review) → separate ~10min YouTube. Read V2 before following this older general pipeline.
+
 # Capy BK production pipeline — CapCut Pro first
 
 ## Constraints / format
