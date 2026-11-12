@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://demo.gd" id="1"]
 [ext_resource type="Script" path="res://machine.gd" id="2"]
+[ext_resource type="Script" path="res://characters.gd" id="3"]
 
 [sub_resource type="Animation" id="Reset"]
 length = 0.001
@@ -19,6 +20,20 @@ tracks/1/path = NodePath(".:pilot_amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.0]}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:stick_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.5]}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:bucket_amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {"times": PackedFloat32Array(0), "transitions": PackedFloat32Array(1), "update": 0, "values": [0.5]}
 
 [sub_resource type="Animation" id="Sequence"]
 resource_name = "sequence"
@@ -36,10 +51,56 @@ tracks/1/enabled = true
 tracks/1/path = NodePath(".:pilot_amount")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
-tracks/1/keys = {"times": PackedFloat32Array(0, 21.7, 23.4, 35.3, 35.75, 42), "transitions": PackedFloat32Array(1, -2, 1, -2, 1, 1), "update": 0, "values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]}
+tracks/1/keys = {"times": PackedFloat32Array(0, 17.4, 19.2, 21.6, 35.3, 35.75, 42), "transitions": PackedFloat32Array(1, -2, -2, 1, -2, 1, 1), "update": 0, "values": [0.0, 0.0, 0.58, 1.0, 1.0, 0.0, 0.0]}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:stick_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {"times": PackedFloat32Array(0, 4.2, 9.8, 17.4, 23.6, 24.5, 35.3, 38.8, 42), "transitions": PackedFloat32Array(1, -2, -2, -2, 1, -2, -2, -2, 1), "update": 0, "values": [0.55, 0.65, 0.15, 0.15, 0.85, 0.85, 0.35, 0.48, 0.42]}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:bucket_amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {"times": PackedFloat32Array(0, 4.2, 9.8, 17.4, 18.6, 23.8, 35.3, 38.8, 42), "transitions": PackedFloat32Array(1, -2, 1, -2, -2, 1, -2, -2, 1), "update": 0, "values": [0.5, 0.55, 0.05, 0.05, 0.12, 1.0, 1.0, 0.88, 0.95]}
+
+[sub_resource type="Animation" id="Proof16s"]
+resource_name = "proof_16s"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:lift_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {"times": PackedFloat32Array(0, 3.2, 8.8, 10.2, 12.8, 16.0), "transitions": PackedFloat32Array(1, -2, 1, -2, 1, 1), "update": 0, "values": [0.0, 0.0, 0.42, 0.18, 1.0, 1.0]}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:pilot_amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {"times": PackedFloat32Array(0, 3.0, 4.2, 12.8, 13.3, 16.0), "transitions": PackedFloat32Array(1, -2, 1, -2, 1, 1), "update": 0, "values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:stick_amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {"times": PackedFloat32Array(0, 3.0, 6.0, 9.0, 12.4, 16.0), "transitions": PackedFloat32Array(1, -2, -2, -2, -2, 1), "update": 0, "values": [0.55, 0.15, 0.65, 0.20, 0.82, 0.45]}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:bucket_amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {"times": PackedFloat32Array(0, 3.0, 8.8, 9.2, 12.5, 16.0), "transitions": PackedFloat32Array(1, -2, 1, -2, 1, 1), "update": 0, "values": [0.45, 0.05, 0.12, 0.05, 1.0, 0.96]}
 
 [sub_resource type="AnimationLibrary" id="Library"]
-_data = {"RESET": SubResource("Reset"), "sequence": SubResource("Sequence")}
+_data = {"RESET": SubResource("Reset"), "proof_16s": SubResource("Proof16s"), "sequence": SubResource("Sequence")}
 
 [node name="Demo" type="Node2D"]
 script = ExtResource("1")
@@ -62,6 +123,11 @@ script = ExtResource("2")
 [node name="Bucket" type="Node2D" parent="Machine/Upper/Boom/Stick"]
 
 [node name="BoomRamNear" type="Node2D" parent="Machine/Upper"]
+
+[node name="DiagramLayer" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+script = ExtResource("3")
 
 [node name="Foreground" type="Node2D" parent="."]
 

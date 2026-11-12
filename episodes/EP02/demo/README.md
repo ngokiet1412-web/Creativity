@@ -1,27 +1,53 @@
-# CAPY BK EP02 · Demo nâng cần PC200-8
+# CAPY BK EP02 · Demo Hệ Thống Thủy Lực Komatsu PC200-8 (V3)
 
-**Bản nháp duyệt cảnh · 42 giây · 1920 × 1080 · 30 fps.** Demo đi từ động cơ diesel, bơm piston và van phân phối đến một lần nâng cần và giữ vị trí. Hai vai thoại có lời và mốc dựng trong SRT và CSV. Mốc dựng sẽ theo bản thu khi có WAV được duyệt.
+**Bản nghiệm thu Giai đoạn 2 & 3 · 42 giây (`sequence`) + Clip QA Proof 16 giây (`proof_16s`) · 1920 × 1080 · 30 FPS.**
+Dự án Godot 4.5.1 minh họa toàn bộ chuỗi truyền lực thủy lực trên máy đào **Komatsu PC200-8**:
+`Động cơ SAA6D107E-1 (110 kW) → Cụm bơm piston đĩa nghiêng (439 L/phút) → Tay trang PPC & Van phân phối CLSS / Bù áp → Xi lanh cần, tay gầu, gầu xúc đất → Nâng cần, giữ tải & Hồi dầu qua két làm mát, lọc về thùng`.
 
-## Mở và chỉnh project
+---
 
-1. Mở `godot/project.godot` trong Godot 4.5.1, rồi chạy `demo.tscn` bằng F6.
-2. Trong scene tree, `AnimationPlayer → sequence` có keyframe cho `lift_amount` và `pilot_amount`. `Machine/Upper/Boom/Stick/Bucket` là chuỗi khớp cha–con. Hai nút `BoomRam` giữ hai xi lanh nâng cần, theo tọa độ chốt tính trong `machine.gd`.
-3. Dự án có bản máy và sơ đồ gốc ngay trong Git. Hình nhân vật EP01 dùng trong bản duyệt nằm ở `godot/local/` trong gói bàn giao. Tên, kích thước atlas, nguồn và cách lấy lại được ghi trong [manifest](ASSET_MANIFEST.md). Tài nguyên cá nhân nằm trong thư mục cục bộ này.
+## 1. Mở và chỉnh sửa Project Godot 4.5.1
 
-Kiểm thử và quay bằng Movie Maker (chạy tại thư mục demo, dùng đường dẫn tới Godot bản console trên Windows). Dùng phiên đồ họa cho Movie Maker.
+1. Mở `episodes/EP02/demo/godot/project.godot` trong **Godot 4.5.1**, sau đó mở scene `res://demo.tscn` và nhấn **F6** để chạy trực tiếp.
+2. Cấu trúc các nút tách lớp trong `demo.tscn`:
+   - `Field` (`Node2D`): Vẽ nền phòng studio (cảnh `D01`) và công trường có mây trôi, bóng đổ mặt đất theo độ cao gầu.
+   - `Machine` (`Node2D`, script `res://machine.gd`): Mô hình máy đào PC200-8 tách lớp cứng (`Track`, `Upper`, `BoomRamFar`, `Boom/Stick/Bucket`, `BoomRamNear`). Cả 3 khâu `Boom`, `Stick`, `Bucket` quay quanh đúng tâm chốt (`BOOM_PIN`, `ELBOW`, `WRIST`) với `scale == Vector2.ONE`, dẫn động bởi cặp xi lanh cần, xi lanh tay gầu và xi lanh gầu + cơ cấu 4 khâu, kèm mô đất biến dạng và hạt đất rơi theo trọng trường $g$.
+   - `DiagramLayer` (`Node2D`): Vẽ các mặt cắt kỹ thuật động hóa (động cơ 6 xi lanh `SAA6D107E-1`, bơm piston đĩa nghiêng, tay trang PPC & van trượt CLSS, xi lanh nâng cần tác động kép, mạch hồi qua két làm mát & lọc về thùng).
+   - `Characters` (`Node2D`, script `res://characters.gd`): Rig nhân vật 2D tách lớp cho **Anh kỹ sư** (`Engineer/{ArmR,Torso,Head/{Brows,Eyelids,Mouth},ArmL}`) và **Capy BK** (`Capy/{Torso,PawLWave,Head/{Brows,Eyelids,Mouth,Hat},PawLRail,PawRRail}`) đứng sau hàng rào an toàn `SafetyRail`.
+   - `AnimationPlayer`: Chứa animation `sequence` (42,0 giây) và `proof_16s` (16,0 giây) điều khiển các thuộc tính `lift_amount`, `stick_amount`, `bucket_amount` và `pilot_amount`.
+
+---
+
+## 2. Chạy kiểm thử tự động (`--qa`) và xuất video bằng Movie Maker
+
+Từ thư mục `episodes/EP02/demo`, chạy bằng Godot 4.5.1 Console và FFmpeg:
 
 ```powershell
+# 1. Kiểm thử tự động toàn bộ 1.260 frame (42s) + 480 frame (16s proof)
 godot --headless --path godot -- --qa
-godot --path godot --resolution 1920x1080 --write-movie EP02-godot.avi --fixed-fps 30 --quit-after 1260
-ffmpeg -i EP02-godot.avi -map 0:v -vf "scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2,setsar=1,pad=1920:1080:(ow-iw)/2:(oh-ih)/2" -c:v libx264 -pix_fmt yuv420p -movflags +faststart EP02-picture.mp4
+
+# 2. Ghi file AVI bằng Movie Maker (bản 42s và bản 16s V3 proof)
+godot --path godot --write-movie out/EP02-V3-Godot.avi --fixed-fps 30 --quit-after 1260
+godot --path godot --write-movie out/EP02-V3-Proof16s.avi --fixed-fps 30 --quit-after 480 -- --proof16
+
+# 3. Nén ra MP4 H.264 + AAC 1920x1080 @ 30fps giữ nguyên tỷ lệ khung hình 16:9
+ffmpeg -y -i out/EP02-V3-Godot.avi -i out/MACHINE.wav -i out/SIGNATURE.wav `
+  -filter_complex "[0:v]scale=1920:1080:flags=lanczos:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=#142c36,setsar=1:1[vout];[2:a]adelay=480|480[sig];[1:a][sig]amix=inputs=2:duration=first:dropout_transition=0,volume=1.6[aout]" `
+  -map "[vout]" -map "[aout]" -c:v libx264 -crf 17 -pix_fmt yuv420p -r 30 -c:a aac -b:a 192k out/CAPY-BK-EP02-PC200-8-demo.mp4
 ```
 
-Xem [storyboard](STORYBOARD.md), [bảng phân vai](audio_timing.csv), [SRT](EP02_demo_vi.srt) và [audit kỹ thuật và QA](TECHNICAL_QA.md). Tài liệu Godot mô tả [Movie Maker](https://docs.godotengine.org/en/4.5/tutorials/animation/creating_movies.html).
+Xem chi tiết tại [Storyboard](STORYBOARD.md), [Bảng phân vai & timing âm thanh](audio_timing.csv), [Phụ đề SRT](EP02_demo_vi.srt), [Asset Manifest](ASSET_MANIFEST.md) và [Báo cáo Kỹ thuật & Animation QA](TECHNICAL_QA.md).
 
-## Bàn giao CapCut Pro
+---
 
-1. Tạo project ngang 16:9, 1920 × 1080, 30 fps. Đặt `CAPY-BK-EP02-PC200-8-demo.mp4` vào video track ở 00:00. Đây là bản duyệt có chữ kỹ thuật và intro, có thể tắt tiếng clip để dựng bằng stem riêng.
-2. Nhập `EP02_demo_vi.srt` từ mục nhập phụ đề cục bộ. Nhập WAV 48 kHz vào ba track tên `SIGNATURE`, `CAPY` và `ENGINEER`. Đặt stem intro ở 00:00.480 và `MACHINE.wav` ở 00:00 trên track hiệu ứng. Hai vai còn lại dùng cue trong CSV khi có bản thu. Kiểm tra dấu tiếng Việt, đọc thử và chốt độ dài hình theo lời.
-3. Khi cần sửa thời điểm dầu đổi đường hoặc xi lanh dừng, sửa keyframe và render lại trong Godot rồi thay clip trên timeline. Xuất H.264/AAC 1080p30 để owner xem duyệt.
+## 3. Hướng dẫn nhập và dựng trong CapCut Pro
 
-Bản YouTube 10–12 phút và bản TikTok 2–2,5 phút có script V2 riêng ở thư mục EP02. Cả hai qua bước duyệt demo trước khi dựng. Bản dọc sẽ bố trí lại góc máy và đường dầu cho 1080 × 1920.
+1. **Khởi tạo Project:** Mở CapCut Pro, tạo project ngang **16:9, `1920 × 1080`, `30 FPS`**.
+2. **Đặt Video Track:** Kéo file `build/EP02_pc200_8_demo_v3/CAPY-BK-EP02-PC200-8-demo.mp4` vào track `V1` tại mốc `00:00:00.000`. (Nếu muốn cân chỉnh âm lượng từng stem riêng, có thể tắt tiếng track video gốc và dùng các file WAV rời trong thư mục `audio/`).
+3. **Đặt 4 Track Âm thanh riêng biệt:**
+   - **Track `A1 (SIGNATURE)`:** Đặt `audio/SIGNATURE.wav` tại mốc **`00:00:00.480`** (khớp câu chào *“Kĩ Sư Ơiiii!”* của Capy trong cảnh `D01`).
+   - **Track `A2 (CAPY)`:** Dành riêng cho các file WAV giọng ElevenLabs đã duyệt của Capy (`CAPY_D02.wav` tại `00:00:04.350`, `CAPY_D06.wav` tại `00:00:36.000`).
+   - **Track `A3 (ENGINEER)`:** Dành riêng cho các file WAV giọng ElevenLabs đã duyệt của Anh kỹ sư (`ENGINEER_D02.wav` tại `00:00:07.200`, `ENGINEER_D03.wav` tại `00:00:10.300`, `ENGINEER_D04.wav` tại `00:00:17.500`, `ENGINEER_D05.wav` tại `00:00:24.300`, `ENGINEER_D06.wav` tại `00:00:38.900`).
+   - **Track `A4 (FOLEY / MACHINE)`:** Đặt `audio/MACHINE.wav` tại mốc `00:00:00.000` (mức âm lượng gợi ý `-8 dB` đến `-6 dB` dưới giọng đọc).
+4. **Nhập Phụ đề rời (`SRT`):** Vào **Text → Local Captions → Import**, chọn file `episodes/EP02/demo/EP02_demo_vi.srt`. Phụ đề hoàn toàn tách rời khỏi nền video, dễ dàng chỉnh font, viền chữ và căn lề dưới.
+5. **Điều chỉnh theo giọng đọc thực tế:** Khi có bản thu ElevenLabs chính thức cho EP02, chỉ cần kéo vị trí keyframe trong `AnimationPlayer` của `demo.tscn` theo độ dài câu thoại thực tế (không ép nhanh lời thoại), rồi chạy lại lệnh Movie Maker ở mục 2.
