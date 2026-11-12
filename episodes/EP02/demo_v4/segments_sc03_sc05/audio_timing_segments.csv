@@ -1,0 +1,25 @@
+segment,cue,speaker,start_s,end_s,slot_s,est_speech_s,fit,voice_file,line
+SC03,1,ANH KỸ SƯ,0.60,4.60,4.00,2.63,OK,pending ElevenLabs (owner-approved voice),Động cơ diesel cấp công suất cơ học cho bơm.
+SC03,2,ANH KỸ SƯ,4.80,10.60,5.80,5.73,OK,pending ElevenLabs (owner-approved voice),Dữ liệu PC200-8 cho thấy động cơ Komatsu SAA6D107E-1;
+SC03,3,ANH KỸ SƯ,10.80,17.40,6.60,5.49,OK,pending ElevenLabs (owner-approved voice),"phần bơm chính là loại piston thay đổi lưu lượng, có hai phần bơm để điều phối các nhu cầu làm việc."
+SC03,4,ANH KỸ SƯ,17.60,22.20,4.60,4.54,OK,pending ElevenLabs (owner-approved voice),"Bên trong bơm piston hướng trục, khi góc đĩa nghiêng thay đổi, hành trình piston thay đổi theo."
+SC03,5,ANH KỸ SƯ,22.40,27.70,5.30,5.25,OK,pending ElevenLabs (owner-approved voice),Góc lớn hơn thường cho lưu lượng lớn hơn ở cùng tốc độ quay; góc nhỏ hơn thì lưu lượng giảm.
+SC03,6,CAPY,28.50,32.90,4.40,3.35,OK,pending ElevenLabs (owner-approved voice),Vậy ga máy tăng chưa chắc gầu lúc nào cũng chạy nhanh nhất?
+SC03,7,ANH KỸ SƯ,33.50,38.60,5.10,5.01,OK,pending ElevenLabs (owner-approved voice),"Đúng. Lưu lượng đến cơ cấu còn tùy bơm đang được điều khiển ra sao, van đang mở thế nào,"
+SC03,8,ANH KỸ SƯ,38.70,43.90,5.20,3.35,OK,pending ElevenLabs (owner-approved voice),tải và các giới hạn công suất. Đó mới là điều thú vị.
+SC04,1,CAPY,0.80,4.50,3.70,3.58,OK,pending ElevenLabs (owner-approved voice),Thế cái tên CLSS nghe như mật mã là gì anh?
+SC04,2,ANH KỸ SƯ,4.90,8.05,3.15,3.11,OK,pending ElevenLabs (owner-approved voice),Đó là hệ thống thủy lực tâm kín có cảm nhận tải.
+SC04,3,ANH KỸ SƯ,8.15,13.70,5.55,5.49,OK,pending ElevenLabs (owner-approved voice),"Nói đơn giản: khi các tay điều khiển ở trung gian, máy không cần cấp lưu lượng lớn tới mọi cơ cấu."
+SC04,4,ANH KỸ SƯ,13.80,21.30,7.50,7.39,OK,pending ElevenLabs (owner-approved voice),"Khi một cơ cấu cần làm việc, tín hiệu cảm nhận tải — gọi là LS — cùng các bộ điều chỉnh trên bơm giúp thay đổi lưu lượng phù hợp."
+SC04,5,ANH KỸ SƯ,21.50,28.30,6.80,4.54,OK,pending ElevenLabs (owner-approved voice),Van bù áp còn hỗ trợ phân chia dòng dầu khi nhiều cơ cấu làm việc cùng lúc.
+SC04,6,CAPY,28.90,32.80,3.90,3.82,OK,pending ElevenLabs (owner-approved voice),À! Không phải cứ nổ máy là bơm xả hết công suất đi khắp nơi.
+SC04,7,CAPY,32.90,35.40,2.50,2.15,OK,pending ElevenLabs (owner-approved voice),Nó phải nghe xem ai đang cần dầu!
+SC04,8,ANH KỸ SƯ,36.20,38.20,2.00,1.92,OK,pending ElevenLabs (owner-approved voice),Hiểu theo mức nhập môn thì đúng.
+SC04,9,ANH KỸ SƯ,38.30,43.80,5.50,5.01,OK,pending ElevenLabs (owner-approved voice),Nhưng điều khiển thực tế có cả giới hạn công suất của động cơ và các điều kiện vận hành.
+SC05,1,CAPY,0.80,5.70,4.90,4.54,OK,pending ElevenLabs (owner-approved voice),"Tui gạt cái cần nhỏ xíu trong cabin, sao điều khiển nổi một cái xi lanh bự vậy?"
+SC05,2,ANH KỸ SƯ,6.70,10.30,3.60,3.35,OK,pending ElevenLabs (owner-approved voice),Tay điều khiển không tự đưa toàn bộ lưu lượng của bơm chính.
+SC05,3,ANH KỸ SƯ,10.40,16.50,6.10,5.96,OK,pending ElevenLabs (owner-approved voice),"Trên PC200-8, mạch điều khiển pilot và cụm van chính thực hiện việc phân phối dầu đến các cơ cấu."
+SC05,4,ANH KỸ SƯ,16.60,19.10,2.50,2.39,OK,pending ElevenLabs (owner-approved voice),"Gạt joystick làm thay đổi tín hiệu điều khiển,"
+SC05,5,ANH KỸ SƯ,19.20,25.10,5.90,5.73,OK,pending ElevenLabs (owner-approved voice),từ đó dịch chuyển phần tử van tương ứng để cho dầu đi đến khoang thích hợp của xi lanh hoặc mô tơ.
+SC05,6,CAPY,25.40,29.30,3.90,3.82,OK,pending ElevenLabs (owner-approved voice),Tức là một tín hiệu nhỏ có thể điều khiển cả dòng năng lượng lớn?
+SC05,7,ANH KỸ SƯ,30.30,35.10,4.80,3.58,OK,pending ElevenLabs (owner-approved voice),"Đúng, nhưng phải có nguồn năng lượng từ động cơ và bơm phía sau."

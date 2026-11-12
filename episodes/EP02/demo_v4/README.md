@@ -46,3 +46,8 @@ Gói bàn giao có:
 - `layers/EP02_V4_layer_machine.webm`, `layers/EP02_V4_layer_hydraulics.webm`, `layers/EP02_V4_layer_crew.webm`, `layers/EP02_V4_layer_intro.webm`: VP9 có kênh alpha.
 
 Xếp từ dưới lên: bg → machine → hydraulics → crew → intro, tất cả đặt ở 00:00. Nếu CapCut không đọc được alpha của WebM, chạy lệnh `--pass` ở trên để xuất PNG, rồi chuyển sang ProRes 4444: `ffmpeg -i layer%08d.png -c:v prores_ks -profile:v 4444 -pix_fmt yuva444p10le layer.mov`. Lưu ý file ProRes khá nặng, khoảng 1–2 GB mỗi layer.
+
+
+## Clip phân đoạn theo kịch bản (SC03–SC05)
+
+Xem `SEGMENTS_SC03_SC05.md`. Mặt cắt chi tiết nằm ở `godot/cutaway/`, cảnh ở `godot/segments/`. Build: `python3 tools/build_segments.py`. Phụ đề, thời gian VO và QA nằm ở `segments_sc03_sc05/`.

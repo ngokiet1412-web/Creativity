@@ -1,0 +1,179 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://segments/sc04.gd" id="root"]
+[ext_resource type="Script" path="res://cutaway/pump_cut.gd" id="c0"]
+[ext_resource type="Script" path="res://cutaway/spool_cut.gd" id="c1"]
+[ext_resource type="Script" path="res://cutaway/spool_cut.gd" id="c2"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 44.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:boom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 12.3, 13.5, 36.2, 41.2, 42.4, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 0.8, 0.8, 0.8, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:arm")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 20.5, 21.7, 41.2, 42.4, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 0.7, 0.7, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:load_boom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0, 36.2, 37.6, 41.2, 42.2, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.55, 0.55, 0.95, 0.95, 0.55, 0.55]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:load_arm")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [0.3, 0.3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:capy_in")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0, 0.3, 0.8, 4.1, 4.6, 28.3, 28.8, 35.2, 35.7, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:capy_tilt")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0, 1.0, 3.1, 28.8, 30.1, 33.2, 35.2, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 4.0, -1.0, 0.0, 5.0, 1.0, 3.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:eng_in")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0, 4.3, 4.9, 7.5, 8.0, 35.6, 36.2, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:legend")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:cam_x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0, 4.3, 6.9, 11.9, 14.3, 20.3, 21.9, 27.9, 29.1, 35.8, 36.8, 42.0, 43.2, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [860.0, 870.0, 380.0, 400.0, 860.0, 860.0, 1150.0, 1150.0, 860.0, 860.0, 420.0, 430.0, 860.0, 860.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:cam_y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0, 4.3, 6.9, 11.9, 14.3, 20.3, 21.9, 27.9, 29.1, 35.8, 36.8, 42.0, 43.2, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [320.0, 320.0, 200.0, 200.0, 320.0, 320.0, 300.0, 300.0, 320.0, 320.0, 180.0, 180.0, 320.0, 320.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:cam_zoom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = false
+tracks/10/keys = {
+"times": PackedFloat32Array(0.0, 4.3, 6.9, 11.9, 14.3, 20.3, 21.9, 27.9, 29.1, 35.8, 36.8, 42.0, 43.2, 44.2),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.86, 0.86, 1.35, 1.35, 0.86, 0.86, 1.05, 1.05, 0.86, 0.86, 1.3, 1.3, 0.86, 0.86]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC04" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC04"
+scene_title = "Điểm khó: cảm nhận tải CLSS"
+inserts = PackedVector2Array(2.0, 0.5, 8.0, 1.8, 14.0, 1.8, 26.5, 1.1)
+
+[node name="Pump" type="Node2D" parent="."]
+script = ExtResource("c0")
+position = Vector2(60, 560)
+scale = Vector2(0.8, 0.8)
+show_rear = false
+show_valve_plate_inset = false
+
+[node name="ValveBoom" type="Node2D" parent="."]
+script = ExtResource("c1")
+position = Vector2(900, 150)
+scale = Vector2(0.55, 0.55)
+tag_text = "Nhánh cần"
+
+[node name="ValveArm" type="Node2D" parent="."]
+script = ExtResource("c2")
+position = Vector2(900, 520)
+scale = Vector2(0.55, 0.55)
+tag_text = "Nhánh tay gầu"
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}
