@@ -13,7 +13,7 @@ Kiểm thử và quay bằng Movie Maker (chạy tại thư mục demo, dùng đ
 ```powershell
 godot --headless --path godot -- --qa
 godot --path godot --resolution 1920x1080 --write-movie EP02-godot.avi --fixed-fps 30 --quit-after 1260
-ffmpeg -i EP02-godot.avi -map 0:v -c:v libx264 -pix_fmt yuv420p -movflags +faststart EP02-picture.mp4
+ffmpeg -i EP02-godot.avi -map 0:v -vf "scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2,setsar=1,pad=1920:1080:(ow-iw)/2:(oh-ih)/2" -c:v libx264 -pix_fmt yuv420p -movflags +faststart EP02-picture.mp4
 ```
 
 Xem [storyboard](STORYBOARD.md), [bảng phân vai](audio_timing.csv), [SRT](EP02_demo_vi.srt) và [audit kỹ thuật và QA](TECHNICAL_QA.md). Tài liệu Godot mô tả [Movie Maker](https://docs.godotengine.org/en/4.5/tutorials/animation/creating_movies.html).
@@ -21,7 +21,7 @@ Xem [storyboard](STORYBOARD.md), [bảng phân vai](audio_timing.csv), [SRT](EP0
 ## Bàn giao CapCut Pro
 
 1. Tạo project ngang 16:9, 1920 × 1080, 30 fps. Đặt `CAPY-BK-EP02-PC200-8-demo.mp4` vào video track ở 00:00. Đây là bản duyệt có chữ kỹ thuật và intro, có thể tắt tiếng clip để dựng bằng stem riêng.
-2. Nhập `EP02_demo_vi.srt` từ mục nhập phụ đề cục bộ. Nhập WAV 48 kHz vào ba track tên `SIGNATURE`, `CAPY` và `ENGINEER`. Đặt stem intro ở 00:00.480. Hai vai còn lại dùng cue trong CSV khi có bản thu. Kiểm tra diacritics, đọc thử và chốt độ dài hình theo lời.
+2. Nhập `EP02_demo_vi.srt` từ mục nhập phụ đề cục bộ. Nhập WAV 48 kHz vào ba track tên `SIGNATURE`, `CAPY` và `ENGINEER`. Đặt stem intro ở 00:00.480 và `MACHINE.wav` ở 00:00 trên track hiệu ứng. Hai vai còn lại dùng cue trong CSV khi có bản thu. Kiểm tra dấu tiếng Việt, đọc thử và chốt độ dài hình theo lời.
 3. Khi cần sửa thời điểm dầu đổi đường hoặc xi lanh dừng, sửa keyframe và render lại trong Godot rồi thay clip trên timeline. Xuất H.264/AAC 1080p30 để owner xem duyệt.
 
 Bản YouTube 10–12 phút và bản TikTok 2–2,5 phút có script V2 riêng ở thư mục EP02. Cả hai qua bước duyệt demo trước khi dựng. Bản dọc sẽ bố trí lại góc máy và đường dầu cho 1080 × 1920.

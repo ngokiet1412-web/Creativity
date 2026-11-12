@@ -31,4 +31,5 @@ Màu là quy ước biên tập. Mũi tên đỏ đi từ bơm qua van vào khoa
 - `godot --headless --path godot -- --qa` chạy 1.260 tư thế ở 30 fps. Kiểm tra điểm mắt ty trùng chốt, hai xi lanh có cùng khoảng cách chốt, ty còn phần lồng trong vỏ, gầu nằm đúng gốc khớp, khâu không đổi tỷ lệ và đoạn giữ cần không trôi.
 - Khoảng cách chốt tăng đơn điệu từ **269,20 đến 299,45 đơn vị minh họa**. Góc nâng bắt đầu ở 24,5 giây, tới đích ở 35,3 giây. Góc tay gầu và gầu tương đối giữ nguyên trong thao tác này.
 - QA hình kiểm tra 6 cảnh, gồm vị trí trước, trong và sau lần nâng. Hình xi lanh trong khung cắt dùng chính tiến độ của rig máy. Hành trình minh họa, áp suất và tải chưa được kiểm thử trên máy thật.
+- Movie Maker ghi 1.260 frame ở 30 fps. Windows giới hạn cửa sổ thu về 1875 × 1055. Bản bàn giao H.264 1920 × 1080 giữ tỷ lệ khi nội suy và thêm biên, không kéo méo khung hình.
 - Rà giọng CAPY và ENGINEER, khẩu hình thoại mới và nhịp dựng theo bản thu khi có WAV đã duyệt. Demo hiện dùng đoạn tag EP01 và tiếng máy minh họa.
