@@ -30,17 +30,14 @@ var shot: int = 0
 var intro: ImageTexture
 var guide: ImageTexture
 var reply: ImageTexture
-var clouds: Array[Vector2] = [Vector2(163, 261), Vector2(795, 174), Vector2(1457, 202)]
-var ground_stones: PackedVector2Array
+var worksite: ImageTexture
 
 func _ready() -> void:
 	intro = _local("studio-cels.png")
 	guide = _local("field-hook.png")
 	reply = _local("field-reply.png")
-	var rng := RandomNumberGenerator.new()
-	rng.seed = 2008
-	for i in range(127):
-		ground_stones.append(Vector2(rng.randf_range(0, WIDTH), rng.randf_range(540, HEIGHT)))
+	worksite = ImageTexture.create_from_image(Image.load_from_file(
+		ProjectSettings.globalize_path("res://art/worksite.png")))
 	field.draw.connect(_draw_field)
 	foreground.draw.connect(_draw_foreground)
 	animator.play("sequence")
@@ -70,8 +67,8 @@ func seek(value: float) -> void:
 	animator.seek(value, true)
 	machine.pose(lift_amount)
 	machine.visible = shot > 0
-	machine.position = Vector2(1210, 686) if shot != 2 else Vector2(1310, 722)
-	var magnification := 1.15 if shot != 2 else 1.07
+	machine.position = Vector2(1184, 688) if shot != 2 else Vector2(1306, 715)
+	var magnification := 1.12 if shot != 2 else 1.04
 	machine.scale = Vector2.ONE * magnification
 	field.queue_redraw()
 	foreground.queue_redraw()
@@ -82,40 +79,24 @@ func _draw_field() -> void:
 		for i in range(7):
 			field.draw_line(Vector2(i * 240, 0), Vector2(i * 240 - 180, 1080), Color("#203e4a"), 3, true)
 		return
-	field.draw_rect(Rect2(0, 0, WIDTH, 630), Color("#b1ddd3"))
-	for i in range(16):
-		var y := float(i * 28)
-		field.draw_rect(Rect2(0, y, WIDTH, 29), Color("#71aeba").lerp(Color("#c5e3ce"), float(i)/16))
-	field.draw_circle(Vector2(1530, 202), 109, Color("#fff0b8"), true, -1, true)
-	for p in clouds:
-		var drift := Vector2(time * 1.4, 0)
-		field.draw_rect(Rect2(p + drift, Vector2(197, 22)), Color("#f2e7cc"))
-		for i in range(4):
-			field.draw_circle(p + drift + Vector2(34 + i * 42, 4), 29 + 8 * (i % 2), Color("#f2e7cc"), true, -1, true)
-	for i in range(22):
-		var y := 458.0 + cos(float(i) * .53) * 42.0
-		field.draw_circle(Vector2(i * 96, y), 129, Color("#80a99d"), true, -1, true)
-	for i in range(46):
-		var y := 530.0 + sin(float(i) * .8) * 35.0
-		field.draw_circle(Vector2(i * 45, y), 58, Color("#577e6c"), true, -1, true)
-	field.draw_colored_polygon(PackedVector2Array([Vector2(0, 604), Vector2(420, 546), Vector2(985, 582),
-		Vector2(1380, 543), Vector2(WIDTH, 582), Vector2(WIDTH, HEIGHT), Vector2(0, HEIGHT)]), Color("#c58e59"))
-	field.draw_colored_polygon(PackedVector2Array([Vector2(0, 814), Vector2(495, 761), Vector2(973, 845),
-		Vector2(1380, 897), Vector2(WIDTH, 850), Vector2(WIDTH, HEIGHT), Vector2(0, HEIGHT)]), Color("#ddab71"))
-	for p in ground_stones:
-		if p.y > 610:
-			var k := 1.0 + (p.y-610.0)/90.0
-			field.draw_line(p, p+Vector2(k * 3.9, 0), Color("#b88454"), k*.62, true)
-	for i in range(23):
-		var x := float(i * 89)
-		field.draw_line(Vector2(x, 577), Vector2(x, 636), Color("#77584a"), 9, true)
-	field.draw_line(Vector2(0, 592), Vector2(1920, 592), Color("#edd197"), 8, true)
-	field.draw_line(Vector2(0, 615), Vector2(1920, 615), Color("#edb970"), 6, true)
+	var art_size := worksite.get_size()
+	var gain := maxf(WIDTH / art_size.x, HEIGHT / art_size.y)
+	var size := art_size * gain
+	field.draw_texture_rect(worksite, Rect2((Vector2(WIDTH, HEIGHT) - size)*.5, size), false)
+	var contact: Vector2 = machine.to_global(Vector2(-130, 247))
+	_ground_shadow(contact+Vector2(4, 3), Vector2(325, 24), .17)
+	_ground_shadow(contact, Vector2(305, 15), .30)
+	var bucket_pos: Vector2 = machine.get_node("Upper/Boom/Stick/Bucket").to_global(Vector2(46, 66))
+	var gap := maxf(0.0, contact.y - bucket_pos.y)
+	_ground_shadow(Vector2(bucket_pos.x + gap*.15, contact.y + 2), Vector2(83 + gap*.13, 8 + gap*.025),
+		.19 - minf(.11, gap*.00045))
+
+func _ground_shadow(center: Vector2, radii: Vector2, opacity: float) -> void:
 	var shadow := PackedVector2Array()
 	for i in range(64):
 		var angle := TAU * i / 64.0
-		shadow.append(Vector2(1102 + cos(angle)*364.0, 966 + sin(angle)*15.0))
-	field.draw_colored_polygon(shadow, Color("#9d764e"))
+		shadow.append(center + Vector2(cos(angle)*radii.x, sin(angle)*radii.y))
+	field.draw_colored_polygon(shadow, Color(0.22, 0.14, 0.11, opacity))
 
 func _text(p: Vector2, text: String, size: int, color := IVORY) -> void:
 	foreground.draw_string(ThemeDB.fallback_font, p, text, HORIZONTAL_ALIGNMENT_LEFT, -1, size, color)
