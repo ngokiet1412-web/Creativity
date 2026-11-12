@@ -1,0 +1,5 @@
+godot/.godot/
+godot/local/
+out/
+*.avi
+__pycache__/
