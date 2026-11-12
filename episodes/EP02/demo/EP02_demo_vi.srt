@@ -1,0 +1,46 @@
+1
+00:00:00,480 --> 00:00:03,290
+Kĩ Sư Ơiiii!
+
+2
+00:00:04,450 --> 00:00:09,850
+Ê anh, cái tay máy đào này
+lấy sức đâu mà nâng cả gầu đất vậy?
+
+3
+00:00:10,300 --> 00:00:13,400
+Động cơ diesel quay bơm piston.
+Bơm tạo dòng dầu.
+
+4
+00:00:13,550 --> 00:00:17,100
+Khi nâng tải, áp suất tăng
+theo sức cản mà xi lanh phải thắng.
+
+5
+00:00:17,650 --> 00:00:21,600
+Gạt joystick, tín hiệu pilot
+làm con trượt trong van dịch chuyển.
+
+6
+00:00:22,000 --> 00:00:24,150
+Van mở đường cấp và đường hồi.
+
+7
+00:00:24,450 --> 00:00:28,200
+Dầu cấp vào khoang đáy.
+Dầu ở khoang ty theo đường hồi về thùng.
+
+8
+00:00:28,500 --> 00:00:31,600
+Tín hiệu tải phản hồi
+về bộ điều chỉnh bơm.
+
+9
+00:00:32,000 --> 00:00:35,250
+Ty vươn ra, đẩy cần quay quanh chốt.
+
+10
+00:00:36,100 --> 00:00:41,000
+À, động cơ quay bơm, van dẫn dầu,
+xi lanh đẩy cần lên. Hiểu rồi!

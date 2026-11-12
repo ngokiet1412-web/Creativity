@@ -1,0 +1,7 @@
+scene,role,start,end,stem,placement_status
+D01,SIGNATURE,00:00:00.480,00:00:03.290,SIGNATURE.wav,EP01 tag selected from local approved take
+D02,CAPY,00:00:04.450,00:00:09.850,CAPY_D02.wav,Awaiting EP02 performance
+D03,ENGINEER,00:00:10.300,00:00:17.100,ENGINEER_D03.wav,Awaiting EP02 performance
+D04,ENGINEER,00:00:17.650,00:00:24.150,ENGINEER_D04.wav,Awaiting EP02 performance
+D05,ENGINEER,00:00:24.450,00:00:35.250,ENGINEER_D05.wav,Awaiting EP02 performance
+D06,CAPY,00:00:36.100,00:00:41.000,CAPY_D06.wav,Awaiting EP02 performance
