@@ -1,0 +1,45 @@
+{
+ "version": "V4 proof 16 s",
+ "start_pose": [
+  22.088960638800927,
+  97.01021554514253,
+  38.0
+ ],
+ "boom_end": 40.0,
+ "bucket_end": 64.0,
+ "joint_keys": {
+  "boom_deg": 166,
+  "arm_rel": 166,
+  "bucket_rel": 166
+ },
+ "shots": {
+  "studio": [
+   0,
+   3.0
+  ],
+  "wide_raise": [
+   3.0,
+   6.4
+  ],
+  "dolly_xray": [
+   6.4,
+   7.7
+  ],
+  "valve_to_cylinder": [
+   7.7,
+   9.6
+  ],
+  "cylinder_cutaway": [
+   9.6,
+   11.9
+  ],
+  "pull_out": [
+   11.9,
+   12.8
+  ],
+  "bucket_curl": [
+   12.8,
+   16.0
+  ]
+ }
+}
