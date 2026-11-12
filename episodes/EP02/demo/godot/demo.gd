@@ -148,8 +148,8 @@ func _draw_foreground() -> void:
 		4: _raise()
 		5: _observation(true)
 	if shot >= 2:
-		_rect(Rect2(1049, 995, 817, 42), DARK)
-		_text(Vector2(1064, 1025), "Sơ đồ giản lược · Chi tiết theo số sê-ri và cấu hình máy", 24, IVORY)
+		_rect(Rect2(1049, 48, 817, 42), DARK)
+		_text(Vector2(1064, 78), "Sơ đồ giản lược · Chi tiết theo số sê-ri và cấu hình máy", 24, IVORY)
 
 func _studio() -> void:
 	if intro:
