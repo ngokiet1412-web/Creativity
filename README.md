@@ -2,11 +2,11 @@
 
 A creator-production workspace for **Capy BK**, an independent animated education channel about automotive engineering, construction machinery, applied AI, HCMUT student life, and carefully approved public-friendly R&D concepts.
 
-> **Status (2026-11-10):** Project kickoff / EP01 pre-production. The earlier 32-second animatic is a **silent narration placeholder**, not a releasable episode. New target: two editorially distinct cuts, **TikTok ~2 min (9:16)** and **YouTube ~10 min (16:9)**, with narration, expressive mascot animation, and scientifically reviewed diagrams.
+> **Status (2026-11-10):** EP01 follows [cinematic workflow V2](docs/WORKFLOW_V2_CINEMATIC.md) and opens with SC01, Capy arriving at the construction site. The [6–8 second CAB-01 handoff](episodes/EP01/shots/CAB-01/README.md) is a separate hand-drawn 2D style trial using the deferred fuel-gauge premise.
 
-## EP01: Máy xúc nghiêng dốc — dầu thật sự mất hay cảm biến đọc sai?
+## EP01: Capy BK khám phá máy công trình
 
-**Story premise:** Capy wrongly accuses someone of stealing fuel because the indicated tank level changed on a slope. The explanation distinguishes *level reading*, *actual fuel volume*, *engine consumption* and *unexplained loss*. Never label theft based on a single level change.
+**Story premise:** Capy arrives at a construction site with a tiny shovel and discovers how different machines dig, move, load, compact and lift. See the [current EP01 brief](https://github.com/ngokiet1412-web/Creativity/blob/main/episodes/EP01/BRIEF.md).
 
 **Channel identity:** Original chubby, short-armed, friendly Capy BK mascot; white/blue school-inspired polo, cheerful facial expressions; studio contains laptop, microphone, BK-themed mug, and technical construction machinery visualizations. This is **not an official university channel**. Verify rights before publishing third-party artwork, marks, sound, or stock assets.
 
@@ -35,4 +35,4 @@ A creator-production workspace for **Capy BK**, an independent animated educatio
 - `episodes/EP01/VOICE_SCRIPT.md` — narration and dialogue direction.
 - `docs/AGENT_HANDOFF.md` — scoped agent work packages, acceptance criteria.
 
-Use GitHub Issues for ownership and PRs for actual artifacts. First goal: **one 15–25 second polished, voice-enabled proof-of-style segment**, approved before producing both complete cuts.
+Use GitHub Issues for ownership and PRs for production artifacts. Follow the current EP01 brief for approval gates and target lengths.

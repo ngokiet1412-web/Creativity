@@ -3,6 +3,8 @@
 # CAPY BK — WORKFLOW V2 / Cinematic animation production
 **Decision date:** 2026-11-10. **Status:** authoritative working workflow for EP01, subject to owner approval. Links: issue #1 (master), #2 (Codex), #3 (CapCut AI), #4 (technical QA), #5 (writing).
 
+> **Separate CAB-01 style trial.** Use hand-drawn 2D comedy with clear outlines, flat color and strong changes in expression. R01–R03 remain the approved originals for character and vehicle continuity. The separate R03-derived 2D frame is a draft for owner review. The active EP01 opens with SC01. See the [CAB-01 operator handoff](../episodes/EP01/shots/CAB-01/README.md).
+
 ## 0. Creative reset: NO slides posing as a film
 Previous 8-card infographic storyboard and 32s animatic are learning prototypes, NOT a style target. Visual priority: **story → character acting → interesting excavator action → visually accurate explanation**, not sequential static posters.
 Owner-approved reference style: 3 cinematic vertical stills from chat (not in GitHub yet): **R01** cheerful Capy BK standing beside high-quality yellow crawler excavator in warm sunlit outdoor construction setting; **R02** same Capy seated in detailed crawler excavator climbing an earthy slope; **R03** front-facing Capy in excavator cab with twin joysticks and fuel gauge. Don't recreate an inconsistent new mascot. These 3 stills must be imported separately by owner/Codex from approved files before batch production.
@@ -32,8 +34,8 @@ Owner-approved reference style: 3 cinematic vertical stills from chat (not in Gi
 **Not CapCut AI:** independently deriving fuel physics, deciding sensor positions, writing definitive technical facts, assuming private GitHub read access, or making the entire long-form video from one prompt.
 **No automatic cross-tool sync:** Codex/GitHub and CapCut desktop exchange local files. ChatGPT can update GitHub, but cannot assume CapCut has consumed the updates.
 
-## 3. Exact scene assembly (cinematic, not cards)
-1. **CAB-01 (6–8s):** use R03. Capy happily pilots with twin levers, glimpses dashboard fuel gauge, freezes, surprised eyes, turns to camera. Animate subtle cabin vibration; no extra limbs, no steering wheel.
+## 3. Deferred fuel-level scene plan
+1. **CAB-01 (6–8s):** use R03 as the identity and geometry reference. Try the draft 2D treatment after owner review. Capy pilots with twin levers, glances at the gauge, freezes with wide eyes and turns to the camera. Keep a consistent cab, two controls and subtle cabin vibration.
 2. **HILL-01 (5–8s):** use R02. Beautiful crawler excavator climbs a modest dirt slope, believable crawler travel and arm constraints. Exterior shot, background parallax.
 3. **HOST-01 (5–8s):** R01 or approved studio GIF. Capy addresses viewer: informal short dialogue; camera pans/pushes smoothly.
 4. **TANK-01 (~6s):** mechanically reviewed generic transparent fuel tank. Fixed fuel volume; while tank tilts, relative fluid depth at an assumed sensor may change. Diagram overlaid by editor, no hand-wavy impossible geometry.
@@ -50,7 +52,7 @@ Keep language natural, not stiff textbook narration. Pause/laugh/reaction timing
 
 ## 4. CapCut AI use instructions
 - In CapCut Video Studio/Seedance, import original *approved still* for each shot (R03 for CAB-01). Use image-to-video with motion prompts; if Director/Standard offers multiple modes, test small first and log cost.
-- For CAB-01 prompt: "Animate exactly this uploaded capybara inside an excavator cabin. The tracked excavator travels gently uphill; subtle cabin vibration. Capy smiles while holding twin joysticks, notices its dashboard fuel gauge, freezes in surprise, opens mouth, and turns toward camera. Cinematic 3D feature-animation acting, natural timing, keep same short arms and polo logo, no steering wheel, no extra limbs, no new dashboard components, no distorted digits or logos, portrait 9:16, 6–8 seconds, no captions baked in."
+- For CAB-01 use the [versioned 2D motion prompt](../episodes/EP01/shots/CAB-01/CAB-01_prompt_v01.txt). It times the joystick action, gauge glance, comic freeze and head turn in a single shot.
 - Prefer audio-first: lock the script + record/generate the voice before trying AI dialogue lip sync. Generate TTS track separately if AI video has no direct audio support. Include lively inflection; test Vietnamese phonemes, e.g. "Ê ê, khoan! Sao mới leo cái dốc mà đồng hồ dầu tụt dữ vậy trời?!".
 - AI model might make text/logos/gauges inconsistent. Fix labels, logo and gauge via CapCut graphic overlays/compositing instead of regenerating entire shot.
 - Provide to Codex: `CAB-01_v01.mp4`, `CAB-01_voice_v01.wav`, `CAB-01_prompt_v01.txt`, runtime/credits/artifacts note. CapCut export is human-mediated; no connector to CapCut app currently verified.

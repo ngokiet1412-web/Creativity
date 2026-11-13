@@ -1,0 +1,35 @@
+{
+  "id": "CAB-01",
+  "version": "v01",
+  "reference": "R03",
+  "style": {
+    "direction": "Original hand-drawn 2D comedy animation with flat colors and clear character poses",
+    "inspiration": "https://www.youtube.com/watch?v=Qqyf1MCse3E",
+    "style_candidate": {
+      "file": "CAB-01_2D_style_test_v01.png",
+      "sha256": "a79b6fc827fd5ab9e2b0441af04f0f036e73f5fe1b8d1346576d6d6f4c10036d",
+      "model": "OpenAI built-in ImageGen",
+      "date": "2026-11-10",
+      "source": "R03",
+      "prompt": "Restyle the attached exact owner-approved R03 as one full-bleed portrait 9:16 storyboard keyframe for an original hand-drawn 2D comedy animation. Keep the attached frame's composition and object placement: same round tan Capy BK, extremely chubby, oversized head, tiny rounded ears, black nose, yellow and black head accessory, white polo and royal-blue collar, exact blue three-hexagon BK emblem, both original short paws on the two existing black excavator joysticks, teal cabin frame, yellow excavator frame and analog needle gauge at lower right, warm dirt slope and greenery behind. This is a style treatment of the reference, preserve proportions, prop geometry, logo placement, gaze direction, silhouette and camera. Use clean slightly irregular charcoal contours, flat cel colors, one hard-edged shadow per shape, warm pale tan/orange against muted teal and forest green, simplified backgrounds with warm hand-painted daylight. Expressive friendly cartoon eyes, dark pupils and easy-to-read mouth drawn in a simple original shape; expression is happy concentration just before a quick surprised reaction. Make the face and hands read instantly like an indie animated comedy, visually warm and human. Simplify texture and tiny bolts while keeping both controls and the fuel gauge completely readable. Full frame art with no borders, poster typography, subtitles, speech bubbles, new character, third-party graphics, or brand references other than the existing BK badge. Maintain a flat matte illustrated look without glossy 3D rendering or photoreal materials.",
+      "status": "DRAFT / OWNER REVIEW",
+      "rights": "Derivative of the approved R03 reference; BK mark subject to rights clearance for release"
+    }
+  },
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "target_frames": 225,
+  "min_frames": 180,
+  "max_frames": 240,
+  "audio_sample_rate": 48000,
+  "dialogue": "Ê ê, khoan! Sao mới leo cái dốc mà đồng hồ dầu tụt dữ vậy trời?!",
+  "beats": [
+    {"frames": [0, 25], "action": "Drive gently uphill with both paws on twin controls."},
+    {"frames": [25, 39], "action": "Eyes go down and right toward the gauge. Needle falls once."},
+    {"frames": [39, 60], "action": "Freeze, widen eyes, then shift gaze and turn slightly toward camera."},
+    {"frames": [60, 180], "action": "Speak the approved Vietnamese line in two beats."},
+    {"frames": [180, 225], "action": "Hold the reaction briefly with cabin movement and controls stable."}
+  ],
+  "status": "DRAFT / STANDALONE STYLE TRIAL AWAITING CAPCUT TAKE AND OWNER REVIEW"
+}
