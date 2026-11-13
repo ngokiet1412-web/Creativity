@@ -35,4 +35,4 @@ A creator-production workspace for **Capy BK**, an independent animated educatio
 - `episodes/EP01/VOICE_SCRIPT.md` — narration and dialogue direction.
 - `docs/AGENT_HANDOFF.md` — scoped agent work packages, acceptance criteria.
 
-Use GitHub Issues for ownership and PRs for actual artifacts. First goal: **one 15–25 second polished, voice-enabled proof-of-style segment**, approved before producing both complete cuts.
+Use GitHub Issues for ownership and PRs for production work. Start with the **6–8 second Vietnamese studio pilot**. Its [build and CapCut handoff](episodes/EP01/PILOT.md) covers the approved asset package, review video and editable media. Review motion, voice, timing and branding before producing either full cut.

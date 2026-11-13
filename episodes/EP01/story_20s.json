@@ -1,0 +1,162 @@
+{
+  "stage": "proof",
+  "profile": "tiktok",
+  "voice": {
+    "model": "vnhellboy/vietnamese-piper-voices / Điềm Đạm",
+    "model_sha256": "821096ee1f6d424fd9d1a0ff83fd851637e5ff880e8aaf3c5b53be87269a6e26",
+    "tokens_sha256": "e8a50ae0c75612d18cfcf3f90800dca79f961e3ed97f9574f3535194469187fd",
+    "rights": "Local synthetic draft voice. Final voice and rights pending owner review."
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start_frame": 0,
+      "duration_frames": 138,
+      "visual": "cabin",
+      "video": "S01_picture.mp4",
+      "voice": "S01_voice.wav",
+      "sfx": "S01_sfx.wav",
+      "asset": {
+        "source": "assets/approved/capy_bk_still_from_gif.png",
+        "date": "2026-11-10",
+        "shot": "S01",
+        "method": "Independent gauge needle and joystick motion, cab suspension, and phoneme-driven mouth deformation.",
+        "prompt": "Create one production keyframe for a vertical 9:16 animated short, portrait full-bleed edge to edge, no cards, no captions, no border. Input image role: exact Capy BK character and emblem reference, recreate its squat head/body proportions, tan round muzzle and ears, tiny chubby arms, small dark nose, white polo with royal-blue collar and small blue triple-hexagon BK badge, and signature yellow light above head. Put this SAME mascot inside the cabin of an original compact yellow-orange tracked excavator on a green construction hillside. Camera is mounted at front windshield looking slightly toward the seated Capy, waist-up, both paws visibly resting on two upright black joystick controls, the head is perfectly front-facing and mouth sits near center with a clearly open, joyful surprised shape suitable for local animation. Head occupies about 42 percent width, centered slightly above mid-frame. Eye arcs, nose and jaw clearly visible. One corner of machine frame, steel bolts, cyan tinted windows, analog fuel gauge on a raised console at lower right with uncluttered circular dark dial (no readable text), and blurred reddish dirt slope outside behind Capy. Stylized high-end soft 3D animated short, tactile lightly textured materials, teal cabin, golden amber light, expressive but recognizable. No other characters, hands, subtitles or text other than the small accurate BK badge.",
+        "rights": "ImageGen draft derived from the owner-approved Capy reference. BK mark rights and generated continuity pending owner review.",
+        "approval": "DRAFT / OWNER REVIEW",
+        "plate": "cabin.png",
+        "plate_sha256": "2fd7f9d284f03b54d60850ab4478698eb1b29fc7f7a35e340d4fb82713cd47ac",
+        "model": "OpenAI built-in ImageGen"
+      },
+      "captions": [
+        {
+          "start_ms": 467,
+          "end_ms": 1100,
+          "text": "Ủa?"
+        },
+        {
+          "start_ms": 1267,
+          "end_ms": 4033,
+          "text": "Mới lên dốc mà kim\ntụt cái rụp!"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "start_frame": 138,
+      "duration_frames": 87,
+      "visual": "machine",
+      "video": "S02_picture.mp4",
+      "voice": "S02_voice.wav",
+      "sfx": "S02_sfx.wav",
+      "asset": {
+        "source": "assets/approved/capy_bk_still_from_gif.png",
+        "date": "2026-11-10",
+        "shot": "S02",
+        "method": "Tracking camera, local suspension movement, and a separate animated dust pass.",
+        "prompt": "Create one full-bleed 9:16 portrait production keyframe for a polished soft 3D animated short. Reference image is the exact Capy BK mascot character, visible small but recognizable through the cabin windshield, white polo blue collar, round tan face. A beautiful original compact tracked excavator, warm yellow-orange body and hydraulic boom, black-gray articulated steel tracks, cool dark teal cabin glazing, scratched metal bucket. Show it climbing a diagonally rising rust-colored dirt road in a wooded green hillside, looking uphill to the right. Dynamic low three-quarter camera that shows the whole silhouette, tracks and scoop, machine centered in the middle half of the vertical frame with a little space around it for a slow camera move. Dust rim-lit by warm afternoon sun and soft depth of field in layers of grasses and pine silhouettes. Tactile premium animated film materials. Strong depth, directional warm key and cool blue shade. Completely original machine design, no commercial brand marks, no text, no frame, no title.",
+        "rights": "ImageGen draft derived from the owner-approved Capy reference. BK mark rights and generated continuity pending owner review.",
+        "approval": "DRAFT / OWNER REVIEW",
+        "plate": "machine.png",
+        "plate_sha256": "71062c1dc1ceccc0cbb809a29b1c769f29d7b030e24f8fc6c3af0f887e286dea",
+        "model": "OpenAI built-in ImageGen"
+      },
+      "captions": [
+        {
+          "start_ms": 333,
+          "end_ms": 2667,
+          "text": "Ai uống dầu\ncủa tui vậy?"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "start_frame": 225,
+      "duration_frames": 150,
+      "visual": "tank",
+      "video": "S03_picture.mp4",
+      "voice": "S03_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "scripts/render_capy_story.py",
+        "date": "2026-11-10",
+        "shot": "S03",
+        "method": "Animated perspective schematic. The closed rectangular tank is half full, at rest, and the sensor is mounted near the end that rises.",
+        "prompt": "Show the rectangular tank tilting with a horizontal liquid surface and a lower depth at the sensor near the elevated end.",
+        "rights": "Original illustrative animation for EP01.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 367,
+          "end_ms": 2000,
+          "text": "Khoan, bình đang nghiêng."
+        },
+        {
+          "start_ms": 2200,
+          "end_ms": 4667,
+          "text": "Chỗ cảm biến, mức đo\ncó thể thấp hơn."
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "start_frame": 375,
+      "duration_frames": 153,
+      "visual": "standing",
+      "video": "S04_picture.mp4",
+      "voice": "S04_voice.wav",
+      "sfx": null,
+      "asset": {
+        "source": "assets/approved/capy_bk_still_from_gif.png",
+        "date": "2026-11-10",
+        "shot": "S04",
+        "method": "Phoneme-driven mouth, a small pointing gesture, and a camera push on the standing character.",
+        "prompt": "Create one portrait 9:16 full-bleed 3D animated film keyframe for the closing dialogue of Capy BK. Image 1 role: exact approved character reference; carefully preserve the identity: oversized round tan capybara head and brown tuft with small yellow light above, tiny round ears, black nose and happy eyes, short arms, plump body, white polo with royal blue collar and blue three-hexagon BK badge. Show that same character standing on short legs, from full head to feet, on level dusty ground next to its parked compact tracked excavator. Machine behind and on the right, yellow-orange painted metal, dark teal cab glazing, black-gray tracked undercarriage, hydraulics and scratched bucket resting on the ground. Capy stands in foreground center-left, faces the viewer square on, mouth already open in a small cheerful speaking grin with dark mouth and pink tongue, one short paw pointing back toward the machine. Keep the face above the middle of the frame and its width about 38 percent of canvas so animated lips are legible. Warm afternoon sunlight, soft shadows, teal tree line and a whimsical comedic expressive beat. High-end original soft 3D animated short with tactile materials, no cards, no lettering apart from the small accurate BK badge, no UI or watermark.",
+        "rights": "ImageGen draft derived from the owner-approved Capy reference. BK mark rights and generated continuity pending owner review.",
+        "approval": "DRAFT / OWNER REVIEW",
+        "plate": "standing.png",
+        "plate_sha256": "d63534fbb12461a60a2465b94fb8b6237357e737afa90e7b62d83618de60b877",
+        "model": "OpenAI built-in ImageGen"
+      },
+      "captions": [
+        {
+          "start_ms": 300,
+          "end_ms": 2200,
+          "text": "Lượng dầu có thể\nvẫn vậy."
+        },
+        {
+          "start_ms": 2400,
+          "end_ms": 4800,
+          "text": "Để tui về chỗ bằng\nđo lại."
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "start_frame": 528,
+      "duration_frames": 72,
+      "visual": "studio",
+      "video": "S05_picture.mp4",
+      "voice": "S05_voice.wav",
+      "sfx": "S05_sfx.wav",
+      "asset": {
+        "source": "assets/approved/capy_bk_master.gif",
+        "sha256": "bbb1ec45588aeabb1f02a51b3cdde241900615fad65959d55a8e28138fe401b0",
+        "date": "2026-11-10",
+        "shot": "S05",
+        "method": "Approved GIF poses, local mouth animation, and full-bleed studio framing.",
+        "prompt": "Capy returns to the original studio for a quick, amused reaction.",
+        "rights": "Owner-approved studio GIF. BK mark requires rights review for release.",
+        "approval": "DRAFT / OWNER REVIEW"
+      },
+      "captions": [
+        {
+          "start_ms": 100,
+          "end_ms": 2233,
+          "text": "Suýt bắt oan cái dốc!"
+        }
+      ]
+    }
+  ]
+}

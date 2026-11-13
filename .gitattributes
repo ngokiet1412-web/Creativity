@@ -1,0 +1,4 @@
+# Preserve byte hashes across Windows and Unix checkouts.
+assets/ASSET_SHA256.json -text
+assets/prototypes/source/build_capy_bk_ep01_animatic_PROTOTYPE.py -text
+episodes/EP01/prototype_shotlist.json -text
