@@ -1,0 +1,53 @@
+1
+00:00:00,480 --> 00:00:03,290
+Kĩ Sư Ơiiii!
+
+2
+00:00:04,350 --> 00:00:07,050
+Ê anh, cái tay máy đào PC200-8 này
+lấy sức đâu mà xúc cả gầu đất nặng vậy?
+
+3
+00:00:07,200 --> 00:00:10,050
+Nhờ chuỗi truyền lực thủy lực từ động cơ,
+bơm piston, van CLSS tới các xi lanh đó Capy!
+
+4
+00:00:10,300 --> 00:00:13,600
+Động cơ diesel SAA6D107E-1 quay cụm bơm piston,
+bơm đẩy dầu tạo ra lưu lượng.
+
+5
+00:00:13,750 --> 00:00:17,100
+Còn áp suất trong mạch chỉ tăng lên
+theo sức cản của tải mà xi lanh phải thắng!
+
+6
+00:00:17,500 --> 00:00:21,200
+Khi gạt tay trang PPC, áp suất pilot 3,2 MPa
+đẩy con trượt trong van phân phối CLSS.
+
+7
+00:00:21,350 --> 00:00:24,000
+Van mở đường dầu cho xi lanh tay gầu và gầu
+cuộn xén qua nền đất!
+
+8
+00:00:24,300 --> 00:00:28,600
+Khi nâng cần, dầu cao áp vào khoang đáy xi lanh,
+dầu khoang ty theo đường hồi về thùng.
+
+9
+00:00:28,800 --> 00:00:35,400
+Tín hiệu tải LS báo về điều chỉnh góc đĩa nghiêng bơm,
+ty xi lanh vươn ra đẩy cần quay quanh chốt!
+
+10
+00:00:36,000 --> 00:00:38,800
+Àaa! Bơm tạo lưu lượng quyết định tốc độ,
+còn áp suất sinh ra để thắng tải của đất và cần!
+
+11
+00:00:38,900 --> 00:00:41,800
+Chuẩn luôn! Khi tay trang về giữa, van khóa dầu
+giữ cần đứng yên và dầu hồi qua két làm mát, lọc về thùng.

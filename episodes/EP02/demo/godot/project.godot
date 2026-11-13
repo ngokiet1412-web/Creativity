@@ -1,0 +1,23 @@
+config_version=5
+
+[application]
+config/name="CAPY BK EP02 | PC200-8"
+run/main_scene="res://demo.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+2d/snap/snap_2d_transforms_to_pixel=false
+
+[editor]
+movie_writer/fps=30

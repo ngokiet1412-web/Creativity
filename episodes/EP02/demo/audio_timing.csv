@@ -1,0 +1,10 @@
+scene,role,start,end,stem,placement_status
+D01,SIGNATURE,00:00:00.480,00:00:03.290,SIGNATURE.wav,EP01 tag selected from local approved take (Capy_Ki_Su_Oiii_v2_Nhe_Tu_Nhien.mp3)
+D02,CAPY,00:00:04.350,00:00:07.050,CAPY_D02.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D02,ENGINEER,00:00:07.200,00:00:10.050,ENGINEER_D02.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D03,ENGINEER,00:00:10.300,00:00:17.100,ENGINEER_D03.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D04,ENGINEER,00:00:17.500,00:00:24.000,ENGINEER_D04.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D05,ENGINEER,00:00:24.300,00:00:35.400,ENGINEER_D05.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D06,CAPY,00:00:36.000,00:00:38.800,CAPY_D06.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D06,ENGINEER,00:00:38.900,00:00:41.800,ENGINEER_D06.wav,Awaiting owner-approved ElevenLabs EP02 performance
+D01-D06,FOLEY,00:00:00.000,00:00:42.000,MACHINE.wav,Synthesized PC200-8 diesel idle + pump whine + PPC clicks + soil scoop crunch

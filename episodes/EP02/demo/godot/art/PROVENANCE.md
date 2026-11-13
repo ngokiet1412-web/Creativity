@@ -1,0 +1,19 @@
+# Hình máy đào và công trường · DRAFT
+
+Hai hình dưới đây do ImageGen tạo ngày 2026-11-12 cho demo EP02. Tham chiếu màu và nét vẽ lấy từ ảnh G-01 của EP01. Bảng QA EP02 V1 giúp định hướng khâu và trục quay. Hình do dự án tạo để minh họa, chờ owner duyệt.
+
+## pc200-parts.png
+
+Atlas trong suốt, 1536 × 1024. Gồm thân trên, bộ xích, cần, tay gầu và gầu. Godot đăng ký từng hình theo chốt, xoay và đổi tỷ lệ đều theo hai trục. Ty và vỏ xi lanh được vẽ riêng.
+
+Prompt
+
+> Create one clean 1536 x 1024 transparent sprite sheet for a detailed 2D animated yellow Komatsu PC200-8 hydraulic crawler excavator. STYLE REFERENCE second image: use its richly inked warm textured illustrated machines, tapered dark brown outlines, golden sunlight, blue tinted cab glass, subtle earth dust, layered highlights on heavy steel and realistic real machine proportions. First reference is only a rough geometry guide. The sprite sheet contains FIVE isolated pieces, each entirely separated by large empty transparent gaps. Orthographic side view, right-facing, camera exactly perpendicular to profile, slight top planes painted as bevels only. Upper-left half contains upper body with rear counterweight on left and cab on right, yellow pedestal where boom pivot attaches at front low on right, do NOT draw any boom or track attached to the upper body. Lower-left half contains separate complete steel double tracked undercarriage, both sides offset very slightly, full-length continuous metal track with shoe tread wrapping around wheels, side-on and at rest. Upper-right contains ONLY the heavy curved yellow boom steel beam, oriented base at left/lower and narrower pin at right/upper, with two easily identifiable dark circular pivot centers at either end; no actuators and no adjacent stick; show a lower reinforcing lug around two thirds of the way to the right. Middle-right contains ONLY a heavy straight-to-tapered yellow stick steel arm, angled downward and slightly right, about 19 degrees off vertical, with exactly one clear mounting hole at each end, no piston, beam thick, side lit. Bottom-right contains ONLY a heavy realistic curved digging bucket with thick steel side cheek plate, mounting pin near top left, mouth and three recognizable teeth oriented toward RIGHT, small retained mound of dry soil inside bucket, no part of arm attached. Each separate piece must be complete with no clipping. Keep all five separate and no shadows outside their silhouettes. No text, decals, grid, words, guide arrows or backgrounds. This is textured hand-inked 2D animation, with industrial details like tracks and bolts consistent with a plausible excavator, matte painted surfaces and controlled perspective. Transparent background, large margins.
+
+## worksite.png
+
+Phông công trường 1672 × 941. Godot giữ tỷ lệ và cắt viền khi phủ khung 16:9.
+
+Prompt
+
+> Paint an original single wide 16:9 construction-site background plate for a hand-drawn 2D animated series. Match the attached art's warm, richly illustrated shaded trees, orange packed earth, subtle dust and distinct dark ink contours. Exactly side view at human eye level. Horizon in upper middle. Forest and low distant golden dirt piles behind an understated wooden site fence in the middle distance. Lower 42% is an open near-level hard-packed dirt platform, track impressions, sparse rocks and dry earth highlights, mostly unobstructed so a large yellow side-profile excavator can be animated on the center-right with its tracks grounded. The sky is soft blue with a few clouds and dappled sunlight. Subtle atmospheric perspective and shadows, rich illustrated background, tasteful not photo, no gradients with stripes, no machines, no people, no characters, no words, no logos, no card borders, no inset panels. Use the attached image for color and linework only.
