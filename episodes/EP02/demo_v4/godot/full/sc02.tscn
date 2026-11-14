@@ -1,0 +1,212 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://full/sc02.gd" id="root"]
+[ext_resource type="Script" path="res://env.gd" id="c1"]
+[ext_resource type="Script" path="res://rig.gd" id="c2"]
+[ext_resource type="Script" path="res://full/machine_fx.gd" id="c3"]
+[ext_resource type="Script" path="res://full/system_map.gd" id="c4"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 33.186
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:xray")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 5.998, 8.048, 32.386, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:grid_alpha")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 5.998, 8.048, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 0.55, 0.55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("World/Map:step")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0, 8.048, 19.726, 33.186),
+"transitions": PackedFloat32Array(-2.0, 1.0, -2.0, -2.0),
+"update": 0,
+"values": [-1.0, -1.0, 9.0, 9.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("World/Map:chain")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0, 20.326, 26.826, 33.186),
+"transitions": PackedFloat32Array(-2.0, 1.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("World/FX:hi_boom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0, 12.7192, 13.887, 15.0548, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 0.35, 0.35]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("World/FX:hi_arm")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0, 13.0695, 14.1206, 15.0548, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 0.35, 0.35]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("World/FX:hi_bucket")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0, 13.4199, 14.3541, 15.0548, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 0.35, 0.35]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:legend")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0, 19.826, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:cam_x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0, 6.498, 8.048, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [160.0, 140.0, 60.0, 70.0, 90.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:cam_y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0, 6.498, 8.048, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [-60.0, -60.0, -20.0, -20.0, -30.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:cam_zoom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = false
+tracks/10/keys = {
+"times": PackedFloat32Array(0.0, 6.498, 8.048, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [1.05, 1.08, 1.32, 1.32, 1.25]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:capy_tilt")
+tracks/11/interp = 1
+tracks/11/loop_wrap = false
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0, 2.2, 3.7, 6.498, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 2.0, -3.0, 4.0, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:capy_in")
+tracks/12/interp = 1
+tracks/12/loop_wrap = false
+tracks/12/keys = {
+"times": PackedFloat32Array(0.0, 1.7, 2.15, 6.998, 7.448, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:eng_in")
+tracks/13/interp = 1
+tracks/13/loop_wrap = false
+tracks/13/keys = {
+"times": PackedFloat32Array(0.0, 6.748, 7.198, 30.986, 31.436, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC02" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC02"
+scene_title = "Bản đồ cả hệ thống"
+capy_blinks = [1.0, 3.69, 7.21, 10.25, 13.94, 17.68, 19.9, 21.97, 26.29, 29.04, 31.71]
+eng_blinks = [1.0, 3.68, 6.0, 9.12, 11.58, 13.8, 16.93, 21.47, 25.69, 29.81, 32.45]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Env" type="Node2D" parent="World"]
+script = ExtResource("c1")
+
+[node name="Machine" type="Node2D" parent="World"]
+script = ExtResource("c2")
+
+[node name="FX" type="Node2D" parent="World"]
+script = ExtResource("c3")
+
+[node name="Map" type="Node2D" parent="World"]
+script = ExtResource("c4")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}

@@ -1,0 +1,40 @@
+1
+00:00:01,600 --> 00:00:05,898
+CAPY: Nhưng động cơ với bơm ở thân trên, hai mô tơ di chuyển nằm dưới gầm xích.
+
+2
+00:00:06,198 --> 00:00:09,543
+CAPY: Khi thân trên xoay, ống dầu không bị xoắn như mì gói hả?
+
+3
+00:00:10,293 --> 00:00:14,590
+ANH KỸ SƯ: Giữa hai phần có khớp quay phân phối dầu ở trung tâm, thường gọi center swivel joint.
+
+4
+00:00:14,890 --> 00:00:20,617
+ANH KỸ SƯ: Nó cho phép dẫn các mạch dầu xuống bộ phận di chuyển trong khi phần trên có thể quay tương đối với gầm.
+
+5
+00:00:20,917 --> 00:00:24,024
+ANH KỸ SƯ: Mỗi bên xích có mô tơ thủy lực và bộ truyền cuối,
+
+6
+00:00:24,324 --> 00:00:27,669
+ANH KỸ SƯ: nên có thể điều khiển hai bên để tiến, lùi hoặc đổi hướng.
+
+7
+00:00:30,169 --> 00:00:33,514
+CAPY: Vậy bánh xích không phải cái hình chữ nhật xoay nguyên cục à!
+
+8
+00:00:34,264 --> 00:00:34,752
+ANH KỸ SƯ: Đúng.
+
+9
+00:00:35,052 --> 00:00:37,445
+ANH KỸ SƯ: Bánh dẫn quay, mắt xích chạy theo đường vòng,
+
+10
+00:00:37,745 --> 00:00:40,376
+ANH KỸ SƯ: và xe dịch chuyển do tương tác với mặt đất.
+

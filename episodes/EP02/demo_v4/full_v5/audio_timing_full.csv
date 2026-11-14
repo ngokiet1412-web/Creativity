@@ -1,0 +1,100 @@
+scene,cue,speaker,start_s,end_s,est_s,voice_file,text
+SC01,1,CAPY,0.8,1.764,0.96,pending ElevenLabs (owner-approved),Kĩiii sưuuu ơiiii!
+SC01,2,CAPY,2.064,2.79,0.73,pending ElevenLabs (owner-approved),Ê anh!
+SC01,3,CAPY,3.09,5.483,2.39,pending ElevenLabs (owner-approved),Bữa trước mình coi nguyên công trường rồi đó.
+SC01,4,CAPY,5.783,10.319,4.54,pending ElevenLabs (owner-approved),"Mà tui vẫn thắc mắc: cái tay máy đào này nhìn như mấy miếng sắt nối với nhau,"
+SC01,5,CAPY,10.619,13.25,2.63,pending ElevenLabs (owner-approved),sao nó nâng được một gầu đất nặng dữ vậy?
+SC01,6,CAPY,13.55,15.705,2.15,pending ElevenLabs (owner-approved),Nó có giấu cơ bắp trong đó hả?
+SC01,7,KS,18.105,19.545,1.44,pending ElevenLabs (owner-approved),Không có cơ bắp đâu.
+SC01,8,KS,19.845,22.0,2.16,pending ElevenLabs (owner-approved),Thứ đáng xem nằm bên trong thân máy:
+SC01,9,KS,22.3,25.169,2.87,pending ElevenLabs (owner-approved),một hệ thống thủy lực được điều khiển khá thông minh.
+SC01,10,KS,25.469,30.719,5.25,pending ElevenLabs (owner-approved),"Hôm nay mình lấy Komatsu PC200-8 làm ví dụ, đi từ động cơ cho tới tận gầu,"
+SC01,11,KS,31.019,33.412,2.39,pending ElevenLabs (owner-approved),rồi xem luôn quay toa và hai bánh xích.
+SC02,1,CAPY,2.2,6.498,4.3,pending ElevenLabs (owner-approved),"Ủa, thủy lực có phải chỉ là một cái bơm nối với một cái xi lanh không?"
+SC02,2,KS,7.248,12.021,4.77,pending ElevenLabs (owner-approved),"Đơn giản hóa như vậy thì dễ học bước đầu, nhưng chưa đủ cho PC200-8."
+SC02,3,KS,12.321,16.381,4.06,pending ElevenLabs (owner-approved),"Trên chiếc máy này còn có điều khiển tải, các đường dầu đến nhiều cơ cấu,"
+SC02,4,KS,16.681,20.026,3.34,pending ElevenLabs (owner-approved),"van phân phối, điều khiển pilot và tín hiệu điện tử phối hợp."
+SC02,5,KS,20.326,24.862,4.54,pending ElevenLabs (owner-approved),Mình sẽ lần theo dòng năng lượng trước: động cơ quay bơm; bơm đưa dầu vào hệ thống;
+SC02,6,KS,25.162,26.602,1.44,pending ElevenLabs (owner-approved),van điều khiển dòng dầu;
+SC02,7,KS,26.902,30.486,3.58,pending ElevenLabs (owner-approved),xi lanh hoặc mô tơ thủy lực biến năng lượng đó thành chuyển động.
+SC06,1,KS,1.8,6.098,4.3,pending ElevenLabs (owner-approved),Cần nâng hạ bằng các xi lanh cần; tay gầu tiến lùi nhờ xi lanh tay gầu;
+SC06,2,KS,6.398,8.552,2.15,pending ElevenLabs (owner-approved),gầu cuộn hoặc mở bằng xi lanh gầu.
+SC06,3,KS,8.852,11.483,2.63,pending ElevenLabs (owner-approved),"Dầu vào một khoang tạo lực làm piston dịch chuyển,"
+SC06,4,KS,11.783,14.89,3.11,pending ElevenLabs (owner-approved),còn dầu ở khoang còn lại phải có đường thoát thích hợp.
+SC06,5,KS,15.19,16.869,1.68,pending ElevenLabs (owner-approved),"Qua các chốt và tay đòn,"
+SC06,6,KS,17.169,20.752,3.58,pending ElevenLabs (owner-approved),lực tịnh tiến của xi lanh biến thành chuyển động quay của các khâu.
+SC06,7,CAPY,21.502,25.324,3.82,pending ElevenLabs (owner-approved),Ủa vậy mình không được vẽ nguyên cái tay máy cong queo như cao su?
+SC06,8,KS,26.074,26.8,0.73,pending ElevenLabs (owner-approved),Chính xác!
+SC06,9,KS,27.1,31.874,4.77,pending ElevenLabs (owner-approved),"Các khâu cứng quay quanh chốt, còn chiều dài xi lanh và góc khớp phải phù hợp hình học."
+SC07,1,CAPY,1.6,4.707,3.11,pending ElevenLabs (owner-approved),"Nghe nói áp suất càng cao là máy càng mạnh, đúng hông?"
+SC07,2,KS,5.457,6.66,1.2,pending ElevenLabs (owner-approved),Đúng một phần thôi.
+SC07,3,KS,6.96,8.876,1.92,pending ElevenLabs (owner-approved),"Với một khoang xi lanh lý tưởng,"
+SC07,4,KS,9.176,12.998,3.82,pending ElevenLabs (owner-approved),lực do áp suất tác dụng xấp xỉ F bằng p nhân diện tích A.
+SC07,5,KS,13.298,18.071,4.77,pending ElevenLabs (owner-approved),"Muốn piston chuyển động nhanh, còn cần lưu lượng Q; tốc độ lý tưởng gần bằng Q chia A."
+SC07,6,KS,18.371,22.193,3.82,pending ElevenLabs (owner-approved),"Nhưng lực tới răng gầu phụ thuộc thêm góc xi lanh, tay đòn, ma sát,"
+SC07,7,KS,22.493,24.171,1.68,pending ElevenLabs (owner-approved),tổn thất và giới hạn bền.
+SC07,8,KS,24.471,28.769,4.3,pending ElevenLabs (owner-approved),Vì vậy không thể lấy lực piston rồi nói máy nâng được đúng chừng đó ký đất.
+SC07,9,CAPY,29.519,30.007,0.49,pending ElevenLabs (owner-approved),À!
+SC07,10,CAPY,30.307,33.652,3.35,pending ElevenLabs (owner-approved),"Áp suất là điều kiện tạo lực, lưu lượng liên quan tốc độ."
+SC07,11,CAPY,33.952,36.583,2.63,pending ElevenLabs (owner-approved),Còn cơ cấu mới quyết định lực ra tới gầu!
+SC08,1,CAPY,2.2,3.879,1.68,pending ElevenLabs (owner-approved),Tay gầu thì dùng xi lanh.
+SC08,2,CAPY,4.179,7.048,2.87,pending ElevenLabs (owner-approved),Nhưng tại sao nguyên cái thân trên quay vòng vòng được?
+SC08,3,KS,7.798,9.238,1.44,pending ElevenLabs (owner-approved),Đó là mạch quay toa.
+SC08,4,KS,9.538,11.931,2.39,pending ElevenLabs (owner-approved),Dầu cấp đến mô tơ thủy lực quay toa;
+SC08,5,KS,12.231,17.243,5.01,pending ElevenLabs (owner-approved),mô tơ cùng bộ truyền giảm tốc tạo mô men để xoay phần trên của máy trên vòng quay toa.
+SC08,6,KS,17.543,20.65,3.11,pending ElevenLabs (owner-approved),Hệ thống có chức năng hãm và giữ quay theo thiết kế.
+SC08,7,KS,20.95,25.248,4.3,pending ElevenLabs (owner-approved),"Ở hình này, gầm xích vẫn đứng yên còn phần thân trên xoay — nhìn vậy mới đúng."
+SC09,1,CAPY,1.6,5.898,4.3,pending ElevenLabs (owner-approved),"Nhưng động cơ với bơm ở thân trên, hai mô tơ di chuyển nằm dưới gầm xích."
+SC09,2,CAPY,6.198,9.543,3.34,pending ElevenLabs (owner-approved),"Khi thân trên xoay, ống dầu không bị xoắn như mì gói hả?"
+SC09,3,KS,10.293,14.59,4.3,pending ElevenLabs (owner-approved),"Giữa hai phần có khớp quay phân phối dầu ở trung tâm, thường gọi center swivel joint."
+SC09,4,KS,14.89,20.617,5.73,pending ElevenLabs (owner-approved),Nó cho phép dẫn các mạch dầu xuống bộ phận di chuyển trong khi phần trên có thể quay tương đối với gầm.
+SC09,5,KS,20.917,24.024,3.11,pending ElevenLabs (owner-approved),"Mỗi bên xích có mô tơ thủy lực và bộ truyền cuối,"
+SC09,6,KS,24.324,27.669,3.34,pending ElevenLabs (owner-approved),"nên có thể điều khiển hai bên để tiến, lùi hoặc đổi hướng."
+SC09,7,CAPY,30.169,33.514,3.35,pending ElevenLabs (owner-approved),Vậy bánh xích không phải cái hình chữ nhật xoay nguyên cục à!
+SC09,8,KS,34.264,34.752,0.49,pending ElevenLabs (owner-approved),Đúng.
+SC09,9,KS,35.052,37.445,2.39,pending ElevenLabs (owner-approved),"Bánh dẫn quay, mắt xích chạy theo đường vòng,"
+SC09,10,KS,37.745,40.376,2.63,pending ElevenLabs (owner-approved),và xe dịch chuyển do tương tác với mặt đất.
+SC10,1,CAPY,1.8,5.145,3.34,pending ElevenLabs (owner-approved),"Nãy giờ toàn thấy dầu đi vô, vậy dầu đi đâu mất anh?"
+SC10,2,KS,5.895,7.812,1.92,pending ElevenLabs (owner-approved),Nó tuần hoàn trong mạch thủy lực.
+SC10,3,KS,8.112,11.457,3.35,pending ElevenLabs (owner-approved),"Sau khi thực hiện công việc, dầu quay về theo các đường hồi,"
+SC10,4,KS,11.757,15.579,3.82,pending ElevenLabs (owner-approved),được làm mát và lọc phù hợp với đường mạch trước khi trở lại bình.
+SC10,5,KS,15.879,18.986,3.11,pending ElevenLabs (owner-approved),Dầu thủy lực không phải nhiên liệu để đốt trong xi lanh.
+SC10,6,KS,19.286,21.917,2.63,pending ElevenLabs (owner-approved),"Nó truyền năng lượng, bôi trơn và giúp tản nhiệt,"
+SC10,7,KS,22.217,24.61,2.39,pending ElevenLabs (owner-approved),nên độ sạch và nhiệt độ rất quan trọng.
+SC11,1,CAPY,1.6,5.183,3.58,pending ElevenLabs (owner-approved),"Ủa, gầu gặp cục đá cứng quá thì áp suất cứ tăng mãi sao?"
+SC11,2,CAPY,5.483,6.686,1.2,pending ElevenLabs (owner-approved),Nghe sợ à nha!
+SC11,3,KS,7.436,12.448,5.01,pending ElevenLabs (owner-approved),Hệ thống cần van giới hạn áp và các chức năng bảo vệ để tránh vượt giới hạn thiết kế.
+SC11,4,KS,12.748,16.569,3.82,pending ElevenLabs (owner-approved),PC200-8 có các mạch với mức áp thiết kế khác nhau.
+SC11,5,KS,16.869,21.167,4.3,pending ElevenLabs (owner-approved),"Tài liệu hãng nêu áp cài đặt relief danh định cho mạch công tác, mạch di chuyển,"
+SC11,6,KS,21.467,25.288,3.82,pending ElevenLabs (owner-approved),mạch quay toa và pilot; không nên gộp thành một con số cho mọi mạch.
+SC11,7,KS,25.588,28.933,3.34,pending ElevenLabs (owner-approved),Ngoài ra còn có giải pháp chống trôi hoặc giữ tải cho cần.
+SC11,8,KS,29.233,33.531,4.3,pending ElevenLabs (owner-approved),Tuy nhiên đừng bao giờ tự nới van relief hay sờ đường dầu áp cao để thử.
+SC11,9,CAPY,34.281,38.579,4.3,pending ElevenLabs (owner-approved),Vậy mấy cái van an toàn mới là đội bảo vệ của dàn cơ bắp thủy lực!
+SC12,1,CAPY,1.8,4.907,3.11,pending ElevenLabs (owner-approved),"Nhưng tui học ô tô, tui muốn tìm ECU cơ!"
+SC12,2,CAPY,5.207,7.6,2.39,pending ElevenLabs (owner-approved),Hệ thống thủy lực này có điện tử không?
+SC12,3,KS,8.35,8.838,0.49,pending ElevenLabs (owner-approved),Có.
+SC12,4,KS,9.138,11.531,2.39,pending ElevenLabs (owner-approved),"Một số tín hiệu vận hành từ động cơ,"
+SC12,5,KS,11.831,16.843,5.01,pending ElevenLabs (owner-approved),"cảm biến và bộ điều khiển được dùng để phối hợp công suất động cơ với yêu cầu thủy lực,"
+SC12,6,KS,17.143,19.774,2.63,pending ElevenLabs (owner-approved),điều khiển van điện từ và chế độ làm việc.
+SC12,7,KS,20.074,25.324,5.25,pending ElevenLabs (owner-approved),"Ở hệ CLSS, LS/PC và EPC là những đầu mối cần học kỹ."
+SC12,8,KS,25.624,30.16,4.54,pending ElevenLabs (owner-approved),"Nhưng sơ đồ dây, cổng điện và hiệu chỉnh phải tra đúng shop manual của phiên bản máy,"
+SC12,9,KS,30.46,32.614,2.15,pending ElevenLabs (owner-approved),chứ không đoán theo một ảnh trên mạng.
+SC13,1,CAPY,1.8,6.336,4.54,pending ElevenLabs (owner-approved),"Vậy nếu một ngày máy đào tự nhiên yếu, gầu lên chậm, có phải hư bơm không anh?"
+SC13,2,KS,7.086,8.288,1.2,pending ElevenLabs (owner-approved),Chưa thể kết luận.
+SC13,3,KS,8.588,13.362,4.77,pending ElevenLabs (owner-approved),Phải tách khả năng động cơ thiếu công suất; điều khiển bơm hoặc tín hiệu LS bất thường;
+SC13,4,KS,13.662,18.436,4.77,pending ElevenLabs (owner-approved),"van phân phối, pilot, rò rỉ bên trong, lọc dầu, nhiệt độ dầu; thậm chí ma sát cơ khí."
+SC13,5,KS,18.736,21.605,2.87,pending ElevenLabs (owner-approved),"Quan trọng là biểu hiện khi nâng cần, co tay gầu,"
+SC13,6,KS,21.905,24.774,2.87,pending ElevenLabs (owner-approved),quay toa và chạy xích có giống nhau hay khác nhau.
+SC13,7,KS,25.074,28.419,3.34,pending ElevenLabs (owner-approved),"Đo và đối chiếu đúng quy trình an toàn mới khoanh vùng được,"
+SC13,8,KS,28.719,31.112,2.39,pending ElevenLabs (owner-approved),chứ không thay bơm chỉ vì thấy máy chậm.
+SC14,1,CAPY,2.6,4.04,1.44,pending ElevenLabs (owner-approved),Để tui tổng kết nha!
+SC14,2,CAPY,4.34,9.352,5.01,pending ElevenLabs (owner-approved),"Động cơ cho năng lượng, hai bơm biến thành dòng dầu, CLSS giúp điều chỉnh theo tải,"
+SC14,3,CAPY,9.652,12.521,2.87,pending ElevenLabs (owner-approved),"van phân phối, xi lanh và mô tơ tạo chuyển động."
+SC14,4,CAPY,12.821,15.929,3.11,pending ElevenLabs (owner-approved),"Dầu còn phải về lọc, làm mát, có van bảo vệ nữa."
+SC14,5,CAPY,16.229,19.812,3.58,pending ElevenLabs (owner-approved),Hóa ra không phải cái gầu khỏe — mà nguyên hệ thống đang phối hợp!
+SC14,6,KS,20.562,21.288,0.73,pending ElevenLabs (owner-approved),Chính xác.
+SC14,7,KS,21.588,23.743,2.15,pending ElevenLabs (owner-approved),Và đó mới là bản đồ tổng thể.
+SC14,8,KS,24.043,28.34,4.3,pending ElevenLabs (owner-approved),"Muốn giải mã đến từng cổng, từng spool hay mã lỗi của PC200-8,"
+SC14,9,KS,28.64,31.271,2.63,pending ElevenLabs (owner-approved),mình sẽ phải xem đúng serial và sơ đồ hãng.
+SC14,10,CAPY,32.021,37.748,5.73,pending ElevenLabs (owner-approved),Tập sau mình thử xem CLSS điều khiển bơm thế nào và vì sao máy có lúc bị ì nha!
+SC14,11,CAPY,38.048,38.774,0.73,pending ElevenLabs (owner-approved),Bye bye!

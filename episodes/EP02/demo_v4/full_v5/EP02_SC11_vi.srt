@@ -1,0 +1,36 @@
+1
+00:00:01,600 --> 00:00:05,183
+CAPY: Ủa, gầu gặp cục đá cứng quá thì áp suất cứ tăng mãi sao?
+
+2
+00:00:05,483 --> 00:00:06,686
+CAPY: Nghe sợ à nha!
+
+3
+00:00:07,436 --> 00:00:12,448
+ANH KỸ SƯ: Hệ thống cần van giới hạn áp và các chức năng bảo vệ để tránh vượt giới hạn thiết kế.
+
+4
+00:00:12,748 --> 00:00:16,569
+ANH KỸ SƯ: PC200-8 có các mạch với mức áp thiết kế khác nhau.
+
+5
+00:00:16,869 --> 00:00:21,167
+ANH KỸ SƯ: Tài liệu hãng nêu áp cài đặt relief danh định cho mạch công tác, mạch di chuyển,
+
+6
+00:00:21,467 --> 00:00:25,288
+ANH KỸ SƯ: mạch quay toa và pilot; không nên gộp thành một con số cho mọi mạch.
+
+7
+00:00:25,588 --> 00:00:28,933
+ANH KỸ SƯ: Ngoài ra còn có giải pháp chống trôi hoặc giữ tải cho cần.
+
+8
+00:00:29,233 --> 00:00:33,531
+ANH KỸ SƯ: Tuy nhiên đừng bao giờ tự nới van relief hay sờ đường dầu áp cao để thử.
+
+9
+00:00:34,281 --> 00:00:38,579
+CAPY: Vậy mấy cái van an toàn mới là đội bảo vệ của dàn cơ bắp thủy lực!
+

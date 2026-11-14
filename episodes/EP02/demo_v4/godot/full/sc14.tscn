@@ -1,0 +1,170 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://full/sc14.gd" id="root"]
+[ext_resource type="Script" path="res://env.gd" id="c1"]
+[ext_resource type="Script" path="res://rig.gd" id="c2"]
+[ext_resource type="Script" path="res://full/machine_fx.gd" id="c3"]
+[ext_resource type="Script" path="res://full/system_map.gd" id="c4"]
+[ext_resource type="Script" path="res://full/studio.gd" id="c5"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 42.974
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Studio:push")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 0.6, 2.6, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Studio:monitor_on")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Studio:studio_on")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("World/Map:step")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0, 2.6, 2.9, 15.929, 42.974),
+"transitions": PackedFloat32Array(-2.0, 0.0, 1.0, -2.0, -2.0),
+"update": 0,
+"values": [9.0, 9.0, -1.0, 9.5, 9.5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("World/Map:chain")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:xray")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:grid_alpha")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [0.55, 0.55]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:legend")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:capy_tilt")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:eng_in")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0, 20.062, 20.512, 31.771, 32.221, 42.974),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC14" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC14"
+scene_title = "Tổng kết"
+capy_blinks = [1.0, 3.49, 7.4, 11.17, 14.52, 17.14, 21.34, 25.58, 29.01, 32.42, 35.11, 37.15, 40.2]
+eng_blinks = [1.0, 5.65, 8.07, 10.17, 14.93, 17.47, 19.84, 23.65, 26.63, 31.09, 33.76, 38.41, 41.32]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Env" type="Node2D" parent="World"]
+script = ExtResource("c1")
+
+[node name="Machine" type="Node2D" parent="World"]
+script = ExtResource("c2")
+
+[node name="FX" type="Node2D" parent="World"]
+script = ExtResource("c3")
+
+[node name="Map" type="Node2D" parent="World"]
+script = ExtResource("c4")
+
+[node name="Studio" type="Node2D" parent="."]
+script = ExtResource("c5")
+focus = Vector2(60, -20)
+focus_zoom = 0.4176
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}

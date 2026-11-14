@@ -1,0 +1,28 @@
+1
+00:00:02,200 --> 00:00:06,498
+CAPY: Ủa, thủy lực có phải chỉ là một cái bơm nối với một cái xi lanh không?
+
+2
+00:00:07,248 --> 00:00:12,021
+ANH KỸ SƯ: Đơn giản hóa như vậy thì dễ học bước đầu, nhưng chưa đủ cho PC200-8.
+
+3
+00:00:12,321 --> 00:00:16,381
+ANH KỸ SƯ: Trên chiếc máy này còn có điều khiển tải, các đường dầu đến nhiều cơ cấu,
+
+4
+00:00:16,681 --> 00:00:20,026
+ANH KỸ SƯ: van phân phối, điều khiển pilot và tín hiệu điện tử phối hợp.
+
+5
+00:00:20,326 --> 00:00:24,862
+ANH KỸ SƯ: Mình sẽ lần theo dòng năng lượng trước: động cơ quay bơm; bơm đưa dầu vào hệ thống;
+
+6
+00:00:25,162 --> 00:00:26,602
+ANH KỸ SƯ: van điều khiển dòng dầu;
+
+7
+00:00:26,902 --> 00:00:30,486
+ANH KỸ SƯ: xi lanh hoặc mô tơ thủy lực biến năng lượng đó thành chuyển động.
+

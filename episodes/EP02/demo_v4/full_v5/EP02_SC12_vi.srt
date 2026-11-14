@@ -1,0 +1,36 @@
+1
+00:00:01,800 --> 00:00:04,907
+CAPY: Nhưng tui học ô tô, tui muốn tìm ECU cơ!
+
+2
+00:00:05,207 --> 00:00:07,600
+CAPY: Hệ thống thủy lực này có điện tử không?
+
+3
+00:00:08,350 --> 00:00:08,838
+ANH KỸ SƯ: Có.
+
+4
+00:00:09,138 --> 00:00:11,531
+ANH KỸ SƯ: Một số tín hiệu vận hành từ động cơ,
+
+5
+00:00:11,831 --> 00:00:16,843
+ANH KỸ SƯ: cảm biến và bộ điều khiển được dùng để phối hợp công suất động cơ với yêu cầu thủy lực,
+
+6
+00:00:17,143 --> 00:00:19,774
+ANH KỸ SƯ: điều khiển van điện từ và chế độ làm việc.
+
+7
+00:00:20,074 --> 00:00:25,324
+ANH KỸ SƯ: Ở hệ CLSS, LS/PC và EPC là những đầu mối cần học kỹ.
+
+8
+00:00:25,624 --> 00:00:30,160
+ANH KỸ SƯ: Nhưng sơ đồ dây, cổng điện và hiệu chỉnh phải tra đúng shop manual của phiên bản máy,
+
+9
+00:00:30,460 --> 00:00:32,614
+ANH KỸ SƯ: chứ không đoán theo một ảnh trên mạng.
+

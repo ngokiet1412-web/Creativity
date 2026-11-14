@@ -1,0 +1,150 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://full/sc12.gd" id="root"]
+[ext_resource type="Script" path="res://full/elec.gd" id="c0"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 35.614
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Elec:stage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 9.138, 11.638, 19.074, 20.074, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 2.0, 2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elec:hi_epc")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 20.074, 20.474, 25.624, 26.124, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Elec:ecu_search")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0, 3.8, 4.3, 12.138, 12.638, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:legend")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:cam_x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0, 9.138, 20.074, 21.074, 25.624, 26.624, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [-260.0, -260.0, -160.0, -160.0, -160.0, -150.0, -150.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:cam_y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0, 25.624, 26.624, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [-60.0, -60.0, -140.0, -140.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:cam_zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0, 9.138, 20.074, 21.074, 25.624, 26.624, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.95, 0.9, 0.9, 1.05, 1.05, 0.95, 0.95]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:capy_tilt")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0, 1.8, 7.6, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 5.0, -3.0, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:capy_in")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0, 1.3, 1.75, 8.1, 8.55, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:eng_in")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0, 7.85, 8.3, 33.114, 33.564, 35.614),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC12" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC12"
+scene_title = "Điện tử có tham gia không?"
+capy_blinks = [1.0, 4.46, 8.69, 13.35, 16.17, 20.3, 24.25, 28.09, 30.43, 32.55]
+eng_blinks = [1.0, 3.53, 7.37, 10.32, 12.9, 16.27, 19.66, 23.0, 26.29, 29.05, 31.78]
+
+[node name="Elec" type="Node2D" parent="."]
+script = ExtResource("c0")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}
