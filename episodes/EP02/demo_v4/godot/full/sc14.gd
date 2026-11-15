@@ -10,7 +10,7 @@ func setup() -> void:
 	callouts = []
 
 func update(time: float) -> void:
-	studio.set_state(time, speaking("CAPY", time), mouth("CAPY"))
+	studio.set_state(time, mouth("CAPY"), mouth("KS"), speaking("KS", time) > 0.0)
 	studio.camera(cam)
 	smap.chain_travel = time * 120.0
 	if rig:
@@ -18,14 +18,14 @@ func update(time: float) -> void:
 	show_chip = false
 	exhaust_load = 0.2
 
-func draw_extra_hud(h: Node2D) -> void:
+func _draw_hud() -> void:
 	var k = clampf((t - M("bye.s")) / 0.5, 0, 1)
 	if k <= 0.0:
 		return
-	var r = Rect2(1180, 620, 680, 220)
+	var h := hud
+	var r = Rect2(550, 215, 820, 332)
 	h.draw_rect(r, Color(0.05, 0.08, 0.13, 0.94 * k))
 	h.draw_rect(Rect2(r.position, Vector2(r.size.x, 6)), Color(1, 0.78, 0.25, k))
-	h.draw_string(bold, r.position + Vector2(24, 60), "KĨ SƯ ƠIII! · Tập 3", HORIZONTAL_ALIGNMENT_LEFT, -1, 34, Color(1, 0.85, 0.4, k))
-	h.draw_string(bold, r.position + Vector2(24, 116), "CLSS điều khiển bơm thế nào?", HORIZONTAL_ALIGNMENT_LEFT, -1, 32, Color(1, 1, 1, k))
-	h.draw_string(font, r.position + Vector2(24, 166), "Vì sao máy có lúc bị ì?", HORIZONTAL_ALIGNMENT_LEFT, -1, 28, Color(0.85, 0.9, 0.95, k))
-	h.draw_string(font, r.position + Vector2(24, 204), "Minh họa nguyên lý — chi tiết theo serial và cấu hình máy.", HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(0.75, 0.8, 0.85, k))
+	h.draw_string(bold, r.position + Vector2(40, 91), "KĨ SƯ ƠIII! · TẬP 3", HORIZONTAL_ALIGNMENT_LEFT, -1, 42, Color(1, 0.85, 0.4, k))
+	h.draw_string(bold, r.position + Vector2(40, 173), "CLSS điều khiển bơm thế nào?", HORIZONTAL_ALIGNMENT_LEFT, -1, 39, Color(1, 1, 1, k))
+	h.draw_string(font, r.position + Vector2(40, 242), "Vì sao máy có lúc bị ì?", HORIZONTAL_ALIGNMENT_LEFT, -1, 34, Color(0.85, 0.9, 0.95, k))

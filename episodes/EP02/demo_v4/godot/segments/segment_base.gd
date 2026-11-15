@@ -167,12 +167,12 @@ func to_screen(p: Vector2) -> Vector2:
 
 func _draw_hud() -> void:
 	# scene chip
-	var title = "%s · %s" % [scene_tag, scene_title]
+	var title = scene_title
 	var tw = bold.get_string_size(title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22).x + 30
 	hud.draw_rect(Rect2(36, 30, tw, 40), Color(0.05, 0.08, 0.12, 0.82))
 	hud.draw_rect(Rect2(36, 30, 5, 40), Color(1, 0.78, 0.25))
 	hud.draw_string(bold, Vector2(52, 58), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 22, Color(1, 1, 1))
-	var notice = "Mặt cắt minh họa nguyên lý · K1 ✓ brochure CEN00049-08 · K2 ✓ thông số shop manual PC200-8 · NGUYÊN LÝ = cấu tạo chung"
+	var notice = "PC200-8  /  MINH HỌA NGUYÊN LÝ"
 	var nw = font.get_string_size(notice, HORIZONTAL_ALIGNMENT_LEFT, -1, 18).x + 24
 	hud.draw_rect(Rect2(1884 - nw, 30, nw, 32), Color(0.05, 0.08, 0.12, 0.78))
 	hud.draw_string(font, Vector2(1896 - nw, 52), notice, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(0.86, 0.94, 0.9))
@@ -186,12 +186,17 @@ func _draw_hud() -> void:
 			hud.draw_line(Vector2(x, 87), Vector2(x + 26, 87), Color(it[0], legend), 7.0)
 			hud.draw_string(font, Vector2(x + 34, 94), it[1], HORIZONTAL_ALIGNMENT_LEFT, -1, 19, Color(1, 1, 1, legend))
 			x += font.get_string_size(it[1], HORIZONTAL_ALIGNMENT_LEFT, -1, 19).x + 50
+	var featured: Array = []
+	var opacity := 0.0
 	for c in callouts:
 		var a = clampf((t - float(c[4])) / 0.35, 0, 1) * clampf((float(c[5]) - t) / 0.3, 0, 1)
 		if a > 0.0:
-			_callout(c[0], c[1], to_screen(c[2]), c[3], a)
+			featured = c
+			opacity = a
+	if not featured.is_empty():
+		_callout(featured[0], "", to_screen(featured[2]), featured[3], opacity)
 	draw_extra_hud(hud)
-	_host(host_capy, capy_in, true, capy_tilt, capy_blinks, [[69, 84, 8, 11], [128, 102, 8.5, 11]])
+	_host(host_capy, capy_in, true, capy_tilt, capy_blinks, [[81, 84, 8, 11], [141, 102, 8.5, 11]])
 	_host(host_eng, eng_in, false, 0.0, eng_blinks, [[135, 138, 7, 11], [185, 124, 6, 10]])
 
 func draw_extra_hud(_h: Node2D) -> void:
@@ -271,7 +276,7 @@ func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eye
 			hud.draw_colored_polygon(pts, Color(250 / 255.0, 172 / 255.0, 100 / 255.0))
 			hud.draw_line(c + Vector2(-rx, ry * 0.2 if close > 0.8 else 0.0), c + Vector2(rx, ry * 0.2 if close > 0.8 else 0.0), Color("#2a1d14"), 2.2, true)
 	if left:
-		Mouth.draw(hud, off + Vector2(90, 120), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), 0.25)
+		Mouth.draw(hud, off + Vector2(103, 120), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), 0.25)
 	else:
 		Mouth.draw(hud, off + Vector2(177, 177), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), -0.3)
 	hud.draw_set_transform(Vector2.ZERO)

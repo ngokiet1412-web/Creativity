@@ -39,5 +39,10 @@ crew = {'size': [w, h], 'capy_head_pivot': [414, 556],
 # Source engineer occupies x<312. The old wider crop included a slice of Capy.
 eng_zone = (xx < 312) & (yy < 630) & ~((xx >= 275) & (yy > 470))
 Image.fromarray(layer(eng_zone)[230:630, :312]).save(LOCAL / 'host_eng.png')
-Image.fromarray(layer((xx >= 318) & (yy >= 386) & (yy < 640))[370:640, 300:]).save(LOCAL / 'host_capy.png')
+# The near paw reaches left of the head. Keep its full contour but trim
+# the neighboring engineer's hand and the horizontal barrier.
+rail_edge = np.interp(xx, [293, 301, 312, 335, 351, 366, 375, 422, 434, 452, 471, 485, 495, 500, 519],
+                      [581, 621, 630, 634, 638, 637, 633, 633, 637, 639, 637, 631, 614, 575, 534])
+capy_zone = (xx >= np.where(yy < 520, 312, 293)) & (yy >= 385) & (yy < rail_edge)
+Image.fromarray(layer(capy_zone)[370:640, 286:]).save(LOCAL / 'host_capy.png')
 print('Prepared original EP01 crew and clean host regions')

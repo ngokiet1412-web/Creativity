@@ -1,55 +1,41 @@
 @tool
 extends Node2D
-## Studio shot built around the owner-approved EP01 studio cels
-## (local/studio-cels.png, 7 x 6 cels of 520 x 737, not in the public repo).
-## The portrait cel sits centre-left; the 16:9 frame is completed by extending
-## the cel's own edge pixels (wall/desk) and drawing a wall monitor on the
-## right. The monitor is a HOLE in the studio layer: the world (machine) is
-## framed behind it, so "the monitor turns on" and the push-in through the
-## monitor is one continuous camera move, no cut.
-##
-## Talk: while Capy's line plays the cels advance through the EP01 talking
-## sequence (cels 5..34) at 12 fps; idle uses the closed-mouth cels.
+## Shared EP02 studio. The stage artwork is a local plate. A four-piece mask
+## leaves the TV open to the live scene rendered by the world camera.
 
-const CEL := Vector2(520, 737)
-const COLS := 7
-const TALK := [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
-const IDLE := [0, 1, 2, 3, 4, 3, 2, 1, 35, 36, 37, 38, 39, 40, 41, 40, 39]
-const MON := Rect2(1010, 150, 780, 439)     # 16:9 monitor (screen px at push 0)
-const MouthD = preload("res://full/mouth.gd")
-const FUR := Color(0.984, 0.68, 0.43)
-const MOUTH := Vector2(276, 361)             # Capy's mouth in cel px (face is static across cels)
+const SCREEN := Rect2(535, 142, 850, 478.125)
+const VIEW := Vector2(1920, 1080)
+const NAVY := Color("#151f34")
+const MOUTH_D = preload("res://full/mouth.gd")
 
 @export_range(0, 1) var studio_on := 1.0
-@export_range(0, 1) var push := 0.0          # 0 = studio, 1 = monitor fills the frame
-@export_range(0, 1) var monitor_on := 0.0    # screen glow / power-on
-@export var focus := Vector2(170, -60)       # world point framed in the monitor
-@export var focus_zoom := 0.62               # world zoom inside the monitor at push 0
+@export_range(0, 1) var push := 0.0
+@export_range(0, 1) var monitor_on := 0.0
+@export var focus := Vector2(170, -60)
+@export var focus_zoom := 0.62
 
-var sheet: Texture2D
-var img: Image
-var layer: CanvasLayer
+var stage: Texture2D
+var capy: Texture2D
+var engineer: Texture2D
 var canvas: Node2D
-var talk := 0.0
 var t := 0.0
-var ok := false
-var scale_cel := 1080.0 / 737.0
-var cel_x := 0.0
-var plate: Texture2D
-var mouth_open := 0.0
+var capy_mouth := 0.0
+var engineer_mouth := 0.0
+var engineer_line := false
+
+func _load_plate(name: String) -> Texture2D:
+	var path := ProjectSettings.globalize_path("res://local/" + name)
+	if not FileAccess.file_exists(path):
+		return null
+	var img := Image.load_from_file(path)
+	img.generate_mipmaps()
+	return ImageTexture.create_from_image(img)
 
 func _ready() -> void:
-	var p = ProjectSettings.globalize_path("res://local/studio-cels.png")
-	if FileAccess.file_exists(p):
-		img = Image.load_from_file(p)
-		var im2 = img.duplicate()
-		im2.generate_mipmaps()
-		sheet = ImageTexture.create_from_image(im2)
-		ok = true
-	var pp = ProjectSettings.globalize_path("res://local/studio_plate.png")
-	if FileAccess.file_exists(pp):
-		plate = ImageTexture.create_from_image(Image.load_from_file(pp))
-	layer = CanvasLayer.new()
+	stage = _load_plate("studio_show_v8.png")
+	capy = _load_plate("host_capy.png")
+	engineer = _load_plate("host_eng.png")
+	var layer := CanvasLayer.new()
 	layer.layer = 2
 	add_child(layer)
 	canvas = Node2D.new()
@@ -57,105 +43,123 @@ func _ready() -> void:
 	layer.add_child(canvas)
 	canvas.draw.connect(_draw_studio)
 
-func set_state(time: float, talking: float, mouth := 0.0) -> void:
+func set_state(time: float, capy_open: float, engineer_open: float, listening: bool) -> void:
 	t = time
-	talk = talking
-	mouth_open = mouth
+	capy_mouth = capy_open
+	engineer_mouth = engineer_open
+	engineer_line = listening
 	canvas.queue_redraw()
 
-## camera so that `focus` sits in the monitor, continuous with the push
+func _scale_factor() -> float:
+	return lerpf(1.0, VIEW.x / SCREEN.size.x, smoothstep(0.0, 1.0, push))
+
+func _pivot() -> Vector2:
+	return SCREEN.position * (VIEW.x / (VIEW.x - SCREEN.size.x))
+
 func camera(cam: Camera2D) -> void:
-	var S = _push_scale()
-	var piv = _pivot(S)
-	var mc = piv + (MON.get_center() - piv) * _s()
-	var z = focus_zoom * _s()
-	cam.zoom = Vector2.ONE * z
-	cam.position = focus - (mc - Vector2(960, 540)) / z
+	var s := _scale_factor()
+	var center := _pivot().lerp(SCREEN.get_center(), s)
+	var zoom_factor := (SCREEN.size.x / VIEW.x) * s
+	cam.zoom = Vector2.ONE * zoom_factor
+	cam.position = focus - (center - VIEW * 0.5) / zoom_factor
 
-func _push_scale() -> float:
-	return 1920.0 / MON.size.x
+func _tile(r: Rect2) -> void:
+	if stage:
+		var ratio := stage.get_size() / VIEW
+		canvas.draw_texture_rect_region(stage, r, Rect2(r.position * ratio, r.size * ratio))
+	else:
+		canvas.draw_rect(r, NAVY)
 
-func _pivot(S: float) -> Vector2:
-	return S * MON.position / (S - 1.0)
-
-func _s() -> float:
-	var u = push * push * (3.0 - 2.0 * push)
-	return lerpf(1.0, _push_scale(), u)
-
-func _cel_index() -> int:
-	if talk > 0.5:
-		return TALK[int(t * 7.0) % TALK.size()]
-	return IDLE[int(t * 3.0) % IDLE.size()]
+func _foreground(coords: Array) -> void:
+	if not stage:
+		return
+	var positions := PackedVector2Array()
+	var uv := PackedVector2Array()
+	for p: Vector2 in coords:
+		var u := p / Vector2(1672, 941)
+		positions.append(u * VIEW)
+		uv.append(u)
+	canvas.draw_polygon(positions, PackedColorArray([Color.WHITE]), uv, stage)
 
 func _draw_studio() -> void:
 	if studio_on <= 0.001 or push >= 0.999:
 		return
-	var S = _push_scale()
-	var piv = _pivot(S)
-	var s = _s()
-	canvas.draw_set_transform(piv - piv * s, 0.0, Vector2.ONE * s)
-	var a = studio_on
-	var i = _cel_index()
-	var src = Rect2(Vector2(i % COLS, i / COLS) * CEL, CEL)
-	var dst = Rect2(Vector2(cel_x, 0), CEL * scale_cel)
-	if ok:
-		canvas.draw_texture_rect_region(sheet, dst, src, Color(1, 1, 1, a))
-		# lip-sync: own mouth over the cel's (fur patch, then smile or open mouth)
-		var mp = dst.position + MOUTH * scale_cel
-		var patch = PackedVector2Array()
-		for k in 24:
-			var ang = k * TAU / 24.0
-			patch.append(mp + Vector2(cos(ang) * 30.0, 6.0 + sin(ang) * 17.0))
-		canvas.draw_colored_polygon(patch, Color(FUR, a))
-		if mouth_open < 0.06:
-			var sm = PackedVector2Array()
-			for k in 13:
-				var u = k / 12.0
-				sm.append(mp + Vector2(-20.0 + 40.0 * u, -4.0 + 7.0 * sin(PI * u)))
-			canvas.draw_polyline(sm, Color(0.16, 0.11, 0.08, a), 3.0, true)
-		else:
-			MouthD.draw(canvas, mp + Vector2(0, -3), 19.0, mouth_open, Color(FUR, a))
-	else:
-		canvas.draw_rect(Rect2(0, 0, 1920, 1080), Color(0.1, 0.14, 0.26, a))
-	if plate:
-		canvas.draw_texture(plate, Vector2.ZERO, Color(1, 1, 1, a))
-	_monitor(a)
-	# The retained 2.81 s signature is the timing reference, no second voice.
-	if t >= 0.8 and t <= 3.9 and get_parent().scene_tag == "SC01":
-		var u = t - 0.8
-		var words = ["KĨ", "SƯ", "ƠIIII!"]
-		var starts = [0.0, 0.48, 1.15]
-		for j in 3:
-			var elapsed = u - starts[j]
-			if elapsed < 0.0:
-				continue
-			var bounce = sin(elapsed * 10.0) * exp(-elapsed * 3.2) * 12.0
-			var k = minf(elapsed / 0.12, 1.0) * clampf((3.9 - t) / 0.25, 0.0, 1.0)
-			var pos = Vector2(1028 + j * 220, 410 + bounce)
-			canvas.draw_string_outline(ThemeDB.fallback_font, pos, words[j], HORIZONTAL_ALIGNMENT_LEFT, -1, 64, 10, Color(0.04, 0.07, 0.13, k))
-			canvas.draw_string(ThemeDB.fallback_font, pos, words[j], HORIZONTAL_ALIGNMENT_LEFT, -1, 64, Color(1, 0.84, 0.35, k))
+	var s := _scale_factor()
+	canvas.draw_set_transform(_pivot() * (1.0 - s), 0.0, Vector2.ONE * s)
+	_tile(Rect2(0, 0, VIEW.x, SCREEN.position.y))
+	_tile(Rect2(0, SCREEN.end.y, VIEW.x, VIEW.y - SCREEN.end.y))
+	_tile(Rect2(0, SCREEN.position.y, SCREEN.position.x, SCREEN.size.y))
+	_tile(Rect2(SCREEN.end.x, SCREEN.position.y, VIEW.x - SCREEN.end.x, SCREEN.size.y))
+	_monitor()
+	_people(s)
+	canvas.draw_set_transform(_pivot() * (1.0 - s), 0.0, Vector2.ONE * s)
+	# Foreground contours come from the same plate, so props occlude the hosts
+	# naturally and the desktop edge keeps the two hosts in the same space.
+	_foreground([Vector2(87,620), Vector2(286,625), Vector2(314,737), Vector2(419,755),
+		Vector2(417,776), Vector2(328,802), Vector2(116,773)])
+	_foreground([Vector2(435,694), Vector2(443,666), Vector2(496,597), Vector2(533,607),
+		Vector2(529,632), Vector2(492,681), Vector2(496,749), Vector2(526,755),
+		Vector2(523,777), Vector2(429,779), Vector2(428,758), Vector2(464,746),
+		Vector2(462,707), Vector2(447,709)])
+	_foreground([Vector2(1142,619), Vector2(1158,598), Vector2(1178,597), Vector2(1237,664),
+		Vector2(1234,709), Vector2(1210,708), Vector2(1209,747), Vector2(1247,754),
+		Vector2(1246,776), Vector2(1146,780), Vector2(1145,757), Vector2(1177,746),
+		Vector2(1178,684)])
 	canvas.draw_set_transform(Vector2.ZERO)
 
-func _monitor(a: float) -> void:
-	var r = MON
-	var frame = r.grow(16)
-	# bezel drawn as 4 bars so the screen stays a hole onto the world
-	var bez = Color(0.06, 0.07, 0.09, a)
-	canvas.draw_rect(Rect2(frame.position, Vector2(frame.size.x, 16)), bez)
-	canvas.draw_rect(Rect2(frame.position.x, r.end.y, frame.size.x, 16), bez)
-	canvas.draw_rect(Rect2(frame.position, Vector2(16, frame.size.y)), bez)
-	canvas.draw_rect(Rect2(r.end.x, frame.position.y, 16, frame.size.y), bez)
-	canvas.draw_rect(frame, Color(0.25, 0.27, 0.3, a), false, 2.0)
-	canvas.draw_rect(Rect2(r.get_center().x - 50, frame.end.y, 100, 40), Color(0.1, 0.11, 0.13, a))
-	canvas.draw_circle(Vector2(r.end.x - 6, r.end.y + 8), 3.0, Color(0.3, 1.0, 0.5, a * monitor_on))
-	# screen: dark until it powers on (power-on line opens vertically)
-	var on = monitor_on
-	if on < 1.0:
-		var h = r.size.y * (1.0 - on)
-		canvas.draw_rect(Rect2(r.position.x, r.get_center().y - h * 0.5, r.size.x, h), Color(0.02, 0.025, 0.035, a))
-		if on > 0.0 and on < 1.0:
-			canvas.draw_rect(Rect2(r.position.x, r.get_center().y - 2, r.size.x, 4), Color(0.8, 0.9, 1.0, a * (1.0 - on)))
-	# glass reflection
-	canvas.draw_colored_polygon(PackedVector2Array([r.position, r.position + Vector2(r.size.x * 0.35, 0), r.position + Vector2(r.size.x * 0.12, r.size.y), r.position + Vector2(0, r.size.y)]), Color(1, 1, 1, 0.05 * a))
-	# screen edge rim shared with the world (frames the push-in)
-	canvas.draw_rect(r, Color(0, 0, 0, 0.6 * a), false, 3.0)
+func _people(s: float) -> void:
+	var stage_offset := _pivot() * (1.0 - s)
+	if engineer:
+		var d := Vector2(178, 842 + sin(t * 2.5) * 1.1)
+		canvas.draw_set_transform(stage_offset + d * s, 0.012 * engineer_mouth, Vector2.ONE * s * 1.24)
+		canvas.draw_texture(engineer, Vector2(0, -400))
+		MOUTH_D.draw(canvas, Vector2(177, -223), 9.0, engineer_mouth, Color("#f8b263"), -0.3)
+	if capy:
+		var beat := fposmod(t + 0.20, 4.35)
+		var nod := sin(PI * clampf((beat - 1.1) / 0.55, 0.0, 1.0)) if engineer_line else 0.0
+		var seat := Vector2(1582, 845 + 1.1 * sin(t * 2.1))
+		var q := 1.50 * s
+		var left := -capy.get_width() / 2.0
+		var w := capy.get_width()
+		canvas.draw_set_transform(stage_offset + seat * s, 0.0, Vector2.ONE * q)
+		canvas.draw_texture_rect_region(capy, Rect2(left, -80, w, 80), Rect2(0, 190, w, 80))
+		var angle := -0.038 * nod + 0.017 * sin(t * 1.6)
+		var neck := seat + Vector2(0, -80 * 1.5)
+		canvas.draw_set_transform(stage_offset + neck * s, angle, Vector2.ONE * q)
+		canvas.draw_texture_rect_region(capy, Rect2(left, -190, w, 194), Rect2(0, 0, w, 194))
+		var blink := fposmod(t + 1.0, 3.65)
+		if blink < 0.12:
+			_lid(Vector2(left + 81, -106), 8, 11)
+			_lid(Vector2(left + 141, -88), 9, 11)
+		MOUTH_D.draw(canvas, Vector2(left + 103, -70), 9.0, capy_mouth, Color("#fbb166"), 0.22)
+
+func _lid(center: Vector2, rx: float, ry: float) -> void:
+	var shape := PackedVector2Array()
+	for i in 24:
+		var angle := TAU * i / 24.0
+		shape.append(center + Vector2(rx * cos(angle), ry * sin(angle)))
+	canvas.draw_colored_polygon(shape, Color("#fbb166"))
+	canvas.draw_arc(center + Vector2(0, 2), rx - 1, 0.12, PI - 0.12, 16, Color("#39241a"), 1.8, true)
+
+func _monitor() -> void:
+	var bezel := SCREEN.grow(12)
+	var color := Color("#090d14")
+	canvas.draw_rect(Rect2(bezel.position, Vector2(bezel.size.x, 12)), color)
+	canvas.draw_rect(Rect2(bezel.position.x, SCREEN.end.y, bezel.size.x, 12), color)
+	canvas.draw_rect(Rect2(bezel.position, Vector2(12, bezel.size.y)), color)
+	canvas.draw_rect(Rect2(SCREEN.end.x, bezel.position.y, 12, bezel.size.y), color)
+	canvas.draw_rect(bezel, Color("#536078"), false, 2.0)
+	canvas.draw_circle(Vector2(SCREEN.end.x - 14, SCREEN.end.y + 6), 2.0, Color("#70cfeb"))
+	if monitor_on < 1.0:
+		canvas.draw_rect(SCREEN, Color(0.028, 0.045, 0.075, 1.0 - monitor_on))
+	if get_parent().scene_tag == "SC01" and t >= 0.78 and t <= 3.85:
+		var font := ThemeDB.fallback_font
+		var words := ["KĨ", "SƯ", "ƠIIII!"]
+		var starts := [0.0, 0.48, 1.15]
+		for j in 3:
+			var elapsed := t - 0.78 - float(starts[j])
+			if elapsed >= 0.0:
+				var bounce := sin(elapsed * 10.0) * exp(-elapsed * 3.2) * 13.0
+				var alpha := minf(elapsed / 0.12, 1.0) * clampf((3.85 - t) / 0.25, 0.0, 1.0)
+				var pos := Vector2(680 + j * 170, 409 + bounce)
+				canvas.draw_string(font, pos, words[j], HORIZONTAL_ALIGNMENT_LEFT, -1, 72, Color(1, 0.84, 0.35, alpha))

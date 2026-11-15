@@ -26,7 +26,6 @@ var comps := [
 	["swing", "Mô tơ quay toa", Vector2(-120, 30), "motor", 5, ""],
 	["travel", "2 mô tơ di chuyển", Vector2(-350, 112), "motor", 6, ""],
 	["cooler", "Két làm mát dầu", Vector2(-372, -76), "cooler", 7, ""],
-	["filter", "Lọc dầu hồi", Vector2(-40, -150), "filter", 8, ""],
 ]
 
 func _ready() -> void:
@@ -94,7 +93,7 @@ func _draw() -> void:
 	# labels last (on top)
 	for c in comps:
 		var lit = clampf(step - float(c[4]) + 1.0, 0.0, 1.0)
-		var cur = clampf(1.6 - absf(step - float(c[4]) - 0.5) * 1.1, 0.0, 1.0)
+		var cur = clampf(1.0 - absf(step - float(c[4]) - 0.5) * 1.95, 0.0, 1.0) * (1.0 - chain)
 		if lit > 0.0 and cur > 0.0:
 			_label(c[1], c[5], c[2], cur * alpha)
 	draw_set_transform(Vector2.ZERO)
@@ -152,12 +151,6 @@ func _symbol(kind: String, p: Vector2, a: float, cur: float) -> void:
 			for k in 10:
 				draw_line(r.position + Vector2(2, 6 + k * 8), r.position + Vector2(26, 6 + k * 8), ink, 1.2)
 			draw_rect(r, ink, false, 2.0)
-		"filter":
-			var r = Rect2(p - Vector2(12, 20), Vector2(24, 40))
-			draw_rect(r, Color(0.85, 0.8, 0.6, a))
-			for k in 5:
-				draw_line(r.position + Vector2(4 + k * 4, 3), r.position + Vector2(4 + k * 4, 37), Color(0.5, 0.4, 0.2, a), 1.2)
-			draw_rect(r, ink, false, 2.0)
 
 ## energy chain: engine -> pumps -> valve -> boom cylinder (pulses on a path)
 func _chain() -> void:
@@ -177,11 +170,5 @@ func _chain() -> void:
 			break
 		var u = clampf((shown - acc) / l, 0, 1)
 		var b = pts[i].lerp(pts[i + 1], u)
-		draw_line(pts[i], b, Color(cols[i], 0.9 * alpha), 6.0, true)
-		# pulses
-		var d = fposmod(chain_travel, 30.0)
-		while d < l * u:
-			var q = pts[i].lerp(pts[i + 1], d / l)
-			draw_circle(q, 4.0, Color(1, 1, 1, 0.8 * alpha), true, -1, true)
-			d += 30.0
+		Kit.pipe(self, PackedVector2Array([pts[i], b]), cols[i], chain_travel, 9.0, alpha)
 		acc += l

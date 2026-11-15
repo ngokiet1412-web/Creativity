@@ -129,12 +129,13 @@ static func oil(c: CanvasItem, pts: PackedVector2Array, col: Color, travel: floa
 
 ## Pipe along a polyline with oil dashes advected by `travel` (px)
 static func pipe(c: CanvasItem, pts: PackedVector2Array, col: Color, travel: float, w := 9.0, live := 1.0) -> void:
-	c.draw_polyline(pts, INK, w + 4.0, true)
-	c.draw_polyline(pts, col.darkened(0.45), w, true)
+	c.draw_polyline(pts, Color(0.01, 0.025, 0.047, 0.94), w + 5.0, true)
+	c.draw_polyline(pts, col.darkened(0.37), w, true)
+	c.draw_polyline(pts, Color(col.lightened(0.22), 0.68), maxf(w * 0.26, 1.0), true)
 	if live <= 0.01:
 		return
-	var period := 26.0
-	var dash := 11.0
+	var period := 52.0
+	var dash := 16.0
 	var acc := 0.0
 	var off := fposmod(travel, period)
 	for i in pts.size() - 1:
@@ -144,7 +145,10 @@ static func pipe(c: CanvasItem, pts: PackedVector2Array, col: Color, travel: flo
 		var s := fposmod(off - acc, period)
 		while s < seg:
 			var e := minf(s + dash, seg)
-			c.draw_line(p0.lerp(p1, s / seg), p0.lerp(p1, e / seg), Color(col.lightened(0.2), live), w - 3.0, true)
+			var front := p0.lerp(p1, e / seg)
+			var start := p0.lerp(p1, s / seg)
+			c.draw_line(start, front, Color(col.lightened(0.18), live * 0.55), maxf(w - 3.0, 2.0), true)
+			c.draw_line(start, front, Color(col.lightened(0.57), live * 0.9), maxf(w * 0.34, 1.8), true)
 			s += period
 		acc += seg
 

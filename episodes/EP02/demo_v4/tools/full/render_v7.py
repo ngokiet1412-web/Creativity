@@ -30,8 +30,8 @@ from assemble import bed
 
 ORDER = [f'SC{i:02}' for i in range(1, 15)]
 
-def run(cmd, log=None):
-    kw = {}
+def run(cmd, log=None, cwd=None):
+    kw = {'cwd': cwd}
     if os.name == 'nt':
         si = subprocess.STARTUPINFO()
         si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -83,13 +83,17 @@ def subtitle_file(path, cues):
 def probe(path):
     return json.loads(subprocess.check_output([PROBE, '-v', 'error', '-show_format', '-show_streams', '-of', 'json', str(path)]))
 
-def mix(sc, folder, length):
+def mix(sc, folder, length, version):
     ambient = folder / f'{sc}_ambience.wav'
-    bed(sc, length, str(ambient))
+    if version == 'V8':
+        from foley_v8 import soundscape
+        soundscape(sc, TIMING[sc], length, ambient)
+    else:
+        bed(sc, length, str(ambient))
     voices = TIMING[sc]['voices']
     assert voices, f'{sc} is missing spoken audio'
     cmd = [FF, '-v', 'error', '-y', '-i', str(ambient)]
-    filters = ['[0:a]volume=0.22[bed]']
+    filters = [f'[0:a]volume={0.84 if version == "V8" else 0.22}[bed]']
     previous_end = 0
     for i, v in enumerate(voices):
         voice = PROJECT / v['file']
@@ -101,14 +105,15 @@ def mix(sc, folder, length):
         previous_end = v['t0'] + d
         assert previous_end <= length + 0.04, (sc, 'voice cut off')
         cmd += ['-i', str(voice)]
-        filters.append(f'[{i+1}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={round(v["t0"]*1000)}:all=1[v{i}]')
+        gain = 'volume=3dB,' if version == 'V8' else ''
+        filters.append(f'[{i+1}:a]aresample=48000,aformat=channel_layouts=stereo,{gain}adelay={round(v["t0"]*1000)}:all=1[v{i}]')
     filters.append('[bed]' + ''.join(f'[v{i}]' for i in range(len(voices))) +
                    f'amix=inputs={len(voices)+1}:normalize=0:duration=first,alimiter=limit=0.891:level=false[m]')
     wav = folder / f'{sc}_mix.wav'
     run(cmd + ['-filter_complex', ';'.join(filters), '-map', '[m]', '-c:a', 'pcm_s16le', str(wav)])
     return wav
 
-def render(sc, out, logs, resume):
+def render(sc, out, logs, resume, version):
     frames = math.ceil(TIMING[sc]['length'] * 30)
     length = frames / 30
     avi = out / f'{sc}.avi'
@@ -120,7 +125,7 @@ def render(sc, out, logs, resume):
         run([GODOT, '--path', str(PROJECT), '--resolution', '1920x1080', '--audio-driver', 'Dummy',
              '--write-movie', str(avi), '--fixed-fps', '30', '--quit-after', str(frames), scene_path(sc),
              '--', '--qa'], logs / f'{sc}_render.log')
-    wav = mix(sc, out, length)
+    wav = mix(sc, out, length, version)
     run([FF, '-v', 'error', '-y', '-i', str(avi), '-i', str(wav),
          '-map', '0:v:0', '-map', '1:a:0', '-vf',
          'scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,setsar=1',
@@ -131,7 +136,19 @@ def render(sc, out, logs, resume):
     avi.unlink()
     print(sc, 'video + audio ready', flush=True)
 
-def write_stems(out, timeline, duration):
+def remix(sc, out, logs, version):
+    source = out / f'{sc}.mp4'
+    video = next(s for s in probe(source)['streams'] if s['codec_type'] == 'video')
+    length = float(video['duration'])
+    audio = mix(sc, out, length, version)
+    replacement = out / f'{sc}_remixed.mp4'
+    run([FF, '-v', 'error', '-y', '-i', str(source), '-i', str(audio),
+         '-map', '0:v:0', '-map', '1:a:0', '-c:v', 'copy', '-c:a', 'aac',
+         '-b:a', '192k', '-ar', '48000', '-disposition:a:0', 'default',
+         '-movflags', '+faststart', '-t', str(length), str(replacement)], logs / f'{sc}_remix.log')
+    replacement.replace(source)
+
+def write_stems(out, timeline, duration, version):
     # All three WAVs begin at master zero for direct timeline import.
     folder = out / 'stems'
     folder.mkdir(exist_ok=True)
@@ -153,9 +170,49 @@ def write_stems(out, timeline, duration):
                 start += end_tag
             tracks[role][start:start + len(pcm)] = pcm
     for name, pcm in tracks.items():
-        with wave.open(str(folder / f'EP02_V7_{name}.wav'), 'wb') as f:
+        with wave.open(str(folder / f'EP02_{version}_{name}.wav'), 'wb') as f:
             f.setparams((1, 2, 48000, 0, 'NONE', 'not compressed'))
             f.writeframes(pcm.tobytes())
+    if version == 'V8':
+        with wave.open(str(folder / 'EP02_V8_HIEU_UNG.wav'), 'wb') as f:
+            f.setparams((2, 2, 48000, 0, 'NONE', 'not compressed'))
+            for segment in timeline:
+                with wave.open(str(out / f'{segment["scene"]}_ambience.wav'), 'rb') as source:
+                    length = round(segment['duration'] * 48000)
+                    data = source.readframes(length)
+                    f.writeframes(data.ljust(length * 4, b'\0'))
+
+def styled_captions(path, cues):
+    header = """[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Voice,Segoe UI Semibold,39,&H00F6FAFF,&H000000FF,&H00131C2B,&H000D1420,0,0,0,0,100,100,0,0,1,1.1,0,2,150,150,45,1
+Style: Shade,Segoe UI,35,&H35101A2A,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+    def timestamp(value):
+        stamp = stamps(value).replace(',', '.')[:-1]
+        return f'{int(stamp[:2])}{stamp[2:]}'
+    events = []
+    for start, end, text in cues:
+        line_count = text.count('\n') + 1
+        text = text.replace('\n', r'\N')
+        a, b = timestamp(start), timestamp(end)
+        height = 61 if line_count == 1 else 110
+        width = min(1120, max(320, 23 * max(len(line) for line in text.split(r'\N')) + 26))
+        shade = r'{\an7\pos(' + str(960-width//2) + ',' + str(1049-height) + r')\p1}'
+        shade += f'm 13 0 l {width-13} 0 b {width-6} 0 {width} 6 {width} 13 l {width} {height-13} b {width} {height-6} {width-6} {height} {width-13} {height} l 13 {height} b 6 {height} 0 {height-6} 0 {height-13} l 0 13 b 0 6 6 0 13 0'
+        events.append(f'Dialogue: 0,{a},{b},Shade,,0,0,0,,{shade}')
+        events.append(f'Dialogue: 1,{a},{b},Voice,,0,0,0,,{text}')
+    path.write_text(header + '\n'.join(events) + '\n', encoding='utf-8')
 
 def main():
     p = argparse.ArgumentParser()
@@ -163,17 +220,23 @@ def main():
     p.add_argument('--shots', default=','.join(ORDER))
     p.add_argument('--snapshots', action='store_true')
     p.add_argument('--assemble-only', action='store_true')
+    p.add_argument('--remix-only', action='store_true')
     p.add_argument('--parts-only', action='store_true')
     p.add_argument('--resume', action='store_true')
     p.add_argument('--jobs', type=int, default=1)
+    p.add_argument('--version', choices=['V7', 'V8'], default='V7')
+    p.add_argument('--review', action='store_true', help='encode a copy with styled captions')
     args = p.parse_args()
     out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
     shots = args.shots.split(',')
     logs = out / 'logs'; logs.mkdir(exist_ok=True)
     run([GODOT, '--headless', '--path', str(PROJECT), '--editor', '--import', '--quit'], logs / 'import.log')
-    if not args.snapshots and not args.assemble_only:
+    if args.remix_only:
         with ThreadPoolExecutor(max_workers=args.jobs) as pool:
-            list(pool.map(lambda sc: render(sc, out, logs, args.resume), shots))
+            list(pool.map(lambda sc: remix(sc, out, logs, args.version), shots))
+    elif not args.snapshots and not args.assemble_only:
+        with ThreadPoolExecutor(max_workers=args.jobs) as pool:
+            list(pool.map(lambda sc: render(sc, out, logs, args.resume, args.version), shots))
     screenshots = []
     summary, cues, offset = [], [], 0.
     timing_rows = []
@@ -213,11 +276,20 @@ def main():
         return
     concat = out / 'concat_v7.txt'
     concat.write_text(''.join(f"file '{(out / (sc+'.mp4')).as_posix()}'\n" for sc in shots), encoding='utf-8')
-    master = out / 'EP02_FULL_V7_VOICED_DRAFT.mp4'
+    master = out / f'EP02_FULL_{args.version}_VOICED_DRAFT.mp4'
     run([FF,'-v','error','-y','-f','concat','-safe','0','-i',str(concat),'-c','copy','-movflags','+faststart',str(master)])
-    subtitle_file(out / 'EP02_FULL_V7_vi.srt', cues)
+    subtitle_file(out / f'EP02_FULL_{args.version}_vi.srt', cues)
     if shots == ORDER:
-        write_stems(out, summary, offset)
+        write_stems(out, summary, offset, args.version)
+    if args.version == 'V8':
+        captions = out / 'EP02_FULL_V8_vi.ass'
+        styled_captions(captions, cues)
+        if args.review:
+            review = out / 'EP02_FULL_V8_CO_PHU_DE.mp4'
+            run([FF, '-v', 'error', '-y', '-i', str(master), '-vf', f'ass={captions.name}',
+                 '-map', '0:v:0', '-map', '0:a:0', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '20',
+                 '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart', str(review)],
+                logs / 'review_encode.log', cwd=out)
     (out / 'render_manifest.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
     with (out / 'audio_timing.csv').open('w',newline='',encoding='utf-8') as f:
         w=csv.writer(f);w.writerow(['scene','role','master_start_s','local_voice_file']);w.writerows(timing_rows)

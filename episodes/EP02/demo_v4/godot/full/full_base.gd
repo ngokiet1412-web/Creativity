@@ -99,5 +99,5 @@ func _hosts_only() -> void:
 		if a > 0.0:
 			_callout(c[0], c[1], to_screen(c[2]), c[3], a)
 	draw_extra_hud(hud)
-	_host(host_capy, capy_in, true, capy_tilt, capy_blinks, [[69, 84, 8, 11], [128, 102, 8.5, 11]])
+	_host(host_capy, capy_in, true, capy_tilt, capy_blinks, [[81, 84, 8, 11], [141, 102, 8.5, 11]])
 	_host(host_eng, eng_in, false, 0.0, eng_blinks, [[135, 138, 7, 11], [185, 124, 6, 10]])

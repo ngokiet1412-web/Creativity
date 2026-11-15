@@ -17,8 +17,15 @@ func setup() -> void:
 	]
 
 func update(time: float) -> void:
-	studio.set_state(time, speaking("CAPY", time) if time < M("push.s") else 0.0, mouth("CAPY"))
-	if time < M("push.e"):
-		studio.camera(cam)
-	show_chip = time > M("push.e")
+	var move := smoothstep(M("ks.e") + 0.2, M("end") - 0.2, time)
+	studio.push = move
+	studio.monitor_on = smoothstep(3.92, 4.45, time)
+	studio.set_state(time, mouth("CAPY"), mouth("KS"), speaking("KS", time) > 0.0)
+	studio.camera(cam)
+	show_chip = false
+	if crew:
+		crew.visible = false
 	exhaust_load = 0.3 + 0.7 * sample(".:pump_load", time)
+
+func _draw_hud() -> void:
+	pass
