@@ -1,0 +1,12 @@
+== SC03
+frames 1322
+owner-method samples 88 below 0.5/255: 0 []
+longest still run 0.03s starting 0.23s
+== SC04
+frames 1326
+owner-method samples 88 below 0.5/255: 1 [np.float64(0.0)]
+longest still run 0.00s starting 0.00s
+== SC05
+frames 1058
+owner-method samples 70 below 0.5/255: 2 [np.float64(0.0), np.float64(5.0)]
+longest still run 0.27s starting 5.43s

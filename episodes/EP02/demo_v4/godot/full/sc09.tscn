@@ -1,0 +1,216 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://full/sc09.gd" id="root"]
+[ext_resource type="Script" path="res://full/swivel.gd" id="c0"]
+[ext_resource type="Script" path="res://full/track_side.gd" id="c1"]
+[ext_resource type="Script" path="res://full/topview.gd" id="c2"]
+[ext_resource type="Script" path="res://full/topview.gd" id="c4"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 48.448
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Swivel:turn")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 2.6, 2.73333, 2.86667, 3.0, 3.13333, 3.26667, 3.4, 3.53333, 3.66667, 3.8, 3.93333, 4.06667, 4.2, 4.33333, 4.46667, 4.6, 4.73333, 4.86667, 5.0, 5.13333, 5.26667, 5.4, 5.53333, 5.66667, 5.8, 5.93333, 6.06667, 6.2, 6.33333, 6.46667, 6.6, 13.686, 13.8527, 14.0193, 14.186, 14.3527, 14.5193, 14.686, 14.8527, 15.0193, 15.186, 15.3527, 15.5193, 15.686, 15.8527, 16.0193, 16.186, 16.3527, 16.5193, 16.686, 16.8527, 17.0193, 17.186, 17.3527, 17.5193, 17.686, 17.8527, 18.0193, 18.186, 18.3527, 18.5193, 18.686, 48.448),
+"transitions": PackedFloat32Array(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
+"update": 0,
+"values": [0.0, 0.0, 0.0270871, 0.359135, 1.49562, 3.83472, 7.46343, 12.1244, 17.3352, 22.6667, 28.0, 33.3333, 38.6667, 44.0, 49.3333, 54.6667, 60.0, 65.3333, 70.6667, 76.0, 81.3333, 86.6667, 92.0, 97.3333, 102.665, 107.876, 112.537, 116.165, 118.504, 119.641, 119.973, 120.0, 120.0, 119.959, 119.461, 117.757, 114.248, 108.805, 101.813, 93.9971, 86.0, 78.0, 70.0, 62.0, 54.0, 46.0, 38.0, 30.0, 22.0, 14.0, 6.0, -2.0, -10.0, -18.0, -26.0, -33.9971, -41.8134, -48.8049, -54.2479, -57.7566, -59.4613, -59.9594, -60.0, -60.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Swivel:noodle")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 4.1, 4.6, 12.186, 12.686, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Side:hi_motor")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0, 23.83, 24.23, 27.83, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Side:wrong")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0, 33.506, 33.906, 38.12, 38.52, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:drive_s")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0, 28.03, 28.1367, 28.2433, 28.35, 28.4567, 28.5633, 28.67, 28.7767, 28.8833, 28.99, 29.0967, 29.2033, 29.31, 29.4167, 29.5233, 29.63, 29.7367, 29.8433, 29.95, 30.0567, 30.1633, 30.27, 30.3767, 30.4833, 30.59, 30.6967, 30.8033, 30.91, 31.0167, 31.1233, 31.23, 48.448),
+"transitions": PackedFloat32Array(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
+"update": 0,
+"values": [0.0, 0.0, 0.0857758, 1.13726, 4.73612, 12.1433, 23.6342, 38.394, 54.8949, 71.7778, 88.6667, 105.556, 122.444, 139.333, 156.222, 173.111, 190.0, 206.889, 223.778, 240.667, 257.556, 274.444, 291.333, 308.222, 325.105, 341.606, 356.366, 367.857, 375.264, 378.863, 379.914, 380.0, 380.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:turn_d")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0, 31.73, 31.8433, 31.9567, 32.07, 32.1833, 32.2967, 32.41, 32.5233, 32.6367, 32.75, 32.8633, 32.9767, 33.09, 33.2033, 33.3167, 33.43, 33.5433, 33.6567, 33.77, 33.8833, 33.9967, 34.11, 34.2233, 34.3367, 34.45, 34.5633, 34.6767, 34.79, 34.9033, 35.0167, 35.13, 48.448),
+"transitions": PackedFloat32Array(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
+"update": 0,
+"values": [0.0, 0.0, 0.0383734, 0.508775, 2.11879, 5.43252, 10.5732, 17.1763, 24.5583, 32.1111, 39.6667, 47.2222, 54.7778, 62.3333, 69.8889, 77.4444, 85.0, 92.5556, 100.111, 107.667, 115.222, 122.778, 130.333, 137.889, 145.442, 152.824, 159.427, 164.567, 167.881, 169.491, 169.962, 170.0, 170.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:side_s")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0, 24.03, 24.2318, 24.4336, 24.6354, 24.8373, 25.0391, 25.2409, 25.4427, 25.6445, 25.8463, 26.0482, 26.25, 26.4518, 26.6536, 26.8554, 27.0572, 27.2591, 27.4609, 27.6627, 27.8645, 28.0663, 28.2681, 28.47, 28.6718, 28.8736, 29.0754, 29.2772, 29.479, 29.6809, 29.8827, 30.0845, 30.2863, 30.4881, 30.6899, 30.8918, 31.0936, 31.2954, 31.4972, 31.699, 31.9008, 32.1027, 32.3045, 32.5063, 32.7081, 32.9099, 33.1118, 33.3136, 33.5154, 33.7172, 33.919, 34.1208, 34.3226, 34.5245, 34.7263, 34.9281, 35.1299, 35.3317, 35.5335, 35.7354, 35.9372, 36.139, 36.3408, 36.5426, 36.7445, 36.9463, 37.1481, 37.3499, 37.5517, 37.7535, 37.9553, 38.1572, 38.359, 38.5608, 38.7626, 38.9644, 39.1662, 39.3681, 39.5699, 39.7717, 39.9735, 40.1753, 40.3772, 40.579, 40.7808, 40.9826, 41.1844, 41.3862, 41.588, 41.7899, 41.9917, 42.1935, 42.3953, 42.5971, 42.799, 43.0008, 43.2026, 43.4044, 43.6062, 43.808, 44.0099, 44.2117, 44.4135, 44.6153, 44.8171, 45.0189, 45.2207, 45.4226, 45.6244, 45.8262, 46.028, 46.2298, 46.4317, 46.6335, 46.8353, 47.0371, 47.2389, 47.4407, 47.6425, 47.8444, 48.0462, 48.248),
+"transitions": PackedFloat32Array(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
+"update": 0,
+"values": [0.0, 0.0, 0.0458923, 0.556827, 2.35713, 6.39289, 13.2013, 22.9288, 35.3098, 49.5232, 64.6804, 80.0725, 95.471, 110.87, 126.268, 141.667, 157.065, 172.464, 187.862, 203.261, 218.659, 234.058, 249.457, 264.855, 280.254, 295.652, 311.051, 326.449, 341.848, 357.246, 372.645, 388.043, 403.442, 418.841, 434.239, 449.638, 465.036, 480.435, 495.833, 511.232, 526.63, 542.029, 557.428, 572.826, 588.225, 603.623, 619.022, 634.42, 649.819, 665.217, 680.616, 696.014, 711.413, 726.812, 742.21, 757.609, 773.007, 788.406, 803.804, 819.203, 834.601, 850.0, 865.399, 880.797, 896.196, 911.594, 926.993, 942.391, 957.79, 973.188, 988.587, 1003.99, 1019.38, 1034.78, 1050.18, 1065.58, 1080.98, 1096.38, 1111.78, 1127.17, 1142.57, 1157.97, 1173.37, 1188.77, 1204.17, 1219.57, 1234.96, 1250.36, 1265.76, 1281.16, 1296.56, 1311.96, 1327.36, 1342.75, 1358.15, 1373.55, 1388.95, 1404.35, 1419.75, 1435.14, 1450.54, 1465.94, 1481.34, 1496.74, 1512.14, 1527.54, 1542.93, 1558.33, 1573.73, 1589.13, 1604.53, 1619.93, 1635.32, 1650.48, 1664.69, 1677.07, 1686.8, 1693.61, 1697.64, 1699.44, 1699.95, 1700.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:legend")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:cam_x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0, 23.23, 24.23, 27.33, 28.13, 31.43, 32.906, 33.706, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 2620.0, 2860.0, 2860.0, 0.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:cam_y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0, 23.23, 24.23, 27.33, 28.13, 32.906, 33.706, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [-10.0, -10.0, 1400.0, 1400.0, 0.0, 0.0, 1400.0, 1400.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:cam_zoom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = false
+tracks/10/keys = {
+"times": PackedFloat32Array(0.0, 23.23, 24.23, 27.33, 28.13, 32.906, 33.706, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [1.15, 1.2, 1.35, 1.35, 0.92, 0.92, 1.3, 1.32]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:capy_tilt")
+tracks/11/interp = 1
+tracks/11/loop_wrap = false
+tracks/11/keys = {
+"times": PackedFloat32Array(0.0, 1.6, 10.936, 33.506, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 3.0, -4.0, 5.0, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:capy_in")
+tracks/12/interp = 1
+tracks/12/loop_wrap = false
+tracks/12/keys = {
+"times": PackedFloat32Array(0.0, 1.1, 1.55, 11.436, 11.886, 33.006, 33.456, 37.87, 38.32, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:eng_in")
+tracks/13/interp = 1
+tracks/13/loop_wrap = false
+tracks/13/keys = {
+"times": PackedFloat32Array(0.0, 11.186, 11.636, 31.506, 31.956, 37.62, 38.07, 45.748, 46.198, 48.448),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC09" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC09"
+scene_title = "Hai bánh xích và khớp quay trung tâm"
+capy_blinks = [1.0, 4.27, 7.83, 12.39, 15.69, 19.11, 22.75, 25.29, 28.73, 32.48, 36.68, 38.97, 41.84, 44.13]
+eng_blinks = [1.0, 4.33, 8.16, 12.01, 14.44, 16.51, 19.57, 22.35, 26.6, 30.52, 34.19, 37.75, 41.59, 44.02, 47.26]
+
+[node name="Swivel" type="Node2D" parent="."]
+script = ExtResource("c0")
+
+[node name="Side" type="Node2D" parent="."]
+script = ExtResource("c1")
+position = Vector2(0, 1400)
+
+[node name="TopGround" type="Node2D" parent="."]
+script = ExtResource("c2")
+position = Vector2(2600, 0)
+only_ground = true
+
+[node name="Drive" type="Node2D" parent="."]
+
+[node name="Top" type="Node2D" parent="Drive"]
+script = ExtResource("c4")
+ground = false
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}

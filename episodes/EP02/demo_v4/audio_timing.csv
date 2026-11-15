@@ -1,0 +1,6 @@
+cue,role,start,end,stem,text,syllables,syll_per_s,status
+V01,SIGNATURE,00:00:00.120,00:00:02.930,SIGNATURE.wav,"Kĩ Sư Ơiiii!",4,1.4,"Tag owner đã dùng ở EP01 (local); cel studio lệch +0,36 s để khớp miệng"
+V02,CAPY,00:00:03.300,00:00:05.600,CAPY_V02.wav,"Ủa, cần nặng vậy mà nâng lên êm ru?",9,3.9,"Chờ WAV giọng Capy ElevenLabs owner đã chọn"
+V03,ENGINEER,00:00:06.600,00:00:12.400,ENGINEER_V03.wav,"Động cơ quay bơm. Van mở, dầu áp lực vào khoang đáy, đẩy piston ra, còn dầu khoang ty chảy về thùng.",24,4.1,"Chờ WAV giọng anh kỹ sư ElevenLabs owner đã chọn"
+V04,CAPY,00:00:13.400,00:00:15.400,CAPY_V04.wav,"À há! Piston đẩy, cần nâng lên!",8,4.0,"Chờ WAV; Capy gật đầu ở 14,55 s"
+M01,MACHINE,00:00:03.000,00:00:16.000,MACHINE.wav,"Động cơ theo tải bơm, rít bơm theo góc đĩa nghiêng, tiếng dầu theo tốc độ ty, click van ở mỗi lần con trượt mở/đóng, đất rơi, tiếng đất trong gầu khi cuộn",,,"Tổng hợp từ telemetry.csv (DRAFT)"

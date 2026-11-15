@@ -1,0 +1,152 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://segments/sc05_v42.gd" id="root"]
+[ext_resource type="Script" path="res://cutaway/ppc_cut.gd" id="c0"]
+[ext_resource type="Script" path="res://cutaway/spool_cut.gd" id="c1"]
+[ext_resource type="Script" path="res://cutaway/pump_cut.gd" id="c2"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 38.17200
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:lever")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00000, 1.22906, 1.87265, 2.73078, 10.71400, 14.19990, 16.98548, 18.66625, 25.38675, 26.33800, 32.09800, 33.22600, 35.10600, 36.04600, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 0.12, 0.0, 0.0, 0.5, 0.5, 1.0, 1.0, 0.0, 0.0, 0.7, 0.7, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:compare")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00000, 26.77133, 27.53569, 31.39000, 31.78000, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:capy_in")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.00000, 0.30000, 0.80000, 6.05600, 6.44600, 26.14775, 26.98800, 31.26000, 31.58500, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:capy_tilt")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.00000, 1.01453, 2.73078, 5.62694, 26.98800, 28.19292, 30.82185, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 3.0, -2.0, 2.0, 0.0, 4.0, 1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:eng_in")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.00000, 6.31600, 6.70600, 10.04600, 10.71400, 31.52000, 31.91000, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:legend")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.00000, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:cam_x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.00000, 6.05600, 7.81933, 11.41433, 14.19990, 26.14775, 27.53569, 31.52000, 32.85000, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [330.0, 340.0, 910.0, 760.0, 880.0, 930.0, 930.0, 1000.0, 900.0, 905.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:cam_y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.00000, 6.05600, 7.81933, 11.41433, 14.19990, 26.14775, 27.53569, 31.52000, 32.85000, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [230.0, 235.0, 250.0, 300.0, 260.0, 245.0, 245.0, 180.0, 330.0, 335.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:cam_zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.00000, 6.05600, 7.81933, 11.41433, 14.19990, 26.14775, 27.53569, 31.52000, 32.85000, 38.17200),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [1.1, 1.12, 0.84, 0.98, 0.88, 0.86, 0.86, 0.98, 0.72, 0.73]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC05" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC05"
+retime_keys = PackedVector2Array(0.00000, 0.00000, 0.80000, 0.80000, 5.70000, 6.05600, 6.70000, 6.70600, 10.30000, 10.71400, 10.40000, 10.83400, 16.50000, 17.91400, 16.60000, 18.03400, 19.10000, 20.66837, 19.20000, 20.72564, 25.10000, 26.33800, 25.40000, 26.98800, 29.30000, 31.26000, 30.30000, 31.91000, 35.10000, 36.42200, 35.30000, 38.17200)
+scene_title = "Từ tay điều khiển đến van chính"
+inserts = PackedVector2Array(3.0, 1.3, 12.5, 1.4, 16.5, 2.8, 21.5, 0.8)
+
+[node name="PPC" type="Node2D" parent="."]
+script = ExtResource("c0")
+position = Vector2(300, 380)
+
+[node name="Spool" type="Node2D" parent="."]
+script = ExtResource("c1")
+position = Vector2(760, 300)
+
+[node name="Pump" type="Node2D" parent="."]
+script = ExtResource("c2")
+position = Vector2(420, 900)
+scale = Vector2(0.5, 0.5)
+show_rear = false
+show_valve_plate_inset = false
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}

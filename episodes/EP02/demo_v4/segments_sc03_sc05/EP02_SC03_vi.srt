@@ -1,0 +1,32 @@
+1
+00:00:00,600 --> 00:00:04,600
+ANH KỸ SƯ: Động cơ diesel cấp công suất cơ học cho bơm.
+
+2
+00:00:04,800 --> 00:00:10,600
+ANH KỸ SƯ: Dữ liệu PC200-8 cho thấy động cơ Komatsu SAA6D107E-1;
+
+3
+00:00:10,800 --> 00:00:17,400
+ANH KỸ SƯ: phần bơm chính là loại piston thay đổi lưu lượng, có hai phần bơm để điều phối các nhu cầu làm việc.
+
+4
+00:00:17,600 --> 00:00:22,200
+ANH KỸ SƯ: Bên trong bơm piston hướng trục, khi góc đĩa nghiêng thay đổi, hành trình piston thay đổi theo.
+
+5
+00:00:22,400 --> 00:00:27,700
+ANH KỸ SƯ: Góc lớn hơn thường cho lưu lượng lớn hơn ở cùng tốc độ quay; góc nhỏ hơn thì lưu lượng giảm.
+
+6
+00:00:28,500 --> 00:00:32,900
+CAPY: Vậy ga máy tăng chưa chắc gầu lúc nào cũng chạy nhanh nhất?
+
+7
+00:00:33,500 --> 00:00:38,600
+ANH KỸ SƯ: Đúng. Lưu lượng đến cơ cấu còn tùy bơm đang được điều khiển ra sao, van đang mở thế nào,
+
+8
+00:00:38,700 --> 00:00:43,900
+ANH KỸ SƯ: tải và các giới hạn công suất. Đó mới là điều thú vị.
+

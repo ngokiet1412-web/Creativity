@@ -1,0 +1,32 @@
+1
+00:00:01,800 --> 00:00:04,704
+ANH KỸ SƯ: Cần nâng hạ bằng các xi lanh cần;
+
+2
+00:00:04,824 --> 00:00:07,992
+ANH KỸ SƯ: tay gầu tiến lùi nhờ xi lanh tay gầu;
+
+3
+00:00:08,112 --> 00:00:11,184
+ANH KỸ SƯ: gầu cuộn hoặc mở bằng xi lanh gầu.
+
+4
+00:00:11,304 --> 00:00:17,736
+ANH KỸ SƯ: Dầu vào một khoang tạo lực làm piston dịch chuyển, còn dầu ở khoang còn lại phải có đường thoát thích hợp.
+
+5
+00:00:17,856 --> 00:00:23,520
+ANH KỸ SƯ: Qua các chốt và tay đòn, lực tịnh tiến của xi lanh biến thành chuyển động quay của các khâu.
+
+6
+00:00:24,270 --> 00:00:28,422
+CAPY: Ủa vậy mình không được vẽ nguyên cái tay máy cong queo như cao su?
+
+7
+00:00:29,172 --> 00:00:31,044
+ANH KỸ SƯ: Chính xác!
+
+8
+00:00:31,164 --> 00:00:36,540
+ANH KỸ SƯ: Các khâu cứng quay quanh chốt, còn chiều dài xi lanh và góc khớp phải phù hợp hình học.
+

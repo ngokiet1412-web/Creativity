@@ -1,0 +1,1515 @@
+{
+ "rate_syll_per_s": 4.2,
+ "scenes": {
+  "SC01": {
+   "length": 40.622,
+   "marks": {
+    "start": 0.0,
+    "q.s": 0.8,
+    "q.e": 19.31,
+    "push.s": 19.31,
+    "push.e": 21.71,
+    "ks.s": 21.71,
+    "ks.e": 38.222,
+    "hold.s": 38.222,
+    "hold.e": 39.422,
+    "end": 40.622,
+    "dig.s": 3.4000000000000004
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 0.8,
+     "t1": 3.61,
+     "text": "Kĩ Sư Ơiiii!",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 3.73,
+     "t1": 5.29,
+     "text": "Ê anh!",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 5.41,
+     "t1": 8.602,
+     "text": "Bữa trước mình coi nguyên công trường rồi đó.",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 8.722,
+     "t1": 16.018,
+     "text": "Mà tui vẫn thắc mắc: cái tay máy đào này nhìn như mấy miếng sắt nối với nhau, sao nó nâng được một gầu đất nặng dữ vậy?",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 16.238,
+     "t1": 19.31,
+     "text": "Nó có giấu cơ bắp trong đó hả?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 21.71,
+     "t1": 23.99,
+     "text": "Không có cơ bắp đâu.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 24.11,
+     "t1": 29.606,
+     "text": "Thứ đáng xem nằm bên trong thân máy: một hệ thống thủy lực được điều khiển khá thông minh.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 29.726,
+     "t1": 38.222,
+     "text": "Hôm nay mình lấy Komatsu PC200-8 làm ví dụ, đi từ động cơ cho tới tận gầu, rồi xem luôn quay toa và hai bánh xích.",
+     "line": 1
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC01_01_CAPY.wav",
+     "t0": 0.8,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC01_02_KS.wav",
+     "t0": 21.71,
+     "who": "KS",
+     "line": 1
+    }
+   ]
+  },
+  "SC02": {
+   "length": 38.938,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 2.2,
+    "q.s": 2.2,
+    "q.e": 6.808,
+    "ks.s": 7.558,
+    "ks.e": 36.238,
+    "hold.s": 36.238,
+    "hold.e": 37.738,
+    "end": 38.938,
+    "chain.s": 22.174
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 2.2,
+     "t1": 6.808,
+     "text": "Ủa, thủy lực có phải chỉ là một cái bơm nối với một cái xi lanh không?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 7.558,
+     "t1": 13.318,
+     "text": "Đơn giản hóa như vậy thì dễ học bước đầu, nhưng chưa đủ cho PC200-8.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 13.438,
+     "t1": 22.054,
+     "text": "Trên chiếc máy này còn có điều khiển tải, các đường dầu đến nhiều cơ cấu, van phân phối, điều khiển pilot và tín hiệu điện tử phối hợp.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 22.174,
+     "t1": 26.494,
+     "text": "Mình sẽ lần theo dòng năng lượng trước: động cơ quay bơm;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 26.614,
+     "t1": 29.254,
+     "text": "bơm đưa dầu vào hệ thống;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 29.374,
+     "t1": 31.798,
+     "text": "van điều khiển dòng dầu;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 31.918,
+     "t1": 36.238,
+     "text": "xi lanh hoặc mô tơ thủy lực biến năng lượng đó thành chuyển động.",
+     "line": 1
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC02_01_CAPY.wav",
+     "t0": 2.2,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC02_02_KS.wav",
+     "t0": 7.558,
+     "who": "KS",
+     "line": 1
+    }
+   ]
+  },
+  "SC06": {
+   "length": 38.94,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.8,
+    "ks.s": 1.8,
+    "ks.e": 23.52,
+    "q.s": 24.27,
+    "q.e": 28.422,
+    "ks2.s": 29.172,
+    "ks2.e": 36.54,
+    "hold.s": 36.54,
+    "hold.e": 37.74,
+    "end": 38.94,
+    "boom.s": 1.8,
+    "arm.s": 4.824,
+    "bkt.s": 8.112,
+    "bkt.e": 11.184,
+    "oil.s": 11.304,
+    "pin.s": 17.856
+   },
+   "cues": [
+    {
+     "who": "KS",
+     "t0": 1.8,
+     "t1": 4.704,
+     "text": "Cần nâng hạ bằng các xi lanh cần;",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 4.824,
+     "t1": 7.992,
+     "text": "tay gầu tiến lùi nhờ xi lanh tay gầu;",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 8.112,
+     "t1": 11.184,
+     "text": "gầu cuộn hoặc mở bằng xi lanh gầu.",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 11.304,
+     "t1": 17.736,
+     "text": "Dầu vào một khoang tạo lực làm piston dịch chuyển, còn dầu ở khoang còn lại phải có đường thoát thích hợp.",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 17.856,
+     "t1": 23.52,
+     "text": "Qua các chốt và tay đòn, lực tịnh tiến của xi lanh biến thành chuyển động quay của các khâu.",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 24.27,
+     "t1": 28.422,
+     "text": "Ủa vậy mình không được vẽ nguyên cái tay máy cong queo như cao su?",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 29.172,
+     "t1": 31.044,
+     "text": "Chính xác!",
+     "line": 2
+    },
+    {
+     "who": "KS",
+     "t0": 31.164,
+     "t1": 36.54,
+     "text": "Các khâu cứng quay quanh chốt, còn chiều dài xi lanh và góc khớp phải phù hợp hình học.",
+     "line": 2
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC06_01_KS.wav",
+     "t0": 1.8,
+     "who": "KS",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC06_02_CAPY.wav",
+     "t0": 24.27,
+     "who": "CAPY",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC06_03_KS.wav",
+     "t0": 29.172,
+     "who": "KS",
+     "line": 2
+    }
+   ]
+  },
+  "SC07": {
+   "length": 47.06,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.6,
+    "q.s": 1.6,
+    "q.e": 5.584,
+    "ks.s": 6.334,
+    "ks.e": 34.582,
+    "q2.s": 35.332,
+    "q2.e": 44.26,
+    "hold.s": 44.26,
+    "hold.e": 45.86,
+    "end": 47.06,
+    "f.s": 8.542,
+    "v.s": 14.926,
+    "lever.s": 22.726
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 1.6,
+     "t1": 5.584,
+     "text": "Nghe nói áp suất càng cao là máy càng mạnh, đúng hông?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 6.334,
+     "t1": 8.422,
+     "text": "Đúng một phần thôi.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 8.542,
+     "t1": 14.806,
+     "text": "Với một khoang xi lanh lý tưởng, lực do áp suất tác dụng xấp xỉ F bằng p nhân diện tích A.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 14.926,
+     "t1": 19.27,
+     "text": "Muốn piston chuyển động nhanh, còn cần lưu lượng Q;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 19.39,
+     "t1": 22.606,
+     "text": "tốc độ lý tưởng gần bằng Q chia A.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 22.726,
+     "t1": 29.326,
+     "text": "Nhưng lực tới răng gầu phụ thuộc thêm góc xi lanh, tay đòn, ma sát, tổn thất và giới hạn bền.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 29.446,
+     "t1": 34.582,
+     "text": "Vì vậy không thể lấy lực piston rồi nói máy nâng được đúng chừng đó ký đất.",
+     "line": 1
+    },
+    {
+     "who": "CAPY",
+     "t0": 35.332,
+     "t1": 36.628,
+     "text": "À!",
+     "line": 2
+    },
+    {
+     "who": "CAPY",
+     "t0": 36.748,
+     "t1": 40.924,
+     "text": "Áp suất là điều kiện tạo lực, lưu lượng liên quan tốc độ.",
+     "line": 2
+    },
+    {
+     "who": "CAPY",
+     "t0": 41.044,
+     "t1": 44.26,
+     "text": "Còn cơ cấu mới quyết định lực ra tới gầu!",
+     "line": 2
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC07_01_CAPY.wav",
+     "t0": 1.6,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC07_02_KS.wav",
+     "t0": 6.334,
+     "who": "KS",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC07_03_CAPY.wav",
+     "t0": 35.332,
+     "who": "CAPY",
+     "line": 2
+    }
+   ]
+  },
+  "SC08": {
+   "length": 35.27,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 2.2,
+    "q.s": 2.2,
+    "q.e": 8.296,
+    "ks.s": 9.046,
+    "ks.e": 30.07,
+    "demo.s": 30.07,
+    "demo.e": 33.07,
+    "hold.s": 33.07,
+    "hold.e": 34.07,
+    "end": 35.27,
+    "motor.s": 11.47,
+    "ring.s": 14.670000000000002,
+    "brake.s": 20.758,
+    "ok.s": 24.622
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 2.2,
+     "t1": 4.648,
+     "text": "Tay gầu thì dùng xi lanh.",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 4.768,
+     "t1": 8.296,
+     "text": "Nhưng tại sao nguyên cái thân trên quay vòng vòng được?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 9.046,
+     "t1": 11.35,
+     "text": "Đó là mạch quay toa.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 11.47,
+     "t1": 14.806,
+     "text": "Dầu cấp đến mô tơ thủy lực quay toa;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 14.926,
+     "t1": 20.638,
+     "text": "mô tơ cùng bộ truyền giảm tốc tạo mô men để xoay phần trên của máy trên vòng quay toa.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 20.758,
+     "t1": 24.502,
+     "text": "Hệ thống có chức năng hãm và giữ quay theo thiết kế.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 24.622,
+     "t1": 30.07,
+     "text": "Ở hình này, gầm xích vẫn đứng yên còn phần thân trên xoay — nhìn vậy mới đúng.",
+     "line": 1
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC08_01_CAPY.wav",
+     "t0": 2.2,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC08_02_KS.wav",
+     "t0": 9.046,
+     "who": "KS",
+     "line": 1
+    }
+   ]
+  },
+  "SC09": {
+   "length": 48.448,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.6,
+    "q.s": 1.6,
+    "q.e": 10.936,
+    "ks.s": 11.686,
+    "ks.e": 31.006,
+    "demo.s": 31.006,
+    "demo.e": 33.506,
+    "q2.s": 33.506,
+    "q2.e": 37.37,
+    "ks2.s": 38.12,
+    "ks2.e": 45.248,
+    "hold.s": 45.248,
+    "hold.e": 47.248,
+    "end": 48.448,
+    "trk.s": 23.83,
+    "top.s": 27.83
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 1.6,
+     "t1": 6.52,
+     "text": "Nhưng động cơ với bơm ở thân trên, hai mô tơ di chuyển nằm dưới gầm xích.",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 6.64,
+     "t1": 10.936,
+     "text": "Khi thân trên xoay, ống dầu không bị xoắn như mì gói hả?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 11.686,
+     "t1": 17.35,
+     "text": "Giữa hai phần có khớp quay phân phối dầu ở trung tâm, thường gọi center swivel joint.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 17.47,
+     "t1": 23.71,
+     "text": "Nó cho phép dẫn các mạch dầu xuống bộ phận di chuyển trong khi phần trên có thể quay tương đối với gầm.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 23.83,
+     "t1": 31.006,
+     "text": "Mỗi bên xích có mô tơ thủy lực và bộ truyền cuối, nên có thể điều khiển hai bên để tiến, lùi hoặc đổi hướng.",
+     "line": 1
+    },
+    {
+     "who": "CAPY",
+     "t0": 33.506,
+     "t1": 37.37,
+     "text": "Vậy bánh xích không phải cái hình chữ nhật xoay nguyên cục à!",
+     "line": 2
+    },
+    {
+     "who": "KS",
+     "t0": 38.12,
+     "t1": 39.536,
+     "text": "Đúng.",
+     "line": 3
+    },
+    {
+     "who": "KS",
+     "t0": 39.656,
+     "t1": 45.248,
+     "text": "Bánh dẫn quay, mắt xích chạy theo đường vòng, và xe dịch chuyển do tương tác với mặt đất.",
+     "line": 3
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC09_01_CAPY.wav",
+     "t0": 1.6,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC09_02_KS.wav",
+     "t0": 11.686,
+     "who": "KS",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC09_03_CAPY.wav",
+     "t0": 33.506,
+     "who": "CAPY",
+     "line": 2
+    },
+    {
+     "file": "local/voice/SC09_04_KS.wav",
+     "t0": 38.12,
+     "who": "KS",
+     "line": 3
+    }
+   ]
+  },
+  "SC10": {
+   "length": 30.374,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.8,
+    "q.s": 1.8,
+    "q.e": 6.048,
+    "ks.s": 6.798,
+    "ks.e": 27.174,
+    "hold.s": 27.174,
+    "hold.e": 29.174,
+    "end": 30.374,
+    "fuel.s": 17.022,
+    "roles.s": 20.958
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 1.8,
+     "t1": 6.048,
+     "text": "Nãy giờ toàn thấy dầu đi vô, vậy dầu đi đâu mất anh?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 6.798,
+     "t1": 9.63,
+     "text": "Nó tuần hoàn trong mạch thủy lực.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 9.75,
+     "t1": 16.902,
+     "text": "Sau khi thực hiện công việc, dầu quay về theo các đường hồi, được làm mát và lọc phù hợp với đường mạch trước khi trở lại bình.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 17.022,
+     "t1": 20.838,
+     "text": "Dầu thủy lực không phải nhiên liệu để đốt trong xi lanh.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 20.958,
+     "t1": 27.174,
+     "text": "Nó truyền năng lượng, bôi trơn và giúp tản nhiệt, nên độ sạch và nhiệt độ rất quan trọng.",
+     "line": 1
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC10_01_CAPY.wav",
+     "t0": 1.8,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC10_02_KS.wav",
+     "t0": 6.798,
+     "who": "KS",
+     "line": 1
+    }
+   ]
+  },
+  "SC11": {
+   "length": 47.276,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.6,
+    "q.s": 1.6,
+    "q.e": 8.396,
+    "ks.s": 9.146,
+    "ks.e": 39.17,
+    "q2.s": 39.92,
+    "q2.e": 44.576,
+    "hold.s": 29.834,
+    "hold.e": 46.076,
+    "end": 47.276,
+    "rv.s": 9.146,
+    "tab.s": 14.81,
+    "warn.s": 33.986
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 1.6,
+     "t1": 6.016,
+     "text": "Ủa, gầu gặp cục đá cứng quá thì áp suất cứ tăng mãi sao?",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 6.236,
+     "t1": 8.396,
+     "text": "Nghe sợ à nha!",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 9.146,
+     "t1": 14.69,
+     "text": "Hệ thống cần van giới hạn áp và các chức năng bảo vệ để tránh vượt giới hạn thiết kế.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 14.81,
+     "t1": 19.274,
+     "text": "PC200-8 có các mạch với mức áp thiết kế khác nhau.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 19.394,
+     "t1": 26.33,
+     "text": "Tài liệu hãng nêu áp cài đặt relief danh định cho mạch công tác, mạch di chuyển, mạch quay toa và pilot;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 26.45,
+     "t1": 29.714,
+     "text": "không nên gộp thành một con số cho mọi mạch.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 29.834,
+     "t1": 33.866,
+     "text": "Ngoài ra còn có giải pháp chống trôi hoặc giữ tải cho cần.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 33.986,
+     "t1": 39.17,
+     "text": "Tuy nhiên đừng bao giờ tự nới van relief hay sờ đường dầu áp cao để thử.",
+     "line": 1
+    },
+    {
+     "who": "CAPY",
+     "t0": 39.92,
+     "t1": 44.576,
+     "text": "Vậy mấy cái van an toàn mới là đội bảo vệ của dàn cơ bắp thủy lực!",
+     "line": 2
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC11_01_CAPY.wav",
+     "t0": 1.6,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC11_02_KS.wav",
+     "t0": 9.146,
+     "who": "KS",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC11_03_CAPY.wav",
+     "t0": 39.92,
+     "who": "CAPY",
+     "line": 2
+    }
+   ]
+  },
+  "SC12": {
+   "length": 37.998,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.8,
+    "q.s": 1.8,
+    "q.e": 8.88,
+    "ks.s": 9.63,
+    "ks.e": 34.998,
+    "hold.s": 34.998,
+    "hold.e": 36.798,
+    "end": 37.998,
+    "sig.s": 11.142,
+    "epc.s": 20.982,
+    "man.s": 27.51
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 1.8,
+     "t1": 5.808,
+     "text": "Nhưng tui học ô tô, tui muốn tìm ECU cơ!",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 5.928,
+     "t1": 8.88,
+     "text": "Hệ thống thủy lực này có điện tử không?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 9.63,
+     "t1": 11.022,
+     "text": "Có.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 11.142,
+     "t1": 20.862,
+     "text": "Một số tín hiệu vận hành từ động cơ, cảm biến và bộ điều khiển được dùng để phối hợp công suất động cơ với yêu cầu thủy lực, điều khiển van điện từ và chế độ làm việc.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 20.982,
+     "t1": 27.39,
+     "text": "Ở hệ CLSS, LS/PC và EPC là những đầu mối cần học kỹ.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 27.51,
+     "t1": 34.998,
+     "text": "Nhưng sơ đồ dây, cổng điện và hiệu chỉnh phải tra đúng shop manual của phiên bản máy, chứ không đoán theo một ảnh trên mạng.",
+     "line": 1
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC12_01_CAPY.wav",
+     "t0": 1.8,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC12_02_KS.wav",
+     "t0": 9.63,
+     "who": "KS",
+     "line": 1
+    }
+   ]
+  },
+  "SC13": {
+   "length": 42.062,
+   "marks": {
+    "start": 0.0,
+    "open.s": 0.6,
+    "open.e": 1.8,
+    "q.s": 1.8,
+    "q.e": 7.296,
+    "ks.s": 8.046,
+    "ks.e": 38.862,
+    "hold.s": 38.862,
+    "hold.e": 40.862,
+    "end": 42.062,
+    "h.s": 10.446,
+    "cmp.s": 26.214,
+    "rule.s": 32.67
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 1.8,
+     "t1": 7.296,
+     "text": "Vậy nếu một ngày máy đào tự nhiên yếu, gầu lên chậm, có phải hư bơm không anh?",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 8.046,
+     "t1": 10.326,
+     "text": "Chưa thể kết luận.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 10.446,
+     "t1": 13.566,
+     "text": "Phải tách khả năng động cơ thiếu công suất;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 13.686,
+     "t1": 17.238,
+     "text": "điều khiển bơm hoặc tín hiệu LS bất thường;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 17.358,
+     "t1": 23.382,
+     "text": "van phân phối, pilot, rò rỉ bên trong, lọc dầu, nhiệt độ dầu;",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 23.502,
+     "t1": 26.094,
+     "text": "thậm chí ma sát cơ khí.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 26.214,
+     "t1": 32.55,
+     "text": "Quan trọng là biểu hiện khi nâng cần, co tay gầu, quay toa và chạy xích có giống nhau hay khác nhau.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 32.67,
+     "t1": 38.862,
+     "text": "Đo và đối chiếu đúng quy trình an toàn mới khoanh vùng được, chứ không thay bơm chỉ vì thấy máy chậm.",
+     "line": 1
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC13_01_CAPY.wav",
+     "t0": 1.8,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC13_02_KS.wav",
+     "t0": 8.046,
+     "who": "KS",
+     "line": 1
+    }
+   ]
+  },
+  "SC14": {
+   "length": 49.532,
+   "marks": {
+    "start": 0.0,
+    "back.s": 0.4,
+    "back.e": 2.6,
+    "sum.s": 2.6,
+    "sum.e": 23.048,
+    "ks.s": 23.798,
+    "ks.e": 37.166,
+    "bye.s": 37.916,
+    "bye.e": 45.332,
+    "end.s": 45.332,
+    "end.e": 48.332,
+    "end": 49.532
+   },
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 2.6,
+     "t1": 4.856,
+     "text": "Để tui tổng kết nha!",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 4.976,
+     "t1": 14.144,
+     "text": "Động cơ cho năng lượng, hai bơm biến thành dòng dầu, CLSS giúp điều chỉnh theo tải, van phân phối, xi lanh và mô tơ tạo chuyển động.",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 14.264,
+     "t1": 18.56,
+     "text": "Dầu còn phải về lọc, làm mát, có van bảo vệ nữa.",
+     "line": 0
+    },
+    {
+     "who": "CAPY",
+     "t0": 18.68,
+     "t1": 23.048,
+     "text": "Hóa ra không phải cái gầu khỏe — mà nguyên hệ thống đang phối hợp!",
+     "line": 0
+    },
+    {
+     "who": "KS",
+     "t0": 23.798,
+     "t1": 25.67,
+     "text": "Chính xác.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 25.79,
+     "t1": 28.766,
+     "text": "Và đó mới là bản đồ tổng thể.",
+     "line": 1
+    },
+    {
+     "who": "KS",
+     "t0": 28.886,
+     "t1": 37.166,
+     "text": "Muốn giải mã đến từng cổng, từng spool hay mã lỗi của PC200-8, mình sẽ phải xem đúng serial và sơ đồ hãng.",
+     "line": 1
+    },
+    {
+     "who": "CAPY",
+     "t0": 37.916,
+     "t1": 43.628,
+     "text": "Tập sau mình thử xem CLSS điều khiển bơm thế nào và vì sao máy có lúc bị ì nha!",
+     "line": 2
+    },
+    {
+     "who": "CAPY",
+     "t0": 43.748,
+     "t1": 45.332,
+     "text": "Bye bye!",
+     "line": 2
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC14_01_CAPY.wav",
+     "t0": 2.6,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC14_02_KS.wav",
+     "t0": 23.798,
+     "who": "KS",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC14_03_CAPY.wav",
+     "t0": 37.916,
+     "who": "CAPY",
+     "line": 2
+    }
+   ]
+  },
+  "SC03": {
+   "length": 50.69,
+   "marks": {},
+   "cues": [
+    {
+     "who": "KS",
+     "line": 0,
+     "text": "Động cơ diesel cấp công suất cơ học cho bơm.",
+     "t0": 0.6,
+     "t1": 4.392
+    },
+    {
+     "who": "KS",
+     "line": 0,
+     "text": "Dữ liệu PC200-8 cho thấy động cơ Komatsu SAA6D107E-1;",
+     "t0": 4.512,
+     "t1": 11.952
+    },
+    {
+     "who": "KS",
+     "line": 0,
+     "text": "phần bơm chính là loại piston thay đổi lưu lượng, có hai phần bơm để điều phối các nhu cầu làm việc.",
+     "t0": 12.072,
+     "t1": 18.48
+    },
+    {
+     "who": "KS",
+     "line": 0,
+     "text": "Bên trong bơm piston hướng trục, khi góc đĩa nghiêng thay đổi, hành trình piston thay đổi theo.",
+     "t0": 18.6,
+     "t1": 25.152
+    },
+    {
+     "who": "KS",
+     "line": 0,
+     "text": "Góc lớn hơn thường cho lưu lượng lớn hơn ở cùng tốc độ quay;",
+     "t0": 25.272,
+     "t1": 29.616
+    },
+    {
+     "who": "KS",
+     "line": 0,
+     "text": "góc nhỏ hơn thì lưu lượng giảm.",
+     "t0": 29.736,
+     "t1": 32.568
+    },
+    {
+     "who": "CAPY",
+     "line": 1,
+     "text": "Vậy ga máy tăng chưa chắc gầu lúc nào cũng chạy nhanh nhất?",
+     "t0": 33.218,
+     "t1": 37.034
+    },
+    {
+     "who": "KS",
+     "line": 2,
+     "text": "Đúng.",
+     "t0": 37.684,
+     "t1": 39.1
+    },
+    {
+     "who": "KS",
+     "line": 2,
+     "text": "Lưu lượng đến cơ cấu còn tùy bơm đang được điều khiển ra sao, van đang mở thế nào, tải và các giới hạn công suất.",
+     "t0": 39.22,
+     "t1": 46.348
+    },
+    {
+     "who": "KS",
+     "line": 2,
+     "text": "Đó mới là điều thú vị.",
+     "t0": 46.468,
+     "t1": 48.94
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC03_01_KS.wav",
+     "t0": 0.6,
+     "who": "KS",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC03_02_CAPY.wav",
+     "t0": 33.218,
+     "who": "CAPY",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC03_03_KS.wav",
+     "t0": 37.684,
+     "who": "KS",
+     "line": 2
+    }
+   ],
+   "retime_keys": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.6,
+     0.6
+    ],
+    [
+     4.6,
+     4.3919999999999995
+    ],
+    [
+     4.8,
+     4.512
+    ],
+    [
+     10.6,
+     11.952
+    ],
+    [
+     10.8,
+     12.072
+    ],
+    [
+     17.4,
+     18.479999999999997
+    ],
+    [
+     17.6,
+     18.6
+    ],
+    [
+     22.2,
+     25.152
+    ],
+    [
+     22.4,
+     25.272000000000002
+    ],
+    [
+     27.7,
+     32.568
+    ],
+    [
+     28.5,
+     33.218
+    ],
+    [
+     32.9,
+     37.034000000000006
+    ],
+    [
+     33.5,
+     37.684000000000005
+    ],
+    [
+     38.6,
+     44.392530973451336
+    ],
+    [
+     38.7,
+     44.455610619469034
+    ],
+    [
+     43.9,
+     48.940000000000005
+    ],
+    [
+     44.1,
+     50.690000000000005
+    ]
+   ]
+  },
+  "SC04": {
+   "length": 49.212,
+   "marks": {},
+   "cues": [
+    {
+     "who": "CAPY",
+     "line": 0,
+     "text": "Thế cái tên CLSS nghe như mật mã là gì anh?",
+     "t0": 0.8,
+     "t1": 4.832
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Đó là hệ thống thủy lực tâm kín có cảm nhận tải.",
+     "t0": 5.482,
+     "t1": 9.25
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Nói đơn giản: khi các tay điều khiển ở trung gian, máy không cần cấp lưu lượng lớn tới mọi cơ cấu.",
+     "t0": 9.37,
+     "t1": 16.042
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Khi một cơ cấu cần làm việc, tín hiệu cảm nhận tải — gọi là LS — cùng các bộ điều chỉnh trên bơm giúp thay đổi lưu lượng phù hợp.",
+     "t0": 16.162,
+     "t1": 24.514
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Van bù áp còn hỗ trợ phân chia dòng dầu khi nhiều cơ cấu làm việc cùng lúc.",
+     "t0": 24.634,
+     "t1": 29.578
+    },
+    {
+     "who": "CAPY",
+     "line": 2,
+     "text": "À!",
+     "t0": 30.228,
+     "t1": 31.524
+    },
+    {
+     "who": "CAPY",
+     "line": 2,
+     "text": "Không phải cứ nổ máy là bơm xả hết công suất đi khắp nơi.",
+     "t0": 31.644,
+     "t1": 35.676
+    },
+    {
+     "who": "CAPY",
+     "line": 2,
+     "text": "Nó phải nghe xem ai đang cần dầu!",
+     "t0": 35.796,
+     "t1": 38.772
+    },
+    {
+     "who": "KS",
+     "line": 3,
+     "text": "Hiểu theo mức nhập môn thì đúng.",
+     "t0": 39.422,
+     "t1": 42.11
+    },
+    {
+     "who": "KS",
+     "line": 3,
+     "text": "Nhưng điều khiển thực tế có cả giới hạn công suất của động cơ và các điều kiện vận hành.",
+     "t0": 42.23,
+     "t1": 47.462
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC04_01_CAPY.wav",
+     "t0": 0.8,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC04_02_KS.wav",
+     "t0": 5.482,
+     "who": "KS",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC04_03_CAPY.wav",
+     "t0": 30.228,
+     "who": "CAPY",
+     "line": 2
+    },
+    {
+     "file": "local/voice/SC04_04_KS.wav",
+     "t0": 39.422,
+     "who": "KS",
+     "line": 3
+    }
+   ],
+   "retime_keys": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.8,
+     0.8
+    ],
+    [
+     4.5,
+     4.832
+    ],
+    [
+     4.9,
+     5.482
+    ],
+    [
+     8.05,
+     9.25
+    ],
+    [
+     8.15,
+     9.370000000000001
+    ],
+    [
+     13.7,
+     16.042
+    ],
+    [
+     13.8,
+     16.162
+    ],
+    [
+     21.3,
+     24.514
+    ],
+    [
+     21.5,
+     24.634
+    ],
+    [
+     28.3,
+     29.578
+    ],
+    [
+     28.9,
+     30.227999999999998
+    ],
+    [
+     32.8,
+     35.676
+    ],
+    [
+     32.9,
+     35.796
+    ],
+    [
+     35.4,
+     38.772
+    ],
+    [
+     36.2,
+     39.422
+    ],
+    [
+     38.2,
+     42.11
+    ],
+    [
+     38.3,
+     42.23
+    ],
+    [
+     43.8,
+     47.461999999999996
+    ],
+    [
+     44.2,
+     49.211999999999996
+    ]
+   ]
+  },
+  "SC05": {
+   "length": 38.172,
+   "marks": {},
+   "cues": [
+    {
+     "who": "CAPY",
+     "line": 0,
+     "text": "Tui gạt cái cần nhỏ xíu trong cabin, sao điều khiển nổi một cái xi lanh bự vậy?",
+     "t0": 0.8,
+     "t1": 6.056
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Tay điều khiển không tự đưa toàn bộ lưu lượng của bơm chính.",
+     "t0": 6.706,
+     "t1": 10.714
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Trên PC200-8, mạch điều khiển pilot và cụm van chính thực hiện việc phân phối dầu đến các cơ cấu.",
+     "t0": 10.834,
+     "t1": 17.914
+    },
+    {
+     "who": "KS",
+     "line": 1,
+     "text": "Gạt joystick làm thay đổi tín hiệu điều khiển, từ đó dịch chuyển phần tử van tương ứng để cho dầu đi đến khoang thích hợp của xi lanh hoặc mô tơ.",
+     "t0": 18.034,
+     "t1": 26.338
+    },
+    {
+     "who": "CAPY",
+     "line": 2,
+     "text": "Tức là một tín hiệu nhỏ có thể điều khiển cả dòng năng lượng lớn?",
+     "t0": 26.988,
+     "t1": 31.26
+    },
+    {
+     "who": "KS",
+     "line": 3,
+     "text": "Đúng, nhưng phải có nguồn năng lượng từ động cơ và bơm phía sau.",
+     "t0": 31.91,
+     "t1": 36.422
+    }
+   ],
+   "voices": [
+    {
+     "file": "local/voice/SC05_01_CAPY.wav",
+     "t0": 0.8,
+     "who": "CAPY",
+     "line": 0
+    },
+    {
+     "file": "local/voice/SC05_02_KS.wav",
+     "t0": 6.706,
+     "who": "KS",
+     "line": 1
+    },
+    {
+     "file": "local/voice/SC05_03_CAPY.wav",
+     "t0": 26.988,
+     "who": "CAPY",
+     "line": 2
+    },
+    {
+     "file": "local/voice/SC05_04_KS.wav",
+     "t0": 31.91,
+     "who": "KS",
+     "line": 3
+    }
+   ],
+   "retime_keys": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.8,
+     0.8
+    ],
+    [
+     5.7,
+     6.056
+    ],
+    [
+     6.7,
+     6.706
+    ],
+    [
+     10.3,
+     10.714
+    ],
+    [
+     10.4,
+     10.834
+    ],
+    [
+     16.5,
+     17.914
+    ],
+    [
+     16.6,
+     18.034
+    ],
+    [
+     19.1,
+     20.668372413793104
+    ],
+    [
+     19.2,
+     20.725641379310346
+    ],
+    [
+     25.1,
+     26.338
+    ],
+    [
+     25.4,
+     26.988
+    ],
+    [
+     29.3,
+     31.259999999999998
+    ],
+    [
+     30.3,
+     31.91
+    ],
+    [
+     35.1,
+     36.422
+    ],
+    [
+     35.3,
+     38.172000000000004
+    ]
+   ]
+  }
+ }
+}

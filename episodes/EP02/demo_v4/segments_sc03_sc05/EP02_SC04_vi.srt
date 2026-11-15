@@ -1,0 +1,36 @@
+1
+00:00:00,800 --> 00:00:04,500
+CAPY: Thế cái tên CLSS nghe như mật mã là gì anh?
+
+2
+00:00:04,900 --> 00:00:08,050
+ANH KỸ SƯ: Đó là hệ thống thủy lực tâm kín có cảm nhận tải.
+
+3
+00:00:08,150 --> 00:00:13,700
+ANH KỸ SƯ: Nói đơn giản: khi các tay điều khiển ở trung gian, máy không cần cấp lưu lượng lớn tới mọi cơ cấu.
+
+4
+00:00:13,800 --> 00:00:21,300
+ANH KỸ SƯ: Khi một cơ cấu cần làm việc, tín hiệu cảm nhận tải — gọi là LS — cùng các bộ điều chỉnh trên bơm giúp thay đổi lưu lượng phù hợp.
+
+5
+00:00:21,500 --> 00:00:28,300
+ANH KỸ SƯ: Van bù áp còn hỗ trợ phân chia dòng dầu khi nhiều cơ cấu làm việc cùng lúc.
+
+6
+00:00:28,900 --> 00:00:32,800
+CAPY: À! Không phải cứ nổ máy là bơm xả hết công suất đi khắp nơi.
+
+7
+00:00:32,900 --> 00:00:35,400
+CAPY: Nó phải nghe xem ai đang cần dầu!
+
+8
+00:00:36,200 --> 00:00:38,200
+ANH KỸ SƯ: Hiểu theo mức nhập môn thì đúng.
+
+9
+00:00:38,300 --> 00:00:43,800
+ANH KỸ SƯ: Nhưng điều khiển thực tế có cả giới hạn công suất của động cơ và các điều kiện vận hành.
+

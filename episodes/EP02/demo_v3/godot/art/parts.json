@@ -1,0 +1,120 @@
+{
+ "source": "../demo/godot/art/pc200-parts.png",
+ "parts": {
+  "upper": {
+   "size": [
+    693,
+    450
+   ],
+   "atlas_rect": [
+    71,
+    118,
+    693,
+    450
+   ],
+   "pins": {
+    "boom_foot": [
+     654.5,
+     357.5
+    ]
+   },
+   "mirrored": false,
+   "opaque_bottom": 444
+  },
+  "undercarriage": {
+   "size": [
+    945,
+    271
+   ],
+   "atlas_rect": [
+    35,
+    702,
+    945,
+    271
+   ],
+   "pins": {},
+   "mirrored": false,
+   "opaque_bottom": 265
+  },
+  "boom": {
+   "size": [
+    651,
+    386
+   ],
+   "atlas_rect": [
+    853,
+    48,
+    651,
+    386
+   ],
+   "pins": {
+    "foot": [
+     40.5,
+     343.5
+    ],
+    "tip": [
+     617.5,
+     35.5
+    ],
+    "top_lug": [
+     349.5,
+     53.5
+    ],
+    "under_lug": [
+     468.5,
+     125.5
+    ]
+   },
+   "mirrored": false,
+   "opaque_bottom": 380
+  },
+  "arm": {
+   "size": [
+    169,
+    355
+   ],
+   "atlas_rect": [
+    1099,
+    317,
+    169,
+    355
+   ],
+   "pins": {
+    "elbow": [
+     39.5,
+     36.5
+    ],
+    "wrist": [
+     137.5,
+     323.5
+    ]
+   },
+   "mirrored": false,
+   "opaque_bottom": 349
+  },
+  "bucket": {
+   "size": [
+    418,
+    292
+   ],
+   "atlas_rect": [
+    1036,
+    687,
+    418,
+    292
+   ],
+   "pins": {
+    "hinge": [
+     334.5,
+     33.5
+    ],
+    "tooth_tip": [
+     4.0,
+     229.0
+    ]
+   },
+   "mirrored": true,
+   "opaque_bottom": 287
+  }
+ }
+}

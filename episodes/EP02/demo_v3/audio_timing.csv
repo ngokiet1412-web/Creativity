@@ -1,0 +1,9 @@
+cue,scene,role,start,end,stem,text,syllables,syll_per_s,status
+A01,D01,SIGNATURE,00:00:00.480,00:00:03.290,SIGNATURE.wav,"Kĩ Sư Ơiiii!",4,1.4,"Owner tag Capy_Ki_Su_Oiii_v2_Nhe_Tu_Nhien.mp3 (local, đã dùng ở EP01)"
+A02,D02,CAPY,00:00:04.400,00:00:08.600,CAPY_A02.wav,"Anh ơi, tay máy này lấy đâu ra sức mà múc nguyên gầu đất dữ vậy?",16,3.8,"Chờ WAV ElevenLabs owner chọn"
+A03,D03,ENGINEER,00:00:09.900,00:00:16.300,ENGINEER_A03.wav,"Sức bắt đầu từ động cơ diesel. Động cơ quay bơm piston. Lúc chưa gạt cần, bơm chỉ giữ một lưu lượng chờ rất nhỏ.",28,4.4,"Chờ WAV ElevenLabs owner chọn"
+A04,D04,ENGINEER,00:00:16.900,00:00:23.200,ENGINEER_A04.wav,"Gạt cần, dầu pilot đẩy con trượt trong van. Tín hiệu tải báo về, bơm tăng góc đĩa nghiêng để đẩy thêm dầu.",27,4.3,"Chờ WAV ElevenLabs owner chọn"
+A05,D05,ENGINEER,00:00:23.600,00:00:30.300,ENGINEER_A05.wav,"Dầu áp lực vào khoang đáy, đẩy piston ra. Dầu khoang ty bị đẩy về thùng. Ty dài ra, cần quay quanh chốt và nâng gầu lên.",30,4.5,"Chờ WAV ElevenLabs owner chọn"
+A06,D06,ENGINEER,00:00:30.900,00:00:34.000,ENGINEER_A06.wav,"Nhả cần, van về giữa. Dầu bị chặn trong xi lanh nên cần đứng yên.",15,4.8,"Chờ WAV ElevenLabs owner chọn"
+A07,D07,CAPY,00:00:34.600,00:00:40.200,CAPY_A07.wav,"À há! Động cơ quay bơm, bơm đẩy dầu, van chia đường, xi lanh đẩy cần. Hiểu rồi nha!",21,3.8,"Chờ WAV ElevenLabs owner chọn; 5 ô chuỗi năng lượng sáng ở 35.8/36.8/37.8/38.7/39.6 s"
+M01,ALL,MACHINE,00:00:04.000,00:00:42.000,MACHINE.wav,"Động cơ, rít bơm theo góc đĩa nghiêng, tiếng dầu theo tốc độ ty, click van 20.42/30.62 s, cào đất và đất rơi",,,"Tổng hợp từ telemetry.csv (DRAFT)"

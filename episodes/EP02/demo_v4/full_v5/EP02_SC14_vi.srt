@@ -1,0 +1,36 @@
+1
+00:00:02,600 --> 00:00:04,856
+CAPY: Để tui tổng kết nha!
+
+2
+00:00:04,976 --> 00:00:14,144
+CAPY: Động cơ cho năng lượng, hai bơm biến thành dòng dầu, CLSS giúp điều chỉnh theo tải, van phân phối, xi lanh và mô tơ tạo chuyển động.
+
+3
+00:00:14,264 --> 00:00:18,560
+CAPY: Dầu còn phải về lọc, làm mát, có van bảo vệ nữa.
+
+4
+00:00:18,680 --> 00:00:23,048
+CAPY: Hóa ra không phải cái gầu khỏe — mà nguyên hệ thống đang phối hợp!
+
+5
+00:00:23,798 --> 00:00:25,670
+ANH KỸ SƯ: Chính xác.
+
+6
+00:00:25,790 --> 00:00:28,766
+ANH KỸ SƯ: Và đó mới là bản đồ tổng thể.
+
+7
+00:00:28,886 --> 00:00:37,166
+ANH KỸ SƯ: Muốn giải mã đến từng cổng, từng spool hay mã lỗi của PC200-8, mình sẽ phải xem đúng serial và sơ đồ hãng.
+
+8
+00:00:37,916 --> 00:00:43,628
+CAPY: Tập sau mình thử xem CLSS điều khiển bơm thế nào và vì sao máy có lúc bị ì nha!
+
+9
+00:00:43,748 --> 00:00:45,332
+CAPY: Bye bye!
+

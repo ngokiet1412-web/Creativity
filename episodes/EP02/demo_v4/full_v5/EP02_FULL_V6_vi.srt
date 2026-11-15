@@ -1,0 +1,492 @@
+1
+00:00:00,800 --> 00:00:01,764
+CAPY: Kĩiii sưuuu ơiiii!
+
+2
+00:00:02,064 --> 00:00:02,790
+CAPY: Ê anh!
+
+3
+00:00:03,090 --> 00:00:05,483
+CAPY: Bữa trước mình coi nguyên công trường rồi đó.
+
+4
+00:00:05,783 --> 00:00:10,319
+CAPY: Mà tui vẫn thắc mắc: cái tay máy đào này nhìn như mấy miếng sắt nối với nhau,
+
+5
+00:00:10,619 --> 00:00:13,250
+CAPY: sao nó nâng được một gầu đất nặng dữ vậy?
+
+6
+00:00:13,550 --> 00:00:15,705
+CAPY: Nó có giấu cơ bắp trong đó hả?
+
+7
+00:00:18,105 --> 00:00:19,545
+ANH KỸ SƯ: Không có cơ bắp đâu.
+
+8
+00:00:19,845 --> 00:00:22,000
+ANH KỸ SƯ: Thứ đáng xem nằm bên trong thân máy:
+
+9
+00:00:22,300 --> 00:00:25,169
+ANH KỸ SƯ: một hệ thống thủy lực được điều khiển khá thông minh.
+
+10
+00:00:25,469 --> 00:00:30,719
+ANH KỸ SƯ: Hôm nay mình lấy Komatsu PC200-8 làm ví dụ, đi từ động cơ cho tới tận gầu,
+
+11
+00:00:31,019 --> 00:00:33,412
+ANH KỸ SƯ: rồi xem luôn quay toa và hai bánh xích.
+
+12
+00:00:38,000 --> 00:00:42,298
+CAPY: Ủa, thủy lực có phải chỉ là một cái bơm nối với một cái xi lanh không?
+
+13
+00:00:43,048 --> 00:00:47,821
+ANH KỸ SƯ: Đơn giản hóa như vậy thì dễ học bước đầu, nhưng chưa đủ cho PC200-8.
+
+14
+00:00:48,121 --> 00:00:52,181
+ANH KỸ SƯ: Trên chiếc máy này còn có điều khiển tải, các đường dầu đến nhiều cơ cấu,
+
+15
+00:00:52,481 --> 00:00:55,826
+ANH KỸ SƯ: van phân phối, điều khiển pilot và tín hiệu điện tử phối hợp.
+
+16
+00:00:56,126 --> 00:01:00,662
+ANH KỸ SƯ: Mình sẽ lần theo dòng năng lượng trước: động cơ quay bơm; bơm đưa dầu vào hệ thống;
+
+17
+00:01:00,962 --> 00:01:02,402
+ANH KỸ SƯ: van điều khiển dòng dầu;
+
+18
+00:01:02,702 --> 00:01:06,286
+ANH KỸ SƯ: xi lanh hoặc mô tơ thủy lực biến năng lượng đó thành chuyển động.
+
+19
+00:01:09,567 --> 00:01:13,567
+ANH KỸ SƯ: Động cơ diesel cấp công suất cơ học cho bơm.
+
+20
+00:01:13,767 --> 00:01:19,567
+ANH KỸ SƯ: Dữ liệu PC200-8 cho thấy động cơ Komatsu SAA6D107E-1;
+
+21
+00:01:19,767 --> 00:01:26,367
+ANH KỸ SƯ: phần bơm chính là loại piston thay đổi lưu lượng, có hai phần bơm để điều phối các nhu cầu làm việc.
+
+22
+00:01:26,567 --> 00:01:31,167
+ANH KỸ SƯ: Bên trong bơm piston hướng trục, khi góc đĩa nghiêng thay đổi, hành trình piston thay đổi theo.
+
+23
+00:01:31,367 --> 00:01:36,667
+ANH KỸ SƯ: Góc lớn hơn thường cho lưu lượng lớn hơn ở cùng tốc độ quay; góc nhỏ hơn thì lưu lượng giảm.
+
+24
+00:01:37,467 --> 00:01:41,867
+CAPY: Vậy ga máy tăng chưa chắc gầu lúc nào cũng chạy nhanh nhất?
+
+25
+00:01:42,467 --> 00:01:47,567
+ANH KỸ SƯ: Đúng. Lưu lượng đến cơ cấu còn tùy bơm đang được điều khiển ra sao, van đang mở thế nào,
+
+26
+00:01:47,667 --> 00:01:52,867
+ANH KỸ SƯ: tải và các giới hạn công suất. Đó mới là điều thú vị.
+
+27
+00:01:53,833 --> 00:01:57,533
+CAPY: Thế cái tên CLSS nghe như mật mã là gì anh?
+
+28
+00:01:57,933 --> 00:02:01,083
+ANH KỸ SƯ: Đó là hệ thống thủy lực tâm kín có cảm nhận tải.
+
+29
+00:02:01,183 --> 00:02:06,733
+ANH KỸ SƯ: Nói đơn giản: khi các tay điều khiển ở trung gian, máy không cần cấp lưu lượng lớn tới mọi cơ cấu.
+
+30
+00:02:06,833 --> 00:02:14,333
+ANH KỸ SƯ: Khi một cơ cấu cần làm việc, tín hiệu cảm nhận tải — gọi là LS — cùng các bộ điều chỉnh trên bơm giúp thay đổi lưu lượng phù hợp.
+
+31
+00:02:14,533 --> 00:02:21,333
+ANH KỸ SƯ: Van bù áp còn hỗ trợ phân chia dòng dầu khi nhiều cơ cấu làm việc cùng lúc.
+
+32
+00:02:21,933 --> 00:02:25,833
+CAPY: À! Không phải cứ nổ máy là bơm xả hết công suất đi khắp nơi.
+
+33
+00:02:25,933 --> 00:02:28,433
+CAPY: Nó phải nghe xem ai đang cần dầu!
+
+34
+00:02:29,233 --> 00:02:31,233
+ANH KỸ SƯ: Hiểu theo mức nhập môn thì đúng.
+
+35
+00:02:31,333 --> 00:02:36,833
+ANH KỸ SƯ: Nhưng điều khiển thực tế có cả giới hạn công suất của động cơ và các điều kiện vận hành.
+
+36
+00:02:38,033 --> 00:02:42,933
+CAPY: Tui gạt cái cần nhỏ xíu trong cabin, sao điều khiển nổi một cái xi lanh bự vậy?
+
+37
+00:02:43,933 --> 00:02:47,533
+ANH KỸ SƯ: Tay điều khiển không tự đưa toàn bộ lưu lượng của bơm chính.
+
+38
+00:02:47,633 --> 00:02:53,733
+ANH KỸ SƯ: Trên PC200-8, mạch điều khiển pilot và cụm van chính thực hiện việc phân phối dầu đến các cơ cấu.
+
+39
+00:02:53,833 --> 00:02:56,333
+ANH KỸ SƯ: Gạt joystick làm thay đổi tín hiệu điều khiển,
+
+40
+00:02:56,433 --> 00:03:02,333
+ANH KỸ SƯ: từ đó dịch chuyển phần tử van tương ứng để cho dầu đi đến khoang thích hợp của xi lanh hoặc mô tơ.
+
+41
+00:03:02,633 --> 00:03:06,533
+CAPY: Tức là một tín hiệu nhỏ có thể điều khiển cả dòng năng lượng lớn?
+
+42
+00:03:07,533 --> 00:03:12,333
+ANH KỸ SƯ: Đúng, nhưng phải có nguồn năng lượng từ động cơ và bơm phía sau.
+
+43
+00:03:14,300 --> 00:03:18,598
+ANH KỸ SƯ: Cần nâng hạ bằng các xi lanh cần; tay gầu tiến lùi nhờ xi lanh tay gầu;
+
+44
+00:03:18,898 --> 00:03:21,052
+ANH KỸ SƯ: gầu cuộn hoặc mở bằng xi lanh gầu.
+
+45
+00:03:21,352 --> 00:03:23,983
+ANH KỸ SƯ: Dầu vào một khoang tạo lực làm piston dịch chuyển,
+
+46
+00:03:24,283 --> 00:03:27,390
+ANH KỸ SƯ: còn dầu ở khoang còn lại phải có đường thoát thích hợp.
+
+47
+00:03:27,690 --> 00:03:29,369
+ANH KỸ SƯ: Qua các chốt và tay đòn,
+
+48
+00:03:29,669 --> 00:03:33,252
+ANH KỸ SƯ: lực tịnh tiến của xi lanh biến thành chuyển động quay của các khâu.
+
+49
+00:03:34,002 --> 00:03:37,824
+CAPY: Ủa vậy mình không được vẽ nguyên cái tay máy cong queo như cao su?
+
+50
+00:03:38,574 --> 00:03:39,300
+ANH KỸ SƯ: Chính xác!
+
+51
+00:03:39,600 --> 00:03:44,374
+ANH KỸ SƯ: Các khâu cứng quay quanh chốt, còn chiều dài xi lanh và góc khớp phải phù hợp hình học.
+
+52
+00:03:48,367 --> 00:03:51,474
+CAPY: Nghe nói áp suất càng cao là máy càng mạnh, đúng hông?
+
+53
+00:03:52,224 --> 00:03:53,427
+ANH KỸ SƯ: Đúng một phần thôi.
+
+54
+00:03:53,727 --> 00:03:55,643
+ANH KỸ SƯ: Với một khoang xi lanh lý tưởng,
+
+55
+00:03:55,943 --> 00:03:59,765
+ANH KỸ SƯ: lực do áp suất tác dụng xấp xỉ F bằng p nhân diện tích A.
+
+56
+00:04:00,065 --> 00:04:04,838
+ANH KỸ SƯ: Muốn piston chuyển động nhanh, còn cần lưu lượng Q; tốc độ lý tưởng gần bằng Q chia A.
+
+57
+00:04:05,138 --> 00:04:08,960
+ANH KỸ SƯ: Nhưng lực tới răng gầu phụ thuộc thêm góc xi lanh, tay đòn, ma sát,
+
+58
+00:04:09,260 --> 00:04:10,938
+ANH KỸ SƯ: tổn thất và giới hạn bền.
+
+59
+00:04:11,238 --> 00:04:15,536
+ANH KỸ SƯ: Vì vậy không thể lấy lực piston rồi nói máy nâng được đúng chừng đó ký đất.
+
+60
+00:04:16,286 --> 00:04:16,774
+CAPY: À!
+
+61
+00:04:17,074 --> 00:04:20,419
+CAPY: Áp suất là điều kiện tạo lực, lưu lượng liên quan tốc độ.
+
+62
+00:04:20,719 --> 00:04:23,350
+CAPY: Còn cơ cấu mới quyết định lực ra tới gầu!
+
+63
+00:04:28,333 --> 00:04:30,012
+CAPY: Tay gầu thì dùng xi lanh.
+
+64
+00:04:30,312 --> 00:04:33,181
+CAPY: Nhưng tại sao nguyên cái thân trên quay vòng vòng được?
+
+65
+00:04:33,931 --> 00:04:35,371
+ANH KỸ SƯ: Đó là mạch quay toa.
+
+66
+00:04:35,671 --> 00:04:38,064
+ANH KỸ SƯ: Dầu cấp đến mô tơ thủy lực quay toa;
+
+67
+00:04:38,364 --> 00:04:43,376
+ANH KỸ SƯ: mô tơ cùng bộ truyền giảm tốc tạo mô men để xoay phần trên của máy trên vòng quay toa.
+
+68
+00:04:43,676 --> 00:04:46,783
+ANH KỸ SƯ: Hệ thống có chức năng hãm và giữ quay theo thiết kế.
+
+69
+00:04:47,083 --> 00:04:51,381
+ANH KỸ SƯ: Ở hình này, gầm xích vẫn đứng yên còn phần thân trên xoay — nhìn vậy mới đúng.
+
+70
+00:04:58,167 --> 00:05:02,465
+CAPY: Nhưng động cơ với bơm ở thân trên, hai mô tơ di chuyển nằm dưới gầm xích.
+
+71
+00:05:02,765 --> 00:05:06,110
+CAPY: Khi thân trên xoay, ống dầu không bị xoắn như mì gói hả?
+
+72
+00:05:06,860 --> 00:05:11,157
+ANH KỸ SƯ: Giữa hai phần có khớp quay phân phối dầu ở trung tâm, thường gọi center swivel joint.
+
+73
+00:05:11,457 --> 00:05:17,184
+ANH KỸ SƯ: Nó cho phép dẫn các mạch dầu xuống bộ phận di chuyển trong khi phần trên có thể quay tương đối với gầm.
+
+74
+00:05:17,484 --> 00:05:20,591
+ANH KỸ SƯ: Mỗi bên xích có mô tơ thủy lực và bộ truyền cuối,
+
+75
+00:05:20,891 --> 00:05:24,236
+ANH KỸ SƯ: nên có thể điều khiển hai bên để tiến, lùi hoặc đổi hướng.
+
+76
+00:05:26,736 --> 00:05:30,081
+CAPY: Vậy bánh xích không phải cái hình chữ nhật xoay nguyên cục à!
+
+77
+00:05:30,831 --> 00:05:31,319
+ANH KỸ SƯ: Đúng.
+
+78
+00:05:31,619 --> 00:05:34,012
+ANH KỸ SƯ: Bánh dẫn quay, mắt xích chạy theo đường vòng,
+
+79
+00:05:34,312 --> 00:05:36,943
+ANH KỸ SƯ: và xe dịch chuyển do tương tác với mặt đất.
+
+80
+00:05:41,933 --> 00:05:45,278
+CAPY: Nãy giờ toàn thấy dầu đi vô, vậy dầu đi đâu mất anh?
+
+81
+00:05:46,028 --> 00:05:47,945
+ANH KỸ SƯ: Nó tuần hoàn trong mạch thủy lực.
+
+82
+00:05:48,245 --> 00:05:51,590
+ANH KỸ SƯ: Sau khi thực hiện công việc, dầu quay về theo các đường hồi,
+
+83
+00:05:51,890 --> 00:05:55,712
+ANH KỸ SƯ: được làm mát và lọc phù hợp với đường mạch trước khi trở lại bình.
+
+84
+00:05:56,012 --> 00:05:59,119
+ANH KỸ SƯ: Dầu thủy lực không phải nhiên liệu để đốt trong xi lanh.
+
+85
+00:05:59,419 --> 00:06:02,050
+ANH KỸ SƯ: Nó truyền năng lượng, bôi trơn và giúp tản nhiệt,
+
+86
+00:06:02,350 --> 00:06:04,743
+ANH KỸ SƯ: nên độ sạch và nhiệt độ rất quan trọng.
+
+87
+00:06:09,533 --> 00:06:13,116
+CAPY: Ủa, gầu gặp cục đá cứng quá thì áp suất cứ tăng mãi sao?
+
+88
+00:06:13,416 --> 00:06:14,619
+CAPY: Nghe sợ à nha!
+
+89
+00:06:15,369 --> 00:06:20,381
+ANH KỸ SƯ: Hệ thống cần van giới hạn áp và các chức năng bảo vệ để tránh vượt giới hạn thiết kế.
+
+90
+00:06:20,681 --> 00:06:24,502
+ANH KỸ SƯ: PC200-8 có các mạch với mức áp thiết kế khác nhau.
+
+91
+00:06:24,802 --> 00:06:29,100
+ANH KỸ SƯ: Tài liệu hãng nêu áp cài đặt relief danh định cho mạch công tác, mạch di chuyển,
+
+92
+00:06:29,400 --> 00:06:33,221
+ANH KỸ SƯ: mạch quay toa và pilot; không nên gộp thành một con số cho mọi mạch.
+
+93
+00:06:33,521 --> 00:06:36,866
+ANH KỸ SƯ: Ngoài ra còn có giải pháp chống trôi hoặc giữ tải cho cần.
+
+94
+00:06:37,166 --> 00:06:41,464
+ANH KỸ SƯ: Tuy nhiên đừng bao giờ tự nới van relief hay sờ đường dầu áp cao để thử.
+
+95
+00:06:42,214 --> 00:06:46,512
+CAPY: Vậy mấy cái van an toàn mới là đội bảo vệ của dàn cơ bắp thủy lực!
+
+96
+00:06:51,000 --> 00:06:54,107
+CAPY: Nhưng tui học ô tô, tui muốn tìm ECU cơ!
+
+97
+00:06:54,407 --> 00:06:56,800
+CAPY: Hệ thống thủy lực này có điện tử không?
+
+98
+00:06:57,550 --> 00:06:58,038
+ANH KỸ SƯ: Có.
+
+99
+00:06:58,338 --> 00:07:00,731
+ANH KỸ SƯ: Một số tín hiệu vận hành từ động cơ,
+
+100
+00:07:01,031 --> 00:07:06,043
+ANH KỸ SƯ: cảm biến và bộ điều khiển được dùng để phối hợp công suất động cơ với yêu cầu thủy lực,
+
+101
+00:07:06,343 --> 00:07:08,974
+ANH KỸ SƯ: điều khiển van điện từ và chế độ làm việc.
+
+102
+00:07:09,274 --> 00:07:14,524
+ANH KỸ SƯ: Ở hệ CLSS, LS/PC và EPC là những đầu mối cần học kỹ.
+
+103
+00:07:14,824 --> 00:07:19,360
+ANH KỸ SƯ: Nhưng sơ đồ dây, cổng điện và hiệu chỉnh phải tra đúng shop manual của phiên bản máy,
+
+104
+00:07:19,660 --> 00:07:21,814
+ANH KỸ SƯ: chứ không đoán theo một ảnh trên mạng.
+
+105
+00:07:26,600 --> 00:07:31,136
+CAPY: Vậy nếu một ngày máy đào tự nhiên yếu, gầu lên chậm, có phải hư bơm không anh?
+
+106
+00:07:31,886 --> 00:07:33,088
+ANH KỸ SƯ: Chưa thể kết luận.
+
+107
+00:07:33,388 --> 00:07:38,162
+ANH KỸ SƯ: Phải tách khả năng động cơ thiếu công suất; điều khiển bơm hoặc tín hiệu LS bất thường;
+
+108
+00:07:38,462 --> 00:07:43,236
+ANH KỸ SƯ: van phân phối, pilot, rò rỉ bên trong, lọc dầu, nhiệt độ dầu; thậm chí ma sát cơ khí.
+
+109
+00:07:43,536 --> 00:07:46,405
+ANH KỸ SƯ: Quan trọng là biểu hiện khi nâng cần, co tay gầu,
+
+110
+00:07:46,705 --> 00:07:49,574
+ANH KỸ SƯ: quay toa và chạy xích có giống nhau hay khác nhau.
+
+111
+00:07:49,874 --> 00:07:53,219
+ANH KỸ SƯ: Đo và đối chiếu đúng quy trình an toàn mới khoanh vùng được,
+
+112
+00:07:53,519 --> 00:07:55,912
+ANH KỸ SƯ: chứ không thay bơm chỉ vì thấy máy chậm.
+
+113
+00:08:01,700 --> 00:08:03,140
+CAPY: Để tui tổng kết nha!
+
+114
+00:08:03,440 --> 00:08:08,452
+CAPY: Động cơ cho năng lượng, hai bơm biến thành dòng dầu, CLSS giúp điều chỉnh theo tải,
+
+115
+00:08:08,752 --> 00:08:11,621
+CAPY: van phân phối, xi lanh và mô tơ tạo chuyển động.
+
+116
+00:08:11,921 --> 00:08:15,029
+CAPY: Dầu còn phải về lọc, làm mát, có van bảo vệ nữa.
+
+117
+00:08:15,329 --> 00:08:18,912
+CAPY: Hóa ra không phải cái gầu khỏe — mà nguyên hệ thống đang phối hợp!
+
+118
+00:08:19,662 --> 00:08:20,388
+ANH KỸ SƯ: Chính xác.
+
+119
+00:08:20,688 --> 00:08:22,843
+ANH KỸ SƯ: Và đó mới là bản đồ tổng thể.
+
+120
+00:08:23,143 --> 00:08:27,440
+ANH KỸ SƯ: Muốn giải mã đến từng cổng, từng spool hay mã lỗi của PC200-8,
+
+121
+00:08:27,740 --> 00:08:30,371
+ANH KỸ SƯ: mình sẽ phải xem đúng serial và sơ đồ hãng.
+
+122
+00:08:31,121 --> 00:08:36,848
+CAPY: Tập sau mình thử xem CLSS điều khiển bơm thế nào và vì sao máy có lúc bị ì nha!
+
+123
+00:08:37,148 --> 00:08:37,874
+CAPY: Bye bye!
+

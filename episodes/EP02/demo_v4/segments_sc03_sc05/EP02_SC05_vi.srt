@@ -1,0 +1,28 @@
+1
+00:00:00,800 --> 00:00:05,700
+CAPY: Tui gạt cái cần nhỏ xíu trong cabin, sao điều khiển nổi một cái xi lanh bự vậy?
+
+2
+00:00:06,700 --> 00:00:10,300
+ANH KỸ SƯ: Tay điều khiển không tự đưa toàn bộ lưu lượng của bơm chính.
+
+3
+00:00:10,400 --> 00:00:16,500
+ANH KỸ SƯ: Trên PC200-8, mạch điều khiển pilot và cụm van chính thực hiện việc phân phối dầu đến các cơ cấu.
+
+4
+00:00:16,600 --> 00:00:19,100
+ANH KỸ SƯ: Gạt joystick làm thay đổi tín hiệu điều khiển,
+
+5
+00:00:19,200 --> 00:00:25,100
+ANH KỸ SƯ: từ đó dịch chuyển phần tử van tương ứng để cho dầu đi đến khoang thích hợp của xi lanh hoặc mô tơ.
+
+6
+00:00:25,400 --> 00:00:29,300
+CAPY: Tức là một tín hiệu nhỏ có thể điều khiển cả dòng năng lượng lớn?
+
+7
+00:00:30,300 --> 00:00:35,100
+ANH KỸ SƯ: Đúng, nhưng phải có nguồn năng lượng từ động cơ và bơm phía sau.
+

@@ -1,0 +1,163 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://full/sc08.gd" id="root"]
+[ext_resource type="Script" path="res://full/topview.gd" id="c0"]
+
+[sub_resource type="Animation" id="seq"]
+resource_name = "sequence"
+length = 35.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:swing_deg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0, 2.8, 2.89, 2.98, 3.07, 3.16, 3.25, 3.34, 3.43, 3.52, 3.61, 3.7, 3.79, 3.88, 3.97, 4.06, 4.15, 4.24, 4.33, 4.42, 4.51, 4.6, 4.69, 4.78, 4.87, 4.96, 5.05, 5.14, 5.23, 5.32, 5.41, 5.5, 5.59, 5.68, 5.77, 5.86, 5.95, 6.04, 6.13, 6.22, 6.31, 6.4, 11.87, 11.98, 12.09, 12.2, 12.31, 12.42, 12.53, 12.64, 12.75, 12.86, 12.97, 13.08, 13.19, 13.3, 13.41, 13.52, 13.63, 13.74, 13.85, 13.96, 14.07, 14.18, 14.29, 14.4, 14.51, 14.62, 14.73, 14.84, 14.95, 15.06, 15.17, 15.28, 15.39, 15.5, 15.61, 15.72, 15.83, 15.94, 16.05, 16.16, 16.27, 24.822, 24.947, 25.072, 25.197, 25.322, 25.447, 25.572, 25.697, 25.822, 25.947, 26.072, 26.197, 26.322, 26.447, 26.572, 26.697, 26.822, 26.947, 27.072, 27.197, 27.322, 27.447, 27.572, 27.697, 27.822, 27.947, 28.072, 28.197, 28.322, 28.447, 28.572, 28.697, 28.822, 28.947, 29.072, 29.197, 29.322, 29.447, 29.572, 29.697, 29.822, 30.67, 30.73, 30.79, 30.85, 30.91, 30.97, 31.03, 31.09, 31.15, 31.21, 31.27, 31.33, 31.39, 31.45, 31.51, 31.57, 31.63, 31.69, 31.75, 31.81, 31.87, 31.93, 31.99, 32.05, 32.11, 32.17, 32.23, 32.29, 32.35, 32.41, 32.47, 32.53, 32.59, 32.65, 32.71, 32.77, 32.83, 32.89, 32.95, 33.01, 33.07, 35.27),
+"transitions": PackedFloat32Array(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0),
+"update": 0,
+"values": [0.0, 0.0, 0.00329565, 0.0470398, 0.212585, 0.596965, 1.28757, 2.34408, 3.78757, 5.59697, 7.71259, 10.047, 12.5033, 15.0, 17.5, 20.0, 22.5, 25.0, 27.5, 30.0, 32.5, 35.0, 37.5, 40.0, 42.5, 45.0, 47.5, 50.0, 52.5, 55.0, 57.4967, 59.953, 62.2874, 64.403, 66.2124, 67.6559, 68.7124, 69.403, 69.7874, 69.953, 69.9967, 70.0, 70.0, 69.9948, 69.9261, 69.6659, 69.0619, 67.9767, 66.3165, 64.0481, 61.2048, 57.8802, 54.2118, 50.352, 46.4286, 42.5, 38.5714, 34.6429, 30.7143, 26.7857, 22.8571, 18.9286, 15.0, 11.0714, 7.14286, 3.21429, -0.714286, -4.64286, -8.57143, -12.5, -16.4286, -20.352, -24.2118, -27.8802, -31.2048, -34.0481, -36.3165, -37.9767, -39.0619, -39.6659, -39.9261, -39.9948, -40.0, -40.0, -39.9925, -39.8925, -39.5141, -38.6355, -37.057, -34.6421, -31.3427, -27.2069, -22.3712, -17.0353, -11.421, -5.71429, 7.10543e-15, 5.71429, 11.4286, 17.1429, 22.8571, 28.5714, 34.2857, 40.0, 45.7143, 51.4286, 57.1429, 62.8571, 68.5714, 74.2857, 80.0, 85.7143, 91.421, 97.0353, 102.371, 107.207, 111.343, 114.642, 117.057, 118.636, 119.514, 119.892, 119.992, 120.0, 120.0, 119.994, 119.919, 119.636, 118.977, 117.793, 115.982, 113.507, 110.405, 106.778, 102.777, 98.5658, 94.2857, 90.0, 85.7143, 81.4286, 77.1429, 72.8571, 68.5714, 64.2857, 60.0, 55.7143, 51.4286, 47.1429, 42.8571, 38.5714, 34.2857, 30.0, 25.7143, 21.4342, 17.2235, 13.2216, 9.5948, 6.49298, 4.01842, 2.20727, 1.02337, 0.364432, 0.0806396, 0.00564969, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Top:hi_motor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0, 11.17, 11.77, 20.758, 21.258, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.3, 0.3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Top:hi_ring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0, 14.37, 14.97, 20.758, 21.258, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.2, 0.2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Top:gear")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0, 11.97, 12.67, 24.622, 25.222, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:legend")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:cam_x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0, 11.47, 12.47, 24.622, 25.622, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [200.0, 200.0, 420.0, 420.0, 240.0, 240.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:cam_y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = false
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [-85.0, -85.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:cam_zoom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = false
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0),
+"update": 0,
+"values": [0.6, 0.6]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:capy_tilt")
+tracks/8/interp = 1
+tracks/8/loop_wrap = false
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0, 2.2, 8.296, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 3.0, -3.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:capy_in")
+tracks/9/interp = 1
+tracks/9/loop_wrap = false
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0, 1.7, 2.15, 8.796, 9.246, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:eng_in")
+tracks/10/interp = 1
+tracks/10/loop_wrap = false
+tracks/10/keys = {
+"times": PackedFloat32Array(0.0, 8.546, 8.996, 30.57, 31.02, 35.27),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="lib"]
+_data = {
+&"sequence": SubResource("seq")
+}
+
+[node name="SC08" type="Node2D"]
+script = ExtResource("root")
+scene_tag = "SC08"
+scene_title = "Quay toa bằng mô tơ thủy lực"
+capy_blinks = [1.0, 4.3, 7.35, 9.77, 14.17, 16.23, 19.63, 24.12, 26.38, 29.92, 33.64]
+eng_blinks = [1.0, 4.59, 7.8, 11.41, 14.01, 18.27, 22.55, 26.36, 28.84, 32.3]
+
+[node name="Top" type="Node2D" parent="."]
+script = ExtResource("c0")
+gear_pos = Vector2(1270, -425)
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("lib")
+}
