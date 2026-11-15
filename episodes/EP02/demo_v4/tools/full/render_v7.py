@@ -29,6 +29,8 @@ TIMING = json.loads((PROJECT / 'full/timing.json').read_text(encoding='utf-8'))[
 from assemble import bed
 
 ORDER = [f'SC{i:02}' for i in range(1, 15)]
+MIX_VERSIONS = ('V8', 'V9', 'V10')
+BUMPER_VERSIONS = ('V9', 'V10')
 
 def run(cmd, log=None, cwd=None):
     kw = {'cwd': cwd}
@@ -57,7 +59,7 @@ def stamps(s):
 def subtitle_cues(sc, version='V7'):
     out = []
     for c in TIMING[sc]['cues']:
-        if version == 'V9' and sc == 'SC01' and c['text'] == 'Kĩ Sư Ơiiii!':
+        if version in BUMPER_VERSIONS and sc == 'SC01' and c['text'] == 'Kĩ Sư Ơiiii!':
             continue
         # Caption cue max 2x42 characters, without re-reading speaker prefixes.
         def wrap(text):
@@ -87,15 +89,15 @@ def probe(path):
 
 def mix(sc, folder, length, version):
     ambient = folder / f'{sc}_ambience.wav'
-    if version in ('V8', 'V9'):
+    if version in MIX_VERSIONS:
         from foley_v8 import soundscape
-        soundscape(sc, TIMING[sc], length, ambient, bumper=version == 'V9')
+        soundscape(sc, TIMING[sc], length, ambient, bumper=version in BUMPER_VERSIONS)
     else:
         bed(sc, length, str(ambient))
     voices = TIMING[sc]['voices']
     assert voices, f'{sc} is missing spoken audio'
     cmd = [FF, '-v', 'error', '-y', '-i', str(ambient)]
-    filters = [f'[0:a]volume={0.84 if version in ("V8", "V9") else 0.22}[bed]']
+    filters = [f'[0:a]volume={0.84 if version in MIX_VERSIONS else 0.22}[bed]']
     previous_end = 0
     for i, v in enumerate(voices):
         voice = PROJECT / v['file']
@@ -107,10 +109,10 @@ def mix(sc, folder, length, version):
         previous_end = v['t0'] + d
         assert previous_end <= length + 0.04, (sc, 'voice cut off')
         cmd += ['-i', str(voice)]
-        gain = 'volume=3dB,' if version in ('V8', 'V9') else ''
+        gain = 'volume=3dB,' if version in MIX_VERSIONS else ''
         # Let the new instrumental bumper take the slot of the old voice tag.
         # Delay the trimmed WAV by the same duration to keep the hook in sync.
-        intro_trim = 2.81 if version == 'V9' and sc == 'SC01' and i == 0 and TIMING[sc]['cues'][0]['text'] == 'Kĩ Sư Ơiiii!' else 0.0
+        intro_trim = 2.81 if version in BUMPER_VERSIONS and sc == 'SC01' and i == 0 and TIMING[sc]['cues'][0]['text'] == 'Kĩ Sư Ơiiii!' else 0.0
         trim = f'atrim=start={intro_trim},asetpts=PTS-STARTPTS,' if intro_trim else ''
         delay = round((v['t0'] + intro_trim) * 1000)
         filters.append(f'[{i+1}:a]{trim}aresample=48000,aformat=channel_layouts=stereo,{gain}adelay={delay}:all=1[v{i}]')
@@ -132,10 +134,14 @@ def render(sc, out, logs, resume, version):
         run([GODOT, '--path', str(PROJECT), '--resolution', '1920x1080', '--audio-driver', 'Dummy',
              '--write-movie', str(avi), '--fixed-fps', '30', '--quit-after', str(frames), scene_path(sc),
              '--', '--qa'], logs / f'{sc}_render.log')
+    render_log = log.read_text(errors='replace')
+    if 'SCRIPT ERROR:' in render_log or 'errors=0' not in render_log:
+        raise RuntimeError(f'The Godot render did not pass QA. Check {log}')
     wav = mix(sc, out, length, version)
+    video_filter = 'scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,setsar=1'
     run([FF, '-v', 'error', '-y', '-i', str(avi), '-i', str(wav),
          '-map', '0:v:0', '-map', '1:a:0', '-vf',
-         'scale=1920:1080:force_original_aspect_ratio=decrease:force_divisible_by=2,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,setsar=1',
+         video_filter,
          '-c:v', 'libx264', '-threads', '4', '-preset', 'veryfast', '-crf', '19',
          '-pix_fmt', 'yuv420p', '-r', '30', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000',
          '-movflags', '+faststart', '-t', str(length), str(mp4)], logs / f'{sc}_encode.log')
@@ -177,12 +183,12 @@ def write_stems(out, timeline, duration, version):
                 start += end_tag
             tracks[role][start:start + len(pcm)] = pcm
     for name, pcm in tracks.items():
-        if version == 'V9' and name == 'SIGNATURE':
+        if version in BUMPER_VERSIONS and name == 'SIGNATURE':
             continue
         with wave.open(str(folder / f'EP02_{version}_{name}.wav'), 'wb') as f:
             f.setparams((1, 2, 48000, 0, 'NONE', 'not compressed'))
             f.writeframes(pcm.tobytes())
-    if version in ('V8', 'V9'):
+    if version in MIX_VERSIONS:
         with wave.open(str(folder / f'EP02_{version}_HIEU_UNG.wav'), 'wb') as f:
             f.setparams((2, 2, 48000, 0, 'NONE', 'not compressed'))
             for segment in timeline:
@@ -233,7 +239,7 @@ def main():
     p.add_argument('--parts-only', action='store_true')
     p.add_argument('--resume', action='store_true')
     p.add_argument('--jobs', type=int, default=1)
-    p.add_argument('--version', choices=['V7', 'V8', 'V9'], default='V7')
+    p.add_argument('--version', choices=['V7', *MIX_VERSIONS], default='V7')
     p.add_argument('--review', action='store_true', help='encode a copy with styled captions')
     args = p.parse_args()
     out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
@@ -290,7 +296,7 @@ def main():
     subtitle_file(out / f'EP02_FULL_{args.version}_vi.srt', cues)
     if shots == ORDER:
         write_stems(out, summary, offset, args.version)
-    if args.version in ('V8', 'V9'):
+    if args.version in MIX_VERSIONS:
         captions = out / f'EP02_FULL_{args.version}_vi.ass'
         styled_captions(captions, cues)
         if args.review:

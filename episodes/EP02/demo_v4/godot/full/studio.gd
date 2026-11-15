@@ -7,6 +7,7 @@ const SCREEN := Rect2(535, 142, 850, 478.125)
 const VIEW := Vector2(1920, 1080)
 const NAVY := Color("#151f34")
 const MOUTH_D = preload("res://full/mouth.gd")
+const CapyDetails = preload("res://full/capy_details.gd")
 
 @export_range(0, 1) var studio_on := 1.0
 @export_range(0, 1) var push := 0.0
@@ -22,6 +23,7 @@ var t := 0.0
 var capy_mouth := 0.0
 var engineer_mouth := 0.0
 var engineer_line := false
+var has_workspace_props := false
 
 func _load_plate(name: String) -> Texture2D:
 	var path := ProjectSettings.globalize_path("res://local/" + name)
@@ -32,7 +34,10 @@ func _load_plate(name: String) -> Texture2D:
 	return ImageTexture.create_from_image(img)
 
 func _ready() -> void:
-	stage = _load_plate("studio_show_v9.png")
+	stage = _load_plate("studio_show_v10.png")
+	has_workspace_props = stage != null
+	if not stage:
+		stage = _load_plate("studio_show_v9.png")
 	if not stage:
 		stage = _load_plate("studio_show_v8.png")
 	capy = _load_plate("host_capy.png")
@@ -99,14 +104,12 @@ func _draw_studio() -> void:
 	# naturally and the desktop edge keeps the two hosts in the same space.
 	_foreground([Vector2(57,657), Vector2(194,663), Vector2(220,741), Vector2(300,754),
 		Vector2(299,769), Vector2(225,789), Vector2(85,778)])
-	_foreground([Vector2(435,694), Vector2(443,666), Vector2(496,597), Vector2(533,607),
-		Vector2(529,632), Vector2(492,681), Vector2(496,749), Vector2(526,755),
-		Vector2(523,777), Vector2(429,779), Vector2(428,758), Vector2(464,746),
-		Vector2(462,707), Vector2(447,709)])
-	_foreground([Vector2(1142,619), Vector2(1158,598), Vector2(1178,597), Vector2(1237,664),
-		Vector2(1234,709), Vector2(1210,708), Vector2(1209,747), Vector2(1247,754),
-		Vector2(1246,776), Vector2(1146,780), Vector2(1145,757), Vector2(1177,746),
-		Vector2(1178,684)])
+	if has_workspace_props:
+		_foreground([Vector2(1330,754), Vector2(1416,742), Vector2(1443,667),
+			Vector2(1584,653), Vector2(1588,663), Vector2(1552,769), Vector2(1408,789),
+			Vector2(1330,768)])
+		_microphone(Vector2(541, 880), Vector2(414, 620), capy_mouth)
+		_microphone(Vector2(1366, 880), Vector2(1540, 565), engineer_mouth)
 	canvas.draw_set_transform(Vector2.ZERO)
 
 func _people(s: float) -> void:
@@ -129,23 +132,35 @@ func _people(s: float) -> void:
 		if blink < 0.12:
 			_lid(Vector2(left + 81, -186), 8, 11)
 			_lid(Vector2(left + 141, -168), 9, 11)
-		_glasses(Vector2(left + 81, -186), Vector2(left + 141, -168))
+		CapyDetails.glasses(canvas, Vector2(left + 81, -186), Vector2(left + 141, -168))
 		MOUTH_D.draw(canvas, Vector2(left + 103, -150), 9.0, capy_mouth, Color("#fbb166"), 0.22)
-		# Flip the character as a whole for a clean silhouette, then orient
-		# only the printed letters on the original badge toward the viewer.
-		var badge := Rect2(122, 230, 17, 12)
+		# Keep the new badge upright in sprite space when the pose is mirrored.
 		canvas.draw_set_transform(stage_offset + seat * s, angle, Vector2.ONE * q)
-		canvas.draw_texture_rect_region(capy, Rect2(Vector2(-left - badge.end.x, -270 + badge.position.y), badge.size), badge)
+		CapyDetails.badge(canvas, Vector2(-left - 129, -35))
 
-func _glasses(a: Vector2, b: Vector2) -> void:
-	var rim := Color("#23354a")
-	canvas.draw_line(a + Vector2(-18, -5), a + Vector2(-30, -12), rim, 2.7, true)
-	canvas.draw_line(b + Vector2(18, -4), b + Vector2(29, -7), rim, 2.7, true)
-	canvas.draw_line(a + Vector2(17, 1), b + Vector2(-17, -6), rim, 2.6, true)
-	for p in [a, b]:
-		canvas.draw_circle(p, 18.0, Color(0.64, 0.81, 0.95, 0.10), true, -1, true)
-		canvas.draw_arc(p, 18.0, 0, TAU, 40, rim, 2.5, true)
-		canvas.draw_arc(p, 15.8, 3.65, 4.48, 12, Color(0.91, 0.98, 1.0, 0.7), 1.5, true)
+func _microphone(base: Vector2, target: Vector2, level: float) -> void:
+	var pivot := base - Vector2(0, 76)
+	var aim := (target - pivot).normalized()
+	var flank := aim.orthogonal()
+	var grille := pivot + aim * 99
+	var black := Color("#100f17")
+	canvas.draw_line(base - Vector2(30, 1), base + Vector2(30, 1), Color(0.08, 0.04, 0.05, 0.34), 17, true)
+	canvas.draw_line(base - Vector2(29, 7), base + Vector2(29, -7), Color("#211d26"), 19, true)
+	canvas.draw_line(base - Vector2(24, 7), base + Vector2(24, -7), Color("#4d4750"), 10, true)
+	canvas.draw_line(base - Vector2(0, 7), pivot, black, 14, true)
+	canvas.draw_line(base - Vector2(1, 9), pivot, Color("#70656c"), 4, true)
+	canvas.draw_circle(pivot, 13, black, true, -1, true)
+	canvas.draw_line(pivot - aim * 12, grille, black, 42, true)
+	canvas.draw_circle(grille, 20.8, black, true, -1, true)
+	canvas.draw_line(pivot - aim * 8, grille, Color("#403942"), 35, true)
+	canvas.draw_circle(grille, 17.3, Color("#504853"), true, -1, true)
+	canvas.draw_line(pivot + aim * 36, grille - aim * 6, Color("#64575d"), 24, true)
+	for row in 7:
+		var point := grille + aim * (9 - row * 7)
+		canvas.draw_line(point - flank * 11, point + flank * 11, Color("#292630"), 1.7, true)
+	var light := Color("#236192").lerp(Color("#63d6ff"), clampf(0.28 + level, 0.0, 1.0))
+	var ring := pivot + aim * 23
+	canvas.draw_line(ring - flank * 17.5, ring + flank * 17.5, light, 5.5, true)
 
 func _lid(center: Vector2, rx: float, ry: float) -> void:
 	var shape := PackedVector2Array()

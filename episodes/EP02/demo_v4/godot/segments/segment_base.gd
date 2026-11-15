@@ -226,6 +226,7 @@ func _callout(text: String, tag: String, anchor: Vector2, offset: Vector2, a: fl
 
 ## Host corner: slides in from the bottom edge, rigid tilt, eyelid blinks.
 const Mouth = preload("res://full/mouth.gd")
+const CapyDetails = preload("res://full/capy_details.gd")
 var _mouth_data = null
 
 ## 0..1 mouth opening of "CAPY" / "KS" at the current frame (full/mouth.json)
@@ -276,6 +277,8 @@ func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eye
 			hud.draw_colored_polygon(pts, Color(250 / 255.0, 172 / 255.0, 100 / 255.0))
 			hud.draw_line(c + Vector2(-rx, ry * 0.2 if close > 0.8 else 0.0), c + Vector2(rx, ry * 0.2 if close > 0.8 else 0.0), Color("#2a1d14"), 2.2, true)
 	if left:
+		CapyDetails.glasses(hud, off + Vector2(eyes[0][0], eyes[0][1]), off + Vector2(eyes[1][0], eyes[1][1]))
+		CapyDetails.badge(hud, off + Vector2(129, 235))
 		Mouth.draw(hud, off + Vector2(103, 120), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), 0.25)
 	else:
 		Mouth.draw(hud, off + Vector2(177, 177), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), -0.3)
