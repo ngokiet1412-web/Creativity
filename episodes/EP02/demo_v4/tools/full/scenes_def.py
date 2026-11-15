@@ -174,12 +174,12 @@ def define5(SCENES, timeline, write, hosts, blinks):
         "Top:gear": [(0, 0), (m["motor.s"] + 0.5, 0, -2), (m["motor.s"] + 1.2, 1), (m["ok.s"], 1, -2), (m["ok.s"] + 0.6, 0), (L, 0)],
         ".:legend": [(0, 0), (L, 0)],
         ".:cam_x": [(0, 200), (m["motor.s"], 200, -2), (m["motor.s"] + 1.0, 420), (m["ok.s"], 420, -2), (m["ok.s"] + 1.0, 240), (L, 240)],
-        ".:cam_y": [(0, -20), (L, -20)],
-        ".:cam_zoom": [(0, 0.92), (m["motor.s"], 0.92, -2), (m["motor.s"] + 1.0, 0.86), (m["ok.s"], 0.86, -2), (m["ok.s"] + 1.0, 0.88), (L, 0.88)],
+        ".:cam_y": [(0, -85), (L, -85)],
+        ".:cam_zoom": [(0, 0.60), (L, 0.60)],
         ".:capy_tilt": [(0, 0), (m["q.s"], 3), (m["q.e"], -3), (L, 0)],
     }
     keys.update(hosts(tl))
-    write("sc08", "sc08.gd", L, [("Top", "res://full/topview.gd", "gear_pos = Vector2(980, -190)")], keys,
+    write("sc08", "sc08.gd", L, [("Top", "res://full/topview.gd", "gear_pos = Vector2(1270, -425)")], keys,
           {"scene_tag": '"SC08"', "scene_title": '"Quay toa bằng mô tơ thủy lực"', "capy_blinks": blinks(L, 9), "eng_blinks": blinks(L, 10)})
 
 

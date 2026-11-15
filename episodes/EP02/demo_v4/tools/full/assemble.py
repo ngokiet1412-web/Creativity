@@ -45,7 +45,7 @@ def bed(scene, length, out):
     rng = np.random.default_rng(len(scene) * 7 + int(scene[2:]))
     n = int(length * SR)
     t = np.arange(n) / SR
-    eng, pump, extra = BED[scene]
+    eng, pump, extra = BED.get(scene, (0.55, 0.3, ""))
     rpm = 1750 + 40 * np.sin(t * 0.7)
     ph = 2 * np.pi * np.cumsum(rpm / 60 * 3) / SR
     x = eng * sum((0.5 / k) * np.sin(k * ph + 0.6 * k) for k in range(1, 6))
@@ -120,13 +120,13 @@ def main(rdir, out):
             cmd = ["ffmpeg", "-v", "error", "-y", "-i", wav]
             flt = "[0]volume=0.5[b];"
             for k, v in enumerate(voices):
-                cmd += ["-i", v["file"]]
+                cmd += ["-i", os.path.join(DEMO, "godot", v["file"])]
                 flt += "[%d]aresample=48000,aformat=channel_layouts=stereo,adelay=%d:all=1[v%d];" % (k + 1, int(v["t0"] * 1000), k)
             flt += "[b]" + "".join("[v%d]" % k for k in range(len(voices))) + "amix=inputs=%d:normalize=0:duration=first[m]" % (len(voices) + 1)
             run(cmd + ["-filter_complex", flt, "-map", "[m]", mix])
             wav = mix
         mp4 = os.path.join(out, f"{sc}.mp4")
-        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+        run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", wav, "-map", "0:v:0", "-map", "1:a:0", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
              "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", mp4])
         parts.append(mp4)
         srt_path = os.path.join(DEMO, SEG_SRT[sc]) if sc in SEG_SRT else os.path.join(DEMO, "full_v5", f"EP02_{sc}_vi.srt")

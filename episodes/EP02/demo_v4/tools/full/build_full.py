@@ -71,8 +71,12 @@ def voice_file(scene, idx, who):
 
 
 def media_len(p):
+    if str(p).lower().endswith('.wav'):
+        import wave
+        with wave.open(str(p), 'rb') as f:
+            return f.getnframes() / f.getframerate()
     import subprocess
-    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p],
+    return float(subprocess.run([os.environ.get("FFPROBE", "ffprobe"), "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p],
                                 capture_output=True, text=True).stdout.strip())
 
 
@@ -111,7 +115,16 @@ def timeline(scene, items, lead=0.6, tail=1.2):
             chs = chunks(text)
             if vf:      # real VO: the line lasts as long as the recording; cues split by syllables
                 total = media_len(vf)
-                voices.append({"file": vf, "t0": round(t, 3), "who": who})
+                voices.append({"file": vf, "t0": round(t, 3), "who": who, "line": it[1]})
+                sidecar = os.path.splitext(vf)[0] + ".json"
+                if os.path.exists(sidecar):
+                    for c in json.load(open(sidecar, encoding="utf-8"))["cues"]:
+                        cues.append({"who": who, "t0": round(t + c["t0"], 3),
+                                     "t1": round(t + c["t1"], 3), "text": c["text"], "line": it[1]})
+                    t += total
+                    marks[it[2] + ".e"] = round(t, 3)
+                    prev_who = who
+                    continue
                 w = [syl(c) for c in chs]
                 for ch, wi in zip(chs, w):
                     d = total * wi / sum(w)
@@ -179,7 +192,7 @@ def write(name, script, length, nodes, keys, props):
              f'\n[node name="Camera" type="Camera2D" parent="."]\n\n'
              f'[node name="AnimationPlayer" type="AnimationPlayer" parent="."]\nlibraries = {{\n&"": SubResource("lib")\n}}\n')
     os.makedirs(os.path.join(GODOT, "full"), exist_ok=True)
-    open(os.path.join(GODOT, "full", f"{name}.tscn"), "w").write(scene)
+    open(os.path.join(GODOT, "full", f"{name}.tscn"), "w", encoding="utf-8").write(scene)
 
 
 def blinks(length, seed, every=3.4):
@@ -247,22 +260,19 @@ def mouth_env(tl):
     import numpy as np
     n = int(tl["length"] * 30) + 2
     env = {"CAPY": np.zeros(n), "KS": np.zeros(n)}
-    voiced = set()
     for v in tl.get("voices", []):
-        raw = subprocess.run(["ffmpeg", "-v", "error", "-i", v["file"], "-f", "s16le", "-ac", "1", "-ar", "16000", "-"], capture_output=True).stdout
+        raw = subprocess.run([os.environ.get("FFMPEG", "ffmpeg"), "-v", "error", "-i", v["file"], "-f", "s16le", "-ac", "1", "-ar", "16000", "-"], capture_output=True).stdout
         x = np.frombuffer(raw, "<i2").astype(float) / 32768.0
-        hop = 16000 // 30
-        rms = np.array([np.sqrt((x[i:i + hop] ** 2).mean()) for i in range(0, max(len(x) - hop, 1), hop)])
+        # Exact sample edges prevent drift from rounding 16000/30 to 533.
+        edges = np.rint(np.arange(int(len(x) / 16000 * 30) + 1) * 16000 / 30).astype(int)
+        rms = np.array([np.sqrt((x[a:b] ** 2).mean()) for a, b in zip(edges, edges[1:]) if b > a])
         if len(rms):
             rms = np.clip((rms / (np.percentile(rms, 95) + 1e-6) - 0.12) / 0.7, 0, 1)
             i0 = int(round(v["t0"] * 30))
             m = min(len(rms), n - i0)
             env[v["who"]][i0:i0 + m] = np.maximum(env[v["who"]][i0:i0 + m], rms[:m])
-            voiced.add((v["who"], round(v["t0"], 1)))
-    have_voice = bool(tl.get("voices"))
     for ci, c in enumerate(tl["cues"]):
-        if have_voice and any(w == c["who"] and abs(c["t0"] - t0) < 60 for w, t0 in voiced) and "line" in c and \
-                any(v["who"] == c["who"] and v["t0"] <= c["t0"] + 1e-3 for v in tl["voices"]):
+        if any(v["who"] == c["who"] and v.get("line") == c.get("line") for v in tl.get("voices", [])):
             continue
         k = max(syl(c["text"]), 1)
         d = (c["t1"] - c["t0"]) / k
@@ -306,23 +316,31 @@ if __name__ == "__main__":
         out["scenes"][sc] = tl
     mouth = {sc: mouth_env(tl) for sc, tl in SCENES.items()}
     for tag in ("SC03", "SC04", "SC05"):
-        seg = seg_cues(tag)
+        from retime_v7 import retime_segment
+        files = [voice_file(tag, i, who) for i, (who, _) in enumerate(LINES[tag])]
+        if all(p and os.path.exists(os.path.splitext(p)[0] + ".json") for p in files):
+            seg = retime_segment(tag, LINES[tag], DEMO, voice_file, media_len)
+        else:
+            seg = seg_cues(tag)
         out["scenes"][tag] = seg
         mouth[tag] = mouth_env(seg)
-    json.dump(out, open(os.path.join(GODOT, "full", "timing.json"), "w"), ensure_ascii=False, indent=1)
+    for tl in out["scenes"].values():
+        for v in tl["voices"]:
+            v["file"] = os.path.relpath(v["file"], GODOT).replace(os.sep, "/")
+    json.dump(out, open(os.path.join(GODOT, "full", "timing.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     json.dump(mouth, open(os.path.join(GODOT, "full", "mouth.json"), "w"))
     sub = os.path.join(DEMO, "full_v5")
     os.makedirs(sub, exist_ok=True)
     with open(os.path.join(sub, "audio_timing_full.csv"), "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["scene", "cue", "speaker", "start_s", "end_s", "est_s", "voice_file", "text"])
         for sc, tl in SCENES.items():
             with open(os.path.join(sub, f"EP02_{sc}_vi.srt"), "w", encoding="utf-8") as s:
                 for i, c in enumerate(tl["cues"], 1):
                     s.write("%d\n%s --> %s\n%s: %s\n\n" % (i, srt_time(c["t0"]), srt_time(c["t1"]),
                             "CAPY" if c["who"] == "CAPY" else "ANH KỸ SƯ", c["text"]))
-                    w.writerow([sc, i, c["who"], c["t0"], c["t1"], round(c["t1"] - c["t0"], 2),
-                                "pending ElevenLabs (owner-approved)", c["text"]])
+                    clip = next((os.path.basename(v["file"]) for v in tl["voices"] if v.get("line") == c.get("line")), "")
+                    w.writerow([sc, i, c["who"], c["t0"], c["t1"], round(c["t1"] - c["t0"], 2), clip, c["text"]])
     # recording sheet for the VO (one file per script line, dropped in godot/local/voice/)
     with open(os.path.join(sub, "VOICE_SHEET.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

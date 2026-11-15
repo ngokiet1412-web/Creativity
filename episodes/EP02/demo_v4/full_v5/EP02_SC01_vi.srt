@@ -1,44 +1,32 @@
 1
-00:00:00,800 --> 00:00:01,764
-CAPY: Kĩiii sưuuu ơiiii!
+00:00:00,800 --> 00:00:03,610
+CAPY: Kĩ Sư Ơiiii!
 
 2
-00:00:02,064 --> 00:00:02,790
+00:00:03,730 --> 00:00:05,290
 CAPY: Ê anh!
 
 3
-00:00:03,090 --> 00:00:05,483
+00:00:05,410 --> 00:00:08,602
 CAPY: Bữa trước mình coi nguyên công trường rồi đó.
 
 4
-00:00:05,783 --> 00:00:10,319
-CAPY: Mà tui vẫn thắc mắc: cái tay máy đào này nhìn như mấy miếng sắt nối với nhau,
+00:00:08,722 --> 00:00:16,018
+CAPY: Mà tui vẫn thắc mắc: cái tay máy đào này nhìn như mấy miếng sắt nối với nhau, sao nó nâng được một gầu đất nặng dữ vậy?
 
 5
-00:00:10,619 --> 00:00:13,250
-CAPY: sao nó nâng được một gầu đất nặng dữ vậy?
-
-6
-00:00:13,550 --> 00:00:15,705
+00:00:16,238 --> 00:00:19,310
 CAPY: Nó có giấu cơ bắp trong đó hả?
 
-7
-00:00:18,105 --> 00:00:19,545
+6
+00:00:21,710 --> 00:00:23,990
 ANH KỸ SƯ: Không có cơ bắp đâu.
 
+7
+00:00:24,110 --> 00:00:29,606
+ANH KỸ SƯ: Thứ đáng xem nằm bên trong thân máy: một hệ thống thủy lực được điều khiển khá thông minh.
+
 8
-00:00:19,845 --> 00:00:22,000
-ANH KỸ SƯ: Thứ đáng xem nằm bên trong thân máy:
-
-9
-00:00:22,300 --> 00:00:25,169
-ANH KỸ SƯ: một hệ thống thủy lực được điều khiển khá thông minh.
-
-10
-00:00:25,469 --> 00:00:30,719
-ANH KỸ SƯ: Hôm nay mình lấy Komatsu PC200-8 làm ví dụ, đi từ động cơ cho tới tận gầu,
-
-11
-00:00:31,019 --> 00:00:33,412
-ANH KỸ SƯ: rồi xem luôn quay toa và hai bánh xích.
+00:00:29,726 --> 00:00:38,222
+ANH KỸ SƯ: Hôm nay mình lấy Komatsu PC200-8 làm ví dụ, đi từ động cơ cho tới tận gầu, rồi xem luôn quay toa và hai bánh xích.
 

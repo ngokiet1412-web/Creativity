@@ -1,28 +1,28 @@
 1
-00:00:02,200 --> 00:00:03,879
+00:00:02,200 --> 00:00:04,648
 CAPY: Tay gầu thì dùng xi lanh.
 
 2
-00:00:04,179 --> 00:00:07,048
+00:00:04,768 --> 00:00:08,296
 CAPY: Nhưng tại sao nguyên cái thân trên quay vòng vòng được?
 
 3
-00:00:07,798 --> 00:00:09,238
+00:00:09,046 --> 00:00:11,350
 ANH KỸ SƯ: Đó là mạch quay toa.
 
 4
-00:00:09,538 --> 00:00:11,931
+00:00:11,470 --> 00:00:14,806
 ANH KỸ SƯ: Dầu cấp đến mô tơ thủy lực quay toa;
 
 5
-00:00:12,231 --> 00:00:17,243
+00:00:14,926 --> 00:00:20,638
 ANH KỸ SƯ: mô tơ cùng bộ truyền giảm tốc tạo mô men để xoay phần trên của máy trên vòng quay toa.
 
 6
-00:00:17,543 --> 00:00:20,650
+00:00:20,758 --> 00:00:24,502
 ANH KỸ SƯ: Hệ thống có chức năng hãm và giữ quay theo thiết kế.
 
 7
-00:00:20,950 --> 00:00:25,248
+00:00:24,622 --> 00:00:30,070
 ANH KỸ SƯ: Ở hình này, gầm xích vẫn đứng yên còn phần thân trên xoay — nhìn vậy mới đúng.
 

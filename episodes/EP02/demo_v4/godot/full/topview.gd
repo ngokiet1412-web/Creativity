@@ -11,10 +11,12 @@ extends Node2D
 ##    gear: pinion spin = swing * (1 - Z_ring / Z_pinion)  (rolling, no slip)
 
 const Kit = preload("res://cutaway/kit.gd")
-const PAINT := Color("#e7a82b")
-const PAINT_DARK := Color("#a8701b")
 const Z_RING := 90
 const Z_PIN := 14
+const UPPER_V7 = preload("res://art/top_upper_v7.png")
+const GROUND_V7 = preload("res://art/top_ground_v7.png")
+const ART_SCALE := 0.44
+const ART_PIVOT := Vector2(430, 380)
 
 @export var swing_deg := 0.0
 @export var track_l := 0.0
@@ -44,19 +46,8 @@ func _draw() -> void:
 		_gear_inset()
 
 func _ground() -> void:
-	var r = Rect2(-1400, -700, 2800, 1400)
-	draw_rect(r, Color("#8a6747"))
-	var rng = RandomNumberGenerator.new()
-	rng.seed = 5
-	for i in 900:
-		var p = Vector2(rng.randf_range(r.position.x, r.end.x), rng.randf_range(r.position.y, r.end.y))
-		draw_circle(p, rng.randf_range(2, 7), Color(0.35, 0.24, 0.15, rng.randf_range(0.08, 0.25)))
-	for side in [-1.0, 1.0]:   # old track imprints
-		var y = side * 119.0
-		for x in range(-1400, 1400, 19):
-			draw_rect(Rect2(x, y - 30, 12, 60), Color(0.3, 0.2, 0.12, 0.10))
-	for k in 18:
-		draw_rect(r.grow(-k * 6), Color(0.05, 0.08, 0.14, 0.05), false, 6.0)
+	var r = Rect2(Vector2(-1800, -1200), GROUND_V7.get_size() * 2.55)
+	draw_texture_rect(GROUND_V7, r, false)
 
 # ------------------------------------------------------------ undercarriage
 func _undercarriage() -> void:
@@ -69,7 +60,7 @@ func _undercarriage() -> void:
 		# links: shoes moving with the track (top run moves opposite to bottom run;
 		# from above we see the top run)
 		var pitch = 19.0
-		var off = fposmod(-trav, pitch)
+		var off = fposmod(trav, pitch)
 		var x = r.position.x + off
 		while x < r.end.x:
 			draw_rect(Rect2(x, r.position.y + 2, pitch - 3, r.size.y - 4), Color("#55504a"))
@@ -98,53 +89,19 @@ func _ring(k: float) -> void:
 
 # ------------------------------------------------------------------- upper
 func _upper() -> void:
-	var a = upper_alpha
-	draw_set_transform(Vector2.ZERO, deg_to_rad(-swing_deg), Vector2.ONE)
-	# shadow
-	var body = PackedVector2Array([Vector2(110, -135), Vector2(110, 135), Vector2(-236, 135)])
-	var a0 = atan2(135.0, -236.0)
-	var a1 = atan2(-135.0, -236.0) + TAU
-	for i in 25:   # rear counterweight arc (tail swing radius)
-		var ang = a0 + (a1 - a0) * i / 24.0
-		body.append(Vector2(cos(ang), sin(ang)) * 272.0)
-	var sh = PackedVector2Array()
-	for p in body:
-		sh.append(p + Vector2(10, 14))
-	draw_colored_polygon(sh, Color(0, 0, 0, 0.3 * a))
-	draw_colored_polygon(body, Color(PAINT, a))
-	body.append(body[0])
-	draw_polyline(body, Color(Kit.INK, a), 3.0, true)
-	# engine hood + grilles, counterweight band
-	draw_rect(Rect2(-240, -100, 150, 200), Color(PAINT_DARK.lightened(0.15), a))
-	for k in 8:
-		draw_line(Vector2(-228 + k * 17, -84), Vector2(-228 + k * 17, 84), Color(Kit.INK, 0.6 * a), 2.0)
-	draw_rect(Rect2(-240, -100, 150, 200), Color(Kit.INK, a), false, 2.0)
-	# cab (front-left)
-	var cab = Rect2(-60, -128, 160, 92)
-	draw_rect(cab, Color("#d39a2a"))
-	draw_rect(cab.grow(-10), Color(0.5, 0.75, 0.9, 0.85 * a))
-	draw_line(cab.grow(-10).position + Vector2(10, 8), cab.grow(-10).position + Vector2(60, 8), Color(1, 1, 1, 0.6 * a), 3.0)
-	draw_rect(cab, Color(Kit.INK, a), false, 2.4)
-	# boom + arm (top view, straight ahead)
-	var bm = PackedVector2Array([Vector2(60, -26), Vector2(640, -20), Vector2(640, 20), Vector2(60, 26)])
-	draw_colored_polygon(bm, Color(PAINT, a))
-	bm.append(bm[0])
-	draw_polyline(bm, Color(Kit.INK, a), 2.6, true)
-	draw_rect(Rect2(600, -16, 260, 32), Color(PAINT_DARK.lightened(0.1), a))
-	draw_rect(Rect2(600, -16, 260, 32), Color(Kit.INK, a), false, 2.2)
-	draw_rect(Rect2(850, -50, 70, 100), Color("#7b6a55"))
-	draw_rect(Rect2(850, -50, 70, 100), Color(Kit.INK, a), false, 2.2)
-	for yy in [-9.0, 9.0]:
-		draw_line(Vector2(80, yy * 2.2), Vector2(380, yy * 1.4), Color("#c9ccd0"), 7.0, true)
-	# swing motor + reduction on the upper, pinion meshing near the ring
-	var mp = Vector2(40, 70)
-	if hi_motor > 0.0:
-		for k in 4:
-			draw_circle(mp, 24 + k * 7, Color(1, 0.82, 0.3, 0.1 * hi_motor), true, -1, true)
-	draw_circle(mp, 22, Color("#6a6e75"))
-	draw_circle(mp, 12, Color("#b23a2c"))
-	draw_arc(mp, 22, 0, TAU, 24, Color(Kit.INK, a), 2.2, true)
+	# A rigid painted superstructure. Rotation is around the turntable only.
+	# No texture warping; front equipment is held fixed for this plan-view shot.
+	draw_set_transform(Vector2(8, 12), deg_to_rad(-swing_deg), Vector2.ONE * ART_SCALE)
+	draw_texture(UPPER_V7, -ART_PIVOT, Color(0, 0, 0, 0.22 * upper_alpha))
+	draw_set_transform(Vector2.ZERO, deg_to_rad(-swing_deg), Vector2.ONE * ART_SCALE)
+	draw_texture(UPPER_V7, -ART_PIVOT, Color(1, 1, 1, upper_alpha))
 	draw_set_transform(Vector2.ZERO)
+	var mp = Vector2(40, 70).rotated(deg_to_rad(-swing_deg))
+	if hi_motor > 0.0:
+		for k in 3:
+			draw_arc(mp, 28 + k * 5, 0, TAU, 48, Color(1, 0.85, 0.4, hi_motor * 0.3), 3.0, true)
+	if hi_ring > 0.0:
+		draw_arc(Vector2.ZERO, 92, 0, TAU, 64, Color(1, 0.85, 0.35, hi_ring * 0.8), 4.0, true)
 
 # ------------------------------------------------------------ gear inset
 func _gear_inset() -> void:
@@ -170,7 +127,7 @@ func _gear_inset() -> void:
 			rc + Vector2(cos(t1), sin(t1)) * (R - 12), rc + Vector2(cos(t1 + 0.012), sin(t1 + 0.012)) * (R + 14)])
 		draw_colored_polygon(poly, Color("#8a9099", k))
 	draw_arc(rc, R + 14, -PI * 0.5 - 0.5, -PI * 0.5 + 0.5, 48, Color(Kit.INK, k), 2.0, true)
-	Kit.label(self, ThemeDB.fallback_font, c + Vector2(-240, -170), "vòng răng trong (gắn gầm) · khung nhìn theo thân trên", 20, Color(1, 1, 1, k))
+	Kit.label(self, ThemeDB.fallback_font, c + Vector2(-240, -170), "Vòng răng trong · gắn với gầm", 24, Color(1, 1, 1, k))
 	# pinion carried by the upper: its centre turns with the swing angle,
 	# its spin follows rolling inside the fixed ring
 	# inset frame turns WITH the upper: pinion centre fixed, ring teeth pass by
@@ -189,4 +146,4 @@ func _gear_inset() -> void:
 	draw_circle(cen, 12, Color(Kit.INK, k))
 	var mark = cen + Vector2(cos(spin - PI * 0.5), sin(spin - PI * 0.5)) * (rp - 18)
 	draw_circle(mark, 6, Color(1, 1, 1, k))
-	Kit.label(self, ThemeDB.fallback_font, cen + Vector2(-110, rp + 34), "bánh răng nhỏ (mô tơ + giảm tốc, trên thân trên)", 20, Color(1, 0.85, 0.75, k))
+	Kit.label(self, ThemeDB.fallback_font, c + Vector2(-240, 155), "Bánh răng dẫn · gắn với thân trên", 24, Color(1, 0.85, 0.75, k))

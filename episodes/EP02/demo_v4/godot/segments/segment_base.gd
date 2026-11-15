@@ -22,6 +22,7 @@ const FPS := 30.0
 @export var cam_zoom := 1.0
 ## (base_time, inserted_seconds) pairs written by tools/segment_timing.py
 @export var inserts: PackedVector2Array = PackedVector2Array()
+@export var retime_keys: PackedVector2Array = PackedVector2Array()
 
 var player: AnimationPlayer
 var anim: Animation
@@ -87,6 +88,11 @@ func warp(bt: float) -> float:
 	for ins in inserts:
 		if bt > ins.x:
 			out += ins.y
+	for i in range(1, retime_keys.size()):
+		if out <= retime_keys[i].x:
+			var a = retime_keys[i - 1]
+			var b = retime_keys[i]
+			return lerpf(a.y, b.y, clampf((out - a.x) / (b.x - a.x), 0.0, 1.0))
 	return out
 
 func sample(path: String, time: float) -> float:
@@ -237,7 +243,7 @@ func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eye
 	var e = 1.0 - pow(1.0 - k, 3.0)
 	var sc = 1.25 if left else 1.0
 	var size = tex.get_size() * sc
-	var base = Vector2(70.0 if left else 1920.0 - size.x - 50.0, 1080.0 - size.y * e + 6.0)
+	var base = Vector2(38.0 if left else 1920.0 - size.x - 38.0, 970.0 - size.y * e + 6.0)
 	var pivot = base + Vector2(size.x * 0.5, size.y)
 	var bob = sin(t * 2.1) * 1.5
 	# the right-hand host is mirrored so he faces / points INTO the frame

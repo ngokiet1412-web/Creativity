@@ -49,7 +49,8 @@ func _draw() -> void:
 	# inner shaft (tied to the undercarriage)
 	var shaft = Rect2(-60, -250, 120, 420)
 	Kit.body(self, Kit.rect_pts(shaft), Color("#a9b1ba"), 2.2)
-	# annular grooves + seals; supply line -> left motor, return -> right
+	# Two isolated work passages A/B of ONE reversible travel motor.
+	# Red supply / blue return show only the selected direction, not fixed ports.
 	var ys = [-190.0, -110.0]
 	var cols = [Kit.RED, Kit.BLUE]
 	for i in 2:
@@ -63,10 +64,15 @@ func _draw() -> void:
 		# drilled passage down the shaft to the undercarriage
 		var px = -24.0 if i == 0 else 24.0
 		Kit.pipe(self, PackedVector2Array([Vector2(px, y), Vector2(px, 170), Vector2(px + side * 0.0, 230)]), cols[i], travel * (1 if i == 0 else -1), 12, live)
-		Kit.pipe(self, PackedVector2Array([Vector2(px, 230), Vector2(px, 300), Vector2(side * 460, 300), Vector2(side * 460, 380)]), cols[i], travel * (1 if i == 0 else -1), 16, live)
+		Kit.pipe(self, PackedVector2Array([Vector2(px, 230), Vector2(px, 275), Vector2(side * 145, 275), Vector2(side * 145, 365), Vector2(side * 62, 365)]), cols[i], travel * (1 if i == 0 else -1), 16, live)
+		draw_circle(Vector2(side * 145, 330), 19, Color("#142435"))
+		Kit.label(self, font, Vector2(side * 145 - 9, 339), "A" if i == 0 else "B", 22, cols[i].lightened(0.45))
 	Kit.label(self, font, Vector2(-520, -110), "từ cụm van (thân trên)", 26)
-	Kit.label(self, font, Vector2(-560, 420), "→ mô tơ di chuyển", 26)
-	Kit.label(self, font, Vector2(330, 420), "mô tơ di chuyển ←", 26)
+	Kit.disc(self, Vector2(0, 365), 62, Color("#556a79"))
+	draw_circle(Vector2(0, 365), 39, Color("#273f51"))
+	draw_arc(Vector2(0, 365), 28, turn * 0.08, turn * 0.08 + PI * 1.6, 30, Color("#ffd36d"), 5.0, true)
+	Kit.label(self, font, Vector2(-195, 464), "A / B · cùng một mô tơ di chuyển", 24)
+	Kit.label(self, font, Vector2(-235, 495), "Đổi chiều: cấp / hồi đổi vai · nhánh kia tương tự", 20)
 	Kit.label(self, font, Vector2(130, -150), "rãnh vòng: dầu thông mọi góc quay", 26, Color(1, 0.9, 0.6))
 	# noodle gag: hoses twisted round each other, crossed out
 	if noodle > 0.01:

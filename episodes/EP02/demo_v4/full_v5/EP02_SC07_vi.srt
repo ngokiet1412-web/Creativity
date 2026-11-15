@@ -1,44 +1,40 @@
 1
-00:00:01,600 --> 00:00:04,707
+00:00:01,600 --> 00:00:05,584
 CAPY: Nghe nói áp suất càng cao là máy càng mạnh, đúng hông?
 
 2
-00:00:05,457 --> 00:00:06,660
+00:00:06,334 --> 00:00:08,422
 ANH KỸ SƯ: Đúng một phần thôi.
 
 3
-00:00:06,960 --> 00:00:08,876
-ANH KỸ SƯ: Với một khoang xi lanh lý tưởng,
+00:00:08,542 --> 00:00:14,806
+ANH KỸ SƯ: Với một khoang xi lanh lý tưởng, lực do áp suất tác dụng xấp xỉ F bằng p nhân diện tích A.
 
 4
-00:00:09,176 --> 00:00:12,998
-ANH KỸ SƯ: lực do áp suất tác dụng xấp xỉ F bằng p nhân diện tích A.
+00:00:14,926 --> 00:00:19,270
+ANH KỸ SƯ: Muốn piston chuyển động nhanh, còn cần lưu lượng Q;
 
 5
-00:00:13,298 --> 00:00:18,071
-ANH KỸ SƯ: Muốn piston chuyển động nhanh, còn cần lưu lượng Q; tốc độ lý tưởng gần bằng Q chia A.
+00:00:19,390 --> 00:00:22,606
+ANH KỸ SƯ: tốc độ lý tưởng gần bằng Q chia A.
 
 6
-00:00:18,371 --> 00:00:22,193
-ANH KỸ SƯ: Nhưng lực tới răng gầu phụ thuộc thêm góc xi lanh, tay đòn, ma sát,
+00:00:22,726 --> 00:00:29,326
+ANH KỸ SƯ: Nhưng lực tới răng gầu phụ thuộc thêm góc xi lanh, tay đòn, ma sát, tổn thất và giới hạn bền.
 
 7
-00:00:22,493 --> 00:00:24,171
-ANH KỸ SƯ: tổn thất và giới hạn bền.
-
-8
-00:00:24,471 --> 00:00:28,769
+00:00:29,446 --> 00:00:34,582
 ANH KỸ SƯ: Vì vậy không thể lấy lực piston rồi nói máy nâng được đúng chừng đó ký đất.
 
-9
-00:00:29,519 --> 00:00:30,007
+8
+00:00:35,332 --> 00:00:36,628
 CAPY: À!
 
-10
-00:00:30,307 --> 00:00:33,652
+9
+00:00:36,748 --> 00:00:40,924
 CAPY: Áp suất là điều kiện tạo lực, lưu lượng liên quan tốc độ.
 
-11
-00:00:33,952 --> 00:00:36,583
+10
+00:00:41,044 --> 00:00:44,260
 CAPY: Còn cơ cấu mới quyết định lực ra tới gầu!
 

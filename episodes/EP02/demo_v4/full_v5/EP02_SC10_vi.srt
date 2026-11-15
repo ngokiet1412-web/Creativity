@@ -1,28 +1,20 @@
 1
-00:00:01,800 --> 00:00:05,145
+00:00:01,800 --> 00:00:06,048
 CAPY: Nãy giờ toàn thấy dầu đi vô, vậy dầu đi đâu mất anh?
 
 2
-00:00:05,895 --> 00:00:07,812
+00:00:06,798 --> 00:00:09,630
 ANH KỸ SƯ: Nó tuần hoàn trong mạch thủy lực.
 
 3
-00:00:08,112 --> 00:00:11,457
-ANH KỸ SƯ: Sau khi thực hiện công việc, dầu quay về theo các đường hồi,
+00:00:09,750 --> 00:00:16,902
+ANH KỸ SƯ: Sau khi thực hiện công việc, dầu quay về theo các đường hồi, được làm mát và lọc phù hợp với đường mạch trước khi trở lại bình.
 
 4
-00:00:11,757 --> 00:00:15,579
-ANH KỸ SƯ: được làm mát và lọc phù hợp với đường mạch trước khi trở lại bình.
-
-5
-00:00:15,879 --> 00:00:18,986
+00:00:17,022 --> 00:00:20,838
 ANH KỸ SƯ: Dầu thủy lực không phải nhiên liệu để đốt trong xi lanh.
 
-6
-00:00:19,286 --> 00:00:21,917
-ANH KỸ SƯ: Nó truyền năng lượng, bôi trơn và giúp tản nhiệt,
-
-7
-00:00:22,217 --> 00:00:24,610
-ANH KỸ SƯ: nên độ sạch và nhiệt độ rất quan trọng.
+5
+00:00:20,958 --> 00:00:27,174
+ANH KỸ SƯ: Nó truyền năng lượng, bôi trơn và giúp tản nhiệt, nên độ sạch và nhiệt độ rất quan trọng.
 

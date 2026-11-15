@@ -120,6 +120,20 @@ func _draw_studio() -> void:
 	if plate:
 		canvas.draw_texture(plate, Vector2.ZERO, Color(1, 1, 1, a))
 	_monitor(a)
+	# The retained 2.81 s signature is the timing reference, no second voice.
+	if t >= 0.8 and t <= 3.9 and get_parent().scene_tag == "SC01":
+		var u = t - 0.8
+		var words = ["KĨ", "SƯ", "ƠIIII!"]
+		var starts = [0.0, 0.48, 1.15]
+		for j in 3:
+			var elapsed = u - starts[j]
+			if elapsed < 0.0:
+				continue
+			var bounce = sin(elapsed * 10.0) * exp(-elapsed * 3.2) * 12.0
+			var k = minf(elapsed / 0.12, 1.0) * clampf((3.9 - t) / 0.25, 0.0, 1.0)
+			var pos = Vector2(1028 + j * 220, 410 + bounce)
+			canvas.draw_string_outline(ThemeDB.fallback_font, pos, words[j], HORIZONTAL_ALIGNMENT_LEFT, -1, 64, 10, Color(0.04, 0.07, 0.13, k))
+			canvas.draw_string(ThemeDB.fallback_font, pos, words[j], HORIZONTAL_ALIGNMENT_LEFT, -1, 64, Color(1, 0.84, 0.35, k))
 	canvas.draw_set_transform(Vector2.ZERO)
 
 func _monitor(a: float) -> void:

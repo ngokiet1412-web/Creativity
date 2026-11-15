@@ -7,7 +7,7 @@
 
 [sub_resource type="Animation" id="seq"]
 resource_name = "sequence"
-length = 44.2
+length = 49.21200
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,7 +15,7 @@ tracks/0/path = NodePath(".:boom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0, 12.3, 13.5, 36.2, 41.2, 42.4, 44.2),
+"times": PackedFloat32Array(0.00000, 14.35897, 15.80157, 39.42200, 44.98869, 46.13022, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 0.8, 0.8, 0.8, 0.0, 0.0]
@@ -27,7 +27,7 @@ tracks/1/path = NodePath(".:arm")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0, 20.5, 21.7, 41.2, 42.4, 44.2),
+"times": PackedFloat32Array(0.00000, 23.62312, 24.77941, 44.98869, 46.13022, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 0.7, 0.7, 0.0, 0.0]
@@ -39,7 +39,7 @@ tracks/2/path = NodePath(".:load_boom")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0, 36.2, 37.6, 41.2, 42.2, 44.2),
+"times": PackedFloat32Array(0.00000, 39.42200, 41.30360, 44.98869, 45.93996, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.55, 0.55, 0.95, 0.95, 0.55, 0.55]
@@ -51,7 +51,7 @@ tracks/3/path = NodePath(".:load_arm")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0, 44.2),
+"times": PackedFloat32Array(0.00000, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0),
 "update": 0,
 "values": [0.3, 0.3]
@@ -63,7 +63,7 @@ tracks/4/path = NodePath(".:capy_in")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0, 0.3, 0.8, 4.1, 4.6, 28.3, 28.8, 35.2, 35.7, 44.2),
+"times": PackedFloat32Array(0.00000, 0.30000, 0.80000, 4.39611, 4.99450, 29.57800, 30.11967, 38.53392, 39.01575, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
@@ -75,7 +75,7 @@ tracks/5/path = NodePath(".:capy_tilt")
 tracks/5/interp = 1
 tracks/5/loop_wrap = false
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0, 1.0, 3.1, 28.8, 30.1, 33.2, 35.2, 44.2),
+"times": PackedFloat32Array(0.00000, 1.01795, 3.30638, 30.11967, 31.90431, 36.15312, 38.53392, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 4.0, -1.0, 0.0, 5.0, 1.0, 3.0, 0.0]
@@ -87,7 +87,7 @@ tracks/6/path = NodePath(".:eng_in")
 tracks/6/interp = 1
 tracks/6/loop_wrap = false
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0, 4.3, 4.9, 7.5, 8.0, 35.6, 36.2, 44.2),
+"times": PackedFloat32Array(0.00000, 4.61405, 5.48200, 8.59210, 9.19019, 38.93450, 39.42200, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0]
@@ -99,7 +99,7 @@ tracks/7/path = NodePath(".:legend")
 tracks/7/interp = 1
 tracks/7/loop_wrap = false
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0, 44.2),
+"times": PackedFloat32Array(0.00000, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0),
 "update": 0,
 "values": [1.0, 1.0]
@@ -111,7 +111,7 @@ tracks/8/path = NodePath(".:cam_x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = false
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0, 4.3, 6.9, 11.9, 14.3, 20.3, 21.9, 27.9, 29.1, 35.8, 36.8, 42.0, 43.2, 44.2),
+"times": PackedFloat32Array(0.00000, 4.61405, 7.87438, 13.87811, 16.71880, 23.40040, 24.92482, 29.28718, 30.50738, 39.09700, 40.22840, 45.74971, 46.89124, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [860.0, 870.0, 380.0, 400.0, 860.0, 860.0, 1150.0, 1150.0, 860.0, 860.0, 420.0, 430.0, 860.0, 860.0]
@@ -123,7 +123,7 @@ tracks/9/path = NodePath(".:cam_y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = false
 tracks/9/keys = {
-"times": PackedFloat32Array(0.0, 4.3, 6.9, 11.9, 14.3, 20.3, 21.9, 27.9, 29.1, 35.8, 36.8, 42.0, 43.2, 44.2),
+"times": PackedFloat32Array(0.00000, 4.61405, 7.87438, 13.87811, 16.71880, 23.40040, 24.92482, 29.28718, 30.50738, 39.09700, 40.22840, 45.74971, 46.89124, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [320.0, 320.0, 200.0, 200.0, 320.0, 320.0, 300.0, 300.0, 320.0, 320.0, 180.0, 180.0, 320.0, 320.0]
@@ -135,7 +135,7 @@ tracks/10/path = NodePath(".:cam_zoom")
 tracks/10/interp = 1
 tracks/10/loop_wrap = false
 tracks/10/keys = {
-"times": PackedFloat32Array(0.0, 4.3, 6.9, 11.9, 14.3, 20.3, 21.9, 27.9, 29.1, 35.8, 36.8, 42.0, 43.2, 44.2),
+"times": PackedFloat32Array(0.00000, 4.61405, 7.87438, 13.87811, 16.71880, 23.40040, 24.92482, 29.28718, 30.50738, 39.09700, 40.22840, 45.74971, 46.89124, 49.21200),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.86, 0.86, 1.35, 1.35, 0.86, 0.86, 1.05, 1.05, 0.86, 0.86, 1.3, 1.3, 0.86, 0.86]
@@ -149,6 +149,7 @@ _data = {
 [node name="SC04" type="Node2D"]
 script = ExtResource("root")
 scene_tag = "SC04"
+retime_keys = PackedVector2Array(0.00000, 0.00000, 0.80000, 0.80000, 4.50000, 4.83200, 4.90000, 5.48200, 8.05000, 9.25000, 8.15000, 9.37000, 13.70000, 16.04200, 13.80000, 16.16200, 21.30000, 24.51400, 21.50000, 24.63400, 28.30000, 29.57800, 28.90000, 30.22800, 32.80000, 35.67600, 32.90000, 35.79600, 35.40000, 38.77200, 36.20000, 39.42200, 38.20000, 42.11000, 38.30000, 42.23000, 43.80000, 47.46200, 44.20000, 49.21200)
 scene_title = "Điểm khó: cảm nhận tải CLSS"
 inserts = PackedVector2Array(2.0, 0.5, 8.0, 1.8, 14.0, 1.8, 26.5, 1.1)
 

@@ -57,6 +57,9 @@ func state_at(time: float) -> Dictionary:
 		"comp_a": clampf((pls - la) * 2.2, 0.0, 1.0) if oa > 0.0 else 0.0}
 
 func update(time: float) -> void:
+	# Retain the complete LS/pump/valve path instead of cutting the pump in half.
+	cam.position = Vector2(850, 260)
+	cam.zoom = Vector2.ONE * 0.66
 	st = state_at(time)
 	pump.shaft_deg = time * 430.0
 	pump.swash_f = st.swash

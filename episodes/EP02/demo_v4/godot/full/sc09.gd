@@ -18,16 +18,20 @@ const GAUGE := 238.0
 
 func setup() -> void:
 	callouts = [
-		["Khớp quay trung tâm (center swivel joint)", "NGUYÊN LÝ", Vector2(0, -260), Vector2(-320, -120), M("ks.s") + 0.2, M("trk.s")],
+		["Khớp quay trung tâm", "NGUYÊN LÝ", Vector2(0, -260), Vector2(70, -48), M("ks.s") + 0.2, M("trk.s")],
 		["Mô tơ di chuyển + bộ truyền cuối", "NGUYÊN LÝ", Vector2(-300, 1400), Vector2(-520, -260), M("trk.s"), M("top.s")],
 		["Hai xích cùng tiến → đi thẳng", "", Vector2(2480, -119), Vector2(-300, -300), M("top.s"), M("top.s") + 3.6],
 		["Một bên tiến, một bên lùi → quay tại chỗ", "", Vector2(2700, 119), Vector2(-360, 300), M("top.s") + 3.8, M("q2.s")],
-		["Bánh dẫn quay → mắt xích chạy theo vòng", "NGUYÊN LÝ", Vector2(-300, 1340), Vector2(-420, -300), M("ks2.s"), M("end")],
+		["Bánh sao chủ động kéo mắt xích", "NGUYÊN LÝ", Vector2(-300, 1340), Vector2(-350, -300), M("ks2.s"), M("end")],
 		["Mắt xích nằm trên đất không trượt → máy tiến", "NGUYÊN LÝ", Vector2(100, 1480), Vector2(-120, 200), M("ks2.s") + 2.0, M("end")],
 	]
 
 func update(time: float) -> void:
-	var a = drive_s
+	# Fit the motor and both A/B labels above the subtitle safe area.
+	var swivel_framing := 1.0 - smoothstep(0.0, 450.0, absf(cam.position.y + 10.0))
+	if absf(cam.position.x) < 100.0 and swivel_framing > 0.0:
+		cam.position.y += 55.0 * swivel_framing
+		cam.zoom = Vector2.ONE * lerpf(cam_zoom, 0.94, swivel_framing)
 	top.track_l = drive_s - turn_d
 	top.track_r = drive_s + turn_d
 	drive.position = Vector2(2300 + drive_s, 0)

@@ -8,7 +8,7 @@
 
 [sub_resource type="Animation" id="seq"]
 resource_name = "sequence"
-length = 33.186
+length = 38.938
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,7 +16,7 @@ tracks/0/path = NodePath(".:xray")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0, 5.998, 8.048, 32.386, 33.186),
+"times": PackedFloat32Array(0.0, 6.308, 8.358, 38.138, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0, 0.6]
@@ -28,7 +28,7 @@ tracks/1/path = NodePath(".:grid_alpha")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0, 5.998, 8.048, 33.186),
+"times": PackedFloat32Array(0.0, 6.308, 8.358, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 0.55, 0.55]
@@ -40,7 +40,7 @@ tracks/2/path = NodePath("World/Map:step")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0, 8.048, 19.726, 33.186),
+"times": PackedFloat32Array(0.0, 8.358, 21.574, 38.938),
 "transitions": PackedFloat32Array(-2.0, 1.0, -2.0, -2.0),
 "update": 0,
 "values": [-1.0, -1.0, 9.0, 9.0]
@@ -52,7 +52,7 @@ tracks/3/path = NodePath("World/Map:chain")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0, 20.326, 26.826, 33.186),
+"times": PackedFloat32Array(0.0, 22.174, 28.674, 38.938),
 "transitions": PackedFloat32Array(-2.0, 1.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0]
@@ -64,7 +64,7 @@ tracks/4/path = NodePath("World/FX:hi_boom")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0, 12.7192, 13.887, 15.0548, 33.186),
+"times": PackedFloat32Array(0.0, 13.6444, 14.966, 16.2876, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 0.35, 0.35]
@@ -76,7 +76,7 @@ tracks/5/path = NodePath("World/FX:hi_arm")
 tracks/5/interp = 1
 tracks/5/loop_wrap = false
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0, 13.0695, 14.1206, 15.0548, 33.186),
+"times": PackedFloat32Array(0.0, 14.0409, 15.2303, 16.2876, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 0.35, 0.35]
@@ -88,7 +88,7 @@ tracks/6/path = NodePath("World/FX:hi_bucket")
 tracks/6/interp = 1
 tracks/6/loop_wrap = false
 tracks/6/keys = {
-"times": PackedFloat32Array(0.0, 13.4199, 14.3541, 15.0548, 33.186),
+"times": PackedFloat32Array(0.0, 14.4374, 15.4946, 16.2876, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 0.35, 0.35]
@@ -100,7 +100,7 @@ tracks/7/path = NodePath(".:legend")
 tracks/7/interp = 1
 tracks/7/loop_wrap = false
 tracks/7/keys = {
-"times": PackedFloat32Array(0.0, 19.826, 20.326, 33.186),
+"times": PackedFloat32Array(0.0, 21.674, 22.174, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0]
@@ -112,7 +112,7 @@ tracks/8/path = NodePath(".:cam_x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = false
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0, 6.498, 8.048, 10.6172, 12.2521, 20.326, 33.186),
+"times": PackedFloat32Array(0.0, 6.808, 8.358, 11.2655, 13.1158, 22.174, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [160.0, 140.0, -190.0, -170.0, 60.0, 70.0, 90.0]
@@ -124,7 +124,7 @@ tracks/9/path = NodePath(".:cam_y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = false
 tracks/9/keys = {
-"times": PackedFloat32Array(0.0, 6.498, 8.048, 10.6172, 12.2521, 20.326, 33.186),
+"times": PackedFloat32Array(0.0, 6.808, 8.358, 11.2655, 13.1158, 22.174, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [-60.0, -60.0, -50.0, -50.0, -20.0, -20.0, -30.0]
@@ -136,7 +136,7 @@ tracks/10/path = NodePath(".:cam_zoom")
 tracks/10/interp = 1
 tracks/10/loop_wrap = false
 tracks/10/keys = {
-"times": PackedFloat32Array(0.0, 6.498, 8.048, 10.6172, 12.2521, 20.326, 33.186),
+"times": PackedFloat32Array(0.0, 6.808, 8.358, 11.2655, 13.1158, 22.174, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [1.05, 1.08, 2.6, 2.6, 1.32, 1.32, 1.25]
@@ -148,7 +148,7 @@ tracks/11/path = NodePath(".:capy_tilt")
 tracks/11/interp = 1
 tracks/11/loop_wrap = false
 tracks/11/keys = {
-"times": PackedFloat32Array(0.0, 2.2, 3.7, 6.498, 33.186),
+"times": PackedFloat32Array(0.0, 2.2, 3.7, 6.808, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 2.0, -3.0, 4.0, 0.0]
@@ -160,7 +160,7 @@ tracks/12/path = NodePath(".:capy_in")
 tracks/12/interp = 1
 tracks/12/loop_wrap = false
 tracks/12/keys = {
-"times": PackedFloat32Array(0.0, 1.7, 2.15, 6.998, 7.448, 33.186),
+"times": PackedFloat32Array(0.0, 1.7, 2.15, 7.308, 7.758, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
@@ -172,7 +172,7 @@ tracks/13/path = NodePath(".:eng_in")
 tracks/13/interp = 1
 tracks/13/loop_wrap = false
 tracks/13/keys = {
-"times": PackedFloat32Array(0.0, 6.748, 7.198, 30.986, 31.436, 33.186),
+"times": PackedFloat32Array(0.0, 7.058, 7.508, 36.738, 37.188, 38.938),
 "transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
 "values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
@@ -187,8 +187,8 @@ _data = {
 script = ExtResource("root")
 scene_tag = "SC02"
 scene_title = "Bản đồ cả hệ thống"
-capy_blinks = [1.0, 3.69, 7.21, 10.25, 13.94, 17.68, 19.9, 21.97, 26.29, 29.04, 31.71]
-eng_blinks = [1.0, 3.68, 6.0, 9.12, 11.58, 13.8, 16.93, 21.47, 25.69, 29.81, 32.45]
+capy_blinks = [1.0, 3.69, 7.21, 10.25, 13.94, 17.68, 19.9, 21.97, 26.29, 29.04, 31.71, 36.46]
+eng_blinks = [1.0, 3.68, 6.0, 9.12, 11.58, 13.8, 16.93, 21.47, 25.69, 29.81, 32.45, 35.95]
 
 [node name="World" type="Node2D" parent="."]
 

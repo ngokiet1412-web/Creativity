@@ -1,32 +1,32 @@
 1
-00:00:01,800 --> 00:00:06,336
+00:00:01,800 --> 00:00:07,296
 CAPY: Vậy nếu một ngày máy đào tự nhiên yếu, gầu lên chậm, có phải hư bơm không anh?
 
 2
-00:00:07,086 --> 00:00:08,288
+00:00:08,046 --> 00:00:10,326
 ANH KỸ SƯ: Chưa thể kết luận.
 
 3
-00:00:08,588 --> 00:00:13,362
-ANH KỸ SƯ: Phải tách khả năng động cơ thiếu công suất; điều khiển bơm hoặc tín hiệu LS bất thường;
+00:00:10,446 --> 00:00:13,566
+ANH KỸ SƯ: Phải tách khả năng động cơ thiếu công suất;
 
 4
-00:00:13,662 --> 00:00:18,436
-ANH KỸ SƯ: van phân phối, pilot, rò rỉ bên trong, lọc dầu, nhiệt độ dầu; thậm chí ma sát cơ khí.
+00:00:13,686 --> 00:00:17,238
+ANH KỸ SƯ: điều khiển bơm hoặc tín hiệu LS bất thường;
 
 5
-00:00:18,736 --> 00:00:21,605
-ANH KỸ SƯ: Quan trọng là biểu hiện khi nâng cần, co tay gầu,
+00:00:17,358 --> 00:00:23,382
+ANH KỸ SƯ: van phân phối, pilot, rò rỉ bên trong, lọc dầu, nhiệt độ dầu;
 
 6
-00:00:21,905 --> 00:00:24,774
-ANH KỸ SƯ: quay toa và chạy xích có giống nhau hay khác nhau.
+00:00:23,502 --> 00:00:26,094
+ANH KỸ SƯ: thậm chí ma sát cơ khí.
 
 7
-00:00:25,074 --> 00:00:28,419
-ANH KỸ SƯ: Đo và đối chiếu đúng quy trình an toàn mới khoanh vùng được,
+00:00:26,214 --> 00:00:32,550
+ANH KỸ SƯ: Quan trọng là biểu hiện khi nâng cần, co tay gầu, quay toa và chạy xích có giống nhau hay khác nhau.
 
 8
-00:00:28,719 --> 00:00:31,112
-ANH KỸ SƯ: chứ không thay bơm chỉ vì thấy máy chậm.
+00:00:32,670 --> 00:00:38,862
+ANH KỸ SƯ: Đo và đối chiếu đúng quy trình an toàn mới khoanh vùng được, chứ không thay bơm chỉ vì thấy máy chậm.
 
