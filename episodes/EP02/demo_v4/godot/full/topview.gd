@@ -46,7 +46,9 @@ func _draw() -> void:
 		_gear_inset()
 
 func _ground() -> void:
-	var r = Rect2(Vector2(-1800, -1200), GROUND_V7.get_size() * 2.55)
+	# The driving plate sits beside the swivel cutaway in SC09's world.
+	var left := -1400.0 if only_ground else -1800.0
+	var r = Rect2(Vector2(left, -1200), GROUND_V7.get_size() * 2.55)
 	draw_texture_rect(GROUND_V7, r, false)
 
 # ------------------------------------------------------------ undercarriage
