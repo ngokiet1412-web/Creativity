@@ -19,9 +19,9 @@ var bold: FontVariation
 # name, label, centre (machine px), kind, order, tag
 var comps := [
 	["engine", "Động cơ SAA6D107E-1", Vector2(-262, -62), "engine", 0, "K1 ✓"],
-	["pumps", "2 bơm chính (HPV95+95)", Vector2(-150, -40), "pumps", 1, "K2 ✓"],
+	["pumps", "2 bơm chính (HPV95+95)", Vector2(-128, -38), "pumps", 1, "K2 ✓"],
 	["tank", "Bình dầu thủy lực", Vector2(-40, -112), "tank", 2, ""],
-	["valve", "Cụm van điều khiển chính", Vector2(-62, -18), "valve", 3, "K2 ✓"],
+	["valve", "Cụm van điều khiển chính", Vector2(-2, -14), "valve", 3, "K2 ✓"],
 	["cyl", "Xi lanh cần · tay gầu · gầu", Vector2(120, -120), "cyl", 4, ""],
 	["swing", "Mô tơ quay toa", Vector2(-120, 30), "motor", 5, ""],
 	["travel", "2 mô tơ di chuyển", Vector2(-350, 112), "motor", 6, ""],
@@ -37,9 +37,42 @@ func _ready() -> void:
 	bold = FontVariation.new()
 	bold.base_font = font
 	bold.variation_embolden = 0.7
+	# the engine and the tandem pump are the real SC03 cutaways, miniaturised
+	eng = Node2D.new()
+	eng.set_script(load("res://cutaway/engine_cut.gd"))
+	eng.show_inset = false
+	eng.show_behind_parent = true
+	add_child(eng)
+	pmp = Node2D.new()
+	pmp.set_script(load("res://cutaway/pump_cut.gd"))
+	pmp.show_valve_plate_inset = false
+	pmp.show_behind_parent = true
+	add_child(pmp)
+
+var eng: Node2D
+var pmp: Node2D
+const ENG_S := 0.185
+const PMP_S := 0.085
 
 func _process(_d: float) -> void:
 	queue_redraw()
+	if rig == null:
+		return
+	var a0 = clampf(step + 1.0, 0.0, 1.0) * alpha
+	var a1 = clampf(step, 0.0, 1.0) * alpha
+	eng.visible = a0 > 0.01
+	pmp.visible = a1 > 0.01
+	eng.modulate.a = a0
+	pmp.modulate.a = a1
+	var e0 = pos("engine") + Vector2(-415, 125) * ENG_S
+	eng.transform = rig.transform * Transform2D(0.0, Vector2.ONE * ENG_S, 0.0, e0)
+	pmp.transform = rig.transform * Transform2D(0.0, Vector2.ONE * PMP_S, 0.0, pos("pumps") + Vector2(-34, 0))
+	eng.crank_deg = chain_travel * 4.0
+	pmp.shaft_deg = chain_travel * 4.0
+	pmp.swash_f = 0.6
+	pmp.swash_r = 0.6
+	pmp.flow_travel_f = chain_travel
+	pmp.flow_travel_r = chain_travel
 
 func pos(name: String) -> Vector2:
 	for c in comps:
@@ -90,22 +123,8 @@ func _symbol(kind: String, p: Vector2, a: float, cur: float) -> void:
 		_glow(p, 30.0, cur)
 	var ink = Color(Kit.INK, a)
 	match kind:
-		"engine":
-			var r = Rect2(p - Vector2(70, 34), Vector2(140, 68))
-			draw_rect(r, Color(0.55, 0.58, 0.62, a))
-			for i in 6:
-				draw_rect(Rect2(r.position + Vector2(8 + i * 22, -14), Vector2(18, 16)), Color(0.4, 0.43, 0.48, a))
-				draw_rect(Rect2(r.position + Vector2(8 + i * 22, -14), Vector2(18, 16)), ink, false, 1.5)
-			draw_rect(r, ink, false, 2.0)
-			draw_circle(r.position + Vector2(140, 44), 16, Color(0.35, 0.37, 0.4, a))
-			draw_arc(r.position + Vector2(140, 44), 16, 0, TAU, 20, ink, 1.5, true)
-		"pumps":
-			for dx in [-16.0, 16.0]:
-				var c = p + Vector2(dx, 0)
-				draw_circle(c, 15, Color(0.75, 0.3, 0.25, a))
-				draw_arc(c, 15, 0, TAU, 20, ink, 1.8, true)
-				draw_colored_polygon(PackedVector2Array([c + Vector2(-7, 6), c + Vector2(7, 6), c + Vector2(0, -8)]), Color(1, 1, 1, a))
-				draw_line(c + Vector2(-12, 12), c + Vector2(12, -12), Color(1, 1, 1, a), 1.5, true)
+		"engine", "pumps":
+			pass   # real cutaway nodes (see _ready)
 		"tank":
 			var r = Rect2(p - Vector2(34, 38), Vector2(68, 76))
 			draw_rect(r, Color(0.2, 0.32, 0.5, a))
@@ -145,7 +164,7 @@ func _chain() -> void:
 	if chain <= 0.01:
 		return
 	var f: Dictionary = rig.current()
-	var pts = PackedVector2Array([pos("engine") + Vector2(70, 10), pos("pumps"), pos("valve"), Vector2(f.Bb), (Vector2(f.Bb) + Vector2(f.Eb)) * 0.5])
+	var pts = PackedVector2Array([pos("engine") + Vector2(84, 24), pos("pumps") + Vector2(0, 24), pos("valve"), Vector2(f.Bb), (Vector2(f.Bb) + Vector2(f.Eb)) * 0.5])
 	var cols = [Color(0.6, 0.65, 0.7), Kit.RED, Kit.RED, Kit.RED]
 	var total = 0.0
 	for i in pts.size() - 1:

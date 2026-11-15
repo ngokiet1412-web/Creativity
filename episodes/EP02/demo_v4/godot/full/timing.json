@@ -13,7 +13,8 @@
     "ks.e": 33.412,
     "hold.s": 33.412,
     "hold.e": 34.612,
-    "end": 35.812
+    "end": 35.812,
+    "dig.s": 3.4000000000000004
    },
    "cues": [
     {
@@ -93,7 +94,8 @@
      "text": "rồi xem luôn quay toa và hai bánh xích.",
      "line": 1
     }
-   ]
+   ],
+   "voices": []
   },
   "SC02": {
    "length": 33.186,
@@ -160,7 +162,8 @@
      "text": "xi lanh hoặc mô tơ thủy lực biến năng lượng đó thành chuyển động.",
      "line": 1
     }
-   ]
+   ],
+   "voices": []
   },
   "SC06": {
    "length": 34.274,
@@ -248,7 +251,8 @@
      "text": "Các khâu cứng quay quanh chốt, còn chiều dài xi lanh và góc khớp phải phù hợp hình học.",
      "line": 2
     }
-   ]
+   ],
+   "voices": []
   },
   "SC07": {
    "length": 39.383,
@@ -347,7 +351,8 @@
      "text": "Còn cơ cấu mới quyết định lực ra tới gầu!",
      "line": 2
     }
-   ]
+   ],
+   "voices": []
   },
   "SC08": {
    "length": 30.448,
@@ -419,7 +424,8 @@
      "text": "Ở hình này, gầm xích vẫn đứng yên còn phần thân trên xoay — nhìn vậy mới đúng.",
      "line": 1
     }
-   ]
+   ],
+   "voices": []
   },
   "SC09": {
    "length": 43.576,
@@ -514,7 +520,8 @@
      "text": "và xe dịch chuyển do tương tác với mặt đất.",
      "line": 3
     }
-   ]
+   ],
+   "voices": []
   },
   "SC10": {
    "length": 27.81,
@@ -582,7 +589,8 @@
      "text": "nên độ sạch và nhiệt độ rất quan trọng.",
      "line": 1
     }
-   ]
+   ],
+   "voices": []
   },
   "SC11": {
    "length": 41.279,
@@ -667,7 +675,8 @@
      "text": "Vậy mấy cái van an toàn mới là đội bảo vệ của dàn cơ bắp thủy lực!",
      "line": 2
     }
-   ]
+   ],
+   "voices": []
   },
   "SC12": {
    "length": 35.614,
@@ -750,7 +759,8 @@
      "text": "chứ không đoán theo một ảnh trên mạng.",
      "line": 1
     }
-   ]
+   ],
+   "voices": []
   },
   "SC13": {
    "length": 34.312,
@@ -826,7 +836,8 @@
      "text": "chứ không thay bơm chỉ vì thấy máy chậm.",
      "line": 1
     }
-   ]
+   ],
+   "voices": []
   },
   "SC14": {
    "length": 42.974,
@@ -922,7 +933,173 @@
      "text": "Bye bye!",
      "line": 2
     }
-   ]
+   ],
+   "voices": []
+  },
+  "SC03": {
+   "length": 46.9,
+   "marks": {},
+   "cues": [
+    {
+     "who": "KS",
+     "t0": 0.6,
+     "t1": 4.6,
+     "text": "Động cơ diesel cấp công suất cơ học cho bơm."
+    },
+    {
+     "who": "KS",
+     "t0": 4.8,
+     "t1": 10.6,
+     "text": "Dữ liệu PC200-8 cho thấy động cơ Komatsu SAA6D107E-1;"
+    },
+    {
+     "who": "KS",
+     "t0": 10.8,
+     "t1": 17.4,
+     "text": "phần bơm chính là loại piston thay đổi lưu lượng, có hai phần bơm để điều phối các nhu cầu làm việc."
+    },
+    {
+     "who": "KS",
+     "t0": 17.6,
+     "t1": 22.2,
+     "text": "Bên trong bơm piston hướng trục, khi góc đĩa nghiêng thay đổi, hành trình piston thay đổi theo."
+    },
+    {
+     "who": "KS",
+     "t0": 22.4,
+     "t1": 27.7,
+     "text": "Góc lớn hơn thường cho lưu lượng lớn hơn ở cùng tốc độ quay; góc nhỏ hơn thì lưu lượng giảm."
+    },
+    {
+     "who": "CAPY",
+     "t0": 28.5,
+     "t1": 32.9,
+     "text": "Vậy ga máy tăng chưa chắc gầu lúc nào cũng chạy nhanh nhất?"
+    },
+    {
+     "who": "KS",
+     "t0": 33.5,
+     "t1": 38.6,
+     "text": "Đúng. Lưu lượng đến cơ cấu còn tùy bơm đang được điều khiển ra sao, van đang mở thế nào,"
+    },
+    {
+     "who": "KS",
+     "t0": 38.7,
+     "t1": 43.9,
+     "text": "tải và các giới hạn công suất. Đó mới là điều thú vị."
+    }
+   ],
+   "voices": []
+  },
+  "SC04": {
+   "length": 46.8,
+   "marks": {},
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 0.8,
+     "t1": 4.5,
+     "text": "Thế cái tên CLSS nghe như mật mã là gì anh?"
+    },
+    {
+     "who": "KS",
+     "t0": 4.9,
+     "t1": 8.05,
+     "text": "Đó là hệ thống thủy lực tâm kín có cảm nhận tải."
+    },
+    {
+     "who": "KS",
+     "t0": 8.15,
+     "t1": 13.7,
+     "text": "Nói đơn giản: khi các tay điều khiển ở trung gian, máy không cần cấp lưu lượng lớn tới mọi cơ cấu."
+    },
+    {
+     "who": "KS",
+     "t0": 13.8,
+     "t1": 21.3,
+     "text": "Khi một cơ cấu cần làm việc, tín hiệu cảm nhận tải — gọi là LS — cùng các bộ điều chỉnh trên bơm giúp thay đổi lưu lượng phù hợp."
+    },
+    {
+     "who": "KS",
+     "t0": 21.5,
+     "t1": 28.3,
+     "text": "Van bù áp còn hỗ trợ phân chia dòng dầu khi nhiều cơ cấu làm việc cùng lúc."
+    },
+    {
+     "who": "CAPY",
+     "t0": 28.9,
+     "t1": 32.8,
+     "text": "À! Không phải cứ nổ máy là bơm xả hết công suất đi khắp nơi."
+    },
+    {
+     "who": "CAPY",
+     "t0": 32.9,
+     "t1": 35.4,
+     "text": "Nó phải nghe xem ai đang cần dầu!"
+    },
+    {
+     "who": "KS",
+     "t0": 36.2,
+     "t1": 38.2,
+     "text": "Hiểu theo mức nhập môn thì đúng."
+    },
+    {
+     "who": "KS",
+     "t0": 38.3,
+     "t1": 43.8,
+     "text": "Nhưng điều khiển thực tế có cả giới hạn công suất của động cơ và các điều kiện vận hành."
+    }
+   ],
+   "voices": []
+  },
+  "SC05": {
+   "length": 38.1,
+   "marks": {},
+   "cues": [
+    {
+     "who": "CAPY",
+     "t0": 0.8,
+     "t1": 5.7,
+     "text": "Tui gạt cái cần nhỏ xíu trong cabin, sao điều khiển nổi một cái xi lanh bự vậy?"
+    },
+    {
+     "who": "KS",
+     "t0": 6.7,
+     "t1": 10.3,
+     "text": "Tay điều khiển không tự đưa toàn bộ lưu lượng của bơm chính."
+    },
+    {
+     "who": "KS",
+     "t0": 10.4,
+     "t1": 16.5,
+     "text": "Trên PC200-8, mạch điều khiển pilot và cụm van chính thực hiện việc phân phối dầu đến các cơ cấu."
+    },
+    {
+     "who": "KS",
+     "t0": 16.6,
+     "t1": 19.1,
+     "text": "Gạt joystick làm thay đổi tín hiệu điều khiển,"
+    },
+    {
+     "who": "KS",
+     "t0": 19.2,
+     "t1": 25.1,
+     "text": "từ đó dịch chuyển phần tử van tương ứng để cho dầu đi đến khoang thích hợp của xi lanh hoặc mô tơ."
+    },
+    {
+     "who": "CAPY",
+     "t0": 25.4,
+     "t1": 29.3,
+     "text": "Tức là một tín hiệu nhỏ có thể điều khiển cả dòng năng lượng lớn?"
+    },
+    {
+     "who": "KS",
+     "t0": 30.3,
+     "t1": 35.1,
+     "text": "Đúng, nhưng phải có nguồn năng lượng từ động cơ và bơm phía sau."
+    }
+   ],
+   "voices": []
   }
  }
 }

@@ -29,6 +29,9 @@ BED = {"SC01": (0.8, 0.5, "studio_in"), "SC02": (0.6, 0.3, ""), "SC06": (0.8, 0.
        "SC11": (0.9, 0.9, "relief"), "SC12": (0.2, 0.1, "hum"), "SC13": (0.4, 0.2, ""), "SC14": (0.0, 0.0, "studio")}
 
 
+TIMING = json.load(open(os.path.join(DEMO, "godot", "full", "timing.json"), encoding="utf-8"))
+
+
 def run(cmd):
     subprocess.run(cmd, check=True)
 
@@ -111,6 +114,17 @@ def main(rdir, out):
             run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(rdir, machine_audio[sc]), "-af", "volume=0.5", "-t", str(L), wav])
         else:
             bed(sc, L, wav)
+        voices = TIMING["scenes"].get(sc, {}).get("voices", [])
+        if voices:      # owner VO on top of the bed (bed ducked 6 dB under speech scenes)
+            mix = os.path.join(out, f"{sc}_mix.wav")
+            cmd = ["ffmpeg", "-v", "error", "-y", "-i", wav]
+            flt = "[0]volume=0.5[b];"
+            for k, v in enumerate(voices):
+                cmd += ["-i", v["file"]]
+                flt += "[%d]aresample=48000,aformat=channel_layouts=stereo,adelay=%d:all=1[v%d];" % (k + 1, int(v["t0"] * 1000), k)
+            flt += "[b]" + "".join("[v%d]" % k for k in range(len(voices))) + "amix=inputs=%d:normalize=0:duration=first[m]" % (len(voices) + 1)
+            run(cmd + ["-filter_complex", flt, "-map", "[m]", mix])
+            wav = mix
         mp4 = os.path.join(out, f"{sc}.mp4")
         run(["ffmpeg", "-v", "error", "-y", "-i", src, "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
              "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", mp4])
@@ -122,13 +136,13 @@ def main(rdir, out):
         print(sc, round(L, 2), "->", round(offset, 2))
     lst = os.path.join(out, "concat.txt")
     open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
-    master = os.path.join(out, "EP02_FULL_V5_DRAFT_noVO.mp4")
+    master = os.path.join(out, "EP02_FULL_V6_DRAFT.mp4")
     run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", "-movflags", "+faststart", master])
-    sp = os.path.join(out, "EP02_FULL_V5_vi.srt")
+    sp = os.path.join(out, "EP02_FULL_V6_vi.srt")
     with open(sp, "w", encoding="utf-8") as f:
         for i, (a, b, txt) in enumerate(srt, 1):
             f.write(f"{i}\n{ts(a)} --> {ts(b)}\n{txt}\n\n")
-    review = os.path.join(out, "EP02_FULL_V5_DRAFT_review_subs.mp4")
+    review = os.path.join(out, "EP02_FULL_V6_DRAFT_review_subs.mp4")
     style = "FontName=Inter,FontSize=15,PrimaryColour=&H00FFFFFF,OutlineColour=&H00101010,BorderStyle=3,Outline=1,Shadow=0,BackColour=&H90101010,MarginV=22"
     run(["ffmpeg", "-v", "error", "-y", "-i", master, "-vf", f"subtitles={sp}:force_style='{style}'", "-c:v", "libx264",
          "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", review])

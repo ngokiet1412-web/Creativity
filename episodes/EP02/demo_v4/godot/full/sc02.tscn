@@ -112,10 +112,10 @@ tracks/8/path = NodePath(".:cam_x")
 tracks/8/interp = 1
 tracks/8/loop_wrap = false
 tracks/8/keys = {
-"times": PackedFloat32Array(0.0, 6.498, 8.048, 20.326, 33.186),
-"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"times": PackedFloat32Array(0.0, 6.498, 8.048, 10.6172, 12.2521, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
-"values": [160.0, 140.0, 60.0, 70.0, 90.0]
+"values": [160.0, 140.0, -190.0, -170.0, 60.0, 70.0, 90.0]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -124,10 +124,10 @@ tracks/9/path = NodePath(".:cam_y")
 tracks/9/interp = 1
 tracks/9/loop_wrap = false
 tracks/9/keys = {
-"times": PackedFloat32Array(0.0, 6.498, 8.048, 20.326, 33.186),
-"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"times": PackedFloat32Array(0.0, 6.498, 8.048, 10.6172, 12.2521, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
-"values": [-60.0, -60.0, -20.0, -20.0, -30.0]
+"values": [-60.0, -60.0, -50.0, -50.0, -20.0, -20.0, -30.0]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -136,10 +136,10 @@ tracks/10/path = NodePath(".:cam_zoom")
 tracks/10/interp = 1
 tracks/10/loop_wrap = false
 tracks/10/keys = {
-"times": PackedFloat32Array(0.0, 6.498, 8.048, 20.326, 33.186),
-"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0),
+"times": PackedFloat32Array(0.0, 6.498, 8.048, 10.6172, 12.2521, 20.326, 33.186),
+"transitions": PackedFloat32Array(-2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0),
 "update": 0,
-"values": [1.05, 1.08, 1.32, 1.32, 1.25]
+"values": [1.05, 1.08, 2.6, 2.6, 1.32, 1.32, 1.25]
 }
 tracks/11/type = "value"
 tracks/11/imported = false

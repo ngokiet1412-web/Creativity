@@ -68,3 +68,14 @@ python3 assemble.py <thư mục render> <thư mục ra>
 ```
 
 Ảnh studio cel và nhân vật nằm trong `godot/local/` (không có trên repo công khai). Thiếu thư mục này thì cảnh vẫn chạy, chỉ không có nhân vật.
+
+## 6. Cập nhật V6 (2026-11-15, theo phản hồi owner)
+
+- **Nhép miệng:** mọi nhân vật (Capy studio, hai nhân vật ở góc, hai nhân vật ở rào chắn) có miệng vẽ riêng, mở theo `godot/full/mouth.json`. Khi chưa có giọng, miệng mở một nhịp cho mỗi âm tiết của câu thoại. Khi có file giọng, miệng mở theo độ to thật của bản thu.
+- **Giọng:** chưa chèn. Phiên làm việc này không có công cụ tạo giọng ElevenLabs, và giọng máy (piper/eSpeak) bị cấm theo yêu cầu. Đường ống đã sẵn: thả file vào `godot/local/voice/` theo tên trong `full_v5/VOICE_SHEET.csv` (một file cho mỗi câu thoại), chạy `build_full.py`, render lại, `assemble.py` tự trộn giọng lên nền tiếng máy. SC01, SC02, SC06–SC14 tự giãn hình theo độ dài giọng; SC03–SC05 giữ nhịp đã duyệt, giọng đặt ở đầu câu.
+- **Studio:** cel đặt sát mép trái; phần còn lại là tường một màu lấy từ cel, mép hòa mềm 70 px, băng ghế và mặt bàn nối tiếp. Không còn sọc kéo dài. Màn hình lớn hơn.
+- **SC02:** động cơ và bơm trong bản đồ là chính mặt cắt chi tiết của SC03 thu nhỏ (trục khuỷu quay, piston chạy), camera đẩy vào gần. Ghi chú và chuỗi năng lượng dời lên trên, không đè phụ đề.
+- **Anh kỹ sư ở góc phải:** lật lại, quay mặt và chỉ tay vào trong khung hình.
+- **Đống đất:** vẽ lại thành đống nằm trên mặt đất (bóng tiếp xúc, chân đống lởm chởm, ba dải sáng tối, viền mực). Chỉ xuất hiện ở cảnh có đào (SC01) và bị gầu khoét theo đúng đường răng gầu. Các cảnh khác máy đứng trên nền phẳng.
+- **Thay đổi vào file dùng chung:** `segment_base.gd`, `crew.gd`, `env.gd` có thêm phần miệng, lật nhân vật và kiểu đống đất mới. Bản gốc đã duyệt vẫn nằm ở commit `b5ae650`.
+- **QA:** 14/14 cảnh, 0 lỗi.

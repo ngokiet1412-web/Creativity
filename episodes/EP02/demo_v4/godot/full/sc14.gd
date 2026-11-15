@@ -10,7 +10,7 @@ func setup() -> void:
 	callouts = []
 
 func update(time: float) -> void:
-	studio.set_state(time, speaking("CAPY", time))
+	studio.set_state(time, speaking("CAPY", time), mouth("CAPY"))
 	studio.camera(cam)
 	smap.chain_travel = time * 120.0
 	if rig:

@@ -214,6 +214,23 @@ func _callout(text: String, tag: String, anchor: Vector2, offset: Vector2, a: fl
 		hud.draw_string(bold, tr.position + Vector2(7, 20), tag, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(1, 1, 1, a))
 
 ## Host corner: slides in from the bottom edge, rigid tilt, eyelid blinks.
+const Mouth = preload("res://full/mouth.gd")
+var _mouth_data = null
+
+## 0..1 mouth opening of "CAPY" / "KS" at the current frame (full/mouth.json)
+func mouth(who: String) -> float:
+	if _mouth_data == null:
+		_mouth_data = {}
+		if FileAccess.file_exists("res://full/mouth.json"):
+			var js = JSON.parse_string(FileAccess.get_file_as_string("res://full/mouth.json"))
+			if js and js.has(scene_tag):
+				_mouth_data = js[scene_tag]
+	if not _mouth_data.has(who):
+		return 0.0
+	var arr: Array = _mouth_data[who]
+	var i = clampi(int(round(t * FPS)), 0, arr.size() - 1)
+	return float(arr[i]) if arr.size() > 0 else 0.0
+
 func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eyes: Array) -> void:
 	if tex == null or k <= 0.001:
 		return
@@ -223,7 +240,10 @@ func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eye
 	var base = Vector2(70.0 if left else 1920.0 - size.x - 50.0, 1080.0 - size.y * e + 6.0)
 	var pivot = base + Vector2(size.x * 0.5, size.y)
 	var bob = sin(t * 2.1) * 1.5
-	hud.draw_set_transform(pivot + Vector2(0, bob), deg_to_rad(tilt), Vector2.ONE * sc)
+	# the right-hand host is mirrored so he faces / points INTO the frame
+	var flip = -1.0 if not left else 1.0
+	var m = mouth("CAPY" if left else "KS")
+	hud.draw_set_transform(pivot + Vector2(0, bob - m * 2.0), deg_to_rad(tilt + (m - 0.3) * 1.5 * (1.0 if m > 0.05 else 0.0)), Vector2(sc * flip, sc))
 	var off = -Vector2(size.x * 0.5, size.y) / sc
 	hud.draw_circle(off + tex.get_size() * Vector2(0.5, 0.75), tex.get_size().x * 0.6, Color(0.35, 0.55, 0.85, 0.18), true, -1, true)
 	hud.draw_texture(tex, off)
@@ -244,4 +264,8 @@ func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eye
 				pts.append(c + Vector2(cos(a) * rx, sin(a) * ry))
 			hud.draw_colored_polygon(pts, Color(250 / 255.0, 172 / 255.0, 100 / 255.0))
 			hud.draw_line(c + Vector2(-rx, ry * 0.2 if close > 0.8 else 0.0), c + Vector2(rx, ry * 0.2 if close > 0.8 else 0.0), Color("#2a1d14"), 2.2, true)
+	if left:
+		Mouth.draw(hud, off + Vector2(90, 120), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), 0.25)
+	else:
+		Mouth.draw(hud, off + Vector2(177, 177), 9.0, m, Color(250 / 255.0, 172 / 255.0, 100 / 255.0), -0.3)
 	hud.draw_set_transform(Vector2.ZERO)

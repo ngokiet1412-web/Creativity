@@ -43,6 +43,11 @@ func set_state(time: float, capy_tilt: float) -> void:
 	tilt = capy_tilt
 	queue_redraw()
 
+const MouthD = preload("res://full/mouth.gd")
+var mouth_capy := 0.0
+var mouth_eng := 0.0
+var appear_t := 2.9
+
 func _blink(times: Array) -> float:
 	for b in times:
 		var d: float = t - b
@@ -51,17 +56,20 @@ func _blink(times: Array) -> float:
 	return 0.0
 
 func _draw() -> void:
-	if not available or t < 2.9:
+	if not available or t < appear_t:
 		return
 	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	draw_set_transform(ORIGIN, 0.0, Vector2.ONE * SCALE)
 	draw_texture(base, Vector2.ZERO)
 	_eyes(cfg.engineer_eyes, _blink(ENG_BLINKS), Color(cfg.fur[0] / 255.0, cfg.fur[1] / 255.0, cfg.fur[2] / 255.0))
+	var furc = Color(cfg.fur[0] / 255.0, cfg.fur[1] / 255.0, cfg.fur[2] / 255.0)
+	MouthD.draw(self, Vector2(177, 407), 9.0, mouth_eng, furc, -0.3)
 	var pv = Vector2(cfg.capy_head_pivot[0], cfg.capy_head_pivot[1])
 	var breathe = 0.6 * sin(t * TAU * 0.35)
 	draw_set_transform(ORIGIN + (pv + Vector2(0, breathe * 0.0)) * SCALE, deg_to_rad(tilt + breathe * 0.4), Vector2.ONE * SCALE)
 	draw_texture(head, -pv)
 	_eyes(cfg.capy_eyes, _blink(CAPY_BLINKS), Color(cfg.fur[0] / 255.0, cfg.fur[1] / 255.0, cfg.fur[2] / 255.0), -pv)
+	MouthD.draw(self, Vector2(390, 490) - pv, 9.0, mouth_capy, furc, 0.25)
 	draw_set_transform(ORIGIN, 0.0, Vector2.ONE * SCALE)
 	draw_texture(collar, Vector2.ZERO)
 	draw_set_transform(Vector2.ZERO)

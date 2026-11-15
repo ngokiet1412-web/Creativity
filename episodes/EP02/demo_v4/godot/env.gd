@@ -52,8 +52,8 @@ func _draw() -> void:
 	if director and director.rig and director.rig.ready_done:
 		var f: Dictionary = director.rig.current()
 		var cx: float = (f.W2.x + f.T.x) * 0.5
-		var hgt := clampf(ground - (f.W2.y + f.T.y) * 0.5, 0.0, 400.0)
-		var k := 1.0 - hgt / 400.0
+		var hgt = clampf(ground - (f.W2.y + f.T.y) * 0.5, 0.0, 400.0)
+		var k = 1.0 - hgt / 400.0
 		draw_set_transform(Vector2(cx + hgt * 0.15, ground + 4), 0.0, Vector2(1.0, 0.18))
 		draw_circle(Vector2.ZERO, 70.0 + 30.0 * (1.0 - k), Color(0.15, 0.08, 0.03, 0.10 + 0.18 * k), true, -1, true)
 		var ax: float = (f.W1.x + f.W2.x) * 0.5
@@ -93,13 +93,16 @@ func _bite(t: float) -> PackedFloat32Array:
 	if director.bake_mound and rig_cfg.has("mound_bite_baked"):
 		return PackedFloat32Array(rig_cfg.mound_bite_baked)
 	var n = int((md.x1 - md.x0) / 5.0) + 2
-	var key = snappedf(minf(t, 9.4), 1.0 / 30.0)
+	var dw = director.get("dig_window")
+	var d0: float = dw.x if dw != null else 4.0
+	var d1: float = dw.y if dw != null else 9.4
+	var key = snappedf(minf(t, d1), 1.0 / 30.0)
 	if _bite_cache.has(key):
 		return _bite_cache[key]
 	var out = PackedFloat32Array()
 	out.resize(n)
 	out.fill(-1e9)
-	var s = 4.0
+	var s = d0
 	var rig = director.rig
 	while s <= key:
 		var f: Dictionary = director.pose_at(s)
@@ -121,8 +124,17 @@ func _draw_front() -> void:
 		return
 	var t: float = director.t
 	var shade = 1.0 - 0.6 * maxf(director.xray, director.cutaway * 0.7)
+	if director.get("mound_on") == false:
+		_draw_crumbs(c, t, shade)
+		_draw_exhaust(c, t, shade)
+		return
 	var prof = mound_profile(t)
 	var md: Dictionary = rig_cfg.mound
+	if director.get("mound_style") == 1:
+		_heap(c, prof, md, shade)
+		_draw_crumbs(c, t, shade)
+		_draw_exhaust(c, t, shade)
+		return
 	var poly = PackedVector2Array([Vector2(md.x0 - 30, ground + 2)])
 	poly.append_array(prof)
 	poly.append(Vector2(md.x1 + 30, ground + 2))
@@ -150,6 +162,61 @@ func _draw_front() -> void:
 		c.draw_circle(Vector2(x - 0.8, y - 0.8), r * 0.5, Color(SOIL_LIGHT, 0.5 * shade), true, -1, true)
 	_draw_crumbs(c, t, shade)
 	_draw_exhaust(c, t, shade)
+
+## V5 heap: sits ON the ground (soft contact shadow, ragged foot), shaded in
+## three bands from a dark base to a sunlit crest, ink outline like the art
+func _heap(c, prof0: PackedVector2Array, md: Dictionary, shade: float) -> void:
+	var n = prof0.size()
+	var prof = prof0.duplicate()
+	for pass_i in 3:          # loose soil slumps: no knife-cut steps in the outline
+		var q = prof.duplicate()
+		for i in range(2, n - 2):
+			q[i].y = (prof[i - 2].y + prof[i - 1].y + prof[i].y + prof[i + 1].y + prof[i + 2].y) / 5.0
+		prof = q
+	for k in 5:
+		var g = 10.0 + k * 9.0
+		var sh = PackedVector2Array()
+		for i in 25:
+			var a = i * TAU / 24.0
+			sh.append(Vector2((md.x0 + md.x1) * 0.5 + cos(a) * ((md.x1 - md.x0) * 0.5 + g), ground + 8 + sin(a) * (10.0 + g * 0.35)))
+		c.draw_colored_polygon(sh, Color(0.2, 0.1, 0.04, 0.07 * shade))
+	var foot = PackedVector2Array()
+	for i in n:
+		var x = prof[n - 1 - i].x
+		foot.append(Vector2(x, ground + 9.0 + 3.5 * sin(x * 0.23) + 2.0 * sin(x * 0.71)))
+	var bands = [[1.0, SOIL_DARK.lightened(0.08)], [0.78, SOIL.darkened(0.04)], [0.5, SOIL.lightened(0.07)]]
+	for b in bands:
+		var poly = PackedVector2Array()
+		for i in n:
+			var p = prof[i]
+			var base_y = foot[n - 1 - i].y
+			poly.append(Vector2(p.x, minf(p.y + (base_y - p.y) * (1.0 - b[0]) + (2.5 * sin(p.x * 0.19 + b[0] * 9.0) if b[0] < 1.0 else 0.0), base_y - 1.0)))
+		poly.append_array(foot)
+		c.draw_colored_polygon(poly, Color(b[1], shade))
+	var crest = PackedVector2Array()
+	for p in prof:
+		crest.append(p + Vector2(0, 4))
+	c.draw_polyline(crest, Color(SOIL_LIGHT.lightened(0.15), 0.8 * shade), 3.5, true)
+	var edge = PackedVector2Array([foot[n - 1]])
+	edge.append_array(prof)
+	edge.append(foot[0])
+	c.draw_polyline(edge, Color(Color("#2a1d14"), shade), 3.0, true)
+	var rng = RandomNumberGenerator.new()
+	rng.seed = 7
+	for i in 34:
+		var x = rng.randf_range(md.x0 + 14, md.x1 - 14)
+		var top = _surface_at(prof, x)
+		if ground - top < 10.0:
+			continue
+		var y = rng.randf_range(top + 9, ground + 2)
+		var r = rng.randf_range(2.5, 7.0)
+		c.draw_circle(Vector2(x, y), r, Color(SOIL_DARK.darkened(0.15), 0.6 * shade), true, -1, true)
+		c.draw_circle(Vector2(x - r * 0.25, y - r * 0.3), r * 0.55, Color(SOIL_LIGHT, 0.7 * shade), true, -1, true)
+	for i in 9:      # loose clods at the foot
+		var x = rng.randf_range(md.x0 - 26, md.x1 + 26)
+		var r = rng.randf_range(3.0, 6.0)
+		c.draw_circle(Vector2(x, ground + 9 + rng.randf_range(0, 8)), r, Color(SOIL.darkened(0.1), shade), true, -1, true)
+		c.draw_arc(Vector2(x, ground + 9), r, PI, TAU, 8, Color(Color("#2a1d14"), 0.6 * shade), 1.5, true)
 
 func _surface_at(prof: PackedVector2Array, x: float) -> float:
 	for i in prof.size() - 1:

@@ -20,7 +20,7 @@ var timing := {}
 var cues: Array = []
 var marks := {}
 var rig = null            # World/Machine (rig.gd) if present
-var bake_mound := true
+var bake_mound := false
 var crumb_bursts: Array = []
 var crew = null
 
@@ -46,8 +46,16 @@ func speaking(who: String, time: float) -> float:
 			k = maxf(k, a)
 	return k
 
-func pose_at(_s: float) -> Dictionary:
-	return rig.current() if rig else {}
+## pose at time s from the joint tracks (env.gd carves the mound with it)
+func pose_at(s: float) -> Dictionary:
+	if rig == null:
+		return {}
+	return rig.fk(sample("World/Machine:boom_deg", s), sample("World/Machine:arm_rel", s), sample("World/Machine:bucket_rel", s))
+
+var mound_on := false          # machine on flat ground unless the scene digs
+var mound_style := 1           # 1 = V5 heap drawing (env.gd)
+var dig_window := Vector2(4.0, 9.4)
+var crew_from := 0.0
 
 func hydraulic_state(_born: float) -> Dictionary:
 	return {"swash": exhaust_load}
@@ -57,6 +65,10 @@ var exhaust_load := 0.3
 func _process(d: float) -> void:
 	super._process(d)
 	if crew:
+		crew.mouth_capy = mouth("CAPY")
+		crew.mouth_eng = mouth("KS")
+		crew.appear_t = 0.0
+		crew.modulate.a = clampf((t - crew_from) / 0.5, 0.0, 1.0)
 		crew.set_state(t, capy_tilt)
 
 func _draw() -> void:
@@ -89,15 +101,3 @@ func _hosts_only() -> void:
 	draw_extra_hud(hud)
 	_host(host_capy, capy_in, true, capy_tilt, capy_blinks, [[69, 84, 8, 11], [128, 102, 8.5, 11]])
 	_host(host_eng, eng_in, false, 0.0, eng_blinks, [[135, 138, 7, 11], [185, 124, 6, 10]])
-
-## Host corner with talk motion: while the host's line plays the bust nods
-## (rigid rotation about the base, small lift) on a speech-like rhythm.
-func _host(tex: Texture2D, k: float, left: bool, tilt: float, blinks: Array, eyes: Array) -> void:
-	var who = "CAPY" if left else "KS"
-	var s = speaking(who, t)
-	var nod = s * (2.2 * sin(t * 9.1) + 1.4 * sin(t * 5.3 + 1.0))
-	var lift = s * absf(sin(t * 7.3)) * 3.0
-	var saved = t
-	super._host(tex, k, left, tilt + nod, blinks, eyes)
-	if lift > 0.0:
-		pass

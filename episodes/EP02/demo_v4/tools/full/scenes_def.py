@@ -16,6 +16,7 @@ def define(SCENES, timeline, write, hosts, blinks, EXT, CREW, ik_, fk_, RIG):
     m, L = tl["marks"], tl["length"]
     mo = Motion(ik(SCOOP[0][1], SCOOP[0][2]))
     t_dig = m["q.s"] + 2.6
+    m["dig.s"] = t_dig
     t_up = mo.path(t_dig, SCOOP) + 0.35
     loaded = mo.end_pose()
     t_top = mo.move(t_up, 7.6, {"boom_deg": 40.0}, ramp=0.18)
@@ -35,7 +36,7 @@ def define(SCENES, timeline, write, hosts, blinks, EXT, CREW, ik_, fk_, RIG):
         ".:capy_tilt": [(0, 0), (m["ks.s"], 0), (m["ks.s"] + 1.0, 4), (m["ks.e"], 2), (L, 0)],
     })
     write("sc01", "sc01.gd", L,
-          EXT + [("World/FX", "res://full/machine_fx.gd", ""), CREW, ("Studio", "res://full/studio.gd", "")],
+          EXT + [("World/FX", "res://full/machine_fx.gd", ""), CREW, ("Studio", "res://full/studio.gd", "focus = Vector2(150, -165)\nfocus_zoom = 0.40625")],
           keys,
           {"scene_tag": '"SC01"', "scene_title": '"Bí ẩn gầu đất"', "capy_blinks": blinks(L, 1), "eng_blinks": blinks(L, 2),
            "pump_load": "0.1"})
@@ -65,9 +66,9 @@ def define2(SCENES, timeline, write, hosts, blinks, EXT, CREW):
         "World/FX:hi_arm": [(0, 0), (x0 + (x1 - x0) * 4.3 / 10, 0, -2), (x0 + (x1 - x0) * 5.2 / 10, 1), (x0 + (x1 - x0) * 6 / 10, 0.35), (L, 0.35)],
         "World/FX:hi_bucket": [(0, 0), (x0 + (x1 - x0) * 4.6 / 10, 0, -2), (x0 + (x1 - x0) * 5.4 / 10, 1), (x0 + (x1 - x0) * 6 / 10, 0.35), (L, 0.35)],
         ".:legend": [(0, 0), (ch - 0.5, 0, -2), (ch, 1), (L, 1)],
-        ".:cam_x": [(0, 160), (m["q.e"], 140, -2), (x0, 60), (ch, 70, -2), (L, 90)],
-        ".:cam_y": [(0, -60), (m["q.e"], -60, -2), (x0, -20), (ch, -20, -2), (L, -30)],
-        ".:cam_zoom": [(0, 1.05), (m["q.e"], 1.08, -2), (x0, 1.32), (ch, 1.32, -2), (L, 1.25)],
+        ".:cam_x": [(0, 160), (m["q.e"], 140, -2), (x0, -190), (x0 + (x1 - x0) * 0.22, -170, -2), (x0 + (x1 - x0) * 0.36, 60), (ch, 70, -2), (L, 90)],
+        ".:cam_y": [(0, -60), (m["q.e"], -60, -2), (x0, -50), (x0 + (x1 - x0) * 0.22, -50, -2), (x0 + (x1 - x0) * 0.36, -20), (ch, -20, -2), (L, -30)],
+        ".:cam_zoom": [(0, 1.05), (m["q.e"], 1.08, -2), (x0, 2.6), (x0 + (x1 - x0) * 0.22, 2.6, -2), (x0 + (x1 - x0) * 0.36, 1.32), (ch, 1.32, -2), (L, 1.25)],
         ".:capy_tilt": [(0, 0), (m["q.s"], 2), (m["q.s"] + 1.5, -3), (m["q.e"], 4), (L, 0)],
     }
     keys.update(hosts(tl))
@@ -336,5 +337,5 @@ def define10(SCENES, timeline, write, hosts, blinks, EXT, CREW):
         ".:capy_tilt": [(0, 0), (L, 0)],
     }
     keys.update(hosts(tl, capy=False))
-    write("sc14", "sc14.gd", L, EXT + [("World/FX", "res://full/machine_fx.gd", ""), ("World/Map", "res://full/system_map.gd", ""), ("Studio", "res://full/studio.gd", "focus = Vector2(60, -20)\nfocus_zoom = 0.4176")],
+    write("sc14", "sc14.gd", L, EXT + [("World/FX", "res://full/machine_fx.gd", ""), ("World/Map", "res://full/system_map.gd", ""), ("Studio", "res://full/studio.gd", "focus = Vector2(60, -20)\nfocus_zoom = 0.53625")],
           keys, {"scene_tag": '"SC14"', "scene_title": '"Tổng kết"', "capy_blinks": blinks(L, 21), "eng_blinks": blinks(L, 22)})

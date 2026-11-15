@@ -15,7 +15,10 @@ const CEL := Vector2(520, 737)
 const COLS := 7
 const TALK := [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
 const IDLE := [0, 1, 2, 3, 4, 3, 2, 1, 35, 36, 37, 38, 39, 40, 41, 40, 39]
-const MON := Rect2(1210, 150, 608, 342)     # 16:9 monitor (screen px at push 0)
+const MON := Rect2(1010, 150, 780, 439)     # 16:9 monitor (screen px at push 0)
+const MouthD = preload("res://full/mouth.gd")
+const FUR := Color(0.984, 0.68, 0.43)
+const MOUTH := Vector2(276, 361)             # Capy's mouth in cel px (face is static across cels)
 
 @export_range(0, 1) var studio_on := 1.0
 @export_range(0, 1) var push := 0.0          # 0 = studio, 1 = monitor fills the frame
@@ -31,7 +34,9 @@ var talk := 0.0
 var t := 0.0
 var ok := false
 var scale_cel := 1080.0 / 737.0
-var cel_x := 300.0
+var cel_x := 0.0
+var plate: Texture2D
+var mouth_open := 0.0
 
 func _ready() -> void:
 	var p = ProjectSettings.globalize_path("res://local/studio-cels.png")
@@ -41,6 +46,9 @@ func _ready() -> void:
 		im2.generate_mipmaps()
 		sheet = ImageTexture.create_from_image(im2)
 		ok = true
+	var pp = ProjectSettings.globalize_path("res://local/studio_plate.png")
+	if FileAccess.file_exists(pp):
+		plate = ImageTexture.create_from_image(Image.load_from_file(pp))
 	layer = CanvasLayer.new()
 	layer.layer = 2
 	add_child(layer)
@@ -49,9 +57,10 @@ func _ready() -> void:
 	layer.add_child(canvas)
 	canvas.draw.connect(_draw_studio)
 
-func set_state(time: float, talking: float) -> void:
+func set_state(time: float, talking: float, mouth := 0.0) -> void:
 	t = time
 	talk = talking
+	mouth_open = mouth
 	canvas.queue_redraw()
 
 ## camera so that `focus` sits in the monitor, continuous with the push
@@ -75,7 +84,7 @@ func _s() -> float:
 
 func _cel_index() -> int:
 	if talk > 0.5:
-		return TALK[int(t * 12.0) % TALK.size()]
+		return TALK[int(t * 7.0) % TALK.size()]
 	return IDLE[int(t * 3.0) % IDLE.size()]
 
 func _draw_studio() -> void:
@@ -90,53 +99,28 @@ func _draw_studio() -> void:
 	var src = Rect2(Vector2(i % COLS, i / COLS) * CEL, CEL)
 	var dst = Rect2(Vector2(cel_x, 0), CEL * scale_cel)
 	if ok:
-		# edge extension: left and right columns of this cel stretched to the frame edges
-		canvas.draw_texture_rect_region(sheet, Rect2(0, 0, cel_x + 2, 1080), Rect2(src.position, Vector2(2, CEL.y)), Color(0.82, 0.84, 0.9, a))
-		var fr = MON.grow(16)
-		var x0 = dst.end.x - 2
-		for piece in [Rect2(x0, 0, 1920 - x0, fr.position.y), Rect2(x0, fr.end.y, 1920 - x0, 1080 - fr.end.y),
-				Rect2(x0, fr.position.y, fr.position.x - x0, fr.size.y), Rect2(fr.end.x, fr.position.y, 1920 - fr.end.x, fr.size.y)]:
-			if piece.size.x <= 0 or piece.size.y <= 0:
-				continue
-			var sy0 = piece.position.y / 1080.0 * CEL.y
-			var sh = piece.size.y / 1080.0 * CEL.y
-			canvas.draw_texture_rect_region(sheet, piece, Rect2(src.position + Vector2(CEL.x - 2, sy0), Vector2(2, sh)), Color(0.82, 0.84, 0.9, a))
+		canvas.draw_texture_rect_region(sheet, dst, src, Color(1, 1, 1, a))
+		# lip-sync: own mouth over the cel's (fur patch, then smile or open mouth)
+		var mp = dst.position + MOUTH * scale_cel
+		var patch = PackedVector2Array()
+		for k in 24:
+			var ang = k * TAU / 24.0
+			patch.append(mp + Vector2(cos(ang) * 30.0, 6.0 + sin(ang) * 17.0))
+		canvas.draw_colored_polygon(patch, Color(FUR, a))
+		if mouth_open < 0.06:
+			var sm = PackedVector2Array()
+			for k in 13:
+				var u = k / 12.0
+				sm.append(mp + Vector2(-20.0 + 40.0 * u, -4.0 + 7.0 * sin(PI * u)))
+			canvas.draw_polyline(sm, Color(0.16, 0.11, 0.08, a), 3.0, true)
+		else:
+			MouthD.draw(canvas, mp + Vector2(0, -3), 19.0, mouth_open, Color(FUR, a))
 	else:
 		canvas.draw_rect(Rect2(0, 0, 1920, 1080), Color(0.1, 0.14, 0.26, a))
-	_wall_details(a, dst)
-	if ok:
-		canvas.draw_texture_rect_region(sheet, dst, src, Color(1, 1, 1, a))
-		# soft seams
-		for k in 18:
-			var w = 18.0 - k
-			canvas.draw_rect(Rect2(dst.position.x - 1 + k, 0, 1, 1080), Color(0.08, 0.1, 0.18, 0.025 * w * a))
-			canvas.draw_rect(Rect2(dst.end.x - k, 0, 1, 1080), Color(0.08, 0.1, 0.18, 0.025 * w * a))
+	if plate:
+		canvas.draw_texture(plate, Vector2.ZERO, Color(1, 1, 1, a))
 	_monitor(a)
 	canvas.draw_set_transform(Vector2.ZERO)
-
-func _wall_details(a: float, dst: Rect2) -> void:
-	var ink = Color(0.05, 0.07, 0.13, 0.55 * a)
-	for x in [70.0, 190.0, 1160.0, 1870.0]:
-		canvas.draw_line(Vector2(x, 0), Vector2(x, 840), ink, 3.0)
-	canvas.draw_line(Vector2(0, 520), Vector2(dst.position.x, 520), ink, 3.0)
-	canvas.draw_line(Vector2(dst.end.x, 600), Vector2(1920, 600), ink, 3.0)
-	# shelf + books on the left (continues the cel's shelf line)
-	var sy = 434.0
-	canvas.draw_rect(Rect2(0, sy, dst.position.x + 4, 16), Color(0.45, 0.28, 0.16, a))
-	canvas.draw_rect(Rect2(0, sy + 16, dst.position.x + 4, 6), Color(0.2, 0.12, 0.07, a))
-	var cols = [Color("#2c4f8f"), Color("#c9822f"), Color("#3b6fb3"), Color("#d9d2c0"), Color("#20386b")]
-	var x = 40.0
-	for k in 9:
-		var h = 70.0 + (k * 37 % 26)
-		canvas.draw_rect(Rect2(x, sy - h, 22, h), Color(cols[k % cols.size()], a))
-		canvas.draw_rect(Rect2(x, sy - h, 22, h), Color(0.03, 0.04, 0.08, a), false, 2.0)
-		x += 26.0 if k != 4 else 60.0
-	# desk continues the cel's desk top
-	var dy = 880.0
-	canvas.draw_rect(Rect2(0, dy, dst.position.x, 1080 - dy), Color(0.55, 0.32, 0.17, a))
-	canvas.draw_rect(Rect2(dst.end.x, dy, 1920 - dst.end.x, 1080 - dy), Color(0.55, 0.32, 0.17, a))
-	canvas.draw_line(Vector2(0, dy), Vector2(dst.position.x, dy), Color(0.75, 0.5, 0.3, a), 4.0)
-	canvas.draw_line(Vector2(dst.end.x, dy), Vector2(1920, dy), Color(0.75, 0.5, 0.3, a), 4.0)
 
 func _monitor(a: float) -> void:
 	var r = MON
