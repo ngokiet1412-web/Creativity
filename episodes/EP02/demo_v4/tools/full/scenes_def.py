@@ -18,15 +18,15 @@ def define(SCENES, timeline, write, hosts, blinks, EXT, CREW, ik_, fk_, RIG):
     t_dig = m["q.s"] + 2.6
     m["dig.s"] = t_dig
     t_up = mo.path(t_dig, SCOOP) + 0.35
-    loaded = mo.end_pose()
-    t_top = mo.move(t_up, 7.6, {"boom_deg": 40.0}, ramp=0.18)
+    t_top = mo.move(t_up, 4.1, {"boom_deg": 40.0}, ramp=0.24)
     mo.move(t_top + 0.2, 1.4, {"bucket_rel": 64.0}, ramp=0.4)
+    mo.move(m["ks.s"] + 1.4, 2.7, {"boom_deg": 38.6, "bucket_rel": 66.2}, ramp=0.35)
     keys = mo.keys(L)
     keys.update({
         "Studio:studio_on": [(0, 1), (L, 1)],
         "Studio:monitor_on": [(0, 0), (m["q.s"] + 1.4, 0, -2), (m["q.s"] + 2.0, 1), (L, 1)],
         "Studio:push": [(0, 0), (m["push.s"], 0, -2), (m["push.e"], 1), (L, 1)],
-        "World/FX:soil": [(0, 0), (t_dig + 3.4, 0, -2), (t_dig + 5.1, 1), (L, 1)],
+        "World/FX:soil": [(0, 0), (t_dig + 1.5, 0, -2), (t_dig + 4.0, 0.62), (t_dig + 5.1, 0.69), (L, 0.69)],
         ".:pump_load": [(0, 0.1), (t_dig - 0.3, 0.1), (t_dig + 0.4, 0.7), (t_top, 0.9), (t_top + 0.8, 0.2), (L, 0.2)],
         ".:grid_alpha": flat(None, L, 0.0),
         ".:legend": flat(None, L, 0.0),

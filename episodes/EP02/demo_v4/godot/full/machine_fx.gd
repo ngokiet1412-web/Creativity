@@ -76,10 +76,9 @@ func _soil(f: Dictionary) -> void:
 		var u = i / 20.0
 		var p = lip.lerp(back, u) + n * (h * sin(PI * u) * (1.0 + 0.12 * sin(u * 23.0)))
 		pts.append(p)
-	pts.append(back)
 	pts.append(inner)
-	pts.append(lip)
-	draw_colored_polygon(pts, SOIL.darkened(0.05))
+	if not Geometry2D.triangulate_polygon(pts).is_empty():
+		draw_colored_polygon(pts, SOIL.darkened(0.05))
 	var crest = PackedVector2Array()
 	for i in 21:
 		crest.append(pts[i] - n * 5.0)

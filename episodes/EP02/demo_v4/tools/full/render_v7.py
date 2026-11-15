@@ -54,9 +54,11 @@ def stamps(s):
     n = int(round(s * 1000))
     return f'{n//3600000:02}:{n//60000%60:02}:{n//1000%60:02},{n%1000:03}'
 
-def subtitle_cues(sc):
+def subtitle_cues(sc, version='V7'):
     out = []
     for c in TIMING[sc]['cues']:
+        if version == 'V9' and sc == 'SC01' and c['text'] == 'Kĩ Sư Ơiiii!':
+            continue
         # Caption cue max 2x42 characters, without re-reading speaker prefixes.
         def wrap(text):
             return textwrap.wrap(text, 42, break_long_words=False, break_on_hyphens=False)
@@ -85,15 +87,15 @@ def probe(path):
 
 def mix(sc, folder, length, version):
     ambient = folder / f'{sc}_ambience.wav'
-    if version == 'V8':
+    if version in ('V8', 'V9'):
         from foley_v8 import soundscape
-        soundscape(sc, TIMING[sc], length, ambient)
+        soundscape(sc, TIMING[sc], length, ambient, bumper=version == 'V9')
     else:
         bed(sc, length, str(ambient))
     voices = TIMING[sc]['voices']
     assert voices, f'{sc} is missing spoken audio'
     cmd = [FF, '-v', 'error', '-y', '-i', str(ambient)]
-    filters = [f'[0:a]volume={0.84 if version == "V8" else 0.22}[bed]']
+    filters = [f'[0:a]volume={0.84 if version in ("V8", "V9") else 0.22}[bed]']
     previous_end = 0
     for i, v in enumerate(voices):
         voice = PROJECT / v['file']
@@ -105,8 +107,13 @@ def mix(sc, folder, length, version):
         previous_end = v['t0'] + d
         assert previous_end <= length + 0.04, (sc, 'voice cut off')
         cmd += ['-i', str(voice)]
-        gain = 'volume=3dB,' if version == 'V8' else ''
-        filters.append(f'[{i+1}:a]aresample=48000,aformat=channel_layouts=stereo,{gain}adelay={round(v["t0"]*1000)}:all=1[v{i}]')
+        gain = 'volume=3dB,' if version in ('V8', 'V9') else ''
+        # Let the new instrumental bumper take the slot of the old voice tag.
+        # Delay the trimmed WAV by the same duration to keep the hook in sync.
+        intro_trim = 2.81 if version == 'V9' and sc == 'SC01' and i == 0 and TIMING[sc]['cues'][0]['text'] == 'Kĩ Sư Ơiiii!' else 0.0
+        trim = f'atrim=start={intro_trim},asetpts=PTS-STARTPTS,' if intro_trim else ''
+        delay = round((v['t0'] + intro_trim) * 1000)
+        filters.append(f'[{i+1}:a]{trim}aresample=48000,aformat=channel_layouts=stereo,{gain}adelay={delay}:all=1[v{i}]')
     filters.append('[bed]' + ''.join(f'[v{i}]' for i in range(len(voices))) +
                    f'amix=inputs={len(voices)+1}:normalize=0:duration=first,alimiter=limit=0.891:level=false[m]')
     wav = folder / f'{sc}_mix.wav'
@@ -170,11 +177,13 @@ def write_stems(out, timeline, duration, version):
                 start += end_tag
             tracks[role][start:start + len(pcm)] = pcm
     for name, pcm in tracks.items():
+        if version == 'V9' and name == 'SIGNATURE':
+            continue
         with wave.open(str(folder / f'EP02_{version}_{name}.wav'), 'wb') as f:
             f.setparams((1, 2, 48000, 0, 'NONE', 'not compressed'))
             f.writeframes(pcm.tobytes())
-    if version == 'V8':
-        with wave.open(str(folder / 'EP02_V8_HIEU_UNG.wav'), 'wb') as f:
+    if version in ('V8', 'V9'):
+        with wave.open(str(folder / f'EP02_{version}_HIEU_UNG.wav'), 'wb') as f:
             f.setparams((2, 2, 48000, 0, 'NONE', 'not compressed'))
             for segment in timeline:
                 with wave.open(str(out / f'{segment["scene"]}_ambience.wav'), 'rb') as source:
@@ -224,7 +233,7 @@ def main():
     p.add_argument('--parts-only', action='store_true')
     p.add_argument('--resume', action='store_true')
     p.add_argument('--jobs', type=int, default=1)
-    p.add_argument('--version', choices=['V7', 'V8'], default='V7')
+    p.add_argument('--version', choices=['V7', 'V8', 'V9'], default='V7')
     p.add_argument('--review', action='store_true', help='encode a copy with styled captions')
     args = p.parse_args()
     out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
@@ -256,9 +265,9 @@ def main():
         data = probe(mp4)
         length = float(data['format']['duration'])
         summary.append({'scene': sc, 'start': offset, 'duration': length, 'voices': len(TIMING[sc]['voices'])})
-        for a,b,txt in subtitle_cues(sc):
+        for a,b,txt in subtitle_cues(sc, args.version):
             cues.append((offset+a, offset+b, txt))
-        subtitle_file(out / f'{sc}.srt', subtitle_cues(sc))
+        subtitle_file(out / f'{sc}.srt', subtitle_cues(sc, args.version))
         for v in TIMING[sc]['voices']:
             timing_rows.append([sc,v['who'],offset+v['t0'],Path(v['file']).name])
         offset += length
@@ -281,11 +290,11 @@ def main():
     subtitle_file(out / f'EP02_FULL_{args.version}_vi.srt', cues)
     if shots == ORDER:
         write_stems(out, summary, offset, args.version)
-    if args.version == 'V8':
-        captions = out / 'EP02_FULL_V8_vi.ass'
+    if args.version in ('V8', 'V9'):
+        captions = out / f'EP02_FULL_{args.version}_vi.ass'
         styled_captions(captions, cues)
         if args.review:
-            review = out / 'EP02_FULL_V8_CO_PHU_DE.mp4'
+            review = out / f'EP02_FULL_{args.version}_CO_PHU_DE.mp4'
             run([FF, '-v', 'error', '-y', '-i', str(master), '-vf', f'ass={captions.name}',
                  '-map', '0:v:0', '-map', '0:a:0', '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '20',
                  '-pix_fmt', 'yuv420p', '-c:a', 'copy', '-movflags', '+faststart', str(review)],

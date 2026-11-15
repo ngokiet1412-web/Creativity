@@ -69,8 +69,13 @@ func _machine_x() -> float:
 	return 0.0
 
 # ------------------------------------------------------------------- mound
+func _mound_spec() -> Dictionary:
+	if director.get("mound_style") == 2:
+		return {"x0": 385.0, "x1": 2100.0, "peak_x": 960.0, "peak_h": 96.0}
+	return rig_cfg.mound
+
 func mound_profile(t: float) -> PackedVector2Array:
-	var md: Dictionary = rig_cfg.mound
+	var md := _mound_spec()
 	var pts = PackedVector2Array()
 	var bite = _bite(t)
 	var x: float = md.x0
@@ -79,6 +84,9 @@ func mound_profile(t: float) -> PackedVector2Array:
 		var u: float = (x - md.peak_x) / ((md.x1 - md.x0) * 0.5)
 		var h: float = md.peak_h * pow(maxf(0.0, 1.0 - u * u), 1.2)
 		h += 3.0 * sin(x * 0.11) * maxf(0.0, 1.0 - absf(u))
+		if director.get("mound_style") == 2:
+			var rise := smoothstep(385.0, 890.0, x)
+			h = rise * (96.0 + 5.0 * sin(x * 0.047) + 3.0 * sin(x * 0.11))
 		var y = ground - h
 		y = maxf(y, bite[i] if i < bite.size() else y)
 		y = minf(y, ground - 1.5)
@@ -89,7 +97,7 @@ func mound_profile(t: float) -> PackedVector2Array:
 
 func _bite(t: float) -> PackedFloat32Array:
 	## lowest surface reached by the bucket teeth so far (carves the mound)
-	var md: Dictionary = rig_cfg.mound
+	var md := _mound_spec()
 	if director.bake_mound and rig_cfg.has("mound_bite_baked"):
 		return PackedFloat32Array(rig_cfg.mound_bite_baked)
 	var n = int((md.x1 - md.x0) / 5.0) + 2
@@ -129,7 +137,12 @@ func _draw_front() -> void:
 		_draw_exhaust(c, t, shade)
 		return
 	var prof = mound_profile(t)
-	var md: Dictionary = rig_cfg.mound
+	var md := _mound_spec()
+	if director.get("mound_style") == 2:
+		_bank(c, prof)
+		_draw_crumbs(c, t, shade)
+		_draw_exhaust(c, t, shade)
+		return
 	if director.get("mound_style") == 1:
 		_heap(c, prof, md, shade)
 		_draw_crumbs(c, t, shade)
@@ -162,6 +175,43 @@ func _draw_front() -> void:
 		c.draw_circle(Vector2(x - 0.8, y - 0.8), r * 0.5, Color(SOIL_LIGHT, 0.5 * shade), true, -1, true)
 	_draw_crumbs(c, t, shade)
 	_draw_exhaust(c, t, shade)
+
+## Continuous stockpile starts beside the bucket and extends beyond the shot.
+## Sample the existing dirt plate for the face. Rely on grading and the fresh
+## rake marks for the silhouette, without an ink outline around the ground.
+func _bank(c: Node2D, prof: PackedVector2Array) -> void:
+	var n := prof.size()
+	var face := prof.duplicate()
+	var colors := PackedColorArray()
+	var uv := PackedVector2Array()
+	var tex_size := plate.get_size() * 1.5
+	for i in n:
+		var p := prof[i]
+		var weight := smoothstep(390.0, 520.0, p.x)
+		colors.append(Color(0.93, 0.86, 0.72, weight))
+		uv.append(Vector2((p.x + 1200.0) / tex_size.x, (ground + 760.0 + 0.25 * (p.y - ground)) / tex_size.y))
+	for i in n:
+		var p := prof[n - 1 - i]
+		face.append(Vector2(p.x, ground + 128.0))
+		colors.append(Color(0.95, 0.94, 0.89, 0.0))
+		uv.append(Vector2((p.x + 1200.0) / tex_size.x, (ground + 970.0) / tex_size.y))
+	var triangles := Geometry2D.triangulate_polygon(face)
+	if not triangles.is_empty():
+		c.draw_polygon(face, colors, uv, plate)
+	var lip := PackedVector2Array()
+	for i in range(19, n):
+		lip.append(prof[i] + Vector2(0, 3))
+	c.draw_polyline(lip, Color(0.50, 0.29, 0.15, 0.38), 2.6, true)
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 211
+	for i in 77:
+		var x := rng.randf_range(445.0, 1720.0)
+		var height := ground - _surface_at(prof, x)
+		if height < 7.0:
+			continue
+		var y := ground - height * rng.randf_range(0.18, 0.91)
+		var r := rng.randf_range(1.6, 4.9)
+		c.draw_line(Vector2(x, y), Vector2(x + r * 2.8, y + r * 0.30), Color(0.48, 0.27, 0.12, 0.26), r, true)
 
 ## V5 heap: sits ON the ground (soft contact shadow, ragged foot), shaded in
 ## three bands from a dark base to a sunlit crest, ink outline like the art
@@ -290,7 +340,7 @@ func _draw_exhaust(c, t: float, shade: float) -> void:
 # ---------------------------------------------------------------------- QA
 func ground_check(f: Dictionary) -> Array:
 	var errs = []
-	var md: Dictionary = rig_cfg.mound
+	var md := _mound_spec()
 	var rig = director.rig
 	for hp in rig_cfg.bucket_hull_px:
 		var p: Vector2 = rig.bucket_point(Vector2(hp[0], hp[1]), f)

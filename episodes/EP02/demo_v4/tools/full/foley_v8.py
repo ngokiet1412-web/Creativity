@@ -12,7 +12,7 @@ def _transition(t, start, span):
     return u * u * (3 - 2 * u)
 
 
-def soundscape(scene, timing, duration, path):
+def soundscape(scene, timing, duration, path, bumper=False):
     t = np.arange(round(duration * SR)) / SR
     rng = np.random.default_rng(80 + int(scene[2:]))
     marks = timing.get("marks", {})
@@ -20,7 +20,7 @@ def soundscape(scene, timing, duration, path):
     mechanical = scene in {"SC01", "SC02", "SC03", "SC05", "SC06", "SC07", "SC08", "SC09", "SC11"}
     if mechanical:
         if scene == "SC01":
-            start = 3.92
+            start = 2.65 if bumper else 3.92
             level = 0.50 * _transition(t, start, 0.52)
             load = 0.75 * _transition(t, marks["dig.s"], 1.5) * (1 - _transition(t, marks["dig.s"] + 7, 1.2))
         else:
@@ -75,7 +75,16 @@ def soundscape(scene, timing, duration, path):
         speaking = _transition(u, cue["t0"] - 0.25, 0.25) * (1 - _transition(u, cue["t1"], 0.25))
         duck[start:end] = np.minimum(duck[start:end], 1 - 0.42 * speaking)
     fade = np.minimum(np.clip(t / 0.32, 0, 1), np.clip((duration - t) / 0.35, 0, 1))
-    pcm = (np.clip(2.35 * bed * fade * duck, -1, 1) * 32767).astype("<i2")
+    signal = 2.35 * bed * fade * duck
+    if bumper and scene == 'SC01':
+        # Short original three-note wood/metal station sound, no stock audio.
+        for start, hz, gain in [(0.38, 349.23, 0.12), (0.56, 440.0, 0.13), (0.81, 523.25, 0.16)]:
+            idx = round(start * SR)
+            u = np.arange(round(0.70 * SR)) / SR
+            envelope = np.minimum(u / 0.012, 1.0) * np.exp(-u * 8.5) * (1 - _transition(u, 0.55, 0.15))
+            note = np.sin(2*np.pi*hz*u) + 0.26*np.sin(2*np.pi*2*hz*u)
+            signal[idx:idx+u.size] += gain * envelope * note
+    pcm = (np.clip(signal, -1, 1) * 32767).astype("<i2")
     with wave.open(str(path), "wb") as f:
         f.setparams((2, 2, SR, 0, "NONE", "not compressed"))
         f.writeframes(np.repeat(pcm[:, None], 2, axis=1).tobytes())

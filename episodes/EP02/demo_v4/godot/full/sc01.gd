@@ -9,6 +9,7 @@ extends "res://full/full_base.gd"
 
 func setup() -> void:
 	mound_on = true
+	mound_style = 2
 	dig_window = Vector2(M("dig.s"), M("dig.s") + 5.2)
 	crew_from = M("push.s") + 1.3
 	callouts = [
@@ -19,8 +20,8 @@ func setup() -> void:
 func update(time: float) -> void:
 	var move := smoothstep(M("ks.e") + 0.2, M("end") - 0.2, time)
 	studio.push = move
-	studio.monitor_on = smoothstep(3.92, 4.45, time)
-	studio.set_state(time, mouth("CAPY"), mouth("KS"), speaking("KS", time) > 0.0)
+	studio.monitor_on = smoothstep(2.57, 3.24, time)
+	studio.set_state(time, mouth("CAPY") if time >= 3.62 else 0.0, mouth("KS"), speaking("KS", time) > 0.0)
 	studio.camera(cam)
 	show_chip = false
 	if crew:
@@ -29,3 +30,7 @@ func update(time: float) -> void:
 
 func _draw_hud() -> void:
 	pass
+
+func qa(time: float) -> void:
+	for violation in $World/Env.ground_check(rig.current()):
+		qa_report.append("t=%.2f %s" % [time, violation])
