@@ -1105,7 +1105,7 @@ def configure_clean_gui_viewport(scene):
                 if space.type != "VIEW_3D":
                     continue
                 if hasattr(space, "shading"):
-                    space.shading.type = "RENDERED"
+                    space.shading.type = "MATERIAL"
                     if hasattr(space.shading, "use_scene_lights"):
                         space.shading.use_scene_lights = True
                     if hasattr(space.shading, "use_scene_world"):
