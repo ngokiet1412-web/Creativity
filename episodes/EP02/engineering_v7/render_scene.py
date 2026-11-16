@@ -314,19 +314,47 @@ def verify_nx(stl, step, joint_map, out):
                    encoding="utf-8")
 
 
+def set_camera_review_view(scene):
+    scene.frame_set(272)
+    for area in bpy.context.screen.areas:
+        if area.type == "VIEW_3D":
+            view = area.spaces.active
+            if view.region_3d is None:
+                continue
+            view.region_3d.view_perspective = "CAMERA"
+            view.region_3d.view_camera_zoom = 20
+            view.region_3d.view_camera_offset = (0, 0)
+            view.lock_camera = False
+            view.overlay.show_overlays = False
+            # Blender 5.3 reopens a saved Rendered viewport as Solid.
+            view.shading.type = "MATERIAL"
+            view.shading.use_scene_lights = True
+            view.shading.use_scene_world = True
+        elif area.ui_type == "TIMELINE":
+            region = next(r for r in area.regions if r.type == "WINDOW")
+            with bpy.context.temp_override(area=area, region=region):
+                bpy.ops.action.view_all()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out",type=Path,required=True)
     parser.add_argument("--capy",type=Path)
     parser.add_argument("--nx-units",action="store_true")
+    parser.add_argument("--camera-copy",action="store_true",
+                        help="Save a new viewing copy of the currently open hero scene.")
     parser.add_argument("--preview",type=int,nargs="*",default=[])
     args = parser.parse_args(sys.argv[sys.argv.index("--")+1:])
     out = args.out.resolve()
     if args.nx_units:
         verify_nx(out/"nx/calibration.stl",out/"nx/calibration.step",out/"joint_map.csv",out/"nx_units.txt")
         return
-    rows = read_trace(out/"motion_trace.csv")
     scene = bpy.context.scene
+    if args.camera_copy:
+        set_camera_review_view(scene)
+        bpy.ops.wm.save_as_mainfile(filepath=str(out/"EP02_hero_CAMERA.blend"), copy=True)
+        return
+    rows = read_trace(out/"motion_trace.csv")
     scene.unit_settings.system = "METRIC"
     scene.unit_settings.scale_length = 1
     animate_machine(scene,rows,out)
@@ -335,7 +363,7 @@ def main():
     scene.eevee.taa_render_samples = 12
     scene.render.image_settings.compression = 4
     scene.render.filepath = "//frames/hr_"
-    scene.frame_set(270)
+    set_camera_review_view(scene)
     bpy.ops.wm.save_as_mainfile(filepath=str(out/"EP02_hero.blend"))
     print("HYDRAULIC_REVEAL_OK 510 frames + 509 half-frame checks",flush=True)
     for frame in args.preview:

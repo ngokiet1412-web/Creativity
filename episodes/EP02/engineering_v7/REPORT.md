@@ -60,6 +60,8 @@ Chiều dài 5.700 mm và tùy chọn 2.925 mm theo brochure đúng họ PC200-8
 
 Chạy từ gốc repo với đường dẫn local của Capy và FFmpeg. Thêm `-PreviewOnly` để chạy thử MATLAB → Blender và xuất 4 ảnh, hoặc bỏ tùy chọn đó để render MP4. Dùng `-IncludeNX` ở một thư mục output mới khi hệ thống cho phép journal NX. Có thể nạp lại `EP02_hero.blend` để chỉnh đèn, camera và mặt cắt. Nếu đổi góc/nhịp máy, sửa waypoint trong `export_motion.m`, chạy lại pipeline và đối chiếu mốc mở mặt cắt.
 
+File dựng mới mở ở góc camera, chế độ Material Preview dùng đèn và World của scene. Với file cũ đang mở, chọn biểu tượng quả cầu Material Preview ở góc trên phải và nhấn `Numpad 0` nếu chưa nhìn qua camera. Để lưu một bản xem riêng từ file cũ, chạy Blender với file nguồn và `--python episodes/EP02/engineering_v7/render_scene.py -- --out <thư mục đầu ra> --camera-copy`.
+
 ```powershell
 $ff = (Resolve-Path '../.capy-tools/python/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe').Path
 .\episodes\EP02\engineering_v7\build.ps1 -Out 'build/EP02_v7_hydraulic_reveal' `
