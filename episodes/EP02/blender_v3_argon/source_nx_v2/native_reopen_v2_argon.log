@@ -1,0 +1,22 @@
+PLACED_SOLIDS PC2008_LOW_PLACED_SOLIDS: 181 solids, 207 features, 13 datums, max error=6.71697e-07 mm
+PLACED_SOLIDS PC2008_REACH_PLACED_SOLIDS: 181 solids, 207 features, 13 datums, max error=5.79584e-07 mm
+PLACED_SOLIDS PC2008_HIGH_PLACED_SOLIDS: 181 solids, 207 features, 13 datums, max error=4.48064e-07 mm
+PLACED_SOLIDS PC2008_REACH_EXPLODED_VIEW: 181 solids, 207 features, 13 datums, max error=5.79584e-07 mm
+COMPONENT_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY: 27 components, 11 constraints, 13 datums, max error=5.79584e-07 mm
+COMPONENT_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_LOW: 27 components, 11 constraints, 13 datums, max error=6.71697e-07 mm
+COMPONENT_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_REACH: 27 components, 11 constraints, 13 datums, max error=5.79584e-07 mm
+COMPONENT_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_HIGH: 27 components, 11 constraints, 13 datums, max error=4.48064e-07 mm
+PART boom: 16 solids | 26 features | expressions=3
+PART stick: 14 solids | 24 features | expressions=3
+PART bucket: 21 solids | 25 features | expressions=1
+PART boom_cylinder_barrel: 9 solids | 12 features | expressions=6
+PART boom_rod: 5 solids | 8 features | expressions=6
+PART arm_cylinder_barrel: 9 solids | 12 features | expressions=6
+PART arm_rod: 5 solids | 8 features | expressions=6
+PART bucket_cylinder_barrel: 9 solids | 12 features | expressions=6
+PART bucket_rod: 5 solids | 8 features | expressions=6
+PART side_link: 7 solids | 11 features | expressions=1
+PART h_link: 8 solids | 12 features | expressions=1
+PART pivot_pin: 4 solids | 6 features | expressions=2
+PART carrier_mount_reference: 7 solids | 13 features | expressions=1
+NX_OPEN_V2_ARGON_VERIFY_OK

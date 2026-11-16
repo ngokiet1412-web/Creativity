@@ -1,0 +1,27 @@
+parameter,value,unit,confidence,source,note
+boom_config,5700,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Published option; not a confirmed pin spacing
+stick_config,2925,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Published option
+boom_axis_spacing,5700.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot pivot distance
+stick_axis_spacing,2925.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot pivot distance
+side_link_axis_spacing,650.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot closure
+h_link_axis_spacing,750.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot closure
+boom_ram_lateral_offset,520.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Symmetric +/-
+ground_z,-1584.9,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Clearance reference only
+boom_bore,120.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+boom_closed,2200.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Mounted pin distance at zero stroke
+boom_eye,42.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot clevis hole radius
+boom_qty,2,count,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+boom_rod,85.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+boom_stroke,1334.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+arm_bore,135.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+arm_closed,1850.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Mounted pin distance at zero stroke
+arm_eye,44.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot clevis hole radius
+arm_qty,1,count,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+arm_rod,95.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+arm_stroke,1490.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+bucket_bore,115.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+bucket_closed,1700.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Mounted pin distance at zero stroke
+bucket_eye,40.0,mm,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Pilot clevis hole radius
+bucket_qty,1,count,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+bucket_rod,80.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific
+bucket_stroke,1120.0,mm,VERIFIED-PUBLIC,S01 CEN00049-08,Configuration-specific

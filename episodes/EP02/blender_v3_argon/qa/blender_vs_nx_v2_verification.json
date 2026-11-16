@@ -1,0 +1,9 @@
+{
+  "states_checked": 1079,
+  "max_pin_dev_mm": 0.001066,
+  "max_link_len_err_mm": 0.003477,
+  "max_cyl_axis_err_mm": 0.000674,
+  "min_bucket_ground_clearance_mm": 83.3801,
+  "zero_metal_scaling_verified": true,
+  "status": "BLENDER_KINEMATICS_QA_PASS"
+}
