@@ -302,6 +302,7 @@ def build_materials_library():
     nt.links.new(mix_c.outputs["Result"], bsdf.inputs["Base Color"])
     bsdf.inputs["Roughness"].default_value = 0.92
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    mat.diffuse_color = (*_lin((0.28, 0.20, 0.13)), 1.0)
     mats["soil"] = mat
 
     # 11. Industrial Test-Bay Floor & Heavy Structural Datum Plinth
@@ -327,6 +328,7 @@ def build_materials_library():
     nt.links.new(mix_c.outputs["Result"], bsdf.inputs["Base Color"])
     nt.links.new(map_r.outputs["Result"], bsdf.inputs["Roughness"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    mat.diffuse_color = (*_lin((0.075, 0.082, 0.095)), 1.0)
     mats["floor"] = mat
 
     mat, nt, bsdf, _ = _new_mat("MAT_Test_Stand_Slate")

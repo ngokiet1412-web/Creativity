@@ -53,7 +53,7 @@ def link_obj(obj, coll, parent=None):
     return obj
 
 
-def make_empty(name, coll, parent=None, location=(0.0, 0.0, 0.0), size=0.10):
+def make_empty(name, coll, parent=None, location=(0.0, 0.0, 0.0), size=0.015):
     obj = bpy.data.objects.new(name, None)
     obj.empty_display_type = "PLAIN_AXES"
     obj.empty_display_size = size
@@ -852,7 +852,16 @@ def setup_animated_demo_camera(cam, target_empty):
 
 
 def build_scene(args):
-    bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.ops.wm.read_factory_settings(use_empty=False)
+    for obj in list(bpy.data.objects):
+        bpy.data.objects.remove(obj, do_unlink=True)
+    for col in list(bpy.data.collections):
+        bpy.data.collections.remove(col)
+    for blk in (bpy.data.meshes, bpy.data.cameras, bpy.data.lights, bpy.data.materials):
+        for item in list(blk):
+            if item.users == 0:
+                blk.remove(item)
+
     scene = bpy.context.scene
     scene.frame_start = 1
     scene.frame_end = FRAMES
@@ -1086,6 +1095,40 @@ def render_four_hero_stills(scene, ctx, samples):
     snap(ctx["shot4"], 331, True, "SHOT_04_CUTAWAY_XRAY.png")
 
 
+def configure_clean_gui_viewport(scene):
+    """Configure saved Layout/3D Viewports so opening .blend in GUI shows clean camera view without light gizmo clutter."""
+    for screen in bpy.data.screens:
+        for area in screen.areas:
+            if area.type != "VIEW_3D":
+                continue
+            for space in area.spaces:
+                if space.type != "VIEW_3D":
+                    continue
+                if hasattr(space, "shading"):
+                    space.shading.type = "RENDERED"
+                    if hasattr(space.shading, "use_scene_lights"):
+                        space.shading.use_scene_lights = True
+                    if hasattr(space.shading, "use_scene_world"):
+                        space.shading.use_scene_world = True
+                if hasattr(space, "overlay"):
+                    for attr, val in (
+                        ("show_extras", False),
+                        ("show_relationship_lines", False),
+                        ("show_cursor", False),
+                        ("show_object_origins", False),
+                        ("show_floor", False),
+                        ("show_axis_x", False),
+                        ("show_axis_y", False),
+                    ):
+                        if hasattr(space.overlay, attr):
+                            setattr(space.overlay, attr, val)
+                if hasattr(space, "region_3d") and space.region_3d is not None:
+                    space.region_3d.view_location = Vector((3.15, 0.0, 0.85))
+                    space.region_3d.view_distance = 8.2
+                    space.region_3d.view_rotation = Euler((math.radians(74.0), 0.0, math.radians(16.0))).to_quaternion()
+                    space.region_3d.view_perspective = "CAMERA"
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("stills", "animate", "full", "build_only"), default="stills")
@@ -1097,13 +1140,22 @@ def main():
 
     scene, ctx = build_scene(args)
 
-    # Save master editable .blend cleanly before rendering
     blend_path = WS_ROOT / "blender_project" / "EP02_PC2008_V3_CINEMATIC.blend"
-    scene.camera = ctx["anim"]
-    scene.frame_set(175)
-    set_cutaway_visibility(ctx["intact_r"], ctx["cutaway_r"], show_cutaway=False)
-    bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
-    print("SAVED_BLEND:", blend_path, flush=True)
+    clean_blend_path = WS_ROOT / "blender_project" / "EP02_PC2008_V3_CLEAN_VIEW.blend"
+
+    def save_clean_blends():
+        ctx["coll_exp"].hide_render = True
+        ctx["coll_exp"].hide_viewport = True
+        configure_render_engine(scene, engine=args.anim_engine, samples=args.anim_samples)
+        scene.camera = ctx["anim"]
+        scene.frame_set(175)
+        bpy.ops.object.select_all(action="DESELECT")
+        configure_clean_gui_viewport(scene)
+        bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
+        bpy.ops.wm.save_as_mainfile(filepath=str(clean_blend_path))
+
+    save_clean_blends()
+    print("SAVED_BLEND:", blend_path, "AND", clean_blend_path, flush=True)
 
     if args.mode in ("stills", "full"):
         render_four_hero_stills(scene, ctx, samples=args.still_samples)
@@ -1111,7 +1163,6 @@ def main():
     if args.mode in ("animate", "full"):
         ctx["coll_exp"].hide_render = True
         ctx["coll_exp"].hide_viewport = True
-        # Restore animated hide_render keyframes on intact/cutaway that render_four_hero_stills temporarily set!
         set_cutaway_visibility(ctx["intact_r"], ctx["cutaway_r"], show_cutaway=False, frame=1)
         set_cutaway_visibility(ctx["intact_r"], ctx["cutaway_r"], show_cutaway=False, frame=239)
         set_cutaway_visibility(ctx["intact_r"], ctx["cutaway_r"], show_cutaway=True, frame=240)
@@ -1126,7 +1177,7 @@ def main():
         t0 = time.monotonic()
         bpy.ops.render.render(animation=True)
         print(f"RENDERED_ANIMATION_540_FRAMES in {time.monotonic() - t0:.2f} s", flush=True)
-        bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
+        save_clean_blends()
 
 
 if __name__ == "__main__":
