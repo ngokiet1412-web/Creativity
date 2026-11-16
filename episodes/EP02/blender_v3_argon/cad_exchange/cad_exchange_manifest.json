@@ -1,0 +1,1322 @@
+{
+  "nx_version": "v12.0.0.27",
+  "source_dir": "D:\\Creativity_CAPY_BK_EP01_Assets_For_Codex\\CAPY_BK_EP02_NX_CODEX_PILOT\\NX_NATIVE_V2_ARGON_20261116",
+  "stl_settings": {
+    "chordal_tol_mm": 0.08,
+    "adjacency_tol_mm": 0.025,
+    "units": "mm",
+    "binary": true
+  },
+  "parts": {
+    "carrier_mount_reference": {
+      "source_prt": "carrier_mount_reference.prt",
+      "solid_bodies_total": 7,
+      "datums": {
+        "J_BOOM_BASE": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "J_BOOM_CYL_A_L": [
+          450.0,
+          520.0,
+          -850.0
+        ],
+        "J_BOOM_CYL_A_R": [
+          450.0,
+          -520.0,
+          -850.0
+        ]
+      },
+      "sub_meshes": {
+        "carrier_mount_reference.stl": {
+          "triangles": 2680,
+          "size_bytes": 134084,
+          "bbox": {
+            "min_mm": [
+              -320.0,
+              -565.0,
+              -946.9999
+            ],
+            "max_mm": [
+              546.9265,
+              565.0,
+              140.9767
+            ]
+          },
+          "body_count": 7
+        }
+      },
+      "whole_part_stl": null
+    },
+    "boom": {
+      "source_prt": "boom.prt",
+      "solid_bodies_total": 16,
+      "datums": {
+        "J_BOOM_BASE": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "J_BOOM_TIP": [
+          5700.0,
+          0.0,
+          0.0
+        ],
+        "J_BOOM_CYL_B_L": [
+          2600.0,
+          520.0,
+          220.0
+        ],
+        "J_BOOM_CYL_B_R": [
+          2600.0,
+          -520.0,
+          220.0
+        ],
+        "J_ARM_CYL_A": [
+          3565.7,
+          0.0,
+          961.4
+        ]
+      },
+      "sub_meshes": {
+        "boom_structure.stl": {
+          "triangles": 3568,
+          "size_bytes": 178484,
+          "bbox": {
+            "min_mm": [
+              -240.0,
+              -520.0,
+              -285.0
+            ],
+            "max_mm": [
+              5860.0,
+              520.0,
+              1080.0
+            ]
+          },
+          "body_count": 8
+        },
+        "boom_bosses.stl": {
+          "triangles": 2596,
+          "size_bytes": 129884,
+          "bbox": {
+            "min_mm": [
+              -92.0,
+              -572.0,
+              -92.0
+            ],
+            "max_mm": [
+              5784.0,
+              572.0,
+              1020.0
+            ]
+          },
+          "body_count": 8
+        }
+      },
+      "whole_part_stl": {
+        "file": "boom.stl",
+        "triangles": 6164,
+        "size_bytes": 308284,
+        "bbox": {
+          "min_mm": [
+            -240.0,
+            -572.0,
+            -285.0
+          ],
+          "max_mm": [
+            5860.0,
+            572.0,
+            1080.0
+          ]
+        },
+        "body_count": 16
+      }
+    },
+    "stick": {
+      "source_prt": "stick.prt",
+      "solid_bodies_total": 14,
+      "datums": {
+        "J_BOOM_TIP": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "J_STICK_TIP": [
+          2925.0,
+          0.0,
+          0.0
+        ],
+        "J_ARM_CYL_B": [
+          -600.0,
+          0.0,
+          0.0
+        ],
+        "J_BUCKET_CYL_A": [
+          500.0,
+          0.0,
+          400.0
+        ],
+        "J_BUCKET_SIDE": [
+          2700.0,
+          0.0,
+          150.0
+        ]
+      },
+      "sub_meshes": {
+        "stick_structure.stl": {
+          "triangles": 6080,
+          "size_bytes": 304084,
+          "bbox": {
+            "min_mm": [
+              -770.0,
+              -152.0,
+              -234.0
+            ],
+            "max_mm": [
+              3060.0,
+              152.0,
+              482.0
+            ]
+          },
+          "body_count": 8
+        },
+        "stick_bosses.stl": {
+          "triangles": 2036,
+          "size_bytes": 101884,
+          "bbox": {
+            "min_mm": [
+              -667.9802,
+              -166.0,
+              -195.0
+            ],
+            "max_mm": [
+              3001.0,
+              166.0,
+              390.0
+            ]
+          },
+          "body_count": 6
+        }
+      },
+      "whole_part_stl": {
+        "file": "stick.stl",
+        "triangles": 8116,
+        "size_bytes": 405884,
+        "bbox": {
+          "min_mm": [
+            -770.0,
+            -166.0,
+            -234.0
+          ],
+          "max_mm": [
+            3060.0,
+            166.0,
+            482.0
+          ]
+        },
+        "body_count": 14
+      }
+    },
+    "bucket": {
+      "source_prt": "bucket.prt",
+      "solid_bodies_total": 21,
+      "datums": {
+        "J_STICK_TIP": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "J_BUCKET_BOSS": [
+          188.6,
+          0.0,
+          -207.5
+        ]
+      },
+      "sub_meshes": {
+        "bucket_teeth.stl": {
+          "triangles": 140,
+          "size_bytes": 7084,
+          "bbox": {
+            "min_mm": [
+              -1398.0,
+              -484.0,
+              -799.0
+            ],
+            "max_mm": [
+              -1105.0,
+              484.0,
+              -715.0
+            ]
+          },
+          "body_count": 5
+        },
+        "bucket_wear_edges.stl": {
+          "triangles": 110,
+          "size_bytes": 5584,
+          "bbox": {
+            "min_mm": [
+              -1254.0,
+              -582.0,
+              -975.0
+            ],
+            "max_mm": [
+              160.0,
+              582.0,
+              -485.0
+            ]
+          },
+          "body_count": 6
+        },
+        "bucket_shell.stl": {
+          "triangles": 4992,
+          "size_bytes": 249684,
+          "bbox": {
+            "min_mm": [
+              -1180.0,
+              -563.0,
+              -1002.3397
+            ],
+            "max_mm": [
+              557.0,
+              563.0,
+              118.0
+            ]
+          },
+          "body_count": 10
+        }
+      },
+      "whole_part_stl": {
+        "file": "bucket.stl",
+        "triangles": 5242,
+        "size_bytes": 262184,
+        "bbox": {
+          "min_mm": [
+            -1398.0,
+            -582.0,
+            -1002.3397
+          ],
+          "max_mm": [
+            557.0,
+            582.0,
+            118.0
+          ]
+        },
+        "body_count": 21
+      }
+    },
+    "boom_cylinder_barrel": {
+      "source_prt": "boom_cylinder_barrel.prt",
+      "solid_bodies_total": 9,
+      "datums": {
+        "J_CYL_PIN": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "boom_cylinder_barrel_body.stl": {
+          "triangles": 2088,
+          "size_bytes": 104484,
+          "bbox": {
+            "min_mm": [
+              -82.0,
+              -84.9803,
+              -84.9213
+            ],
+            "max_mm": [
+              2080.0,
+              85.0,
+              85.0
+            ]
+          },
+          "body_count": 4
+        },
+        "boom_cylinder_barrel_gland.stl": {
+          "triangles": 1028,
+          "size_bytes": 51484,
+          "bbox": {
+            "min_mm": [
+              2038.0,
+              -89.9803,
+              -89.9211
+            ],
+            "max_mm": [
+              2108.0,
+              90.0,
+              90.0
+            ]
+          },
+          "body_count": 2
+        },
+        "boom_cylinder_barrel_ports.stl": {
+          "triangles": 240,
+          "size_bytes": 12084,
+          "bbox": {
+            "min_mm": [
+              220.0,
+              -28.0,
+              76.0
+            ],
+            "max_mm": [
+              2015.0,
+              28.0,
+              110.0
+            ]
+          },
+          "body_count": 3
+        }
+      },
+      "whole_part_stl": {
+        "file": "boom_cylinder_barrel.stl",
+        "triangles": 3356,
+        "size_bytes": 167884,
+        "bbox": {
+          "min_mm": [
+            -82.0,
+            -89.9803,
+            -89.9211
+          ],
+          "max_mm": [
+            2108.0,
+            90.0,
+            110.0
+          ]
+        },
+        "body_count": 9
+      }
+    },
+    "boom_rod": {
+      "source_prt": "boom_rod.prt",
+      "solid_bodies_total": 5,
+      "datums": {
+        "J_ROD_PIN": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "boom_rod_chrome.stl": {
+          "triangles": 208,
+          "size_bytes": 10484,
+          "bbox": {
+            "min_mm": [
+              104.0,
+              -42.5,
+              -42.5
+            ],
+            "max_mm": [
+              2000.0,
+              42.5,
+              42.5
+            ]
+          },
+          "body_count": 1
+        },
+        "boom_rod_piston.stl": {
+          "triangles": 488,
+          "size_bytes": 24484,
+          "bbox": {
+            "min_mm": [
+              1918.0,
+              -59.4803,
+              -59.4211
+            ],
+            "max_mm": [
+              2000.0,
+              59.5,
+              59.5
+            ]
+          },
+          "body_count": 2
+        },
+        "boom_rod_eye.stl": {
+          "triangles": 824,
+          "size_bytes": 41284,
+          "bbox": {
+            "min_mm": [
+              -74.9245,
+              -54.0,
+              -75.0
+            ],
+            "max_mm": [
+              133.5,
+              54.0,
+              75.0
+            ]
+          },
+          "body_count": 2
+        }
+      },
+      "whole_part_stl": {
+        "file": "boom_rod.stl",
+        "triangles": 1520,
+        "size_bytes": 76084,
+        "bbox": {
+          "min_mm": [
+            -74.9245,
+            -59.4803,
+            -75.0
+          ],
+          "max_mm": [
+            2000.0,
+            59.5,
+            75.0
+          ]
+        },
+        "body_count": 5
+      }
+    },
+    "arm_cylinder_barrel": {
+      "source_prt": "arm_cylinder_barrel.prt",
+      "solid_bodies_total": 9,
+      "datums": {
+        "J_CYL_PIN": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "arm_cylinder_barrel_body.stl": {
+          "triangles": 2176,
+          "size_bytes": 108884,
+          "bbox": {
+            "min_mm": [
+              -84.0,
+              -92.5,
+              -92.5
+            ],
+            "max_mm": [
+              1730.0,
+              92.5,
+              92.5
+            ]
+          },
+          "body_count": 4
+        },
+        "arm_cylinder_barrel_gland.stl": {
+          "triangles": 1076,
+          "size_bytes": 53884,
+          "bbox": {
+            "min_mm": [
+              1688.0,
+              -97.4209,
+              -97.5
+            ],
+            "max_mm": [
+              1758.0,
+              97.5,
+              97.5
+            ]
+          },
+          "body_count": 2
+        },
+        "arm_cylinder_barrel_ports.stl": {
+          "triangles": 240,
+          "size_bytes": 12084,
+          "bbox": {
+            "min_mm": [
+              220.0,
+              -28.0,
+              83.5
+            ],
+            "max_mm": [
+              1665.0,
+              28.0,
+              117.5
+            ]
+          },
+          "body_count": 3
+        }
+      },
+      "whole_part_stl": {
+        "file": "arm_cylinder_barrel.stl",
+        "triangles": 3492,
+        "size_bytes": 174684,
+        "bbox": {
+          "min_mm": [
+            -84.0,
+            -97.4209,
+            -97.5
+          ],
+          "max_mm": [
+            1758.0,
+            97.5,
+            117.5
+          ]
+        },
+        "body_count": 9
+      }
+    },
+    "arm_rod": {
+      "source_prt": "arm_rod.prt",
+      "solid_bodies_total": 5,
+      "datums": {
+        "J_ROD_PIN": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "arm_rod_chrome.stl": {
+          "triangles": 440,
+          "size_bytes": 22084,
+          "bbox": {
+            "min_mm": [
+              104.0,
+              -47.4806,
+              -47.4806
+            ],
+            "max_mm": [
+              1650.0,
+              47.5,
+              47.5
+            ]
+          },
+          "body_count": 1
+        },
+        "arm_rod_piston.stl": {
+          "triangles": 520,
+          "size_bytes": 26084,
+          "bbox": {
+            "min_mm": [
+              1568.0,
+              -66.9804,
+              -66.9218
+            ],
+            "max_mm": [
+              1650.0,
+              67.0,
+              67.0
+            ]
+          },
+          "body_count": 2
+        },
+        "arm_rod_eye.stl": {
+          "triangles": 844,
+          "size_bytes": 42284,
+          "bbox": {
+            "min_mm": [
+              -76.9225,
+              -54.0,
+              -77.0
+            ],
+            "max_mm": [
+              137.06,
+              54.0,
+              77.0
+            ]
+          },
+          "body_count": 2
+        }
+      },
+      "whole_part_stl": {
+        "file": "arm_rod.stl",
+        "triangles": 1804,
+        "size_bytes": 90284,
+        "bbox": {
+          "min_mm": [
+            -76.9225,
+            -66.9804,
+            -77.0
+          ],
+          "max_mm": [
+            1650.0,
+            67.0,
+            77.0
+          ]
+        },
+        "body_count": 5
+      }
+    },
+    "bucket_cylinder_barrel": {
+      "source_prt": "bucket_cylinder_barrel.prt",
+      "solid_bodies_total": 9,
+      "datums": {
+        "J_CYL_PIN": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "bucket_cylinder_barrel_body.stl": {
+          "triangles": 1816,
+          "size_bytes": 90884,
+          "bbox": {
+            "min_mm": [
+              -80.0,
+              -84.0,
+              -82.5
+            ],
+            "max_mm": [
+              1580.0,
+              84.0,
+              82.5
+            ]
+          },
+          "body_count": 4
+        },
+        "bucket_cylinder_barrel_gland.stl": {
+          "triangles": 1012,
+          "size_bytes": 50684,
+          "bbox": {
+            "min_mm": [
+              1538.0,
+              -87.4212,
+              -87.5
+            ],
+            "max_mm": [
+              1608.0,
+              87.5,
+              87.5
+            ]
+          },
+          "body_count": 2
+        },
+        "bucket_cylinder_barrel_ports.stl": {
+          "triangles": 240,
+          "size_bytes": 12084,
+          "bbox": {
+            "min_mm": [
+              220.0,
+              -28.0,
+              73.5
+            ],
+            "max_mm": [
+              1515.0,
+              28.0,
+              107.5
+            ]
+          },
+          "body_count": 3
+        }
+      },
+      "whole_part_stl": {
+        "file": "bucket_cylinder_barrel.stl",
+        "triangles": 3068,
+        "size_bytes": 153484,
+        "bbox": {
+          "min_mm": [
+            -80.0,
+            -87.4212,
+            -87.5
+          ],
+          "max_mm": [
+            1608.0,
+            87.5,
+            107.5
+          ]
+        },
+        "body_count": 9
+      }
+    },
+    "bucket_rod": {
+      "source_prt": "bucket_rod.prt",
+      "solid_bodies_total": 5,
+      "datums": {
+        "J_ROD_PIN": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "bucket_rod_chrome.stl": {
+          "triangles": 400,
+          "size_bytes": 20084,
+          "bbox": {
+            "min_mm": [
+              104.0,
+              -40.0,
+              -40.0
+            ],
+            "max_mm": [
+              1500.0,
+              40.0,
+              40.0
+            ]
+          },
+          "body_count": 1
+        },
+        "bucket_rod_piston.stl": {
+          "triangles": 480,
+          "size_bytes": 24084,
+          "bbox": {
+            "min_mm": [
+              1418.0,
+              -57.0,
+              -57.0
+            ],
+            "max_mm": [
+              1500.0,
+              57.0,
+              57.0
+            ]
+          },
+          "body_count": 2
+        },
+        "bucket_rod_eye.stl": {
+          "triangles": 804,
+          "size_bytes": 40284,
+          "bbox": {
+            "min_mm": [
+              -73.0,
+              -54.0,
+              -73.0
+            ],
+            "max_mm": [
+              129.94,
+              54.0,
+              73.0
+            ]
+          },
+          "body_count": 2
+        }
+      },
+      "whole_part_stl": {
+        "file": "bucket_rod.stl",
+        "triangles": 1684,
+        "size_bytes": 84284,
+        "bbox": {
+          "min_mm": [
+            -73.0,
+            -57.0,
+            -73.0
+          ],
+          "max_mm": [
+            1500.0,
+            57.0,
+            73.0
+          ]
+        },
+        "body_count": 5
+      }
+    },
+    "side_link": {
+      "source_prt": "side_link.prt",
+      "solid_bodies_total": 7,
+      "datums": {
+        "J_LINK_A": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "J_LINK_B": [
+          650.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "side_link_body.stl": {
+          "triangles": 1600,
+          "size_bytes": 80084,
+          "bbox": {
+            "min_mm": [
+              -72.0,
+              -83.0,
+              -72.0
+            ],
+            "max_mm": [
+              722.0,
+              83.0,
+              72.0
+            ]
+          },
+          "body_count": 3
+        },
+        "side_link_bosses.stl": {
+          "triangles": 1760,
+          "size_bytes": 88084,
+          "bbox": {
+            "min_mm": [
+              -58.0,
+              -93.0,
+              -58.0
+            ],
+            "max_mm": [
+              708.0,
+              93.0,
+              58.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": {
+        "file": "side_link.stl",
+        "triangles": 3360,
+        "size_bytes": 168084,
+        "bbox": {
+          "min_mm": [
+            -72.0,
+            -93.0,
+            -72.0
+          ],
+          "max_mm": [
+            722.0,
+            93.0,
+            72.0
+          ]
+        },
+        "body_count": 7
+      }
+    },
+    "h_link": {
+      "source_prt": "h_link.prt",
+      "solid_bodies_total": 8,
+      "datums": {
+        "J_LINK_A": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "J_LINK_B": [
+          750.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "h_link_body.stl": {
+          "triangles": 1628,
+          "size_bytes": 81484,
+          "bbox": {
+            "min_mm": [
+              -77.9215,
+              -83.0,
+              -78.0
+            ],
+            "max_mm": [
+              827.9214,
+              83.0,
+              78.0
+            ]
+          },
+          "body_count": 4
+        },
+        "h_link_bosses.stl": {
+          "triangles": 1760,
+          "size_bytes": 88084,
+          "bbox": {
+            "min_mm": [
+              -58.0,
+              -93.0,
+              -58.0
+            ],
+            "max_mm": [
+              808.0,
+              93.0,
+              58.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": {
+        "file": "h_link.stl",
+        "triangles": 3388,
+        "size_bytes": 169484,
+        "bbox": {
+          "min_mm": [
+            -77.9215,
+            -93.0,
+            -78.0
+          ],
+          "max_mm": [
+            827.9214,
+            93.0,
+            78.0
+          ]
+        },
+        "body_count": 8
+      }
+    },
+    "pivot_pin": {
+      "source_prt": "pivot_pin.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pivot_pin.stl": {
+          "triangles": 692,
+          "size_bytes": 34684,
+          "bbox": {
+            "min_mm": [
+              -57.0,
+              -140.0,
+              -57.0
+            ],
+            "max_mm": [
+              57.0,
+              148.0,
+              79.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R64_L710": {
+      "source_prt": "pin_R64_L710.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r64_l710.stl": {
+          "triangles": 844,
+          "size_bytes": 42284,
+          "bbox": {
+            "min_mm": [
+              -83.0,
+              -363.0,
+              -83.0
+            ],
+            "max_mm": [
+              83.0,
+              371.0,
+              105.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R60_L496": {
+      "source_prt": "pin_R60_L496.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r60_l496.stl": {
+          "triangles": 828,
+          "size_bytes": 41484,
+          "bbox": {
+            "min_mm": [
+              -78.9205,
+              -256.0,
+              -79.0
+            ],
+            "max_mm": [
+              79.0,
+              264.0,
+              101.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R54_L476": {
+      "source_prt": "pin_R54_L476.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r54_l476.stl": {
+          "triangles": 792,
+          "size_bytes": 39684,
+          "bbox": {
+            "min_mm": [
+              -73.0,
+              -246.0,
+              -73.0
+            ],
+            "max_mm": [
+              73.0,
+              254.0,
+              95.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R44_L344": {
+      "source_prt": "pin_R44_L344.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r44_l344.stl": {
+          "triangles": 740,
+          "size_bytes": 37084,
+          "bbox": {
+            "min_mm": [
+              -62.9804,
+              -180.0,
+              -63.0
+            ],
+            "max_mm": [
+              63.0,
+              188.0,
+              85.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R44_L256": {
+      "source_prt": "pin_R44_L256.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r44_l256.stl": {
+          "triangles": 740,
+          "size_bytes": 37084,
+          "bbox": {
+            "min_mm": [
+              -62.9804,
+              -136.0,
+              -63.0
+            ],
+            "max_mm": [
+              63.0,
+              144.0,
+              85.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R42_L184": {
+      "source_prt": "pin_R42_L184.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r42_l184.stl": {
+          "triangles": 724,
+          "size_bytes": 36284,
+          "bbox": {
+            "min_mm": [
+              -60.9217,
+              -100.0,
+              -61.0
+            ],
+            "max_mm": [
+              61.0,
+              108.0,
+              83.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R42_L170": {
+      "source_prt": "pin_R42_L170.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r42_l170.stl": {
+          "triangles": 724,
+          "size_bytes": 36284,
+          "bbox": {
+            "min_mm": [
+              -60.9217,
+              -93.0,
+              -61.0
+            ],
+            "max_mm": [
+              61.0,
+              101.0,
+              83.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R40_L204": {
+      "source_prt": "pin_R40_L204.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r40_l204.stl": {
+          "triangles": 712,
+          "size_bytes": 35684,
+          "bbox": {
+            "min_mm": [
+              -58.9804,
+              -110.0,
+              -59.0
+            ],
+            "max_mm": [
+              59.0,
+              118.0,
+              81.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R38_L470": {
+      "source_prt": "pin_R38_L470.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r38_l470.stl": {
+          "triangles": 692,
+          "size_bytes": 34684,
+          "bbox": {
+            "min_mm": [
+              -57.0,
+              -243.0,
+              -57.0
+            ],
+            "max_mm": [
+              57.0,
+              251.0,
+              79.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R38_L320": {
+      "source_prt": "pin_R38_L320.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r38_l320.stl": {
+          "triangles": 692,
+          "size_bytes": 34684,
+          "bbox": {
+            "min_mm": [
+              -57.0,
+              -168.0,
+              -57.0
+            ],
+            "max_mm": [
+              57.0,
+              176.0,
+              79.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    },
+    "pin_R38_L264": {
+      "source_prt": "pin_R38_L264.prt",
+      "solid_bodies_total": 4,
+      "datums": {
+        "J_PIN_CENTER": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "sub_meshes": {
+        "pin_r38_l264.stl": {
+          "triangles": 692,
+          "size_bytes": 34684,
+          "bbox": {
+            "min_mm": [
+              -57.0,
+              -140.0,
+              -57.0
+            ],
+            "max_mm": [
+              57.0,
+              148.0,
+              79.0
+            ]
+          },
+          "body_count": 4
+        }
+      },
+      "whole_part_stl": null
+    }
+  },
+  "total_stl_files": 53,
+  "total_triangles": 52746,
+  "assembly_verified": {
+    "file": "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY.prt",
+    "components": 27,
+    "constraints": 11,
+    "persistent_points": 13
+  }
+}

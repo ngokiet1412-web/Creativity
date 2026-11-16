@@ -1,0 +1,48 @@
+{
+  "matlab_version": "26.2.0.3386108 (R2026b)",
+  "fps": 30,
+  "frame_count": 540,
+  "duration_s": 17.966666666666665,
+  "samples_120hz": 2161,
+  "nx_v2_max_pin_distance_diff_mm": 3.9347105484921485E-7,
+  "nx_v2_max_joint_coord_diff_mm": 6.7169673814988151E-7,
+  "trajectory_summary_30fps": {
+    "min_clearance_mm": 83.380142394075847,
+    "max_four_bar_err_mm": 9.0949470177292824E-13,
+    "min_overlap_mm": 398.34341999088747,
+    "all_strokes_valid": true,
+    "boom_stroke_range_mm": [
+      572.05427972556026,
+      859.80757781868533
+    ],
+    "arm_stroke_range_mm": [
+      272.47151103783608,
+      471.21393419081505
+    ],
+    "bucket_stroke_range_mm": [
+      878.30351660312544,
+      981.65658000911253
+    ],
+    "boom_max_speed_mms": 21.683671997595944
+  },
+  "trajectory_summary_120hz": {
+    "min_clearance_mm": 83.380142394075847,
+    "max_four_bar_err_mm": 9.0949470177292824E-13,
+    "min_overlap_mm": 398.34341999088747,
+    "all_strokes_valid": true,
+    "boom_stroke_range_mm": [
+      572.05427972556026,
+      859.80757781868533
+    ],
+    "arm_stroke_range_mm": [
+      272.47093819258953,
+      471.21393419081505
+    ],
+    "bucket_stroke_range_mm": [
+      878.30154097517607,
+      981.65658000911253
+    ],
+    "boom_max_speed_mms": 21.683704937759181
+  },
+  "hydraulic_note": "Piston cap/rod flow rates computed from NX V2 brochure bore/rod area * piston velocity (Q = A*v). Pressure trace is an illustrative boom-lift load curve, NOT field-measured Komatsu PC200-8 telemetry."
+}

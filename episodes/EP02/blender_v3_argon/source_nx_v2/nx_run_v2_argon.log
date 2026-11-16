@@ -1,0 +1,37 @@
+NXOPEN_V2_ARGON_RUNNING | NX v12.0.0.27 | Python 3.6.1 | millimeters
+NATIVE_PART boom | 26 features | 16 solid bodies | 5 datums
+NATIVE_PART stick | 24 features | 14 solid bodies | 5 datums
+NATIVE_PART bucket | 25 features | 21 solid bodies | 2 datums
+NATIVE_PART side_link | 11 features | 7 solid bodies | 2 datums
+NATIVE_PART h_link | 12 features | 8 solid bodies | 2 datums
+NATIVE_PART pivot_pin | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART carrier_mount_reference | 13 features | 7 solid bodies | 3 datums
+NATIVE_PART boom_cylinder_barrel | 12 features | 9 solid bodies | 2 datums
+NATIVE_PART boom_rod | 8 features | 5 solid bodies | 2 datums
+NATIVE_PART arm_cylinder_barrel | 12 features | 9 solid bodies | 2 datums
+NATIVE_PART arm_rod | 8 features | 5 solid bodies | 2 datums
+NATIVE_PART bucket_cylinder_barrel | 12 features | 9 solid bodies | 2 datums
+NATIVE_PART bucket_rod | 8 features | 5 solid bodies | 2 datums
+NATIVE_PART pin_R64_L710 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R60_L496 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R54_L476 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R42_L184 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R42_L170 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R44_L256 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R44_L344 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R40_L204 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R38_L320 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R38_L264 | 6 features | 4 solid bodies | 1 datums
+NATIVE_PART pin_R38_L470 | 6 features | 4 solid bodies | 1 datums
+NATIVE_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_LOW | 27 components | 11 constraints | 13 joint points
+NATIVE_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_REACH | 27 components | 11 constraints | 13 joint points
+NATIVE_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY | 27 components | 11 constraints | 13 joint points
+NATIVE_ASSY PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_HIGH | 27 components | 11 constraints | 13 joint points
+NATIVE_POSE low | 181 solid bodies | 13 persistent points
+STEP_EXPORT low | 181 MANIFOLD_SOLID_BREP entities verified
+NATIVE_POSE reach | 181 solid bodies | 13 persistent points
+STEP_EXPORT reach | 181 MANIFOLD_SOLID_BREP entities verified
+NATIVE_POSE high | 181 solid bodies | 13 persistent points
+STEP_EXPORT high | 181 MANIFOLD_SOLID_BREP entities verified
+NATIVE_VIEW exploded | 181 solid bodies | STL exported
+NX_PILOT_V2_ARGON_DONE

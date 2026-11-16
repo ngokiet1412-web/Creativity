@@ -1,0 +1,198 @@
+﻿STEP to UG
+! INFO-     NX STEP AP214 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 16-NOV-2026  5:58:04 PM
+! INFO-      
+! STATUS-   Converting Part: D:\Creativity_CAPY_BK_EP01_Assets_For_Codex\CAPY_BK_EP02_NX_CODEX_PILOT\NX_NATIVE_V2_ARGON_20261116\PC2008_LOW_PLACED_SOLIDS.prt
+! ERROR-    Invalid STEP file name. 
+! ERROR-    File must have a '.step' or .stp' extension. 
+! ERROR-    Unable to continue processing. 
+! INFO-      
+! INFO-     End of Translation: 16-NOV-2026  5:58:04 PM
+! INFO-      
+UG to STEP
+! INFO-     NX STEP AP214 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 16-NOV-2026  6:00:06 PM
+! INFO-      
+! STATUS-   Converting Part: D:\Creativity_CAPY_BK_EP01_Assets_For_Codex\CAPY_BK_EP02_NX_CODEX_PILOT\NX_NATIVE_V2_ARGON_20261116\PC2008_LOW_PLACED_SOLIDS.prt
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-  For Part: D:\Creativity_CAPY_BK_EP01_Assets_For_Codex\CAPY_BK_EP02_NX_CODEX_PILOT\NX_NATIVE_V2_ARGON_20261116\PC2008_LOW_PLACED_SOLIDS.prt 
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Part Attribute ..............:     1
+! SUMMARY-  Font ........................:     1
+! SUMMARY-  Color Table .................:     2
+! SUMMARY-  Coordinate System ...........:     1
+! SUMMARY-  Parameter ...................:     1
+! SUMMARY-  Matrix ......................:     1
+! SUMMARY-  Solid .......................:
+! SUMMARY-     Body .....................:   179
+! SUMMARY-                                 -----
+! SUMMARY-  Total                            186
+! STATUS-    
+! STATUS-   Converting to Output Form (Phase 2 of 3): 16-NOV-2026 6:00:08 PM
+! STATUS-    
+! STATUS-    
+! STATUS-   Generating UG geometry and placing them in parts
+! STATUS-    
+! SUMMARY-   
+! SUMMARY-    STEP Header Information
+! SUMMARY-   
+! SUMMARY-  Description      Unknown
+! SUMMARY-  Imp_Level        1
+! SUMMARY-  File_Name        PC2008_LOW_AP214.step
+! SUMMARY-  Date             2026-11-16T18:00:08+07:00
+! SUMMARY-  Author           Unknown
+! SUMMARY-  Organization     Unknown
+! SUMMARY-  Pre_Version      ST-DEVELOPER v16.7
+! SUMMARY-  Orig_System      SIEMENS PLM Software NX 12.0
+! SUMMARY-  Authorization    Unknown
+! SUMMARY-   
+! SUMMARY-    Summary of STEP Entities
+! SUMMARY-   
+! SUMMARY-  Entity Type                                                   Count
+! SUMMARY-  -----------                                                   ------
+! SUMMARY-  advanced_face ..............................................:   1039
+! SUMMARY-  application_context ........................................:      1
+! SUMMARY-  axis2_placement_3d .........................................:   1482
+! SUMMARY-  cartesian_point ............................................:   4258
+! SUMMARY-  circle .....................................................:    442
+! SUMMARY-  closed_shell ...............................................:    179
+! SUMMARY-  conversion_based_unit_and_plane_angle_unit .................:      1
+! SUMMARY-  cylindrical_surface ........................................:    221
+! SUMMARY-  dimensional_exponents ......................................:      1
+! SUMMARY-  direction ..................................................:   4378
+! SUMMARY-  edge_curve .................................................:   1856
+! SUMMARY-  edge_loop ..................................................:   1402
+! SUMMARY-  face_bound .................................................:    694
+! SUMMARY-  face_outer_bound ...........................................:    708
+! SUMMARY-  geometric_representation_context_and_global_uncertainty_a ..:      1
+! SUMMARY-  length_unit_and_si_unit ....................................:      1
+! SUMMARY-  line .......................................................:   1414
+! SUMMARY-  manifold_solid_brep ........................................:    179
+! SUMMARY-  oriented_edge ..............................................:   3712
+! SUMMARY-  plane ......................................................:    818
+! SUMMARY-  plane_angle_measure_with_unit ..............................:      1
+! SUMMARY-  plane_angle_unit_and_si_unit ...............................:      1
+! SUMMARY-  product ....................................................:      1
+! SUMMARY-  product_context ............................................:      1
+! SUMMARY-  product_definition .........................................:      1
+! SUMMARY-  product_definition_context .................................:      1
+! SUMMARY-  product_definition_formation_with_specified_source .........:      1
+! SUMMARY-  product_definition_shape ...................................:      1
+! SUMMARY-  product_related_product_category ...........................:      1
+! SUMMARY-  si_unit_and_solid_angle_unit ...............................:      1
+! SUMMARY-  uncertainty_measure_with_unit ..............................:      1
+! SUMMARY-  vector .....................................................:   1414
+! SUMMARY-  vertex_point ...............................................:   1362
+! SUMMARY-                                                               -------
+! SUMMARY-  Total                                                          25574
+! INFO-      
+! INFO-     User interface/default file
+! INFO-     Bspline aprx. value in effect for this translation : 2.540000e-02 mm
+! INFO-      
+! INFO-     Total number of solids input for this translation  :     179
+! INFO-      
+! INFO-     Number of solids processed without problems        :     179
+! INFO-      
+! INFO-     Number of solids with problems output as sheets    :       0
+! INFO-      
+! INFO-     Number of solids not processed                     :       0
+! INFO-      
+! INFO-     End of Translation: 16-NOV-2026  6:00:08 PM
+! INFO-      
+UG to STEP
+! INFO-     NX STEP AP214 - V12.0
+! INFO-      
+! INFO-     Start of Translation: 16-NOV-2026  6:06:27 PM
+! INFO-      
+! STATUS-   Converting Part: D:\Creativity_CAPY_BK_EP01_Assets_For_Codex\CAPY_BK_EP02_NX_CODEX_PILOT\NX_NATIVE_V2_ARGON_20261116\PC2008_LOW_PLACED_SOLIDS.prt
+! SUMMARY-   
+! SUMMARY-  Summary of Unigraphics Part Entities
+! SUMMARY-  For Part: D:\Creativity_CAPY_BK_EP01_Assets_For_Codex\CAPY_BK_EP02_NX_CODEX_PILOT\NX_NATIVE_V2_ARGON_20261116\PC2008_LOW_PLACED_SOLIDS.prt 
+! SUMMARY-  Entities Processed             Count
+! SUMMARY-  ------------------             -----
+! SUMMARY-  Part Attribute ..............:     1
+! SUMMARY-  Font ........................:     1
+! SUMMARY-  Color Table .................:     2
+! SUMMARY-  Coordinate System ...........:     1
+! SUMMARY-  Parameter ...................:     1
+! SUMMARY-  Matrix ......................:     1
+! SUMMARY-  Solid .......................:
+! SUMMARY-     Body .....................:   181
+! SUMMARY-                                 -----
+! SUMMARY-  Total                            188
+! STATUS-    
+! STATUS-   Converting to Output Form (Phase 2 of 3): 16-NOV-2026 6:06:28 PM
+! STATUS-    
+! STATUS-    
+! STATUS-   Generating UG geometry and placing them in parts
+! STATUS-    
+! SUMMARY-   
+! SUMMARY-    STEP Header Information
+! SUMMARY-   
+! SUMMARY-  Description      Unknown
+! SUMMARY-  Imp_Level        1
+! SUMMARY-  File_Name        PC2008_LOW_AP214.step
+! SUMMARY-  Date             2026-11-16T18:06:28+07:00
+! SUMMARY-  Author           Unknown
+! SUMMARY-  Organization     Unknown
+! SUMMARY-  Pre_Version      ST-DEVELOPER v16.7
+! SUMMARY-  Orig_System      SIEMENS PLM Software NX 12.0
+! SUMMARY-  Authorization    Unknown
+! SUMMARY-   
+! SUMMARY-    Summary of STEP Entities
+! SUMMARY-   
+! SUMMARY-  Entity Type                                                   Count
+! SUMMARY-  -----------                                                   ------
+! SUMMARY-  advanced_face ..............................................:   1050
+! SUMMARY-  application_context ........................................:      1
+! SUMMARY-  axis2_placement_3d .........................................:   1497
+! SUMMARY-  cartesian_point ............................................:   4302
+! SUMMARY-  circle .....................................................:    446
+! SUMMARY-  closed_shell ...............................................:    181
+! SUMMARY-  conversion_based_unit_and_plane_angle_unit .................:      1
+! SUMMARY-  cylindrical_surface ........................................:    223
+! SUMMARY-  dimensional_exponents ......................................:      1
+! SUMMARY-  direction ..................................................:   4423
+! SUMMARY-  edge_curve .................................................:   1875
+! SUMMARY-  edge_loop ..................................................:   1417
+! SUMMARY-  face_bound .................................................:    702
+! SUMMARY-  face_outer_bound ...........................................:    715
+! SUMMARY-  geometric_representation_context_and_global_uncertainty_a ..:      1
+! SUMMARY-  length_unit_and_si_unit ....................................:      1
+! SUMMARY-  line .......................................................:   1429
+! SUMMARY-  manifold_solid_brep ........................................:    181
+! SUMMARY-  oriented_edge ..............................................:   3750
+! SUMMARY-  plane ......................................................:    827
+! SUMMARY-  plane_angle_measure_with_unit ..............................:      1
+! SUMMARY-  plane_angle_unit_and_si_unit ...............................:      1
+! SUMMARY-  product ....................................................:      1
+! SUMMARY-  product_context ............................................:      1
+! SUMMARY-  product_definition .........................................:      1
+! SUMMARY-  product_definition_context .................................:      1
+! SUMMARY-  product_definition_formation_with_specified_source .........:      1
+! SUMMARY-  product_definition_shape ...................................:      1
+! SUMMARY-  product_related_product_category ...........................:      1
+! SUMMARY-  si_unit_and_solid_angle_unit ...............................:      1
+! SUMMARY-  uncertainty_measure_with_unit ..............................:      1
+! SUMMARY-  vector .....................................................:   1429
+! SUMMARY-  vertex_point ...............................................:   1376
+! SUMMARY-                                                               -------
+! SUMMARY-  Total                                                          25839
+! INFO-      
+! INFO-     User interface/default file
+! INFO-     Bspline aprx. value in effect for this translation : 2.540000e-02 mm
+! INFO-      
+! INFO-     Total number of solids input for this translation  :     181
+! INFO-      
+! INFO-     Number of solids processed without problems        :     181
+! INFO-      
+! INFO-     Number of solids with problems output as sheets    :       0
+! INFO-      
+! INFO-     Number of solids not processed                     :       0
+! INFO-      
+! INFO-     End of Translation: 16-NOV-2026  6:06:28 PM
+! INFO-      

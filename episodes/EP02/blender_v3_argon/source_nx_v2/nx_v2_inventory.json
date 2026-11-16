@@ -1,0 +1,522 @@
+{
+  "generated_utc": "2026-11-16T12:44:41.032142+00:00",
+  "source_folder_rel": "D:\\Creativity_CAPY_BK_EP01_Assets_For_Codex\\CAPY_BK_EP02_NX_CODEX_PILOT\\NX_NATIVE_V2_ARGON_20261116",
+  "zip_package_present": true,
+  "zip_note": "Found both folder and zip archive.",
+  "total_v2_bytes": 34938491,
+  "counts": {
+    "prt_native": 32,
+    "argon_v2_prefixed_prt": 8,
+    "step_ap214": 3,
+    "stl_v2_existing": 9,
+    "csv_tables": 4,
+    "logs_and_audit": 6,
+    "viewports_png": 4,
+    "other": 0
+  },
+  "categories": {
+    "prt_native": [
+      {
+        "name": "arm_cylinder_barrel.prt",
+        "size_bytes": 147734,
+        "sha256": "649d0c8d275a5aafd5b8fe9c7a71c7b6ad1487bc8283d03eca33533cd4881300",
+        "mtime_utc": "2026-11-16T11:06:21.409960+00:00"
+      },
+      {
+        "name": "arm_rod.prt",
+        "size_bytes": 99659,
+        "sha256": "4bc4f5c83aec5017ae011a68a89069061b3dbd2de6ab6c751d5a35af279d998a",
+        "mtime_utc": "2026-11-16T11:06:21.487369+00:00"
+      },
+      {
+        "name": "boom.prt",
+        "size_bytes": 311637,
+        "sha256": "df6a4f66c5efe69ba86c7824ba7572ee5e8e06f64a2f451a604303ed93386eec",
+        "mtime_utc": "2026-11-16T11:06:19.826216+00:00"
+      },
+      {
+        "name": "boom_cylinder_barrel.prt",
+        "size_bytes": 146582,
+        "sha256": "df9daa03bd524df6ad79b30ef5675acd38a3c6d4129c8e103b8af11b6cb39a2a",
+        "mtime_utc": "2026-11-16T11:06:21.148747+00:00"
+      },
+      {
+        "name": "boom_rod.prt",
+        "size_bytes": 99540,
+        "sha256": "ab517dbd5e5725dab1547523fdc5453e2ca0781977a0ef8f375505bee2d899b0",
+        "mtime_utc": "2026-11-16T11:06:21.270322+00:00"
+      },
+      {
+        "name": "bucket.prt",
+        "size_bytes": 331481,
+        "sha256": "a930a5c471e5d80e2f4ec45cf2aed0f84fd52b23177f7df81551662b654ef527",
+        "mtime_utc": "2026-11-16T11:06:20.417222+00:00"
+      },
+      {
+        "name": "bucket_cylinder_barrel.prt",
+        "size_bytes": 147503,
+        "sha256": "2983c38680e418fc9a23434f5a4df05a8a86441d081cd0ce47600e7278750835",
+        "mtime_utc": "2026-11-16T11:06:21.616265+00:00"
+      },
+      {
+        "name": "bucket_rod.prt",
+        "size_bytes": 99617,
+        "sha256": "711bfb7b4fea801e6354e6f5f4a939d76e65a3e8e13b04bf0b303cf2da3a489a",
+        "mtime_utc": "2026-11-16T11:06:21.693987+00:00"
+      },
+      {
+        "name": "carrier_mount_reference.prt",
+        "size_bytes": 153195,
+        "sha256": "96ca2784948136233660699aa78669a4eeb4c16ba5d0cdee451d0437e55957e4",
+        "mtime_utc": "2026-11-16T11:06:20.966284+00:00"
+      },
+      {
+        "name": "h_link.prt",
+        "size_bytes": 141004,
+        "sha256": "eb0913ce02329100ded4d9da834c6ae1051aadb304f270e5535a385b7c9e7d71",
+        "mtime_utc": "2026-11-16T11:06:20.712721+00:00"
+      },
+      {
+        "name": "PC2008_HIGH_PLACED_SOLIDS.prt",
+        "size_bytes": 2152303,
+        "sha256": "fa442582afe7f6a14d947dd7a08662ffc61a30dd38fedd1b4dc6c95dc1dc798d",
+        "mtime_utc": "2026-11-16T11:06:37.614734+00:00"
+      },
+      {
+        "name": "PC2008_LOW_PLACED_SOLIDS.prt",
+        "size_bytes": 2156453,
+        "sha256": "b0c61236ae0605d6953b1cef71b9dddec67849e30875ff3c27ced96fca3dc1ba",
+        "mtime_utc": "2026-11-16T11:06:25.045721+00:00"
+      },
+      {
+        "name": "PC2008_REACH_EXPLODED_VIEW.prt",
+        "size_bytes": 2161677,
+        "sha256": "7f564b48b6c6e036508e6040159c5c25a620ab3e957d1f5f43d1a353628eb277",
+        "mtime_utc": "2026-11-16T11:06:44.232944+00:00"
+      },
+      {
+        "name": "PC2008_REACH_PLACED_SOLIDS.prt",
+        "size_bytes": 2157299,
+        "sha256": "b7a5d93b0573d1e2c9209510659e6064bb86fd6be14af67853df4ed4a74f88c0",
+        "mtime_utc": "2026-11-16T11:06:31.342495+00:00"
+      },
+      {
+        "name": "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY.prt",
+        "size_bytes": 78481,
+        "sha256": "9d868f3820e4b9e49feda753c9470ea3b42984209f7836718a24f2bcb9628e24",
+        "mtime_utc": "2026-11-16T11:06:22.610141+00:00"
+      },
+      {
+        "name": "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_HIGH.prt",
+        "size_bytes": 78504,
+        "sha256": "3079f8545a721686852952ab59f87381572e9a4e2ccef2a97a4e0939c20dc344",
+        "mtime_utc": "2026-11-16T11:06:22.682194+00:00"
+      },
+      {
+        "name": "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_LOW.prt",
+        "size_bytes": 78538,
+        "sha256": "c97cadab1c45e0cb3bb9144973bcb17f2669ec5be929e1ee50ed4b1e9620dc15",
+        "mtime_utc": "2026-11-16T11:06:22.460310+00:00"
+      },
+      {
+        "name": "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_REACH.prt",
+        "size_bytes": 78543,
+        "sha256": "454937c4a881fcd87c73fc49cee678f8f9038ded75131b461dd867605079f32e",
+        "mtime_utc": "2026-11-16T11:06:22.532551+00:00"
+      },
+      {
+        "name": "pin_R38_L264.prt",
+        "size_bytes": 85636,
+        "sha256": "1387c31817cc05be72d403bc5945eaaa701982d27b92a7f96f1fc48f0d7b0c2b",
+        "mtime_utc": "2026-11-16T11:06:22.322172+00:00"
+      },
+      {
+        "name": "pin_R38_L320.prt",
+        "size_bytes": 85356,
+        "sha256": "477294704445aa553fb466eae9357823ce878ca71dfe6549a10744d246a80eb2",
+        "mtime_utc": "2026-11-16T11:06:22.258807+00:00"
+      },
+      {
+        "name": "pin_R38_L470.prt",
+        "size_bytes": 83366,
+        "sha256": "c5ad1849343f89fc4ca6b6e041c884f139ed470cc889810add967ea834280e33",
+        "mtime_utc": "2026-11-16T11:06:22.383465+00:00"
+      },
+      {
+        "name": "pin_R40_L204.prt",
+        "size_bytes": 86861,
+        "sha256": "e3b24afe2b816c529b820c0f133ed61672550f517307211a96cd4a7377e9a44f",
+        "mtime_utc": "2026-11-16T11:06:22.196992+00:00"
+      },
+      {
+        "name": "pin_R42_L170.prt",
+        "size_bytes": 87071,
+        "sha256": "0b7ee2e9c86051f40135b134c50ae74d2d891d31dff2eaf7af0f5b2499755663",
+        "mtime_utc": "2026-11-16T11:06:22.004812+00:00"
+      },
+      {
+        "name": "pin_R42_L184.prt",
+        "size_bytes": 86509,
+        "sha256": "ca7a12311726b6ff3bad804c215eeddbaf09839b612547d96eace154650ffe54",
+        "mtime_utc": "2026-11-16T11:06:21.939982+00:00"
+      },
+      {
+        "name": "pin_R44_L256.prt",
+        "size_bytes": 86564,
+        "sha256": "c89466ad646a02d2e9bdc427473817f83446811196648cc12454066d14fcae99",
+        "mtime_utc": "2026-11-16T11:06:22.070987+00:00"
+      },
+      {
+        "name": "pin_R44_L344.prt",
+        "size_bytes": 85519,
+        "sha256": "f9bb88756cc960f36d65d9cb502295ff764fd5fb000ad24337004f93aa4beeae",
+        "mtime_utc": "2026-11-16T11:06:22.132613+00:00"
+      },
+      {
+        "name": "pin_R54_L476.prt",
+        "size_bytes": 85398,
+        "sha256": "063bc7fda29147cf3bb4e4907c220a3cd3d3150a51bd96726cadac3edb0e2e98",
+        "mtime_utc": "2026-11-16T11:06:21.879190+00:00"
+      },
+      {
+        "name": "pin_R60_L496.prt",
+        "size_bytes": 85379,
+        "sha256": "6d059c1ce2ed8a38947d3c47bb9ef19df21e6fc32abe8c6f1ca2e14356be3ba4",
+        "mtime_utc": "2026-11-16T11:06:21.815805+00:00"
+      },
+      {
+        "name": "pin_R64_L710.prt",
+        "size_bytes": 83368,
+        "sha256": "329271ba2e59f6660ea987206aac7a6af549ba7cd6fa253361c5441c88edfbd0",
+        "mtime_utc": "2026-11-16T11:06:21.752977+00:00"
+      },
+      {
+        "name": "pivot_pin.prt",
+        "size_bytes": 85596,
+        "sha256": "dc37a5eb74b696b144a78c4b9c48a9056496d16ca998652307e0b6439e421e33",
+        "mtime_utc": "2026-11-16T11:06:20.798705+00:00"
+      },
+      {
+        "name": "side_link.prt",
+        "size_bytes": 131434,
+        "sha256": "8443187d923d7c76922b7c9f29a1858479cd6eee64eeca4bd007692dac9d90c9",
+        "mtime_utc": "2026-11-16T11:06:20.567494+00:00"
+      },
+      {
+        "name": "stick.prt",
+        "size_bytes": 293734,
+        "sha256": "cc0412c32e01d7512b8a236e8fa3a7e0bea77069925974da652d75aa73426dc8",
+        "mtime_utc": "2026-11-16T11:06:20.111397+00:00"
+      }
+    ],
+    "argon_v2_prefixed_prt": [
+      {
+        "name": "ARGON_V2_BOOM.prt",
+        "size_bytes": 311637,
+        "sha256": "df6a4f66c5efe69ba86c7824ba7572ee5e8e06f64a2f451a604303ed93386eec",
+        "mtime_utc": "2026-11-16T11:06:19.826216+00:00"
+      },
+      {
+        "name": "ARGON_V2_BOOM_CYLINDER.prt",
+        "size_bytes": 146582,
+        "sha256": "df9daa03bd524df6ad79b30ef5675acd38a3c6d4129c8e103b8af11b6cb39a2a",
+        "mtime_utc": "2026-11-16T11:06:21.148747+00:00"
+      },
+      {
+        "name": "ARGON_V2_BUCKET.prt",
+        "size_bytes": 331481,
+        "sha256": "a930a5c471e5d80e2f4ec45cf2aed0f84fd52b23177f7df81551662b654ef527",
+        "mtime_utc": "2026-11-16T11:06:20.417222+00:00"
+      },
+      {
+        "name": "ARGON_V2_EXPLODED_VIEW.prt",
+        "size_bytes": 2161677,
+        "sha256": "7f564b48b6c6e036508e6040159c5c25a620ab3e957d1f5f43d1a353628eb277",
+        "mtime_utc": "2026-11-16T11:06:44.232944+00:00"
+      },
+      {
+        "name": "ARGON_V2_FULL_EXCAVATOR_HIGH.prt",
+        "size_bytes": 2152303,
+        "sha256": "fa442582afe7f6a14d947dd7a08662ffc61a30dd38fedd1b4dc6c95dc1dc798d",
+        "mtime_utc": "2026-11-16T11:06:37.614734+00:00"
+      },
+      {
+        "name": "ARGON_V2_FULL_EXCAVATOR_LOW.prt",
+        "size_bytes": 2156453,
+        "sha256": "b0c61236ae0605d6953b1cef71b9dddec67849e30875ff3c27ced96fca3dc1ba",
+        "mtime_utc": "2026-11-16T11:06:25.045721+00:00"
+      },
+      {
+        "name": "ARGON_V2_FULL_EXCAVATOR_REACH.prt",
+        "size_bytes": 2157299,
+        "sha256": "b7a5d93b0573d1e2c9209510659e6064bb86fd6be14af67853df4ed4a74f88c0",
+        "mtime_utc": "2026-11-16T11:06:31.342495+00:00"
+      },
+      {
+        "name": "ARGON_V2_STICK.prt",
+        "size_bytes": 293734,
+        "sha256": "cc0412c32e01d7512b8a236e8fa3a7e0bea77069925974da652d75aa73426dc8",
+        "mtime_utc": "2026-11-16T11:06:20.111397+00:00"
+      }
+    ],
+    "step_ap214": [
+      {
+        "name": "PC2008_HIGH_AP214.step",
+        "size_bytes": 1245831,
+        "sha256": "1b41eb4405cb63fb4e51e619716333ac0ccc9b8d3c565984da6c14ae0d2f838a",
+        "mtime_utc": "2026-11-16T11:06:41.292331+00:00"
+      },
+      {
+        "name": "PC2008_LOW_AP214.step",
+        "size_bytes": 1248208,
+        "sha256": "1185b40569a36a1246ae2613dbb5519ddaa70c4280176fb28a7f97affcf6ba50",
+        "mtime_utc": "2026-11-16T11:06:28.599386+00:00"
+      },
+      {
+        "name": "PC2008_REACH_AP214.step",
+        "size_bytes": 1246656,
+        "sha256": "1f9ccf4ead06b73cda29f1794635cf75f53359be44ad5076451300f75b449c68",
+        "mtime_utc": "2026-11-16T11:06:34.834361+00:00"
+      }
+    ],
+    "stl_v2_existing": [
+      {
+        "name": "boom.stl",
+        "size_bytes": 171884,
+        "sha256": "761584464415a0a9c81b43ff12b928d0f9cc81e2fdfe87731c4652d860466398",
+        "mtime_utc": "2026-11-16T11:06:19.863504+00:00"
+      },
+      {
+        "name": "boom_cylinder_barrel.stl",
+        "size_bytes": 87884,
+        "sha256": "bc325c0f55be02e49160da330e7b40571f04ca1d7346690925e22c02782b1a0e",
+        "mtime_utc": "2026-11-16T11:06:21.171561+00:00"
+      },
+      {
+        "name": "boom_rod.stl",
+        "size_bytes": 50084,
+        "sha256": "c6c3bb268644e604a99d0eef485241dd39e1ae65121ead94fd4c5b43d40259d1",
+        "mtime_utc": "2026-11-16T11:06:21.286867+00:00"
+      },
+      {
+        "name": "bucket.stl",
+        "size_bytes": 157384,
+        "sha256": "dbf264be0b57ff26ddfb1e8043366463b68d96904ea8bb5239aaa7586bd73837",
+        "mtime_utc": "2026-11-16T11:06:20.457078+00:00"
+      },
+      {
+        "name": "PC2008_HIGH_PLACED_SOLIDS.stl",
+        "size_bytes": 1709384,
+        "sha256": "d7808b0129dcbac006423ecbe2f7e6bdb4194b8ea539f44da00aca71583f0325",
+        "mtime_utc": "2026-11-16T11:06:37.930830+00:00"
+      },
+      {
+        "name": "PC2008_LOW_PLACED_SOLIDS.stl",
+        "size_bytes": 1710184,
+        "sha256": "25b569a9b6d1e65d17fabf84873eb5cbf594b323bb4562c36e47c35ec17f0459",
+        "mtime_utc": "2026-11-16T11:06:25.347933+00:00"
+      },
+      {
+        "name": "PC2008_REACH_EXPLODED_VIEW.stl",
+        "size_bytes": 1709784,
+        "sha256": "76c5adea50bd0e1ebdf88a75a89c80aa64bbe96185ff4ff8bdcf05dc63b624be",
+        "mtime_utc": "2026-11-16T11:06:44.565357+00:00"
+      },
+      {
+        "name": "PC2008_REACH_PLACED_SOLIDS.stl",
+        "size_bytes": 1709784,
+        "sha256": "cdcf4d9cc93b9ddf5055aa046aa82d675b93863d89ed729bc0846bde7afe1522",
+        "mtime_utc": "2026-11-16T11:06:31.656990+00:00"
+      },
+      {
+        "name": "stick.stl",
+        "size_bytes": 230484,
+        "sha256": "21f90fec0c636c91d7a17203440a261ae4d1c0d8e57ee55e8a5cede9cc0b062c",
+        "mtime_utc": "2026-11-16T11:06:20.148007+00:00"
+      }
+    ],
+    "csv_tables": [
+      {
+        "name": "assembly_params.csv",
+        "size_bytes": 2142,
+        "sha256": "20f54a120c47c1619eb12508dc937d9c47841b03b09a46d34b018f3cbd42cb1e",
+        "mtime_utc": "2026-11-16T11:06:18.570220+00:00"
+      },
+      {
+        "name": "joint_map.csv",
+        "size_bytes": 3745,
+        "sha256": "45f39411b19989d67b741bd919a279b18b25738b0e8944b7e0c2a6263b11cf76",
+        "mtime_utc": "2026-11-16T11:06:18.570220+00:00"
+      },
+      {
+        "name": "pin_verification_v2.csv",
+        "size_bytes": 6465,
+        "sha256": "6719466db818f4c975fd4035731aa5e30dff2ed70dfa32ee458f86f2df89b1c1",
+        "mtime_utc": "2026-11-16T11:06:18.570220+00:00"
+      },
+      {
+        "name": "pose_check.csv",
+        "size_bytes": 1216,
+        "sha256": "e93a0986bba66297c4f8b17a8ca1aa14efaccf0e0a94c14a727da48daacd5ff1",
+        "mtime_utc": "2026-11-16T11:06:18.570220+00:00"
+      }
+    ],
+    "logs_and_audit": [
+      {
+        "name": "feature_tree_audit_v2_argon.json",
+        "size_bytes": 30902,
+        "sha256": "3dd7a4f7d3e351eeb7fa994f09fed91a92e7bb525764a1e271822c2a46775afc",
+        "mtime_utc": "2026-11-16T11:49:25.579639+00:00"
+      },
+      {
+        "name": "native_reopen_v2_argon.log",
+        "size_bytes": 1694,
+        "sha256": "955a6e25973c209ba7c6588bfb252c4cb1645d34f2d46e2c8621ecbab0bc635a",
+        "mtime_utc": "2026-11-16T11:49:25.579639+00:00"
+      },
+      {
+        "name": "nx_run_v2_argon.log",
+        "size_bytes": 2539,
+        "sha256": "3cb29d461c7a23e8a2ffb61bc678c04110ae43b35a5d6018135e62b2ea13c1da",
+        "mtime_utc": "2026-11-16T11:06:44.576184+00:00"
+      },
+      {
+        "name": "PC2008_HIGH_AP214.log",
+        "size_bytes": 10929,
+        "sha256": "2a7b479717467839c6a67acc7cd3700b1ff2de66a79cd8ed6025726d5f39472a",
+        "mtime_utc": "2026-11-16T11:06:41.309949+00:00"
+      },
+      {
+        "name": "PC2008_LOW_AP214.log",
+        "size_bytes": 11447,
+        "sha256": "e34ee3dad2ee035a01327502f8275d2e6914d325d23bdf96f65c300579d00425",
+        "mtime_utc": "2026-11-16T11:06:28.616545+00:00"
+      },
+      {
+        "name": "PC2008_REACH_AP214.log",
+        "size_bytes": 10935,
+        "sha256": "88d365498cbd0d82916af7c63adeb519e95165cf347d1c752dd993cfceda3cdc",
+        "mtime_utc": "2026-11-16T11:06:34.849626+00:00"
+      }
+    ],
+    "viewports_png": [
+      {
+        "name": "01_nx_v2_full_linkage_viewport.png",
+        "size_bytes": 390132,
+        "sha256": "7cddf3831877dc895ea2509bb963680a17fdf02924f7c64115134224fd20d249",
+        "mtime_utc": "2026-11-16T11:06:50.156980+00:00"
+      },
+      {
+        "name": "02_nx_v2_cylinder_and_bucket_closeup.png",
+        "size_bytes": 514803,
+        "sha256": "26135aa45249d3e56bb8e9a9c391d0aa81e344f11370d33e9d855c12196f2c87",
+        "mtime_utc": "2026-11-16T11:06:50.387413+00:00"
+      },
+      {
+        "name": "03_nx_v2_exploded_assembly_viewport.png",
+        "size_bytes": 543705,
+        "sha256": "281f95a1183b7bd4117d146d97bf9eb0d4187fffed824ff0b6e5dcf9293a83a9",
+        "mtime_utc": "2026-11-16T11:06:50.904578+00:00"
+      },
+      {
+        "name": "04_nx_v2_three_poses_pin_qa.png",
+        "size_bytes": 347579,
+        "sha256": "bfe4b71a539587591bf68a3fc3544eac8ab2ed31921fbba47eed7845b353b2c8",
+        "mtime_utc": "2026-11-16T11:06:51.474724+00:00"
+      }
+    ],
+    "other": []
+  },
+  "nxopen_v2_scripts": [
+    {
+      "name": "geometry_v2_argon.py",
+      "size_bytes": 11023,
+      "sha256": "fca7b65aa1e6a69919077dd89516415149d0f767969f4f91fe725c451d457675"
+    },
+    {
+      "name": "nx_pilot_v2_argon.py",
+      "size_bytes": 39108,
+      "sha256": "9b0ad437e05e61027144e63a7ba8c566741e96e28597a1e8b3394e10ec827862"
+    },
+    {
+      "name": "nx_review_v2_argon.py",
+      "size_bytes": 7308,
+      "sha256": "6b93050eebbb9e44c847817c32f73e7148bcfe3eae34ed8eaa1d12e6da1b2706"
+    },
+    {
+      "name": "nx_ui_preview_v2_argon.py",
+      "size_bytes": 2642,
+      "sha256": "32439f8beccb21f9cffe198f51d4440992c0800eb1bfe20718ad67a69036e3c4"
+    },
+    {
+      "name": "render_nx_viewports_v2_argon.py",
+      "size_bytes": 24237,
+      "sha256": "925d05169fa3f5bdcabdb407e8f346d23c711752e0b79d0e59cc67c3ca0c6a82"
+    },
+    {
+      "name": "REPORT_V2_ARGON_TAKEOVER.md",
+      "size_bytes": 17417,
+      "sha256": "ed8572b0553270dab2f9ad575263de37f805dd4c63fd049c638364df38b49e09"
+    }
+  ],
+  "feature_audit_summary": {
+    "assemblies": {
+      "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY": {
+        "component_count": 27,
+        "constraint_count": 11,
+        "datum_points": 13,
+        "max_datum_error_mm": 5.795842582473608e-07
+      },
+      "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_LOW": {
+        "component_count": 27,
+        "constraint_count": 11,
+        "datum_points": 13,
+        "max_datum_error_mm": 6.716967381498815e-07
+      },
+      "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_REACH": {
+        "component_count": 27,
+        "constraint_count": 11,
+        "datum_points": 13,
+        "max_datum_error_mm": 5.795842582473608e-07
+      },
+      "PC2008_WORK_EQUIPMENT_CONCEPT_ASSY_HIGH": {
+        "component_count": 27,
+        "constraint_count": 11,
+        "datum_points": 13,
+        "max_datum_error_mm": 4.480642377982605e-07
+      }
+    },
+    "placed_solids": {
+      "PC2008_LOW_PLACED_SOLIDS": {
+        "solid_bodies": 181,
+        "feature_count": 207,
+        "datum_points": 13,
+        "max_datum_error_mm": 6.716967381498815e-07
+      },
+      "PC2008_REACH_PLACED_SOLIDS": {
+        "solid_bodies": 181,
+        "feature_count": 207,
+        "datum_points": 13,
+        "max_datum_error_mm": 5.795842582473608e-07
+      },
+      "PC2008_HIGH_PLACED_SOLIDS": {
+        "solid_bodies": 181,
+        "feature_count": 207,
+        "datum_points": 13,
+        "max_datum_error_mm": 4.480642377982605e-07
+      },
+      "PC2008_REACH_EXPLODED_VIEW": {
+        "solid_bodies": 181,
+        "feature_count": 207,
+        "datum_points": 13,
+        "max_datum_error_mm": 5.795842582473608e-07
+      }
+    },
+    "parts_count": 13
+  },
+  "known_gaps_inherited_from_v2": [
+    "PC200-8 undercarriage/tracks, revolving upper deck, cabin, engine, pump block, and counterweight are NOT in V2 (only carrier_mount_reference A-frame turret lugs + working attachment).",
+    "Cylinder bore/rod diameters (boom 120/85, arm 135/95, bucket 115/80) match brochure/public reference tables; clevis joint coordinates, closed lengths, and external SAE feed ports are V2 assumed/illustrative engineering geometry, NOT OEM Komatsu shop drawings.",
+    "Rubber flexible hoses from carrier manifold to boom cylinders and stick cylinder feed were NOT yet modeled in NX V2 (to be added as clearly labeled illustrative routing in Blender V3)."
+  ]
+}

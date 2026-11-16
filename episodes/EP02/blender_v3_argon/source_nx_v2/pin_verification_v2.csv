@@ -1,0 +1,40 @@
+pose,pin_id,joint_id,parent_part,child_part,x_mm,y_mm,z_mm,pin_diameter_mm,pin_length_mm,confidence,source_id,note
+low,PIN_BOOM_BASE,boom_base,carrier_mount_reference,boom,0.0,0.0,0.0,128.0,710.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Boom foot main hinge pin
+low,PIN_BOOM_TIP,boom_tip,boom,stick,5266.113335,0.0,2181.295564,120.0,496.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Boom-to-stick main pivot pin
+low,PIN_STICK_TIP,stick_tip,stick,bucket,5849.264543,0.0,-684.984197,108.0,476.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Stick-to-bucket main hinge pin
+low,PIN_BOOM_CYL_A_L,boom_cyl_A,carrier_mount_reference,boom_cylinder_barrel,450.0,520.0,-850.0,84.0,184.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Left boom cylinder base clevis pin
+low,PIN_BOOM_CYL_A_R,boom_cyl_A,carrier_mount_reference,boom_cylinder_barrel,450.0,-520.0,-850.0,84.0,184.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Right boom cylinder base clevis pin
+low,PIN_BOOM_CYL_B_L,boom_cyl_B,boom,boom_rod,2317.896429,520.0,1198.230421,84.0,170.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Left boom cylinder rod eye pin
+low,PIN_BOOM_CYL_B_R,boom_cyl_B,boom,boom_rod,2317.896429,-520.0,1198.230421,84.0,170.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Right boom cylinder rod eye pin
+low,PIN_ARM_CYL_A,arm_cyl_A,boom,arm_cylinder_barrel,2926.365397,0.0,2252.752097,88.0,256.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Arm cylinder base lug pin on boom
+low,PIN_ARM_CYL_B,arm_cyl_B,stick,arm_rod,5146.492575,0.0,2769.250387,88.0,344.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Arm cylinder rod eye pin on stick horn
+low,PIN_BUCKET_CYL_A,bucket_cyl_A,stick,bucket_cylinder_barrel,5757.767184,0.0,1771.080386,80.0,204.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Bucket cylinder base lug pin on stick
+low,PIN_BUCKET_SIDE,bucket_side,stick,side_link,5951.395464,0.0,-434.595948,76.0,320.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar side link anchor pin on stick
+low,PIN_BUCKET_CYL_B,bucket_cyl_B,side_link,bucket_rod,6542.087816,0.0,-705.856976,76.0,264.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar knee pin (side_link + h_link + bucket_rod)
+low,PIN_BUCKET_BOSS,bucket_boss,bucket,h_link,5838.344906,0.0,-965.175152,76.0,470.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar H-link pin on bucket ear
+reach,PIN_BOOM_BASE,boom_base,carrier_mount_reference,boom,0.0,0.0,0.0,128.0,710.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Boom foot main hinge pin
+reach,PIN_BOOM_TIP,boom_tip,boom,stick,4985.332331,0.0,2763.414835,120.0,496.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Boom-to-stick main pivot pin
+reach,PIN_STICK_TIP,stick_tip,stick,bucket,6578.401508,0.0,310.303424,108.0,476.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Stick-to-bucket main hinge pin
+reach,PIN_BOOM_CYL_A_L,boom_cyl_A,carrier_mount_reference,boom_cylinder_barrel,450.0,520.0,-850.0,84.0,184.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Left boom cylinder base clevis pin
+reach,PIN_BOOM_CYL_A_R,boom_cyl_A,carrier_mount_reference,boom_cylinder_barrel,450.0,-520.0,-850.0,84.0,184.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Right boom cylinder base clevis pin
+reach,PIN_BOOM_CYL_B_L,boom_cyl_B,boom,boom_rod,2167.353122,520.0,1452.921348,84.0,170.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Left boom cylinder rod eye pin
+reach,PIN_BOOM_CYL_B_R,boom_cyl_B,boom,boom_rod,2167.353122,-520.0,1452.921348,84.0,170.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Right boom cylinder rod eye pin
+reach,PIN_ARM_CYL_A,arm_cyl_A,boom,arm_cylinder_barrel,2652.535521,0.0,2569.545049,88.0,256.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Arm cylinder base lug pin on boom
+reach,PIN_ARM_CYL_B,arm_cyl_B,stick,arm_rod,4658.54891,0.0,3266.617176,88.0,344.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Arm cylinder rod eye pin on stick horn
+reach,PIN_BUCKET_CYL_A,bucket_cyl_A,stick,bucket_cylinder_barrel,5593.120075,0.0,2561.935165,80.0,204.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Bucket cylinder base lug pin on stick
+reach,PIN_BUCKET_SIDE,bucket_side,stick,side_link,6581.65831,0.0,580.700157,76.0,320.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar side link anchor pin on stick
+reach,PIN_BUCKET_CYL_B,bucket_cyl_B,side_link,bucket_rod,7227.474635,0.0,507.070849,76.0,264.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar knee pin (side_link + h_link + bucket_rod)
+reach,PIN_BUCKET_BOSS,bucket_boss,bucket,h_link,6642.756789,0.0,37.384741,76.0,470.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar H-link pin on bucket ear
+high,PIN_BOOM_BASE,boom_base,carrier_mount_reference,boom,0.0,0.0,0.0,128.0,710.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Boom foot main hinge pin
+high,PIN_BOOM_TIP,boom_tip,boom,stick,4235.925505,0.0,3814.044456,120.0,496.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Boom-to-stick main pivot pin
+high,PIN_STICK_TIP,stick_tip,stick,bucket,5563.847717,0.0,1207.850373,108.0,476.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Stick-to-bucket main hinge pin
+high,PIN_BOOM_CYL_A_L,boom_cyl_A,carrier_mount_reference,boom_cylinder_barrel,450.0,520.0,-850.0,84.0,184.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Left boom cylinder base clevis pin
+high,PIN_BOOM_CYL_A_R,boom_cyl_A,carrier_mount_reference,boom_cylinder_barrel,450.0,-520.0,-850.0,84.0,184.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Right boom cylinder base clevis pin
+high,PIN_BOOM_CYL_B_L,boom_cyl_B,boom,boom_rod,1784.967813,520.0,1903.231438,84.0,170.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Left boom cylinder rod eye pin
+high,PIN_BOOM_CYL_B_R,boom_cyl_B,boom,boom_rod,1784.967813,-520.0,1903.231438,84.0,170.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Right boom cylinder rod eye pin
+high,PIN_ARM_CYL_A,arm_cyl_A,boom,arm_cylinder_barrel,2006.529339,0.0,3100.378438,88.0,256.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Arm cylinder base lug pin on boom
+high,PIN_ARM_CYL_B,arm_cyl_B,stick,arm_rod,3963.531205,0.0,4348.648371,88.0,344.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Arm cylinder rod eye pin on stick horn
+high,PIN_BUCKET_CYL_A,bucket_cyl_A,stick,bucket_cylinder_barrel,4819.323365,0.0,3550.137394,80.0,204.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Bucket cylinder base lug pin on stick
+high,PIN_BUCKET_SIDE,bucket_side,stick,side_link,5595.350833,0.0,1476.425416,76.0,320.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar side link anchor pin on stick
+high,PIN_BUCKET_CYL_B,bucket_cyl_B,side_link,bucket_rod,6206.529849,0.0,1255.155873,76.0,264.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar knee pin (side_link + h_link + bucket_rod)
+high,PIN_BUCKET_BOSS,bucket_boss,bucket,h_link,5530.978212,0.0,929.379898,76.0,470.0,ASSUMED-PARAM,CONCEPT-V6-ADAPTATION,Four-bar H-link pin on bucket ear
