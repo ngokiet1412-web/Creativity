@@ -1,0 +1,20 @@
+{
+  "schema": "capy-ep02-validation-1",
+  "status": "DRAFT ASSUMED-PARAM concept, not OEM or measured telemetry",
+  "units": {"length": "mm", "angle": "deg", "time": "s", "pressure": "bar", "force": "N", "flow": "L/min"},
+  "frame": "right-handed X forward, Y left, Z up; rotate XZ by positive mathematical angle",
+  "cad_revision": "PC2008_ARGON_V3_NX_FIT_DRAFT / PR14 a46bcb08f03e5fedb1898e93d650e7365c5d3ead",
+  "boom_len": 5700, "stick_len": 2925, "ground_z": -1584.9, "boom_half_y": 520,
+  "link_side": 650, "link_h": 750,
+  "joints": {"boom_cyl_A": [450,-850], "boom_cyl_B": [2600,220], "arm_cyl_A": [3565.7,1191.4], "arm_cyl_B": [-600,0], "bucket_cyl_A": [500,595], "bucket_side": [2700,150], "bucket_boss": [188.6,-207.5]},
+  "act": {
+    "boom": {"bore":120,"stroke":1334,"rod":85,"closed":2200,"qty":2},
+    "arm": {"bore":135,"stroke":1490,"rod":95,"closed":1850,"qty":1},
+    "bucket": {"bore":115,"stroke":1120,"rod":80,"closed":1700,"qty":1}
+  },
+  "bucket_hull": [[-1400,-830],[-1400,-690],[-850,-1015],[-250,-1080],[300,-850],[510,-535],[560,-290],[370,140],[90,260],[-120,230]],
+  "fluid": {"head_inner_mm":172,"gland_inner_from_closed_mm":162,"piston_cap_from_rod_eye_from_closed_mm":200,"piston_rod_from_rod_eye_from_closed_mm":282,"note":"CAD concept axial fluid boundaries; omit port and hose dead volumes, leakage and compressibility. Piston assembly occupies 82 mm."},
+  "pressure_case": {"label":"HYPOTHETICAL static differential pressure, not measured, not a solved load history", "cap_bar":100,"rod_bar":10},
+  "geometry_evidence": "Brochure CEN00049-08 supports selected boom/arm lengths and bore/stroke/rod sizes; all pivot coordinates, closed lengths, hull, pin/clearance and chamber structure are ASSUMED-PARAM. Files hashed in local source_manifest.json.",
+  "keys": [[0,22.5,101,56],[2.2,24.2,95.5,52],[5.8,29,86,62],[10.5,35.8,94.5,69.2],[14.2,40.5,102.8,74.2],[16.8,42,105,76]]
+}
