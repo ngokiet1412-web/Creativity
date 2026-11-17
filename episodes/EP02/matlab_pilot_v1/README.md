@@ -56,7 +56,7 @@ git fetch origin refs/pull/15/head:refs/remotes/origin/pr-15
 ./episodes/EP02/matlab_pilot_v1/reproduce.ps1 -Cad '<PC2008_ARGON_V3_NX_FIT_DRAFT>' -Out '<thu-muc-ket-qua-moi>'
 ```
 
-- `source_manifest.json` ghim đầu vào. `matlab/` có `summary.json`, ba bảng tư thế NX, dấu vết 120 Hz và 540 frame, tọa độ chốt mỗi frame, đồ thị PNG và bản FIG chỉnh sửa được.
+- `source_manifest.json` ghim đầu vào. `matlab/` có `summary.json`, bảng đối chiếu ba tư thế NX, dấu vết 120 Hz và 540 frame, tọa độ chốt mỗi frame, đồ thị PNG và bản FIG chỉnh sửa được.
 - `nx_verify/` chứa CSV Boolean và log. `ansys/` chứa STEP, báo cáo hội tụ, file `.mechdat`, thư mục dữ liệu đi cùng mỗi project, `.rst`, deck, log, trường vô hướng và ảnh gốc Mechanical. Giữ `.mechdat` cạnh thư mục `_Mech_Files` khi di chuyển để mở kết quả. Ảnh Mechanical có scale biến dạng hiển thị. Sử dụng legend và giá trị số khi đọc độ võng.
 - Kết quả chạy trên máy nằm dưới `CODEX_MATLAB_ANSYS_20261117` cùng cấp thư mục CAD. Repo lưu mã và báo cáo để tái chạy. File CAD và kết quả native giữ tại máy.
 
